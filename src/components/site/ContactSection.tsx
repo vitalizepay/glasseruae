@@ -77,10 +77,6 @@ export function ContactSection() {
                 <label htmlFor="details" className="block text-[11px] font-medium uppercase tracking-[0.22em] text-muted-foreground mb-2">Project Details</label>
                 <textarea id="details" name="details" rows={4} className="w-full bg-white border border-border rounded-2xl px-4 py-3.5 text-navy focus:outline-none focus:ring-2 focus:ring-navy/20 resize-none" placeholder="Tell us about your space, dimensions, timeline…" />
               </div>
-              <div className="sm:col-span-2">
-                <label className="block text-[11px] font-medium uppercase tracking-[0.22em] text-muted-foreground mb-2">Project Details</label>
-                <textarea rows={4} className="w-full bg-white border border-border rounded-2xl px-4 py-3.5 text-navy focus:outline-none focus:ring-2 focus:ring-navy/20 resize-none" placeholder="Tell us about your space, dimensions, timeline…" />
-              </div>
             </div>
 
             <button type="submit" className="mt-8 inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-full bg-navy text-navy-foreground font-medium hover:bg-navy/90 transition">
