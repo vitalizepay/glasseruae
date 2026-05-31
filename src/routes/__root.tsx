@@ -85,6 +85,12 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { property: "og:locale", content: "en_AE" },
       { name: "twitter:card", content: "summary_large_image" },
       { name: "theme-color", content: "#0A1A2F" },
+      { property: "og:title", content: "Glasser UAE — Premium Glass & Aluminium Specialists in Dubai" },
+      { name: "twitter:title", content: "Glasser UAE — Premium Glass & Aluminium Specialists in Dubai" },
+      { property: "og:description", content: "Dubai's trusted glass & aluminium experts. Frameless partitions, shower enclosures, aluminium doors & windows across the UAE." },
+      { name: "twitter:description", content: "Dubai's trusted glass & aluminium experts. Frameless partitions, shower enclosures, aluminium doors & windows across the UAE." },
+      { property: "og:image", content: "https://storage.googleapis.com/gpt-engineer-file-uploads/CCSag2zzSeVsAhrIMLoFggnKxEm2/social-images/social-1780255457152-glasser_logo.webp" },
+      { name: "twitter:image", content: "https://storage.googleapis.com/gpt-engineer-file-uploads/CCSag2zzSeVsAhrIMLoFggnKxEm2/social-images/social-1780255457152-glasser_logo.webp" },
     ],
     links: [
       { rel: "stylesheet", href: appCss },
