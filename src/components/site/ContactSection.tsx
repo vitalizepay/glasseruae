@@ -68,10 +68,14 @@ export function ContactSection() {
               <Field label="Phone" name="phone" type="tel" required />
               <Field label="Email" name="email" type="email" required className="sm:col-span-2" />
               <div className="sm:col-span-2">
-                <label className="block text-[11px] font-medium uppercase tracking-[0.22em] text-muted-foreground mb-2">Service Required</label>
-                <select className="w-full bg-white border border-border rounded-2xl px-4 py-3.5 text-navy focus:outline-none focus:ring-2 focus:ring-navy/20">
+                <label htmlFor="service" className="block text-[11px] font-medium uppercase tracking-[0.22em] text-muted-foreground mb-2">Service Required</label>
+                <select id="service" name="service" className="w-full bg-white border border-border rounded-2xl px-4 py-3.5 text-navy focus:outline-none focus:ring-2 focus:ring-navy/20">
                   {["Frameless Glass Partitions","Aluminium Doors","Aluminium Windows","Shower Enclosures","Custom Mirrors","Glass Facades","Other"].map(o => <option key={o}>{o}</option>)}
                 </select>
+              </div>
+              <div className="sm:col-span-2">
+                <label htmlFor="details" className="block text-[11px] font-medium uppercase tracking-[0.22em] text-muted-foreground mb-2">Project Details</label>
+                <textarea id="details" name="details" rows={4} className="w-full bg-white border border-border rounded-2xl px-4 py-3.5 text-navy focus:outline-none focus:ring-2 focus:ring-navy/20 resize-none" placeholder="Tell us about your space, dimensions, timeline…" />
               </div>
               <div className="sm:col-span-2">
                 <label className="block text-[11px] font-medium uppercase tracking-[0.22em] text-muted-foreground mb-2">Project Details</label>
