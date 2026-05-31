@@ -64,6 +64,7 @@ function Index() {
       <About />
       <Services />
       <Projects />
+      <GlassSkyline />
       <WhyUs />
       <Testimonials />
       <CTA />
