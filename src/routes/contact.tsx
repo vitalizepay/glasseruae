@@ -15,6 +15,32 @@ export const Route = createFileRoute("/contact")({
       { property: "og:url", content: "/contact" },
     ],
     links: [{ rel: "canonical", href: "/contact" }],
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "LocalBusiness",
+          name: "Glasser Technical Works LLC",
+          telephone: "+971568400838",
+          email: "sales@glasseruae.com",
+          url: "https://glazer-uae-vision.lovable.app/contact",
+          address: {
+            "@type": "PostalAddress",
+            streetAddress: "Al Hilal Bldg, Al Nahda St, Al Qusais",
+            addressLocality: "Dubai",
+            postalCode: "235485",
+            addressCountry: "AE",
+          },
+          areaServed: ["Dubai", "Abu Dhabi", "Sharjah", "Ajman", "UAE"],
+          openingHoursSpecification: [{
+            "@type": "OpeningHoursSpecification",
+            dayOfWeek: ["Saturday","Sunday","Monday","Tuesday","Wednesday","Thursday"],
+            opens: "08:00", closes: "19:00",
+          }],
+        }),
+      },
+    ],
   }),
   component: () => (
     <Layout>
