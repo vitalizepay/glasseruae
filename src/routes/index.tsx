@@ -4,6 +4,7 @@ import { Hero } from "@/components/site/Hero";
 import { About } from "@/components/site/About";
 import { Services } from "@/components/site/Services";
 import { Projects } from "@/components/site/Projects";
+import { GlassSkyline } from "@/components/site/GlassSkyline";
 import { WhyUs } from "@/components/site/WhyUs";
 import { Testimonials } from "@/components/site/Testimonials";
 import { CTA } from "@/components/site/CTA";
@@ -63,6 +64,7 @@ function Index() {
       <About />
       <Services />
       <Projects />
+      <GlassSkyline />
       <WhyUs />
       <Testimonials />
       <CTA />

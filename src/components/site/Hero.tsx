@@ -1,22 +1,49 @@
-import { motion } from "framer-motion";
+import { motion, useScroll, useTransform } from "framer-motion";
 import { Link } from "@tanstack/react-router";
 import { ArrowRight, Play } from "lucide-react";
+import { useRef } from "react";
 import hero from "@/assets/hero-dubai.jpg";
+import { SkylineScene } from "./SkylineScene";
 
 export function Hero() {
+  const ref = useRef<HTMLElement>(null);
+  const { scrollYProgress } = useScroll({ target: ref, offset: ["start start", "end start"] });
+  const yImg = useTransform(scrollYProgress, [0, 1], [0, 200]);
+  const opacityImg = useTransform(scrollYProgress, [0, 0.8], [1, 0.3]);
+
   return (
-    <section className="relative min-h-screen flex items-center overflow-hidden">
-      <div className="absolute inset-0">
-        <img src={hero} alt="Dubai skyline through glass facade" className="w-full h-full object-cover" width={1920} height={1280} />
+    <section ref={ref} className="relative min-h-screen flex items-center overflow-hidden bg-navy">
+      <motion.div style={{ y: yImg, opacity: opacityImg }} className="absolute inset-0">
+        <img src={hero} alt="Dubai skyline through glass facade" className="w-full h-full object-cover opacity-60" width={1920} height={1280} />
         <div className="absolute inset-0 gradient-hero" />
-        <div className="absolute inset-0 bg-gradient-to-t from-background via-background/20 to-transparent" />
-      </div>
+        <div className="absolute inset-0 bg-gradient-to-t from-background via-navy/40 to-transparent" />
+      </motion.div>
+
+      {/* Animated glass skyline */}
+      <SkylineScene />
 
       {/* Floating glass panels */}
       <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute top-[18%] left-[8%] w-40 h-56 glass rounded-2xl animate-float opacity-50" />
-        <div className="absolute top-[55%] right-[12%] w-32 h-44 glass rounded-2xl animate-float opacity-40" style={{ animationDelay: "2s" }} />
-        <div className="absolute top-[30%] right-[28%] w-24 h-32 glass rounded-xl animate-float opacity-30" style={{ animationDelay: "4s" }} />
+        <motion.div
+          animate={{ y: [0, -25, 0], rotate: [0, 2, 0] }}
+          transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
+          className="absolute top-[18%] left-[6%] w-44 h-60 glass rounded-2xl opacity-60 shadow-elegant"
+        >
+          <div className="absolute inset-2 rounded-xl border border-white/20" />
+          <div className="absolute top-3 left-3 w-2 h-2 rounded-full bg-orange animate-pulse" />
+        </motion.div>
+        <motion.div
+          animate={{ y: [0, 20, 0], rotate: [0, -2, 0] }}
+          transition={{ duration: 10, repeat: Infinity, ease: "easeInOut", delay: 1 }}
+          className="absolute top-[52%] right-[10%] w-36 h-48 glass rounded-2xl opacity-50"
+        >
+          <div className="absolute inset-2 rounded-xl border border-white/15" />
+        </motion.div>
+        <motion.div
+          animate={{ y: [0, -15, 0] }}
+          transition={{ duration: 7, repeat: Infinity, ease: "easeInOut", delay: 3 }}
+          className="absolute top-[28%] right-[26%] w-28 h-36 glass rounded-xl opacity-40"
+        />
       </div>
 
       <div className="container mx-auto px-6 relative z-10 pt-32 pb-20">
@@ -61,6 +88,16 @@ export function Hero() {
           </div>
         </motion.div>
       </div>
+
+      {/* Scroll indicator */}
+      <motion.div
+        animate={{ y: [0, 10, 0] }}
+        transition={{ duration: 2, repeat: Infinity }}
+        className="absolute bottom-8 left-1/2 -translate-x-1/2 z-20 text-white/60 text-xs uppercase tracking-[0.3em] flex flex-col items-center gap-2"
+      >
+        Scroll
+        <span className="w-px h-10 bg-gradient-to-b from-orange to-transparent" />
+      </motion.div>
     </section>
   );
 }
