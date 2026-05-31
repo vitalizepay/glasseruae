@@ -11,7 +11,7 @@ export function Footer() {
       <div className="container mx-auto px-6 pt-32 pb-10">
         <div className="grid md:grid-cols-4 gap-10">
           <div>
-            <img src={logo} alt="Glasser" className="h-12 bg-white rounded-md p-1 w-auto mb-4" />
+            <img src={logo} alt="Glasser Technical Works LLC logo" className="h-12 bg-white rounded-md p-1 w-auto mb-4" />
             <p className="text-sm text-white/70 leading-relaxed">
               Dubai's trusted glass &amp; aluminium specialists. Premium installations across the UAE since 2009.
             </p>
