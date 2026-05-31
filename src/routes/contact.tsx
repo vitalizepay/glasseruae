@@ -2,7 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { Layout } from "@/components/site/Layout";
 import { ContactSection } from "@/components/site/ContactSection";
 
-const T = "Contact Glasser UAE — Free Quote on Glass & Aluminium Work in Dubai";
+const T = "Contact Glasser UAE — Free Glass & Aluminium Quote";
 const D = "Call +971 56 840 0838 or email sales@glasseruae.com. Free site survey and quote for glass partitions, shower enclosures, aluminium doors & windows in the UAE.";
 
 export const Route = createFileRoute("/contact")({
