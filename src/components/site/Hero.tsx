@@ -15,6 +15,8 @@ export function Hero() {
           className="w-full h-full object-cover animate-ken-burns"
           width={1920}
           height={1280}
+          fetchPriority="high"
+          decoding="async"
         />
         {/* Soft white overlay for an Apple/Emaar luxury feel */}
         <div className="absolute inset-0 bg-white/70" />
@@ -87,9 +89,9 @@ export function Hero() {
       </div>
 
       {/* Tasteful scroll cue */}
-      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10 text-navy/40 text-[10px] uppercase tracking-[0.4em] flex flex-col items-center gap-2">
+      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10 text-navy/70 text-[10px] uppercase tracking-[0.4em] flex flex-col items-center gap-2">
         Scroll
-        <span className="w-px h-10 bg-gradient-to-b from-navy/40 to-transparent" />
+        <span className="w-px h-10 bg-gradient-to-b from-navy/60 to-transparent" />
       </div>
     </section>
   );

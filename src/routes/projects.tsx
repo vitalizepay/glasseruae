@@ -3,7 +3,7 @@ import { Layout } from "@/components/site/Layout";
 import { Projects } from "@/components/site/Projects";
 import { CTA } from "@/components/site/CTA";
 
-const T = "Projects — Glass & Aluminium Installations Across Dubai | Glasser UAE";
+const T = "Projects — Glass & Aluminium in Dubai | Glasser UAE";
 const D = "Explore Glasser UAE's portfolio: luxury villas, offices, hotels and commercial facades with frameless glass and architectural aluminium.";
 
 export const Route = createFileRoute("/projects")({

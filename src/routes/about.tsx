@@ -5,8 +5,8 @@ import { WhyUs } from "@/components/site/WhyUs";
 import { Testimonials } from "@/components/site/Testimonials";
 import { CTA } from "@/components/site/CTA";
 
-const T = "About Glasser Technical Works — Dubai Glass & Aluminium Specialists";
-const D = "Learn about Glasser Technical Works LLC — 15+ years delivering premium glass and aluminium installations to homes, offices and hotels across the UAE.";
+const T = "About Glasser UAE — Dubai Glass & Aluminium Experts";
+const D = "Glasser Technical Works LLC — 15+ years of premium glass and aluminium installations for homes, offices and hotels across the UAE.";
 
 export const Route = createFileRoute("/about")({
   head: () => ({

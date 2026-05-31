@@ -11,8 +11,8 @@ import { FAQ, FAQS } from "@/components/site/FAQ";
 import { CTA } from "@/components/site/CTA";
 import { ContactSection } from "@/components/site/ContactSection";
 
-const TITLE = "Glass Company Dubai | Glasser UAE — Premium Glass & Aluminium Experts";
-const DESC = "Glasser Technical Works LLC — Dubai's premium specialists in frameless glass partitions, aluminium doors & windows, shower enclosures, custom mirrors and architectural glass facades across the UAE.";
+const TITLE = "Glass & Aluminium Company Dubai | Glasser UAE";
+const DESC = "Glasser UAE — Dubai specialists in frameless glass partitions, aluminium doors & windows, shower enclosures, mirrors and facades across the UAE.";
 
 const SERVICE_LIST = [
   "Frameless Glass Partitions Dubai",
