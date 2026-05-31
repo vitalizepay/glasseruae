@@ -51,7 +51,7 @@ export function Footer() {
             </ul>
           </div>
         </div>
-        <div className="border-t border-white/10 mt-12 pt-6 flex flex-col md:flex-row justify-between gap-3 text-xs text-white/50">
+        <div className="border-t border-white/10 mt-12 pt-6 flex flex-col md:flex-row justify-between gap-3 text-xs text-white/80">
           <p>© {new Date().getFullYear()} Glasser Technical Works LLC. All rights reserved.</p>
           <p>Dubai · Abu Dhabi · Sharjah · Ajman · UAE</p>
         </div>
