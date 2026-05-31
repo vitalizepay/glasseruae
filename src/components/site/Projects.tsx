@@ -1,53 +1,68 @@
 import { motion } from "framer-motion";
+import { ArrowUpRight } from "lucide-react";
 import villa from "@/assets/project-villa.jpg";
 import office from "@/assets/project-office.jpg";
 import hotel from "@/assets/project-hotel.jpg";
-import shower from "@/assets/service-shower.jpg";
-import partition from "@/assets/service-partition.jpg";
-import mirror from "@/assets/service-mirror.jpg";
 
 const PROJECTS = [
-  { img: villa, title: "Luxury Villa Facade", cat: "Residential · Emirates Hills", span: "md:col-span-2 md:row-span-2" },
-  { img: office, title: "Corporate Office Partitions", cat: "Commercial · DIFC" },
-  { img: hotel, title: "Hospitality Lobby", cat: "Hotel · Downtown Dubai" },
-  { img: shower, title: "Marble Shower Enclosure", cat: "Residential · Palm Jumeirah" },
-  { img: partition, title: "Frameless Boardroom", cat: "Office · Business Bay", span: "md:col-span-2" },
-  { img: mirror, title: "Mirror Installation", cat: "Hospitality · JBR" },
+  { img: villa, title: "Luxury Villa Facade", cat: "Residential · Emirates Hills", year: "2024" },
+  { img: office, title: "Corporate Office Partitions", cat: "Commercial · DIFC", year: "2024" },
+  { img: hotel, title: "Hospitality Lobby", cat: "Hotel · Downtown Dubai", year: "2023" },
 ];
 
 export function Projects() {
   return (
-    <section id="projects" className="py-24 md:py-32 bg-navy text-navy-foreground relative overflow-hidden">
+    <section id="projects" className="py-24 md:py-36 bg-background">
       <div className="container mx-auto px-6">
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-16">
           <div className="max-w-2xl">
-            <span className="text-xs uppercase tracking-[0.3em] text-orange font-semibold">Featured Work</span>
-            <h2 className="text-4xl md:text-6xl mt-3 text-white text-balance">
+            <span className="text-[11px] uppercase tracking-[0.3em] text-muted-foreground">Featured Work</span>
+            <h2 className="text-4xl md:text-6xl mt-4 text-navy text-balance font-light">
               Projects shaping the UAE skyline
             </h2>
           </div>
-          <p className="text-white/60 max-w-md">
+          <p className="text-muted-foreground max-w-md font-light">
             A curated selection of luxury villas, offices and hospitality landmarks where craftsmanship meets architecture.
           </p>
         </div>
 
-        <div className="grid md:grid-cols-4 grid-flow-dense auto-rows-[220px] gap-4">
+        <div className="space-y-8">
           {PROJECTS.map((p, i) => (
-            <motion.div
+            <motion.article
               key={p.title}
-              initial={{ opacity: 0, scale: 0.95 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              viewport={{ once: true, margin: "-50px" }}
-              transition={{ duration: 0.6, delay: i * 0.07 }}
-              className={`relative group overflow-hidden rounded-2xl ${p.span ?? ""}`}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-80px" }}
+              transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
+              className="group relative overflow-hidden rounded-[2rem] bg-stone"
             >
-              <img src={p.img} alt={p.title} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" loading="lazy" />
-              <div className="absolute inset-0 bg-gradient-to-t from-navy via-navy/40 to-transparent opacity-80 group-hover:opacity-95 transition-opacity" />
-              <div className="absolute bottom-0 inset-x-0 p-6 translate-y-2 group-hover:translate-y-0 transition-transform">
-                <p className="text-xs uppercase tracking-widest text-orange">{p.cat}</p>
-                <h3 className="text-xl font-semibold text-white mt-1">{p.title}</h3>
+              <div className="relative aspect-[21/9] overflow-hidden">
+                <img
+                  src={p.img}
+                  alt={p.title}
+                  className="w-full h-full object-cover transition-transform duration-[1400ms] group-hover:scale-105"
+                  loading="lazy"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-navy/70 via-navy/10 to-transparent opacity-60 group-hover:opacity-90 transition-opacity duration-700" />
               </div>
-            </motion.div>
+              <div className="absolute inset-x-0 bottom-0 p-8 md:p-12 text-white">
+                <div className="flex items-end justify-between gap-6">
+                  <div>
+                    <div className="text-[11px] uppercase tracking-[0.3em] text-white/70">{p.cat} · {p.year}</div>
+                    <h3 className="mt-3 text-3xl md:text-5xl font-light text-balance">{p.title}</h3>
+                  </div>
+                  <span className="hidden md:flex w-14 h-14 rounded-full bg-white text-navy items-center justify-center shrink-0 translate-y-2 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500">
+                    <ArrowUpRight size={20} />
+                  </span>
+                </div>
+                <div className="mt-6 max-w-2xl text-sm text-white/0 group-hover:text-white/80 transition-colors duration-500 leading-relaxed">
+                  <span className="opacity-0 group-hover:opacity-100 transition-opacity duration-700 delay-100">
+                    Engineered glass and aluminium delivered to architectural specification, installed on schedule.
+                  </span>
+                </div>
+              </div>
+              <div className="absolute top-{i} left-6 top-6 text-xs uppercase tracking-[0.3em] text-white/80 hidden">{String(i + 1).padStart(2, "0")}</div>
+            </motion.article>
           ))}
         </div>
       </div>
