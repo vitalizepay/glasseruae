@@ -47,7 +47,10 @@ export function GlassSkyline() {
           <div className="absolute inset-0 bg-gradient-to-b from-[#0c1f3d] via-[#1a2f55] to-[#3a1f0a]" />
 
           {/* Sun */}
-          <div className="absolute right-[20%] top-[20%] w-32 h-32 rounded-full bg-gradient-radial from-orange via-orange/60 to-transparent blur-md animate-pulse-slow" />
+          <div
+            style={{ background: "radial-gradient(circle, oklch(0.69 0.19 45 / 0.9), oklch(0.69 0.19 45 / 0.4) 40%, transparent 70%)" }}
+            className="absolute right-[20%] top-[20%] w-32 h-32 rounded-full blur-md animate-pulse-slow"
+          />
 
           {/* Stars/lights */}
           <svg className="absolute inset-0 w-full h-full">
