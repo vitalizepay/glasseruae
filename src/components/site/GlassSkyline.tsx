@@ -23,8 +23,8 @@ export function GlassSkyline() {
     >
       {/* Atmospheric sun */}
       <motion.div
-        style={{ y: sunY }}
-        className="absolute left-1/2 top-20 -translate-x-1/2 w-[700px] h-[700px] rounded-full bg-gradient-radial from-orange/30 via-orange/10 to-transparent blur-3xl"
+        style={{ y: sunY, background: "radial-gradient(circle, oklch(0.69 0.19 45 / 0.3), oklch(0.69 0.19 45 / 0.08) 50%, transparent 70%)" }}
+        className="absolute left-1/2 top-20 -translate-x-1/2 w-[700px] h-[700px] rounded-full blur-3xl"
       />
 
       <div className="container mx-auto px-6 relative z-10">
