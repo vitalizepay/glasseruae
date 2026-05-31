@@ -6,6 +6,12 @@ import { CTA } from "@/components/site/CTA";
 const T = "Projects — Glass & Aluminium in Dubai | Glasser UAE";
 const D = "Explore Glasser UAE's portfolio: luxury villas, offices, hotels and commercial facades with frameless glass and architectural aluminium.";
 
+const ITEMS = [
+  "Luxury Villa Facade — Emirates Hills",
+  "Corporate Office Partitions — DIFC",
+  "Hospitality Lobby — Downtown Dubai",
+];
+
 export const Route = createFileRoute("/projects")({
   head: () => ({
     meta: [
@@ -16,6 +22,25 @@ export const Route = createFileRoute("/projects")({
       { property: "og:url", content: "/projects" },
     ],
     links: [{ rel: "canonical", href: "/projects" }],
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "CollectionPage",
+          name: "Glasser UAE Projects",
+          url: "https://glazer-uae-vision.lovable.app/projects",
+          mainEntity: {
+            "@type": "ItemList",
+            itemListElement: ITEMS.map((name, i) => ({
+              "@type": "ListItem",
+              position: i + 1,
+              name,
+            })),
+          },
+        }),
+      },
+    ],
   }),
   component: () => (
     <Layout>
