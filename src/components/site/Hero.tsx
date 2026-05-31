@@ -15,6 +15,8 @@ export function Hero() {
           className="w-full h-full object-cover animate-ken-burns"
           width={1920}
           height={1280}
+          fetchPriority="high"
+          decoding="async"
         />
         {/* Soft white overlay for an Apple/Emaar luxury feel */}
         <div className="absolute inset-0 bg-white/70" />
