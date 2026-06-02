@@ -7,6 +7,11 @@ export interface RelatedService {
   label: string;
 }
 
+export interface ServiceFAQ {
+  q: string;
+  a: string;
+}
+
 export interface ServicePageProps {
   h1: string;
   eyebrow: string;
@@ -14,9 +19,10 @@ export interface ServicePageProps {
   featuresHeading: string;
   features: string[];
   related: RelatedService[];
+  faqs?: ServiceFAQ[];
 }
 
-export function ServicePage({ h1, eyebrow, intro, featuresHeading, features, related }: ServicePageProps) {
+export function ServicePage({ h1, eyebrow, intro, featuresHeading, features, related, faqs }: ServicePageProps) {
   return (
     <Layout>
       <section className="pt-32 pb-16 bg-surface">
@@ -40,6 +46,39 @@ export function ServicePage({ h1, eyebrow, intro, featuresHeading, features, rel
           </ul>
         </div>
       </section>
+
+      {faqs && faqs.length > 0 && (
+        <section className="py-20 bg-surface">
+          <div className="container mx-auto px-6 max-w-4xl">
+            <h2 className="text-2xl md:text-3xl text-navy font-medium mb-8">Frequently asked questions</h2>
+            <div className="space-y-4">
+              {faqs.map((f) => (
+                <details key={f.q} className="group p-6 rounded-2xl border border-border bg-background">
+                  <summary className="cursor-pointer text-navy font-medium list-none flex justify-between items-start gap-4">
+                    <span>{f.q}</span>
+                    <span className="text-orange text-xl leading-none group-open:rotate-45 transition-transform">+</span>
+                  </summary>
+                  <p className="mt-4 text-muted-foreground font-light leading-relaxed">{f.a}</p>
+                </details>
+              ))}
+            </div>
+          </div>
+          <script
+            type="application/ld+json"
+            dangerouslySetInnerHTML={{
+              __html: JSON.stringify({
+                "@context": "https://schema.org",
+                "@type": "FAQPage",
+                mainEntity: faqs.map((f) => ({
+                  "@type": "Question",
+                  name: f.q,
+                  acceptedAnswer: { "@type": "Answer", text: f.a },
+                })),
+              }),
+            }}
+          />
+        </section>
+      )}
 
       <section className="py-20 bg-navy text-white">
         <div className="container mx-auto px-6 max-w-3xl text-center">
