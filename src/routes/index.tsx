@@ -37,6 +37,16 @@ export const Route = createFileRoute("/")({
     ],
     scripts: [
       {
+        src: "https://www.googletagmanager.com/gtag/js?id=G-VEJ92D45PT",
+        async: true,
+      },
+      {
+        children: `window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-VEJ92D45PT');`,
+      },
+      {
         type: "application/ld+json",
         children: JSON.stringify({
           "@context": "https://schema.org",
