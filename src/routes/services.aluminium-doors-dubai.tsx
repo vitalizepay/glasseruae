@@ -34,6 +34,12 @@ export const Route = createFileRoute("/services/aluminium-doors-dubai")({
         "Integrated security locking and smart access options",
       ]}
       related={relatedFor(SLUG)}
+      faqs={[
+        { q: "What types of aluminium doors do you supply in Dubai?", a: "We supply and install sliding doors, pivot doors, folding doors, and bifold aluminium door systems in a range of premium architectural finishes." },
+        { q: "Are aluminium doors suitable for Dubai's climate?", a: "Yes. Aluminium is naturally corrosion-resistant and performs exceptionally well in the UAE's heat and humidity. Our door systems are engineered specifically for Gulf conditions." },
+        { q: "How much do aluminium doors cost in Dubai?", a: "Aluminium door pricing in Dubai starts from approximately AED 1,500 per unit for standard sliding systems, rising for pivot and custom folding configurations. Contact us for a free site survey and quotation." },
+        { q: "Do you install aluminium doors in villas and apartments?", a: "Yes. We install across residential villas, apartments, commercial offices, and hospitality spaces throughout Dubai and the wider UAE." },
+      ]}
     />
   ),
 });

@@ -34,6 +34,13 @@ export const Route = createFileRoute("/services/aluminium-windows-dubai")({
         "Compliance with Dubai Municipality regulations",
       ]}
       related={relatedFor(SLUG)}
+      faqs={[
+        { q: "Why choose aluminium windows for Dubai villas?", a: "Aluminium windows are corrosion-resistant, low-maintenance and can be fitted with thermal-break technology to reduce heat transfer and cooling costs significantly." },
+        { q: "What is a thermal-break aluminium window?", a: "A thermal-break window has a non-conductive barrier inside the aluminium frame that reduces heat transfer. In Dubai's climate this can reduce cooling costs by up to 30%." },
+        { q: "How much do aluminium windows cost in Dubai?", a: "Pricing starts from approximately AED 400 per square metre for standard systems, rising to AED 900+ for thermal-break double-glazed systems. Contact us for a free quotation." },
+        { q: "Do you replace existing windows in Dubai villas?", a: "Yes. We remove existing systems and install new aluminium windows with full sealing, finishing and warranty across all Emirates." },
+        { q: "How long does aluminium window installation take?", a: "A typical Dubai villa window replacement takes 3–5 days depending on the number of windows and site access." },
+      ]}
     />
   ),
 });
