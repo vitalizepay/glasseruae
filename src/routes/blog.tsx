@@ -26,9 +26,9 @@ export const Route = createFileRoute("/blog")({
       { name: "description", content: D },
       { property: "og:title", content: T },
       { property: "og:description", content: D },
-      { property: "og:url", content: "/blog" },
+      { property: "og:url", content: "https://glasseruae.com/blog" },
     ],
-    links: [{ rel: "canonical", href: "/blog" }],
+    links: [{ rel: "canonical", href: "https://glasseruae.com/blog" }],
     scripts: [
       {
         type: "application/ld+json",
@@ -36,14 +36,14 @@ export const Route = createFileRoute("/blog")({
           "@context": "https://schema.org",
           "@type": "CollectionPage",
           name: "Glasser UAE Blog",
-          url: "https://glazer-uae-vision.lovable.app/blog",
+          url: "https://glasseruae.com/blog",
           mainEntity: {
             "@type": "ItemList",
             itemListElement: POSTS.map((p, i) => ({
               "@type": "ListItem",
               position: i + 1,
               name: p.title,
-              url: `https://glazer-uae-vision.lovable.app/blog`,
+              url: `https://glasseruae.com/blog`,
             })),
           },
         }),
