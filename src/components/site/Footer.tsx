@@ -36,8 +36,15 @@ export function Footer() {
           <div>
             <h4 className="text-sm font-semibold uppercase tracking-wider mb-4 text-orange">Services</h4>
             <ul className="space-y-2 text-sm text-white/70">
-              {["Glass Partitions", "Frameless Glass", "Aluminium Doors", "Aluminium Windows", "Shower Enclosures", "Custom Mirrors"].map((s) => (
-                <li key={s}><Link to="/services" className="hover:text-orange">{s}</Link></li>
+              {([
+                ["Glass Partitions", "/services/frameless-glass-partitions-dubai"],
+                ["Frameless Glass", "/services/frameless-glass-partitions-dubai"],
+                ["Aluminium Doors", "/services/aluminium-doors-dubai"],
+                ["Aluminium Windows", "/services/aluminium-windows-dubai"],
+                ["Shower Enclosures", "/services/shower-enclosures-dubai"],
+                ["Custom Mirrors", "/services/custom-mirrors-dubai"],
+              ] as const).map(([label, to]) => (
+                <li key={label}><Link to={to} className="hover:text-orange">{label}</Link></li>
               ))}
             </ul>
           </div>
