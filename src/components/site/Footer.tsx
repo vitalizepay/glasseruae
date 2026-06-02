@@ -13,7 +13,7 @@ export function Footer() {
           <div>
             <img src={logo} alt="Glasser Technical Works LLC logo" className="h-12 bg-white rounded-md p-1 w-auto mb-4" />
             <p className="text-sm text-white/70 leading-relaxed">
-              Dubai's trusted glass &amp; aluminium specialists. Premium installations across the UAE since 2009.
+              Dubai's trusted glass &amp; aluminium specialists. Premium installations across the UAE since 2019.
             </p>
             <div className="flex gap-3 mt-5">
               {[Facebook, Instagram, Linkedin].map((Icon, i) => (

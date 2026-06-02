@@ -33,7 +33,7 @@ export function Hero() {
           >
             <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-stone border border-border text-[11px] uppercase tracking-[0.22em] text-navy/70">
               <span className="w-1.5 h-1.5 rounded-full bg-orange" />
-              Glass &amp; Aluminium · Dubai · Since 2009
+              Glass &amp; Aluminium · Dubai · Since 2019
             </span>
             <h1 className="mt-7 text-5xl md:text-7xl lg:text-[5.25rem] font-light text-navy leading-[1.02] tracking-tight text-balance">
               Dubai's Premium <br className="hidden md:block" />

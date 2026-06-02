@@ -10,11 +10,13 @@ const T = "Blog — Glass & Aluminium Insights from Dubai | Glasser UAE";
 const D = "Trends, guides and design ideas for glass partitions, shower enclosures, aluminium windows and mirror installations across the UAE.";
 
 const POSTS = [
-  { slug: "glass-trends-dubai-2025", title: "Glass Trends Shaping Dubai Interiors in 2025", img: partition, cat: "Trends" },
-  { slug: "frameless-glass-design-guide", title: "The Complete Guide to Frameless Glass Designs", img: shower, cat: "Guide" },
-  { slug: "aluminium-windows-uae-guide", title: "Choosing Aluminium Windows for the UAE Climate", img: aluminium, cat: "Aluminium" },
-  { slug: "mirror-design-ideas", title: "10 Custom Mirror Design Ideas for Luxury Homes", img: mirror, cat: "Inspiration" },
-  { slug: "office-glass-partitions", title: "Office Glass Partitions: Productivity Meets Design", img: office, cat: "Office" },
+  { slug: "glass-partitions-dubai-office-guide", title: "How to Choose the Right Glass Partition for Your Dubai Office", img: partition, cat: "Guide", to: "/blog/glass-partitions-dubai-office-guide" as const },
+  { slug: "frameless-shower-enclosures-dubai-guide", title: "Frameless Shower Enclosures Dubai: What to Expect from Installation", img: shower, cat: "Guide", to: "/blog/frameless-shower-enclosures-dubai-guide" as const },
+  { slug: "glass-trends-dubai-2025", title: "Glass Trends Shaping Dubai Interiors in 2025", img: partition, cat: "Trends", to: "/blog" as const },
+  { slug: "frameless-glass-design-guide", title: "The Complete Guide to Frameless Glass Designs", img: shower, cat: "Guide", to: "/blog" as const },
+  { slug: "aluminium-windows-uae-guide", title: "Choosing Aluminium Windows for the UAE Climate", img: aluminium, cat: "Aluminium", to: "/blog" as const },
+  { slug: "mirror-design-ideas", title: "10 Custom Mirror Design Ideas for Luxury Homes", img: mirror, cat: "Inspiration", to: "/blog" as const },
+  { slug: "office-glass-partitions", title: "Office Glass Partitions: Productivity Meets Design", img: office, cat: "Office", to: "/blog" as const },
 ];
 
 export const Route = createFileRoute("/blog")({
@@ -61,7 +63,7 @@ function BlogPage() {
       <section className="py-20 bg-background">
         <div className="container mx-auto px-6 grid md:grid-cols-2 lg:grid-cols-3 gap-6">
           {POSTS.map((p) => (
-            <Link key={p.slug} to="/blog" className="group rounded-2xl overflow-hidden border border-border bg-white hover:shadow-elegant transition-shadow">
+            <Link key={p.slug} to={p.to} className="group rounded-2xl overflow-hidden border border-border bg-white hover:shadow-elegant transition-shadow">
               <div className="aspect-[4/3] overflow-hidden">
                 <img src={p.img} alt={p.title} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" loading="lazy" />
               </div>

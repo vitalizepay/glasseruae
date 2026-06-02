@@ -34,6 +34,13 @@ export const Route = createFileRoute("/services/shower-enclosures-dubai")({
         "Easy-clean nano coating available",
       ]}
       related={relatedFor(SLUG)}
+      faqs={[
+        { q: "How much does a frameless shower enclosure cost in Dubai?", a: "Frameless shower enclosures in Dubai range from AED 2,500 to AED 8,000+ depending on size, glass thickness, and hardware. We provide free measurements and written quotations." },
+        { q: "What glass is used for shower enclosures in the UAE?", a: "We use 8mm and 10mm toughened tempered safety glass with marine-grade corrosion-resistant hardware throughout." },
+        { q: "How long does shower enclosure installation take?", a: "A standard frameless shower enclosure installation in Dubai takes 1–2 days." },
+        { q: "Do you install shower enclosures across all seven Emirates?", a: "Yes. We serve Dubai, Abu Dhabi, Sharjah, Ajman, Ras Al Khaimah, Fujairah and Umm Al Quwain." },
+        { q: "Do you offer walk-in shower screens in Dubai?", a: "Yes. We supply walk-in screens, hinged door enclosures, sliding door systems, and corner entry enclosures — all custom-made." },
+      ]}
     />
   ),
 });

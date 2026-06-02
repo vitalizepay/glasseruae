@@ -34,6 +34,12 @@ export const Route = createFileRoute("/services/glass-facades-dubai")({
         "Coordination with main contractors and consultants",
       ]}
       related={relatedFor(SLUG)}
+      faqs={[
+        { q: "What is a structural glass facade?", a: "A structural glass facade is a building envelope system where glass panels are supported by a structural framework — either a curtain wall, spider fitting system, or structural silicone glazing — creating an all-glass exterior wall." },
+        { q: "Do you install glass facades on Dubai villas?", a: "Yes. We install glass facade and curtain wall systems on residential villas, commercial buildings, and mixed-use towers across Dubai and Abu Dhabi." },
+        { q: "How long does a glass facade project take in Dubai?", a: "Facade projects vary significantly. A residential villa facade typically takes 3–6 weeks. Commercial curtain wall projects depend on building size and structural requirements." },
+        { q: "Do you handle the engineering and permits for glass facades in Dubai?", a: "Yes. Our team manages the full process including structural engineering, material specification, fabrication, and on-site installation across the UAE." },
+      ]}
     />
   ),
 });
