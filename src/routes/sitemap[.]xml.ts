@@ -20,6 +20,8 @@ export const Route = createFileRoute("/sitemap.xml")({
           { path: "/services/glass-facades-dubai", priority: "0.9" },
           { path: "/projects", priority: "0.8" },
           { path: "/blog", priority: "0.7" },
+          { path: "/blog/glass-partitions-dubai-office-guide", priority: "0.8" },
+          { path: "/blog/frameless-shower-enclosures-dubai-guide", priority: "0.8" },
           { path: "/contact", priority: "0.8" },
         ];
         const urls = entries

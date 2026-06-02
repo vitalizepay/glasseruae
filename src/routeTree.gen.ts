@@ -23,6 +23,8 @@ import { Route as ServicesFramelessGlassPartitionsDubaiRouteImport } from './rou
 import { Route as ServicesCustomMirrorsDubaiRouteImport } from './routes/services.custom-mirrors-dubai'
 import { Route as ServicesAluminiumWindowsDubaiRouteImport } from './routes/services.aluminium-windows-dubai'
 import { Route as ServicesAluminiumDoorsDubaiRouteImport } from './routes/services.aluminium-doors-dubai'
+import { Route as BlogGlassPartitionsDubaiOfficeGuideRouteImport } from './routes/blog.glass-partitions-dubai-office-guide'
+import { Route as BlogFramelessShowerEnclosuresDubaiGuideRouteImport } from './routes/blog.frameless-shower-enclosures-dubai-guide'
 import { Route as ApiChatRouteImport } from './routes/api/chat'
 
 const SitemapDotxmlRoute = SitemapDotxmlRouteImport.update({
@@ -101,6 +103,18 @@ const ServicesAluminiumDoorsDubaiRoute =
     path: '/aluminium-doors-dubai',
     getParentRoute: () => ServicesRoute,
   } as any)
+const BlogGlassPartitionsDubaiOfficeGuideRoute =
+  BlogGlassPartitionsDubaiOfficeGuideRouteImport.update({
+    id: '/glass-partitions-dubai-office-guide',
+    path: '/glass-partitions-dubai-office-guide',
+    getParentRoute: () => BlogRoute,
+  } as any)
+const BlogFramelessShowerEnclosuresDubaiGuideRoute =
+  BlogFramelessShowerEnclosuresDubaiGuideRouteImport.update({
+    id: '/frameless-shower-enclosures-dubai-guide',
+    path: '/frameless-shower-enclosures-dubai-guide',
+    getParentRoute: () => BlogRoute,
+  } as any)
 const ApiChatRoute = ApiChatRouteImport.update({
   id: '/api/chat',
   path: '/api/chat',
@@ -110,12 +124,14 @@ const ApiChatRoute = ApiChatRouteImport.update({
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
-  '/blog': typeof BlogRoute
+  '/blog': typeof BlogRouteWithChildren
   '/contact': typeof ContactRoute
   '/projects': typeof ProjectsRoute
   '/services': typeof ServicesRouteWithChildren
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/api/chat': typeof ApiChatRoute
+  '/blog/frameless-shower-enclosures-dubai-guide': typeof BlogFramelessShowerEnclosuresDubaiGuideRoute
+  '/blog/glass-partitions-dubai-office-guide': typeof BlogGlassPartitionsDubaiOfficeGuideRoute
   '/services/aluminium-doors-dubai': typeof ServicesAluminiumDoorsDubaiRoute
   '/services/aluminium-windows-dubai': typeof ServicesAluminiumWindowsDubaiRoute
   '/services/custom-mirrors-dubai': typeof ServicesCustomMirrorsDubaiRoute
@@ -127,11 +143,13 @@ export interface FileRoutesByFullPath {
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
-  '/blog': typeof BlogRoute
+  '/blog': typeof BlogRouteWithChildren
   '/contact': typeof ContactRoute
   '/projects': typeof ProjectsRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/api/chat': typeof ApiChatRoute
+  '/blog/frameless-shower-enclosures-dubai-guide': typeof BlogFramelessShowerEnclosuresDubaiGuideRoute
+  '/blog/glass-partitions-dubai-office-guide': typeof BlogGlassPartitionsDubaiOfficeGuideRoute
   '/services/aluminium-doors-dubai': typeof ServicesAluminiumDoorsDubaiRoute
   '/services/aluminium-windows-dubai': typeof ServicesAluminiumWindowsDubaiRoute
   '/services/custom-mirrors-dubai': typeof ServicesCustomMirrorsDubaiRoute
@@ -144,12 +162,14 @@ export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
-  '/blog': typeof BlogRoute
+  '/blog': typeof BlogRouteWithChildren
   '/contact': typeof ContactRoute
   '/projects': typeof ProjectsRoute
   '/services': typeof ServicesRouteWithChildren
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/api/chat': typeof ApiChatRoute
+  '/blog/frameless-shower-enclosures-dubai-guide': typeof BlogFramelessShowerEnclosuresDubaiGuideRoute
+  '/blog/glass-partitions-dubai-office-guide': typeof BlogGlassPartitionsDubaiOfficeGuideRoute
   '/services/aluminium-doors-dubai': typeof ServicesAluminiumDoorsDubaiRoute
   '/services/aluminium-windows-dubai': typeof ServicesAluminiumWindowsDubaiRoute
   '/services/custom-mirrors-dubai': typeof ServicesCustomMirrorsDubaiRoute
@@ -169,6 +189,8 @@ export interface FileRouteTypes {
     | '/services'
     | '/sitemap.xml'
     | '/api/chat'
+    | '/blog/frameless-shower-enclosures-dubai-guide'
+    | '/blog/glass-partitions-dubai-office-guide'
     | '/services/aluminium-doors-dubai'
     | '/services/aluminium-windows-dubai'
     | '/services/custom-mirrors-dubai'
@@ -185,6 +207,8 @@ export interface FileRouteTypes {
     | '/projects'
     | '/sitemap.xml'
     | '/api/chat'
+    | '/blog/frameless-shower-enclosures-dubai-guide'
+    | '/blog/glass-partitions-dubai-office-guide'
     | '/services/aluminium-doors-dubai'
     | '/services/aluminium-windows-dubai'
     | '/services/custom-mirrors-dubai'
@@ -202,6 +226,8 @@ export interface FileRouteTypes {
     | '/services'
     | '/sitemap.xml'
     | '/api/chat'
+    | '/blog/frameless-shower-enclosures-dubai-guide'
+    | '/blog/glass-partitions-dubai-office-guide'
     | '/services/aluminium-doors-dubai'
     | '/services/aluminium-windows-dubai'
     | '/services/custom-mirrors-dubai'
@@ -214,7 +240,7 @@ export interface FileRouteTypes {
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AboutRoute: typeof AboutRoute
-  BlogRoute: typeof BlogRoute
+  BlogRoute: typeof BlogRouteWithChildren
   ContactRoute: typeof ContactRoute
   ProjectsRoute: typeof ProjectsRoute
   ServicesRoute: typeof ServicesRouteWithChildren
@@ -322,6 +348,20 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ServicesAluminiumDoorsDubaiRouteImport
       parentRoute: typeof ServicesRoute
     }
+    '/blog/glass-partitions-dubai-office-guide': {
+      id: '/blog/glass-partitions-dubai-office-guide'
+      path: '/glass-partitions-dubai-office-guide'
+      fullPath: '/blog/glass-partitions-dubai-office-guide'
+      preLoaderRoute: typeof BlogGlassPartitionsDubaiOfficeGuideRouteImport
+      parentRoute: typeof BlogRoute
+    }
+    '/blog/frameless-shower-enclosures-dubai-guide': {
+      id: '/blog/frameless-shower-enclosures-dubai-guide'
+      path: '/frameless-shower-enclosures-dubai-guide'
+      fullPath: '/blog/frameless-shower-enclosures-dubai-guide'
+      preLoaderRoute: typeof BlogFramelessShowerEnclosuresDubaiGuideRouteImport
+      parentRoute: typeof BlogRoute
+    }
     '/api/chat': {
       id: '/api/chat'
       path: '/api/chat'
@@ -331,6 +371,20 @@ declare module '@tanstack/react-router' {
     }
   }
 }
+
+interface BlogRouteChildren {
+  BlogFramelessShowerEnclosuresDubaiGuideRoute: typeof BlogFramelessShowerEnclosuresDubaiGuideRoute
+  BlogGlassPartitionsDubaiOfficeGuideRoute: typeof BlogGlassPartitionsDubaiOfficeGuideRoute
+}
+
+const BlogRouteChildren: BlogRouteChildren = {
+  BlogFramelessShowerEnclosuresDubaiGuideRoute:
+    BlogFramelessShowerEnclosuresDubaiGuideRoute,
+  BlogGlassPartitionsDubaiOfficeGuideRoute:
+    BlogGlassPartitionsDubaiOfficeGuideRoute,
+}
+
+const BlogRouteWithChildren = BlogRoute._addFileChildren(BlogRouteChildren)
 
 interface ServicesRouteChildren {
   ServicesAluminiumDoorsDubaiRoute: typeof ServicesAluminiumDoorsDubaiRoute
@@ -360,7 +414,7 @@ const ServicesRouteWithChildren = ServicesRoute._addFileChildren(
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AboutRoute: AboutRoute,
-  BlogRoute: BlogRoute,
+  BlogRoute: BlogRouteWithChildren,
   ContactRoute: ContactRoute,
   ProjectsRoute: ProjectsRoute,
   ServicesRoute: ServicesRouteWithChildren,
@@ -370,3 +424,13 @@ const rootRouteChildren: RootRouteChildren = {
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
   ._addFileTypes<FileRouteTypes>()
+
+import type { getRouter } from './router.tsx'
+import type { startInstance } from './start.ts'
+declare module '@tanstack/react-start' {
+  interface Register {
+    ssr: true
+    router: Awaited<ReturnType<typeof getRouter>>
+    config: Awaited<ReturnType<typeof startInstance.getOptions>>
+  }
+}
