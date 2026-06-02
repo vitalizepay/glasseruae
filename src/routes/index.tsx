@@ -10,6 +10,7 @@ import { Testimonials } from "@/components/site/Testimonials";
 import { FAQ } from "@/components/site/FAQ";
 import { CTA } from "@/components/site/CTA";
 import { ContactSection } from "@/components/site/ContactSection";
+import heroImage from "@/assets/hero-dubai.jpg";
 
 const TITLE = "Glass & Aluminium Company Dubai | Glasser UAE";
 const DESC = "Glasser UAE — Dubai specialists in frameless glass partitions, aluminium doors & windows, shower enclosures, mirrors and facades across the UAE.";
@@ -30,7 +31,10 @@ export const Route = createFileRoute("/")({
       { name: "twitter:title", content: TITLE },
       { name: "twitter:description", content: DESC },
     ],
-    links: [{ rel: "canonical", href: URL }],
+    links: [
+      { rel: "canonical", href: URL },
+      { rel: "preload", as: "image", href: heroImage, fetchpriority: "high" },
+    ],
     scripts: [
       {
         type: "application/ld+json",
