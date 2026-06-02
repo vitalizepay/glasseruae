@@ -23,7 +23,7 @@ export const Route = createFileRoute("/services/frameless-glass-partitions-dubai
     <ServicePage
       eyebrow="Service"
       h1="Frameless Glass Partitions Dubai"
-      intro="Looking for frameless glass partitions in Dubai? Glasser Technical Works LLC designs and installs crystal-clear tempered glass partition systems for offices, villas and commercial spaces across the UAE. With over 15 years of experience and 500+ projects completed, our team delivers precision-engineered partitions that transform interiors without sacrificing light or space."
+      intro="Looking for frameless glass partitions in Dubai? Glasser Technical Works LLC designs and installs crystal-clear tempered glass partition systems for offices, villas and commercial spaces across the UAE. With over 5 years of experience and 500+ projects completed, our team delivers precision-engineered partitions that transform interiors without sacrificing light or space."
       featuresHeading="What we offer"
       features={[
         "Tempered safety glass to international standards",

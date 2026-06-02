@@ -23,7 +23,7 @@ export const Route = createFileRoute("/about")({
     <Layout>
       <div className="pt-32 pb-12 bg-surface text-center">
         <span className="text-xs uppercase tracking-[0.3em] text-orange font-semibold">About</span>
-        <h1 className="text-5xl md:text-7xl text-navy mt-3">Crafting glass since 2009</h1>
+        <h1 className="text-5xl md:text-7xl text-navy mt-3">Crafting glass since 2019</h1>
       </div>
       <About />
       <WhyUs />

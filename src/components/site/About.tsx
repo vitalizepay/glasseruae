@@ -33,7 +33,7 @@ export function About() {
             Crafting luxury glass spaces across the Emirates
           </h2>
           <p className="mt-6 text-lg text-muted-foreground leading-relaxed font-light">
-            Glasser Technical Works LLC has been transforming Dubai's most ambitious residential, commercial and hospitality spaces for over 15 years. Our specialists combine European engineering with regional craftsmanship.
+            Glasser Technical Works LLC has been transforming Dubai's most ambitious residential, commercial and hospitality spaces for over 5 years. Our specialists combine European engineering with regional craftsmanship.
           </p>
           <p className="mt-3 text-muted-foreground leading-relaxed font-light">
             We partner directly with developers, architects, interior designers and homeowners — from concept through to flawless on-site execution.
