@@ -24,7 +24,7 @@ export const Route = createFileRoute("/contact")({
           name: "Glasser Technical Works LLC",
           telephone: "+971568400838",
           email: "sales@glasseruae.com",
-          url: "https://glazer-uae-vision.lovable.app/contact",
+          url: "https://glasseruae.com/contact",
           address: {
             "@type": "PostalAddress",
             streetAddress: "Al Hilal Bldg, Al Nahda St, Al Qusais",

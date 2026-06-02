@@ -29,7 +29,7 @@ export const Route = createFileRoute("/projects")({
           "@context": "https://schema.org",
           "@type": "CollectionPage",
           name: "Glasser UAE Projects",
-          url: "https://glazer-uae-vision.lovable.app/projects",
+          url: "https://glasseruae.com/projects",
           mainEntity: {
             "@type": "ItemList",
             itemListElement: ITEMS.map((name, i) => ({
