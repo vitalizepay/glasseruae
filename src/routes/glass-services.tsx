@@ -215,7 +215,14 @@ function GlassServicesPage() {
 
   return (
     <Layout>
-      <div style={{ ...DM_SANS, color: INK, background: "#FFFFFF" }}>
+      <div style={{ ...DM_SANS, color: INK, background: "#FFFFFF", position: "relative" }}>
+        {/* Glassy ambient background */}
+        <div aria-hidden className="pointer-events-none fixed inset-0 -z-10 overflow-hidden">
+          <div style={{ position: "absolute", top: "-10%", left: "-10%", width: 520, height: 520, borderRadius: "50%", background: "radial-gradient(circle, rgba(201,168,76,0.18), transparent 70%)", filter: "blur(40px)" }} />
+          <div style={{ position: "absolute", top: "30%", right: "-8%", width: 600, height: 600, borderRadius: "50%", background: "radial-gradient(circle, rgba(26,26,46,0.12), transparent 70%)", filter: "blur(50px)" }} />
+          <div style={{ position: "absolute", bottom: "-15%", left: "20%", width: 700, height: 700, borderRadius: "50%", background: "radial-gradient(circle, rgba(125,180,220,0.15), transparent 70%)", filter: "blur(60px)" }} />
+          <div style={{ position: "absolute", inset: 0, background: "linear-gradient(135deg, rgba(255,255,255,0.6) 0%, rgba(248,249,250,0.4) 100%)", backdropFilter: "blur(2px)" }} />
+        </div>
         {/* Sticky anchor nav */}
         <div className="sticky top-16 z-30 bg-white/95 backdrop-blur border-b" style={{ borderColor: "#E5E7EB" }}>
           <div className="container mx-auto px-6">
@@ -258,76 +265,94 @@ function GlassServicesPage() {
           </div>
         </div>
 
-        {/* HERO */}
+        {/* HERO — content left, image collage right */}
         <section
-          className="pt-24 pb-20 bg-white"
+          className="pt-20 pb-24"
           style={{
             opacity: fade ? 1 : 0,
             transform: fade ? "translateY(0)" : "translateY(12px)",
             transition: "opacity 800ms ease, transform 800ms ease",
           }}
         >
-          <div className="container mx-auto px-6 max-w-5xl text-center">
-            <h1 style={{ ...DM_SERIF, color: NAVY, fontSize: "clamp(44px, 7vw, 72px)", lineHeight: 1.05 }}>
-              Glass Services
-            </h1>
-            <div style={{ height: 2, width: 80, background: GOLD, margin: "24px auto" }} />
-            <p style={{ color: SUB, fontSize: 20 }} className="max-w-2xl mx-auto">
-              Precision Craftsmanship in Glass &amp; Aluminium — Dubai &amp; UAE
-            </p>
-            <div className="mt-8 flex flex-wrap gap-3 justify-center">
-              <span className="px-5 py-2 rounded-full text-sm font-medium" style={{ background: NAVY, color: "#fff" }}>
-                500+ Projects Completed
-              </span>
-              <span className="px-5 py-2 rounded-full text-sm font-medium" style={{ background: NAVY, color: "#fff" }}>
-                Licensed UAE Contractor
-              </span>
-            </div>
-          </div>
-        </section>
-
-        {/* GALLERY */}
-        <section className="py-16">
           <div className="container mx-auto px-6 max-w-7xl">
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-              {GALLERY.map((g) => (
-                <figure key={g.cap} className="group relative overflow-hidden rounded-sm" style={{ aspectRatio: "4/3" }}>
-                  <img
-                    src={g.src}
-                    alt={g.alt}
-                    loading="lazy"
-                    width={800}
-                    height={600}
-                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-                  />
-                  <figcaption
-                    className="absolute inset-0 flex items-end p-6 opacity-0 group-hover:opacity-100 transition-opacity"
-                    style={{ background: "rgba(26,26,46,0.6)" }}
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+              {/* LEFT — content */}
+              <div className="lg:col-span-6">
+                <span className="inline-block text-xs uppercase tracking-[0.3em] font-semibold" style={{ color: GOLD }}>
+                  Glasser UAE · Dubai
+                </span>
+                <h1 style={{ ...DM_SERIF, color: NAVY, fontSize: "clamp(40px, 6vw, 68px)", lineHeight: 1.05 }} className="mt-4">
+                  Glass Services
+                </h1>
+                <div style={{ height: 2, width: 80, background: GOLD, margin: "20px 0" }} />
+                <p style={{ color: SUB, fontSize: 19, lineHeight: 1.6 }}>
+                  Precision craftsmanship in glass &amp; aluminium across Dubai and the UAE — frameless partitions, structural facades, luxury mirrors, shopfronts, enclosures and balustrades engineered for the region's most exacting interiors.
+                </p>
+                <div className="mt-8 flex flex-wrap gap-3">
+                  <span className="px-5 py-2 rounded-full text-sm font-medium" style={{ background: NAVY, color: "#fff" }}>
+                    500+ Projects Completed
+                  </span>
+                  <span className="px-5 py-2 rounded-full text-sm font-medium border" style={{ borderColor: NAVY, color: NAVY, background: "rgba(255,255,255,0.5)", backdropFilter: "blur(8px)" }}>
+                    Licensed UAE Contractor
+                  </span>
+                </div>
+                <div className="mt-10 flex gap-4">
+                  <a href="/contact" className="px-7 py-3 rounded-full text-sm font-semibold transition hover:opacity-90" style={{ background: NAVY, color: "#fff" }}>
+                    Get a Free Quote
+                  </a>
+                  <button onClick={() => scrollTo("partitions")} className="px-7 py-3 rounded-full text-sm font-semibold transition" style={{ border: `1px solid ${GOLD}`, color: NAVY, background: "rgba(255,255,255,0.4)", backdropFilter: "blur(8px)" }}>
+                    Explore Services
+                  </button>
+                </div>
+              </div>
+
+              {/* RIGHT — image collage (4 attached images) */}
+              <div className="lg:col-span-6">
+                <div className="relative">
+                  <div className="grid grid-cols-2 gap-4">
+                    {GALLERY.map((g, i) => (
+                      <figure
+                        key={g.cap}
+                        className="group relative overflow-hidden rounded-2xl shadow-lg"
+                        style={{
+                          aspectRatio: i % 2 === 0 ? "3/4" : "3/4",
+                          transform: i === 1 ? "translateY(32px)" : i === 3 ? "translateY(32px)" : "none",
+                          border: "1px solid rgba(255,255,255,0.5)",
+                          background: "rgba(255,255,255,0.3)",
+                          backdropFilter: "blur(10px)",
+                        }}
+                      >
+                        <img
+                          src={g.src}
+                          alt={g.alt}
+                          loading={i < 2 ? "eager" : "lazy"}
+                          width={600}
+                          height={800}
+                          className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                        />
+                        <figcaption
+                          className="absolute inset-x-0 bottom-0 p-3 text-white text-xs font-medium opacity-0 group-hover:opacity-100 transition-opacity"
+                          style={{ background: "linear-gradient(to top, rgba(26,26,46,0.85), transparent)" }}
+                        >
+                          {g.cap}
+                        </figcaption>
+                      </figure>
+                    ))}
+                  </div>
+                  {/* Floating glass badge */}
+                  <div
+                    className="absolute -bottom-6 -left-6 px-5 py-4 rounded-2xl shadow-xl hidden md:block"
+                    style={{
+                      background: "rgba(255,255,255,0.65)",
+                      backdropFilter: "blur(20px)",
+                      border: "1px solid rgba(255,255,255,0.6)",
+                    }}
                   >
-                    <span className="text-white text-base font-medium">{g.cap}</span>
-                  </figcaption>
-                </figure>
-              ))}
-              {[4, 5].map((n) => (
-                <div
-                  key={n}
-                  className="flex items-center justify-center rounded-sm"
-                  style={{
-                    aspectRatio: "4/3",
-                    border: `2px dashed ${GOLD}`,
-                    background: CARD_BG,
-                    color: SUB,
-                  }}
-                >
-                  <div className="flex flex-col items-center gap-2">
-                    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke={GOLD} strokeWidth="1.5">
-                      <path d="M12 16V4M12 4l-5 5M12 4l5 5" />
-                      <path d="M4 16v2a2 2 0 002 2h12a2 2 0 002-2v-2" />
-                    </svg>
-                    <span className="text-sm">Project Image {n}</span>
+                    <div className="text-xs uppercase tracking-widest" style={{ color: GOLD }}>Recent Work</div>
+                    <div className="text-sm font-semibold mt-1" style={{ color: NAVY }}>Live UAE Installations</div>
                   </div>
                 </div>
-              ))}
+              </div>
             </div>
           </div>
         </section>
