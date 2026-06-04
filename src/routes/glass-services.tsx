@@ -1,9 +1,10 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
 import { Layout } from "@/components/site/Layout";
-import staircase from "@/assets/glass-staircase.asset.json";
-import facade from "@/assets/glass-facade.asset.json";
-import partition from "@/assets/steel-partition.asset.json";
+import bathroomMirror from "@/assets/luxury-bathroom-mirror.jpg.asset.json";
+import officePartitionBlack from "@/assets/office-glass-partition-black.jpg.asset.json";
+import vanityMirror from "@/assets/marble-vanity-mirror.jpg.asset.json";
+import officeCabin from "@/assets/glass-office-cabin.jpg.asset.json";
 
 const T = "Glass Services Dubai | Partitions, Facades, Shopfronts, Mirrors, Railings UAE";
 const D = "Premium glass and aluminium services in Dubai UAE — partitions, facades, shopfronts, mirrors, enclosures, skylights, railings, cladding, windows, doors. Expert installation across all Emirates.";
@@ -131,9 +132,10 @@ const RELATED = [
 ];
 
 const GALLERY = [
-  { src: staircase.url, cap: "Frameless Glass Balustrade — Dubai Villa", alt: "frameless glass balustrade staircase railing Dubai villa" },
-  { src: facade.url, cap: "Structural Glass Facade — Palm Jumeirah", alt: "floor to ceiling structural glass facade Palm Jumeirah UAE" },
-  { src: partition.url, cap: "Steel Frame Glass Partition — Business Bay", alt: "black frame steel glass office partition Business Bay Dubai" },
+  { src: bathroomMirror.url, cap: "Backlit LED Mirror & Stone Vanity — Dubai Villa", alt: "luxury backlit LED mirror with stone vanity Dubai bathroom" },
+  { src: officePartitionBlack.url, cap: "Black Steel-Frame Glass Partitions — DIFC Office", alt: "black steel frame glass office partition DIFC Dubai" },
+  { src: vanityMirror.url, cap: "Frameless Backlit Mirror — Marble Bathroom", alt: "frameless backlit vanity mirror marble bathroom Dubai" },
+  { src: officeCabin.url, cap: "Frameless Glass Cabin — Business Bay", alt: "frameless glass office cabin black frame Business Bay Dubai" },
 ];
 
 export const Route = createFileRoute("/glass-services")({
