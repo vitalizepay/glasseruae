@@ -42,6 +42,10 @@ import { Route as ServicesFramelessGlassPartitionsDubaiRouteImport } from './rou
 import { Route as ServicesCustomMirrorsDubaiRouteImport } from './routes/services.custom-mirrors-dubai'
 import { Route as ServicesAluminiumWindowsDubaiRouteImport } from './routes/services.aluminium-windows-dubai'
 import { Route as ServicesAluminiumDoorsDubaiRouteImport } from './routes/services.aluminium-doors-dubai'
+import { Route as ProjectsShowerGlassInstallationJvcRouteImport } from './routes/projects.shower-glass-installation-jvc'
+import { Route as ProjectsOfficeGlassPartitionAlQusaisRouteImport } from './routes/projects.office-glass-partition-al-qusais'
+import { Route as ProjectsGlassRailingDubaiMarinaRouteImport } from './routes/projects.glass-railing-dubai-marina'
+import { Route as ProjectsAluminiumShopfrontSharjahRouteImport } from './routes/projects.aluminium-shopfront-sharjah'
 import { Route as BlogGlassPartitionsDubaiOfficeGuideRouteImport } from './routes/blog.glass-partitions-dubai-office-guide'
 import { Route as BlogFramelessShowerEnclosuresDubaiGuideRouteImport } from './routes/blog.frameless-shower-enclosures-dubai-guide'
 import { Route as ApiChatRouteImport } from './routes/api/chat'
@@ -223,6 +227,30 @@ const ServicesAluminiumDoorsDubaiRoute =
     path: '/aluminium-doors-dubai',
     getParentRoute: () => ServicesRoute,
   } as any)
+const ProjectsShowerGlassInstallationJvcRoute =
+  ProjectsShowerGlassInstallationJvcRouteImport.update({
+    id: '/shower-glass-installation-jvc',
+    path: '/shower-glass-installation-jvc',
+    getParentRoute: () => ProjectsRoute,
+  } as any)
+const ProjectsOfficeGlassPartitionAlQusaisRoute =
+  ProjectsOfficeGlassPartitionAlQusaisRouteImport.update({
+    id: '/office-glass-partition-al-qusais',
+    path: '/office-glass-partition-al-qusais',
+    getParentRoute: () => ProjectsRoute,
+  } as any)
+const ProjectsGlassRailingDubaiMarinaRoute =
+  ProjectsGlassRailingDubaiMarinaRouteImport.update({
+    id: '/glass-railing-dubai-marina',
+    path: '/glass-railing-dubai-marina',
+    getParentRoute: () => ProjectsRoute,
+  } as any)
+const ProjectsAluminiumShopfrontSharjahRoute =
+  ProjectsAluminiumShopfrontSharjahRouteImport.update({
+    id: '/aluminium-shopfront-sharjah',
+    path: '/aluminium-shopfront-sharjah',
+    getParentRoute: () => ProjectsRoute,
+  } as any)
 const BlogGlassPartitionsDubaiOfficeGuideRoute =
   BlogGlassPartitionsDubaiOfficeGuideRouteImport.update({
     id: '/glass-partitions-dubai-office-guide',
@@ -263,7 +291,7 @@ export interface FileRoutesByFullPath {
   '/glass-services': typeof GlassServicesRoute
   '/glass-shopfront-dubai': typeof GlassShopfrontDubaiRoute
   '/office-glass-partition-dubai': typeof OfficeGlassPartitionDubaiRoute
-  '/projects': typeof ProjectsRoute
+  '/projects': typeof ProjectsRouteWithChildren
   '/services': typeof ServicesRouteWithChildren
   '/shower-glass-dubai': typeof ShowerGlassDubaiRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
@@ -271,6 +299,10 @@ export interface FileRoutesByFullPath {
   '/api/chat': typeof ApiChatRoute
   '/blog/frameless-shower-enclosures-dubai-guide': typeof BlogFramelessShowerEnclosuresDubaiGuideRoute
   '/blog/glass-partitions-dubai-office-guide': typeof BlogGlassPartitionsDubaiOfficeGuideRoute
+  '/projects/aluminium-shopfront-sharjah': typeof ProjectsAluminiumShopfrontSharjahRoute
+  '/projects/glass-railing-dubai-marina': typeof ProjectsGlassRailingDubaiMarinaRoute
+  '/projects/office-glass-partition-al-qusais': typeof ProjectsOfficeGlassPartitionAlQusaisRoute
+  '/projects/shower-glass-installation-jvc': typeof ProjectsShowerGlassInstallationJvcRoute
   '/services/aluminium-doors-dubai': typeof ServicesAluminiumDoorsDubaiRoute
   '/services/aluminium-windows-dubai': typeof ServicesAluminiumWindowsDubaiRoute
   '/services/custom-mirrors-dubai': typeof ServicesCustomMirrorsDubaiRoute
@@ -301,13 +333,17 @@ export interface FileRoutesByTo {
   '/glass-services': typeof GlassServicesRoute
   '/glass-shopfront-dubai': typeof GlassShopfrontDubaiRoute
   '/office-glass-partition-dubai': typeof OfficeGlassPartitionDubaiRoute
-  '/projects': typeof ProjectsRoute
+  '/projects': typeof ProjectsRouteWithChildren
   '/shower-glass-dubai': typeof ShowerGlassDubaiRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/skylight-installation-dubai': typeof SkylightInstallationDubaiRoute
   '/api/chat': typeof ApiChatRoute
   '/blog/frameless-shower-enclosures-dubai-guide': typeof BlogFramelessShowerEnclosuresDubaiGuideRoute
   '/blog/glass-partitions-dubai-office-guide': typeof BlogGlassPartitionsDubaiOfficeGuideRoute
+  '/projects/aluminium-shopfront-sharjah': typeof ProjectsAluminiumShopfrontSharjahRoute
+  '/projects/glass-railing-dubai-marina': typeof ProjectsGlassRailingDubaiMarinaRoute
+  '/projects/office-glass-partition-al-qusais': typeof ProjectsOfficeGlassPartitionAlQusaisRoute
+  '/projects/shower-glass-installation-jvc': typeof ProjectsShowerGlassInstallationJvcRoute
   '/services/aluminium-doors-dubai': typeof ServicesAluminiumDoorsDubaiRoute
   '/services/aluminium-windows-dubai': typeof ServicesAluminiumWindowsDubaiRoute
   '/services/custom-mirrors-dubai': typeof ServicesCustomMirrorsDubaiRoute
@@ -339,7 +375,7 @@ export interface FileRoutesById {
   '/glass-services': typeof GlassServicesRoute
   '/glass-shopfront-dubai': typeof GlassShopfrontDubaiRoute
   '/office-glass-partition-dubai': typeof OfficeGlassPartitionDubaiRoute
-  '/projects': typeof ProjectsRoute
+  '/projects': typeof ProjectsRouteWithChildren
   '/services': typeof ServicesRouteWithChildren
   '/shower-glass-dubai': typeof ShowerGlassDubaiRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
@@ -347,6 +383,10 @@ export interface FileRoutesById {
   '/api/chat': typeof ApiChatRoute
   '/blog/frameless-shower-enclosures-dubai-guide': typeof BlogFramelessShowerEnclosuresDubaiGuideRoute
   '/blog/glass-partitions-dubai-office-guide': typeof BlogGlassPartitionsDubaiOfficeGuideRoute
+  '/projects/aluminium-shopfront-sharjah': typeof ProjectsAluminiumShopfrontSharjahRoute
+  '/projects/glass-railing-dubai-marina': typeof ProjectsGlassRailingDubaiMarinaRoute
+  '/projects/office-glass-partition-al-qusais': typeof ProjectsOfficeGlassPartitionAlQusaisRoute
+  '/projects/shower-glass-installation-jvc': typeof ProjectsShowerGlassInstallationJvcRoute
   '/services/aluminium-doors-dubai': typeof ServicesAluminiumDoorsDubaiRoute
   '/services/aluminium-windows-dubai': typeof ServicesAluminiumWindowsDubaiRoute
   '/services/custom-mirrors-dubai': typeof ServicesCustomMirrorsDubaiRoute
@@ -387,6 +427,10 @@ export interface FileRouteTypes {
     | '/api/chat'
     | '/blog/frameless-shower-enclosures-dubai-guide'
     | '/blog/glass-partitions-dubai-office-guide'
+    | '/projects/aluminium-shopfront-sharjah'
+    | '/projects/glass-railing-dubai-marina'
+    | '/projects/office-glass-partition-al-qusais'
+    | '/projects/shower-glass-installation-jvc'
     | '/services/aluminium-doors-dubai'
     | '/services/aluminium-windows-dubai'
     | '/services/custom-mirrors-dubai'
@@ -424,6 +468,10 @@ export interface FileRouteTypes {
     | '/api/chat'
     | '/blog/frameless-shower-enclosures-dubai-guide'
     | '/blog/glass-partitions-dubai-office-guide'
+    | '/projects/aluminium-shopfront-sharjah'
+    | '/projects/glass-railing-dubai-marina'
+    | '/projects/office-glass-partition-al-qusais'
+    | '/projects/shower-glass-installation-jvc'
     | '/services/aluminium-doors-dubai'
     | '/services/aluminium-windows-dubai'
     | '/services/custom-mirrors-dubai'
@@ -462,6 +510,10 @@ export interface FileRouteTypes {
     | '/api/chat'
     | '/blog/frameless-shower-enclosures-dubai-guide'
     | '/blog/glass-partitions-dubai-office-guide'
+    | '/projects/aluminium-shopfront-sharjah'
+    | '/projects/glass-railing-dubai-marina'
+    | '/projects/office-glass-partition-al-qusais'
+    | '/projects/shower-glass-installation-jvc'
     | '/services/aluminium-doors-dubai'
     | '/services/aluminium-windows-dubai'
     | '/services/custom-mirrors-dubai'
@@ -493,7 +545,7 @@ export interface RootRouteChildren {
   GlassServicesRoute: typeof GlassServicesRoute
   GlassShopfrontDubaiRoute: typeof GlassShopfrontDubaiRoute
   OfficeGlassPartitionDubaiRoute: typeof OfficeGlassPartitionDubaiRoute
-  ProjectsRoute: typeof ProjectsRoute
+  ProjectsRoute: typeof ProjectsRouteWithChildren
   ServicesRoute: typeof ServicesRouteWithChildren
   ShowerGlassDubaiRoute: typeof ShowerGlassDubaiRoute
   SitemapDotxmlRoute: typeof SitemapDotxmlRoute
@@ -734,6 +786,34 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ServicesAluminiumDoorsDubaiRouteImport
       parentRoute: typeof ServicesRoute
     }
+    '/projects/shower-glass-installation-jvc': {
+      id: '/projects/shower-glass-installation-jvc'
+      path: '/shower-glass-installation-jvc'
+      fullPath: '/projects/shower-glass-installation-jvc'
+      preLoaderRoute: typeof ProjectsShowerGlassInstallationJvcRouteImport
+      parentRoute: typeof ProjectsRoute
+    }
+    '/projects/office-glass-partition-al-qusais': {
+      id: '/projects/office-glass-partition-al-qusais'
+      path: '/office-glass-partition-al-qusais'
+      fullPath: '/projects/office-glass-partition-al-qusais'
+      preLoaderRoute: typeof ProjectsOfficeGlassPartitionAlQusaisRouteImport
+      parentRoute: typeof ProjectsRoute
+    }
+    '/projects/glass-railing-dubai-marina': {
+      id: '/projects/glass-railing-dubai-marina'
+      path: '/glass-railing-dubai-marina'
+      fullPath: '/projects/glass-railing-dubai-marina'
+      preLoaderRoute: typeof ProjectsGlassRailingDubaiMarinaRouteImport
+      parentRoute: typeof ProjectsRoute
+    }
+    '/projects/aluminium-shopfront-sharjah': {
+      id: '/projects/aluminium-shopfront-sharjah'
+      path: '/aluminium-shopfront-sharjah'
+      fullPath: '/projects/aluminium-shopfront-sharjah'
+      preLoaderRoute: typeof ProjectsAluminiumShopfrontSharjahRouteImport
+      parentRoute: typeof ProjectsRoute
+    }
     '/blog/glass-partitions-dubai-office-guide': {
       id: '/blog/glass-partitions-dubai-office-guide'
       path: '/glass-partitions-dubai-office-guide'
@@ -771,6 +851,27 @@ const BlogRouteChildren: BlogRouteChildren = {
 }
 
 const BlogRouteWithChildren = BlogRoute._addFileChildren(BlogRouteChildren)
+
+interface ProjectsRouteChildren {
+  ProjectsAluminiumShopfrontSharjahRoute: typeof ProjectsAluminiumShopfrontSharjahRoute
+  ProjectsGlassRailingDubaiMarinaRoute: typeof ProjectsGlassRailingDubaiMarinaRoute
+  ProjectsOfficeGlassPartitionAlQusaisRoute: typeof ProjectsOfficeGlassPartitionAlQusaisRoute
+  ProjectsShowerGlassInstallationJvcRoute: typeof ProjectsShowerGlassInstallationJvcRoute
+}
+
+const ProjectsRouteChildren: ProjectsRouteChildren = {
+  ProjectsAluminiumShopfrontSharjahRoute:
+    ProjectsAluminiumShopfrontSharjahRoute,
+  ProjectsGlassRailingDubaiMarinaRoute: ProjectsGlassRailingDubaiMarinaRoute,
+  ProjectsOfficeGlassPartitionAlQusaisRoute:
+    ProjectsOfficeGlassPartitionAlQusaisRoute,
+  ProjectsShowerGlassInstallationJvcRoute:
+    ProjectsShowerGlassInstallationJvcRoute,
+}
+
+const ProjectsRouteWithChildren = ProjectsRoute._addFileChildren(
+  ProjectsRouteChildren,
+)
 
 interface ServicesRouteChildren {
   ServicesAluminiumDoorsDubaiRoute: typeof ServicesAluminiumDoorsDubaiRoute
@@ -819,7 +920,7 @@ const rootRouteChildren: RootRouteChildren = {
   GlassServicesRoute: GlassServicesRoute,
   GlassShopfrontDubaiRoute: GlassShopfrontDubaiRoute,
   OfficeGlassPartitionDubaiRoute: OfficeGlassPartitionDubaiRoute,
-  ProjectsRoute: ProjectsRoute,
+  ProjectsRoute: ProjectsRouteWithChildren,
   ServicesRoute: ServicesRouteWithChildren,
   ShowerGlassDubaiRoute: ShowerGlassDubaiRoute,
   SitemapDotxmlRoute: SitemapDotxmlRoute,
