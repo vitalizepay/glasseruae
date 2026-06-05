@@ -12,8 +12,8 @@ import { CTA } from "@/components/site/CTA";
 import { ContactSection } from "@/components/site/ContactSection";
 import heroImage from "@/assets/hero-dubai.jpg";
 
-const TITLE = "Glass & Aluminium Company Dubai | Glasser UAE";
-const DESC = "Glasser UAE — Dubai specialists in frameless glass partitions, aluminium doors & windows, shower enclosures, mirrors and facades across the UAE.";
+const TITLE = "Glass Partition & Aluminium Works Company in Dubai | Glasser UAE";
+const DESC = "Glasser Technical Works provides glass partitions, shower glass, aluminium fabrication, glass railings and commercial glass solutions across Dubai, Sharjah and UAE.";
 const URL = "https://glasseruae.com/";
 
 export const Route = createFileRoute("/")({
