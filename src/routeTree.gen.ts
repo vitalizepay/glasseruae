@@ -9,12 +9,22 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
+import { Route as SkylightInstallationDubaiRouteImport } from './routes/skylight-installation-dubai'
 import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
+import { Route as ShowerGlassDubaiRouteImport } from './routes/shower-glass-dubai'
 import { Route as ServicesRouteImport } from './routes/services'
 import { Route as ProjectsRouteImport } from './routes/projects'
+import { Route as OfficeGlassPartitionDubaiRouteImport } from './routes/office-glass-partition-dubai'
+import { Route as GlassShopfrontDubaiRouteImport } from './routes/glass-shopfront-dubai'
 import { Route as GlassServicesRouteImport } from './routes/glass-services'
+import { Route as GlassRailingDubaiRouteImport } from './routes/glass-railing-dubai'
+import { Route as GlassPartitionDubaiRouteImport } from './routes/glass-partition-dubai'
+import { Route as GlassFacadeDubaiRouteImport } from './routes/glass-facade-dubai'
+import { Route as GlassDoorInstallationDubaiRouteImport } from './routes/glass-door-installation-dubai'
 import { Route as ContactRouteImport } from './routes/contact'
 import { Route as BlogRouteImport } from './routes/blog'
+import { Route as AluminiumWorksDubaiRouteImport } from './routes/aluminium-works-dubai'
+import { Route as AluminiumFabricationDubaiRouteImport } from './routes/aluminium-fabrication-dubai'
 import { Route as AboutRouteImport } from './routes/about'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as ServicesIndexRouteImport } from './routes/services.index'
@@ -28,9 +38,20 @@ import { Route as BlogGlassPartitionsDubaiOfficeGuideRouteImport } from './route
 import { Route as BlogFramelessShowerEnclosuresDubaiGuideRouteImport } from './routes/blog.frameless-shower-enclosures-dubai-guide'
 import { Route as ApiChatRouteImport } from './routes/api/chat'
 
+const SkylightInstallationDubaiRoute =
+  SkylightInstallationDubaiRouteImport.update({
+    id: '/skylight-installation-dubai',
+    path: '/skylight-installation-dubai',
+    getParentRoute: () => rootRouteImport,
+  } as any)
 const SitemapDotxmlRoute = SitemapDotxmlRouteImport.update({
   id: '/sitemap.xml',
   path: '/sitemap.xml',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ShowerGlassDubaiRoute = ShowerGlassDubaiRouteImport.update({
+  id: '/shower-glass-dubai',
+  path: '/shower-glass-dubai',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ServicesRoute = ServicesRouteImport.update({
@@ -43,11 +64,43 @@ const ProjectsRoute = ProjectsRouteImport.update({
   path: '/projects',
   getParentRoute: () => rootRouteImport,
 } as any)
+const OfficeGlassPartitionDubaiRoute =
+  OfficeGlassPartitionDubaiRouteImport.update({
+    id: '/office-glass-partition-dubai',
+    path: '/office-glass-partition-dubai',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const GlassShopfrontDubaiRoute = GlassShopfrontDubaiRouteImport.update({
+  id: '/glass-shopfront-dubai',
+  path: '/glass-shopfront-dubai',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const GlassServicesRoute = GlassServicesRouteImport.update({
   id: '/glass-services',
   path: '/glass-services',
   getParentRoute: () => rootRouteImport,
 } as any)
+const GlassRailingDubaiRoute = GlassRailingDubaiRouteImport.update({
+  id: '/glass-railing-dubai',
+  path: '/glass-railing-dubai',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const GlassPartitionDubaiRoute = GlassPartitionDubaiRouteImport.update({
+  id: '/glass-partition-dubai',
+  path: '/glass-partition-dubai',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const GlassFacadeDubaiRoute = GlassFacadeDubaiRouteImport.update({
+  id: '/glass-facade-dubai',
+  path: '/glass-facade-dubai',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const GlassDoorInstallationDubaiRoute =
+  GlassDoorInstallationDubaiRouteImport.update({
+    id: '/glass-door-installation-dubai',
+    path: '/glass-door-installation-dubai',
+    getParentRoute: () => rootRouteImport,
+  } as any)
 const ContactRoute = ContactRouteImport.update({
   id: '/contact',
   path: '/contact',
@@ -58,6 +111,17 @@ const BlogRoute = BlogRouteImport.update({
   path: '/blog',
   getParentRoute: () => rootRouteImport,
 } as any)
+const AluminiumWorksDubaiRoute = AluminiumWorksDubaiRouteImport.update({
+  id: '/aluminium-works-dubai',
+  path: '/aluminium-works-dubai',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AluminiumFabricationDubaiRoute =
+  AluminiumFabricationDubaiRouteImport.update({
+    id: '/aluminium-fabrication-dubai',
+    path: '/aluminium-fabrication-dubai',
+    getParentRoute: () => rootRouteImport,
+  } as any)
 const AboutRoute = AboutRouteImport.update({
   id: '/about',
   path: '/about',
@@ -130,12 +194,22 @@ const ApiChatRoute = ApiChatRouteImport.update({
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
+  '/aluminium-fabrication-dubai': typeof AluminiumFabricationDubaiRoute
+  '/aluminium-works-dubai': typeof AluminiumWorksDubaiRoute
   '/blog': typeof BlogRouteWithChildren
   '/contact': typeof ContactRoute
+  '/glass-door-installation-dubai': typeof GlassDoorInstallationDubaiRoute
+  '/glass-facade-dubai': typeof GlassFacadeDubaiRoute
+  '/glass-partition-dubai': typeof GlassPartitionDubaiRoute
+  '/glass-railing-dubai': typeof GlassRailingDubaiRoute
   '/glass-services': typeof GlassServicesRoute
+  '/glass-shopfront-dubai': typeof GlassShopfrontDubaiRoute
+  '/office-glass-partition-dubai': typeof OfficeGlassPartitionDubaiRoute
   '/projects': typeof ProjectsRoute
   '/services': typeof ServicesRouteWithChildren
+  '/shower-glass-dubai': typeof ShowerGlassDubaiRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
+  '/skylight-installation-dubai': typeof SkylightInstallationDubaiRoute
   '/api/chat': typeof ApiChatRoute
   '/blog/frameless-shower-enclosures-dubai-guide': typeof BlogFramelessShowerEnclosuresDubaiGuideRoute
   '/blog/glass-partitions-dubai-office-guide': typeof BlogGlassPartitionsDubaiOfficeGuideRoute
@@ -150,11 +224,21 @@ export interface FileRoutesByFullPath {
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
+  '/aluminium-fabrication-dubai': typeof AluminiumFabricationDubaiRoute
+  '/aluminium-works-dubai': typeof AluminiumWorksDubaiRoute
   '/blog': typeof BlogRouteWithChildren
   '/contact': typeof ContactRoute
+  '/glass-door-installation-dubai': typeof GlassDoorInstallationDubaiRoute
+  '/glass-facade-dubai': typeof GlassFacadeDubaiRoute
+  '/glass-partition-dubai': typeof GlassPartitionDubaiRoute
+  '/glass-railing-dubai': typeof GlassRailingDubaiRoute
   '/glass-services': typeof GlassServicesRoute
+  '/glass-shopfront-dubai': typeof GlassShopfrontDubaiRoute
+  '/office-glass-partition-dubai': typeof OfficeGlassPartitionDubaiRoute
   '/projects': typeof ProjectsRoute
+  '/shower-glass-dubai': typeof ShowerGlassDubaiRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
+  '/skylight-installation-dubai': typeof SkylightInstallationDubaiRoute
   '/api/chat': typeof ApiChatRoute
   '/blog/frameless-shower-enclosures-dubai-guide': typeof BlogFramelessShowerEnclosuresDubaiGuideRoute
   '/blog/glass-partitions-dubai-office-guide': typeof BlogGlassPartitionsDubaiOfficeGuideRoute
@@ -170,12 +254,22 @@ export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
+  '/aluminium-fabrication-dubai': typeof AluminiumFabricationDubaiRoute
+  '/aluminium-works-dubai': typeof AluminiumWorksDubaiRoute
   '/blog': typeof BlogRouteWithChildren
   '/contact': typeof ContactRoute
+  '/glass-door-installation-dubai': typeof GlassDoorInstallationDubaiRoute
+  '/glass-facade-dubai': typeof GlassFacadeDubaiRoute
+  '/glass-partition-dubai': typeof GlassPartitionDubaiRoute
+  '/glass-railing-dubai': typeof GlassRailingDubaiRoute
   '/glass-services': typeof GlassServicesRoute
+  '/glass-shopfront-dubai': typeof GlassShopfrontDubaiRoute
+  '/office-glass-partition-dubai': typeof OfficeGlassPartitionDubaiRoute
   '/projects': typeof ProjectsRoute
   '/services': typeof ServicesRouteWithChildren
+  '/shower-glass-dubai': typeof ShowerGlassDubaiRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
+  '/skylight-installation-dubai': typeof SkylightInstallationDubaiRoute
   '/api/chat': typeof ApiChatRoute
   '/blog/frameless-shower-enclosures-dubai-guide': typeof BlogFramelessShowerEnclosuresDubaiGuideRoute
   '/blog/glass-partitions-dubai-office-guide': typeof BlogGlassPartitionsDubaiOfficeGuideRoute
@@ -192,12 +286,22 @@ export interface FileRouteTypes {
   fullPaths:
     | '/'
     | '/about'
+    | '/aluminium-fabrication-dubai'
+    | '/aluminium-works-dubai'
     | '/blog'
     | '/contact'
+    | '/glass-door-installation-dubai'
+    | '/glass-facade-dubai'
+    | '/glass-partition-dubai'
+    | '/glass-railing-dubai'
     | '/glass-services'
+    | '/glass-shopfront-dubai'
+    | '/office-glass-partition-dubai'
     | '/projects'
     | '/services'
+    | '/shower-glass-dubai'
     | '/sitemap.xml'
+    | '/skylight-installation-dubai'
     | '/api/chat'
     | '/blog/frameless-shower-enclosures-dubai-guide'
     | '/blog/glass-partitions-dubai-office-guide'
@@ -212,11 +316,21 @@ export interface FileRouteTypes {
   to:
     | '/'
     | '/about'
+    | '/aluminium-fabrication-dubai'
+    | '/aluminium-works-dubai'
     | '/blog'
     | '/contact'
+    | '/glass-door-installation-dubai'
+    | '/glass-facade-dubai'
+    | '/glass-partition-dubai'
+    | '/glass-railing-dubai'
     | '/glass-services'
+    | '/glass-shopfront-dubai'
+    | '/office-glass-partition-dubai'
     | '/projects'
+    | '/shower-glass-dubai'
     | '/sitemap.xml'
+    | '/skylight-installation-dubai'
     | '/api/chat'
     | '/blog/frameless-shower-enclosures-dubai-guide'
     | '/blog/glass-partitions-dubai-office-guide'
@@ -231,12 +345,22 @@ export interface FileRouteTypes {
     | '__root__'
     | '/'
     | '/about'
+    | '/aluminium-fabrication-dubai'
+    | '/aluminium-works-dubai'
     | '/blog'
     | '/contact'
+    | '/glass-door-installation-dubai'
+    | '/glass-facade-dubai'
+    | '/glass-partition-dubai'
+    | '/glass-railing-dubai'
     | '/glass-services'
+    | '/glass-shopfront-dubai'
+    | '/office-glass-partition-dubai'
     | '/projects'
     | '/services'
+    | '/shower-glass-dubai'
     | '/sitemap.xml'
+    | '/skylight-installation-dubai'
     | '/api/chat'
     | '/blog/frameless-shower-enclosures-dubai-guide'
     | '/blog/glass-partitions-dubai-office-guide'
@@ -252,22 +376,46 @@ export interface FileRouteTypes {
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AboutRoute: typeof AboutRoute
+  AluminiumFabricationDubaiRoute: typeof AluminiumFabricationDubaiRoute
+  AluminiumWorksDubaiRoute: typeof AluminiumWorksDubaiRoute
   BlogRoute: typeof BlogRouteWithChildren
   ContactRoute: typeof ContactRoute
+  GlassDoorInstallationDubaiRoute: typeof GlassDoorInstallationDubaiRoute
+  GlassFacadeDubaiRoute: typeof GlassFacadeDubaiRoute
+  GlassPartitionDubaiRoute: typeof GlassPartitionDubaiRoute
+  GlassRailingDubaiRoute: typeof GlassRailingDubaiRoute
   GlassServicesRoute: typeof GlassServicesRoute
+  GlassShopfrontDubaiRoute: typeof GlassShopfrontDubaiRoute
+  OfficeGlassPartitionDubaiRoute: typeof OfficeGlassPartitionDubaiRoute
   ProjectsRoute: typeof ProjectsRoute
   ServicesRoute: typeof ServicesRouteWithChildren
+  ShowerGlassDubaiRoute: typeof ShowerGlassDubaiRoute
   SitemapDotxmlRoute: typeof SitemapDotxmlRoute
+  SkylightInstallationDubaiRoute: typeof SkylightInstallationDubaiRoute
   ApiChatRoute: typeof ApiChatRoute
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
+    '/skylight-installation-dubai': {
+      id: '/skylight-installation-dubai'
+      path: '/skylight-installation-dubai'
+      fullPath: '/skylight-installation-dubai'
+      preLoaderRoute: typeof SkylightInstallationDubaiRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/sitemap.xml': {
       id: '/sitemap.xml'
       path: '/sitemap.xml'
       fullPath: '/sitemap.xml'
       preLoaderRoute: typeof SitemapDotxmlRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/shower-glass-dubai': {
+      id: '/shower-glass-dubai'
+      path: '/shower-glass-dubai'
+      fullPath: '/shower-glass-dubai'
+      preLoaderRoute: typeof ShowerGlassDubaiRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/services': {
@@ -284,11 +432,53 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ProjectsRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/office-glass-partition-dubai': {
+      id: '/office-glass-partition-dubai'
+      path: '/office-glass-partition-dubai'
+      fullPath: '/office-glass-partition-dubai'
+      preLoaderRoute: typeof OfficeGlassPartitionDubaiRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/glass-shopfront-dubai': {
+      id: '/glass-shopfront-dubai'
+      path: '/glass-shopfront-dubai'
+      fullPath: '/glass-shopfront-dubai'
+      preLoaderRoute: typeof GlassShopfrontDubaiRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/glass-services': {
       id: '/glass-services'
       path: '/glass-services'
       fullPath: '/glass-services'
       preLoaderRoute: typeof GlassServicesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/glass-railing-dubai': {
+      id: '/glass-railing-dubai'
+      path: '/glass-railing-dubai'
+      fullPath: '/glass-railing-dubai'
+      preLoaderRoute: typeof GlassRailingDubaiRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/glass-partition-dubai': {
+      id: '/glass-partition-dubai'
+      path: '/glass-partition-dubai'
+      fullPath: '/glass-partition-dubai'
+      preLoaderRoute: typeof GlassPartitionDubaiRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/glass-facade-dubai': {
+      id: '/glass-facade-dubai'
+      path: '/glass-facade-dubai'
+      fullPath: '/glass-facade-dubai'
+      preLoaderRoute: typeof GlassFacadeDubaiRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/glass-door-installation-dubai': {
+      id: '/glass-door-installation-dubai'
+      path: '/glass-door-installation-dubai'
+      fullPath: '/glass-door-installation-dubai'
+      preLoaderRoute: typeof GlassDoorInstallationDubaiRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/contact': {
@@ -303,6 +493,20 @@ declare module '@tanstack/react-router' {
       path: '/blog'
       fullPath: '/blog'
       preLoaderRoute: typeof BlogRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/aluminium-works-dubai': {
+      id: '/aluminium-works-dubai'
+      path: '/aluminium-works-dubai'
+      fullPath: '/aluminium-works-dubai'
+      preLoaderRoute: typeof AluminiumWorksDubaiRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/aluminium-fabrication-dubai': {
+      id: '/aluminium-fabrication-dubai'
+      path: '/aluminium-fabrication-dubai'
+      fullPath: '/aluminium-fabrication-dubai'
+      preLoaderRoute: typeof AluminiumFabricationDubaiRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/about': {
@@ -434,12 +638,22 @@ const ServicesRouteWithChildren = ServicesRoute._addFileChildren(
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AboutRoute: AboutRoute,
+  AluminiumFabricationDubaiRoute: AluminiumFabricationDubaiRoute,
+  AluminiumWorksDubaiRoute: AluminiumWorksDubaiRoute,
   BlogRoute: BlogRouteWithChildren,
   ContactRoute: ContactRoute,
+  GlassDoorInstallationDubaiRoute: GlassDoorInstallationDubaiRoute,
+  GlassFacadeDubaiRoute: GlassFacadeDubaiRoute,
+  GlassPartitionDubaiRoute: GlassPartitionDubaiRoute,
+  GlassRailingDubaiRoute: GlassRailingDubaiRoute,
   GlassServicesRoute: GlassServicesRoute,
+  GlassShopfrontDubaiRoute: GlassShopfrontDubaiRoute,
+  OfficeGlassPartitionDubaiRoute: OfficeGlassPartitionDubaiRoute,
   ProjectsRoute: ProjectsRoute,
   ServicesRoute: ServicesRouteWithChildren,
+  ShowerGlassDubaiRoute: ShowerGlassDubaiRoute,
   SitemapDotxmlRoute: SitemapDotxmlRoute,
+  SkylightInstallationDubaiRoute: SkylightInstallationDubaiRoute,
   ApiChatRoute: ApiChatRoute,
 }
 export const routeTree = rootRouteImport
