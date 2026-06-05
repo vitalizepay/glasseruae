@@ -19,9 +19,9 @@ export const Route = createFileRoute("/projects")({
       { name: "description", content: D },
       { property: "og:title", content: T },
       { property: "og:description", content: D },
-      { property: "og:url", content: "/projects" },
+      { property: "og:url", content: "https://glasseruae.com/projects" },
     ],
-    links: [{ rel: "canonical", href: "/projects" }],
+    links: [{ rel: "canonical", href: "https://glasseruae.com/projects" }],
     scripts: [
       {
         type: "application/ld+json",
