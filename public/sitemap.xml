@@ -1,17 +1,51 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>https://glasseruae.com/</loc><lastmod>2026-06-02</lastmod><priority>1.0</priority></url>
-  <url><loc>https://glasseruae.com/about</loc><lastmod>2026-06-02</lastmod><priority>0.8</priority></url>
-  <url><loc>https://glasseruae.com/services</loc><lastmod>2026-06-02</lastmod><priority>0.9</priority></url>
-  <url><loc>https://glasseruae.com/services/frameless-glass-partitions-dubai</loc><lastmod>2026-06-02</lastmod><priority>0.9</priority></url>
-  <url><loc>https://glasseruae.com/services/aluminium-doors-dubai</loc><lastmod>2026-06-02</lastmod><priority>0.9</priority></url>
-  <url><loc>https://glasseruae.com/services/aluminium-windows-dubai</loc><lastmod>2026-06-02</lastmod><priority>0.9</priority></url>
-  <url><loc>https://glasseruae.com/services/shower-enclosures-dubai</loc><lastmod>2026-06-02</lastmod><priority>0.9</priority></url>
-  <url><loc>https://glasseruae.com/services/custom-mirrors-dubai</loc><lastmod>2026-06-02</lastmod><priority>0.9</priority></url>
-  <url><loc>https://glasseruae.com/services/glass-facades-dubai</loc><lastmod>2026-06-02</lastmod><priority>0.9</priority></url>
-  <url><loc>https://glasseruae.com/projects</loc><lastmod>2026-06-02</lastmod><priority>0.8</priority></url>
-  <url><loc>https://glasseruae.com/blog</loc><lastmod>2026-06-02</lastmod><priority>0.7</priority></url>
-  <url><loc>https://glasseruae.com/blog/glass-partitions-dubai-office-guide</loc><lastmod>2026-06-02</lastmod><priority>0.8</priority></url>
-  <url><loc>https://glasseruae.com/blog/frameless-shower-enclosures-dubai-guide</loc><lastmod>2026-06-02</lastmod><priority>0.8</priority></url>
-  <url><loc>https://glasseruae.com/contact</loc><lastmod>2026-06-02</lastmod><priority>0.8</priority></url>
+  <url><loc>https://glasseruae.com/</loc><lastmod>2026-06-05</lastmod><priority>1.0</priority></url>
+  <url><loc>https://glasseruae.com/about</loc><lastmod>2026-06-05</lastmod><priority>0.8</priority></url>
+  <url><loc>https://glasseruae.com/services</loc><lastmod>2026-06-05</lastmod><priority>0.9</priority></url>
+  <url><loc>https://glasseruae.com/glass-services</loc><lastmod>2026-06-05</lastmod><priority>0.9</priority></url>
+  <url><loc>https://glasseruae.com/areas-we-serve</loc><lastmod>2026-06-05</lastmod><priority>0.8</priority></url>
+  <url><loc>https://glasseruae.com/projects</loc><lastmod>2026-06-05</lastmod><priority>0.8</priority></url>
+  <url><loc>https://glasseruae.com/blog</loc><lastmod>2026-06-05</lastmod><priority>0.7</priority></url>
+  <url><loc>https://glasseruae.com/contact</loc><lastmod>2026-06-05</lastmod><priority>0.8</priority></url>
+
+  <url><loc>https://glasseruae.com/glass-partition-dubai</loc><lastmod>2026-06-05</lastmod><priority>0.95</priority></url>
+  <url><loc>https://glasseruae.com/office-glass-partition-dubai</loc><lastmod>2026-06-05</lastmod><priority>0.95</priority></url>
+  <url><loc>https://glasseruae.com/aluminium-works-dubai</loc><lastmod>2026-06-05</lastmod><priority>0.95</priority></url>
+  <url><loc>https://glasseruae.com/aluminium-fabrication-dubai</loc><lastmod>2026-06-05</lastmod><priority>0.9</priority></url>
+  <url><loc>https://glasseruae.com/shower-glass-dubai</loc><lastmod>2026-06-05</lastmod><priority>0.9</priority></url>
+  <url><loc>https://glasseruae.com/glass-shopfront-dubai</loc><lastmod>2026-06-05</lastmod><priority>0.9</priority></url>
+  <url><loc>https://glasseruae.com/glass-railing-dubai</loc><lastmod>2026-06-05</lastmod><priority>0.9</priority></url>
+  <url><loc>https://glasseruae.com/glass-facade-dubai</loc><lastmod>2026-06-05</lastmod><priority>0.9</priority></url>
+  <url><loc>https://glasseruae.com/glass-door-installation-dubai</loc><lastmod>2026-06-05</lastmod><priority>0.9</priority></url>
+  <url><loc>https://glasseruae.com/skylight-installation-dubai</loc><lastmod>2026-06-05</lastmod><priority>0.85</priority></url>
+
+  <url><loc>https://glasseruae.com/services/frameless-glass-partitions-dubai</loc><lastmod>2026-06-05</lastmod><priority>0.9</priority></url>
+  <url><loc>https://glasseruae.com/services/aluminium-doors-dubai</loc><lastmod>2026-06-05</lastmod><priority>0.9</priority></url>
+  <url><loc>https://glasseruae.com/services/aluminium-windows-dubai</loc><lastmod>2026-06-05</lastmod><priority>0.9</priority></url>
+  <url><loc>https://glasseruae.com/services/shower-enclosures-dubai</loc><lastmod>2026-06-05</lastmod><priority>0.9</priority></url>
+  <url><loc>https://glasseruae.com/services/custom-mirrors-dubai</loc><lastmod>2026-06-05</lastmod><priority>0.9</priority></url>
+  <url><loc>https://glasseruae.com/services/glass-facades-dubai</loc><lastmod>2026-06-05</lastmod><priority>0.9</priority></url>
+
+  <url><loc>https://glasseruae.com/glass-partition-al-qusais</loc><lastmod>2026-06-05</lastmod><priority>0.85</priority></url>
+  <url><loc>https://glasseruae.com/glass-partition-al-nahda</loc><lastmod>2026-06-05</lastmod><priority>0.85</priority></url>
+  <url><loc>https://glasseruae.com/glass-partition-deira</loc><lastmod>2026-06-05</lastmod><priority>0.85</priority></url>
+  <url><loc>https://glasseruae.com/glass-partition-business-bay</loc><lastmod>2026-06-05</lastmod><priority>0.85</priority></url>
+  <url><loc>https://glasseruae.com/glass-partition-dubai-marina</loc><lastmod>2026-06-05</lastmod><priority>0.85</priority></url>
+  <url><loc>https://glasseruae.com/glass-partition-jvc</loc><lastmod>2026-06-05</lastmod><priority>0.85</priority></url>
+  <url><loc>https://glasseruae.com/glass-partition-sharjah</loc><lastmod>2026-06-05</lastmod><priority>0.85</priority></url>
+  <url><loc>https://glasseruae.com/glass-partition-ajman</loc><lastmod>2026-06-05</lastmod><priority>0.85</priority></url>
+
+  <url><loc>https://glasseruae.com/projects/office-glass-partition-al-qusais</loc><lastmod>2026-06-05</lastmod><priority>0.7</priority></url>
+  <url><loc>https://glasseruae.com/projects/shower-glass-installation-jvc</loc><lastmod>2026-06-05</lastmod><priority>0.7</priority></url>
+  <url><loc>https://glasseruae.com/projects/aluminium-shopfront-sharjah</loc><lastmod>2026-06-05</lastmod><priority>0.7</priority></url>
+  <url><loc>https://glasseruae.com/projects/glass-railing-dubai-marina</loc><lastmod>2026-06-05</lastmod><priority>0.7</priority></url>
+
+  <url><loc>https://glasseruae.com/blog/glass-partitions-dubai-office-guide</loc><lastmod>2026-06-05</lastmod><priority>0.75</priority></url>
+  <url><loc>https://glasseruae.com/blog/frameless-shower-enclosures-dubai-guide</loc><lastmod>2026-06-05</lastmod><priority>0.75</priority></url>
+  <url><loc>https://glasseruae.com/blog/best-glass-partition-company-dubai</loc><lastmod>2026-06-05</lastmod><priority>0.75</priority></url>
+  <url><loc>https://glasseruae.com/blog/office-glass-partition-cost-dubai</loc><lastmod>2026-06-05</lastmod><priority>0.75</priority></url>
+  <url><loc>https://glasseruae.com/blog/shower-glass-installation-guide-dubai</loc><lastmod>2026-06-05</lastmod><priority>0.75</priority></url>
+  <url><loc>https://glasseruae.com/blog/glass-shopfront-installation-guide</loc><lastmod>2026-06-05</lastmod><priority>0.75</priority></url>
+  <url><loc>https://glasseruae.com/blog/aluminium-fabrication-services-dubai</loc><lastmod>2026-06-05</lastmod><priority>0.75</priority></url>
 </urlset>

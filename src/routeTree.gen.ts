@@ -31,6 +31,7 @@ import { Route as GlassFacadeDubaiRouteImport } from './routes/glass-facade-duba
 import { Route as GlassDoorInstallationDubaiRouteImport } from './routes/glass-door-installation-dubai'
 import { Route as ContactRouteImport } from './routes/contact'
 import { Route as BlogRouteImport } from './routes/blog'
+import { Route as AreasWeServeRouteImport } from './routes/areas-we-serve'
 import { Route as AluminiumWorksDubaiRouteImport } from './routes/aluminium-works-dubai'
 import { Route as AluminiumFabricationDubaiRouteImport } from './routes/aluminium-fabrication-dubai'
 import { Route as AboutRouteImport } from './routes/about'
@@ -46,8 +47,13 @@ import { Route as ProjectsShowerGlassInstallationJvcRouteImport } from './routes
 import { Route as ProjectsOfficeGlassPartitionAlQusaisRouteImport } from './routes/projects.office-glass-partition-al-qusais'
 import { Route as ProjectsGlassRailingDubaiMarinaRouteImport } from './routes/projects.glass-railing-dubai-marina'
 import { Route as ProjectsAluminiumShopfrontSharjahRouteImport } from './routes/projects.aluminium-shopfront-sharjah'
+import { Route as BlogShowerGlassInstallationGuideDubaiRouteImport } from './routes/blog.shower-glass-installation-guide-dubai'
+import { Route as BlogOfficeGlassPartitionCostDubaiRouteImport } from './routes/blog.office-glass-partition-cost-dubai'
+import { Route as BlogGlassShopfrontInstallationGuideRouteImport } from './routes/blog.glass-shopfront-installation-guide'
 import { Route as BlogGlassPartitionsDubaiOfficeGuideRouteImport } from './routes/blog.glass-partitions-dubai-office-guide'
 import { Route as BlogFramelessShowerEnclosuresDubaiGuideRouteImport } from './routes/blog.frameless-shower-enclosures-dubai-guide'
+import { Route as BlogBestGlassPartitionCompanyDubaiRouteImport } from './routes/blog.best-glass-partition-company-dubai'
+import { Route as BlogAluminiumFabricationServicesDubaiRouteImport } from './routes/blog.aluminium-fabrication-services-dubai'
 import { Route as ApiChatRouteImport } from './routes/api/chat'
 
 const SkylightInstallationDubaiRoute =
@@ -165,6 +171,11 @@ const BlogRoute = BlogRouteImport.update({
   path: '/blog',
   getParentRoute: () => rootRouteImport,
 } as any)
+const AreasWeServeRoute = AreasWeServeRouteImport.update({
+  id: '/areas-we-serve',
+  path: '/areas-we-serve',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const AluminiumWorksDubaiRoute = AluminiumWorksDubaiRouteImport.update({
   id: '/aluminium-works-dubai',
   path: '/aluminium-works-dubai',
@@ -251,6 +262,24 @@ const ProjectsAluminiumShopfrontSharjahRoute =
     path: '/aluminium-shopfront-sharjah',
     getParentRoute: () => ProjectsRoute,
   } as any)
+const BlogShowerGlassInstallationGuideDubaiRoute =
+  BlogShowerGlassInstallationGuideDubaiRouteImport.update({
+    id: '/shower-glass-installation-guide-dubai',
+    path: '/shower-glass-installation-guide-dubai',
+    getParentRoute: () => BlogRoute,
+  } as any)
+const BlogOfficeGlassPartitionCostDubaiRoute =
+  BlogOfficeGlassPartitionCostDubaiRouteImport.update({
+    id: '/office-glass-partition-cost-dubai',
+    path: '/office-glass-partition-cost-dubai',
+    getParentRoute: () => BlogRoute,
+  } as any)
+const BlogGlassShopfrontInstallationGuideRoute =
+  BlogGlassShopfrontInstallationGuideRouteImport.update({
+    id: '/glass-shopfront-installation-guide',
+    path: '/glass-shopfront-installation-guide',
+    getParentRoute: () => BlogRoute,
+  } as any)
 const BlogGlassPartitionsDubaiOfficeGuideRoute =
   BlogGlassPartitionsDubaiOfficeGuideRouteImport.update({
     id: '/glass-partitions-dubai-office-guide',
@@ -261,6 +290,18 @@ const BlogFramelessShowerEnclosuresDubaiGuideRoute =
   BlogFramelessShowerEnclosuresDubaiGuideRouteImport.update({
     id: '/frameless-shower-enclosures-dubai-guide',
     path: '/frameless-shower-enclosures-dubai-guide',
+    getParentRoute: () => BlogRoute,
+  } as any)
+const BlogBestGlassPartitionCompanyDubaiRoute =
+  BlogBestGlassPartitionCompanyDubaiRouteImport.update({
+    id: '/best-glass-partition-company-dubai',
+    path: '/best-glass-partition-company-dubai',
+    getParentRoute: () => BlogRoute,
+  } as any)
+const BlogAluminiumFabricationServicesDubaiRoute =
+  BlogAluminiumFabricationServicesDubaiRouteImport.update({
+    id: '/aluminium-fabrication-services-dubai',
+    path: '/aluminium-fabrication-services-dubai',
     getParentRoute: () => BlogRoute,
   } as any)
 const ApiChatRoute = ApiChatRouteImport.update({
@@ -274,6 +315,7 @@ export interface FileRoutesByFullPath {
   '/about': typeof AboutRoute
   '/aluminium-fabrication-dubai': typeof AluminiumFabricationDubaiRoute
   '/aluminium-works-dubai': typeof AluminiumWorksDubaiRoute
+  '/areas-we-serve': typeof AreasWeServeRoute
   '/blog': typeof BlogRouteWithChildren
   '/contact': typeof ContactRoute
   '/glass-door-installation-dubai': typeof GlassDoorInstallationDubaiRoute
@@ -297,8 +339,13 @@ export interface FileRoutesByFullPath {
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/skylight-installation-dubai': typeof SkylightInstallationDubaiRoute
   '/api/chat': typeof ApiChatRoute
+  '/blog/aluminium-fabrication-services-dubai': typeof BlogAluminiumFabricationServicesDubaiRoute
+  '/blog/best-glass-partition-company-dubai': typeof BlogBestGlassPartitionCompanyDubaiRoute
   '/blog/frameless-shower-enclosures-dubai-guide': typeof BlogFramelessShowerEnclosuresDubaiGuideRoute
   '/blog/glass-partitions-dubai-office-guide': typeof BlogGlassPartitionsDubaiOfficeGuideRoute
+  '/blog/glass-shopfront-installation-guide': typeof BlogGlassShopfrontInstallationGuideRoute
+  '/blog/office-glass-partition-cost-dubai': typeof BlogOfficeGlassPartitionCostDubaiRoute
+  '/blog/shower-glass-installation-guide-dubai': typeof BlogShowerGlassInstallationGuideDubaiRoute
   '/projects/aluminium-shopfront-sharjah': typeof ProjectsAluminiumShopfrontSharjahRoute
   '/projects/glass-railing-dubai-marina': typeof ProjectsGlassRailingDubaiMarinaRoute
   '/projects/office-glass-partition-al-qusais': typeof ProjectsOfficeGlassPartitionAlQusaisRoute
@@ -316,6 +363,7 @@ export interface FileRoutesByTo {
   '/about': typeof AboutRoute
   '/aluminium-fabrication-dubai': typeof AluminiumFabricationDubaiRoute
   '/aluminium-works-dubai': typeof AluminiumWorksDubaiRoute
+  '/areas-we-serve': typeof AreasWeServeRoute
   '/blog': typeof BlogRouteWithChildren
   '/contact': typeof ContactRoute
   '/glass-door-installation-dubai': typeof GlassDoorInstallationDubaiRoute
@@ -338,8 +386,13 @@ export interface FileRoutesByTo {
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/skylight-installation-dubai': typeof SkylightInstallationDubaiRoute
   '/api/chat': typeof ApiChatRoute
+  '/blog/aluminium-fabrication-services-dubai': typeof BlogAluminiumFabricationServicesDubaiRoute
+  '/blog/best-glass-partition-company-dubai': typeof BlogBestGlassPartitionCompanyDubaiRoute
   '/blog/frameless-shower-enclosures-dubai-guide': typeof BlogFramelessShowerEnclosuresDubaiGuideRoute
   '/blog/glass-partitions-dubai-office-guide': typeof BlogGlassPartitionsDubaiOfficeGuideRoute
+  '/blog/glass-shopfront-installation-guide': typeof BlogGlassShopfrontInstallationGuideRoute
+  '/blog/office-glass-partition-cost-dubai': typeof BlogOfficeGlassPartitionCostDubaiRoute
+  '/blog/shower-glass-installation-guide-dubai': typeof BlogShowerGlassInstallationGuideDubaiRoute
   '/projects/aluminium-shopfront-sharjah': typeof ProjectsAluminiumShopfrontSharjahRoute
   '/projects/glass-railing-dubai-marina': typeof ProjectsGlassRailingDubaiMarinaRoute
   '/projects/office-glass-partition-al-qusais': typeof ProjectsOfficeGlassPartitionAlQusaisRoute
@@ -358,6 +411,7 @@ export interface FileRoutesById {
   '/about': typeof AboutRoute
   '/aluminium-fabrication-dubai': typeof AluminiumFabricationDubaiRoute
   '/aluminium-works-dubai': typeof AluminiumWorksDubaiRoute
+  '/areas-we-serve': typeof AreasWeServeRoute
   '/blog': typeof BlogRouteWithChildren
   '/contact': typeof ContactRoute
   '/glass-door-installation-dubai': typeof GlassDoorInstallationDubaiRoute
@@ -381,8 +435,13 @@ export interface FileRoutesById {
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/skylight-installation-dubai': typeof SkylightInstallationDubaiRoute
   '/api/chat': typeof ApiChatRoute
+  '/blog/aluminium-fabrication-services-dubai': typeof BlogAluminiumFabricationServicesDubaiRoute
+  '/blog/best-glass-partition-company-dubai': typeof BlogBestGlassPartitionCompanyDubaiRoute
   '/blog/frameless-shower-enclosures-dubai-guide': typeof BlogFramelessShowerEnclosuresDubaiGuideRoute
   '/blog/glass-partitions-dubai-office-guide': typeof BlogGlassPartitionsDubaiOfficeGuideRoute
+  '/blog/glass-shopfront-installation-guide': typeof BlogGlassShopfrontInstallationGuideRoute
+  '/blog/office-glass-partition-cost-dubai': typeof BlogOfficeGlassPartitionCostDubaiRoute
+  '/blog/shower-glass-installation-guide-dubai': typeof BlogShowerGlassInstallationGuideDubaiRoute
   '/projects/aluminium-shopfront-sharjah': typeof ProjectsAluminiumShopfrontSharjahRoute
   '/projects/glass-railing-dubai-marina': typeof ProjectsGlassRailingDubaiMarinaRoute
   '/projects/office-glass-partition-al-qusais': typeof ProjectsOfficeGlassPartitionAlQusaisRoute
@@ -402,6 +461,7 @@ export interface FileRouteTypes {
     | '/about'
     | '/aluminium-fabrication-dubai'
     | '/aluminium-works-dubai'
+    | '/areas-we-serve'
     | '/blog'
     | '/contact'
     | '/glass-door-installation-dubai'
@@ -425,8 +485,13 @@ export interface FileRouteTypes {
     | '/sitemap.xml'
     | '/skylight-installation-dubai'
     | '/api/chat'
+    | '/blog/aluminium-fabrication-services-dubai'
+    | '/blog/best-glass-partition-company-dubai'
     | '/blog/frameless-shower-enclosures-dubai-guide'
     | '/blog/glass-partitions-dubai-office-guide'
+    | '/blog/glass-shopfront-installation-guide'
+    | '/blog/office-glass-partition-cost-dubai'
+    | '/blog/shower-glass-installation-guide-dubai'
     | '/projects/aluminium-shopfront-sharjah'
     | '/projects/glass-railing-dubai-marina'
     | '/projects/office-glass-partition-al-qusais'
@@ -444,6 +509,7 @@ export interface FileRouteTypes {
     | '/about'
     | '/aluminium-fabrication-dubai'
     | '/aluminium-works-dubai'
+    | '/areas-we-serve'
     | '/blog'
     | '/contact'
     | '/glass-door-installation-dubai'
@@ -466,8 +532,13 @@ export interface FileRouteTypes {
     | '/sitemap.xml'
     | '/skylight-installation-dubai'
     | '/api/chat'
+    | '/blog/aluminium-fabrication-services-dubai'
+    | '/blog/best-glass-partition-company-dubai'
     | '/blog/frameless-shower-enclosures-dubai-guide'
     | '/blog/glass-partitions-dubai-office-guide'
+    | '/blog/glass-shopfront-installation-guide'
+    | '/blog/office-glass-partition-cost-dubai'
+    | '/blog/shower-glass-installation-guide-dubai'
     | '/projects/aluminium-shopfront-sharjah'
     | '/projects/glass-railing-dubai-marina'
     | '/projects/office-glass-partition-al-qusais'
@@ -485,6 +556,7 @@ export interface FileRouteTypes {
     | '/about'
     | '/aluminium-fabrication-dubai'
     | '/aluminium-works-dubai'
+    | '/areas-we-serve'
     | '/blog'
     | '/contact'
     | '/glass-door-installation-dubai'
@@ -508,8 +580,13 @@ export interface FileRouteTypes {
     | '/sitemap.xml'
     | '/skylight-installation-dubai'
     | '/api/chat'
+    | '/blog/aluminium-fabrication-services-dubai'
+    | '/blog/best-glass-partition-company-dubai'
     | '/blog/frameless-shower-enclosures-dubai-guide'
     | '/blog/glass-partitions-dubai-office-guide'
+    | '/blog/glass-shopfront-installation-guide'
+    | '/blog/office-glass-partition-cost-dubai'
+    | '/blog/shower-glass-installation-guide-dubai'
     | '/projects/aluminium-shopfront-sharjah'
     | '/projects/glass-railing-dubai-marina'
     | '/projects/office-glass-partition-al-qusais'
@@ -528,6 +605,7 @@ export interface RootRouteChildren {
   AboutRoute: typeof AboutRoute
   AluminiumFabricationDubaiRoute: typeof AluminiumFabricationDubaiRoute
   AluminiumWorksDubaiRoute: typeof AluminiumWorksDubaiRoute
+  AreasWeServeRoute: typeof AreasWeServeRoute
   BlogRoute: typeof BlogRouteWithChildren
   ContactRoute: typeof ContactRoute
   GlassDoorInstallationDubaiRoute: typeof GlassDoorInstallationDubaiRoute
@@ -709,6 +787,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof BlogRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/areas-we-serve': {
+      id: '/areas-we-serve'
+      path: '/areas-we-serve'
+      fullPath: '/areas-we-serve'
+      preLoaderRoute: typeof AreasWeServeRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/aluminium-works-dubai': {
       id: '/aluminium-works-dubai'
       path: '/aluminium-works-dubai'
@@ -814,6 +899,27 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ProjectsAluminiumShopfrontSharjahRouteImport
       parentRoute: typeof ProjectsRoute
     }
+    '/blog/shower-glass-installation-guide-dubai': {
+      id: '/blog/shower-glass-installation-guide-dubai'
+      path: '/shower-glass-installation-guide-dubai'
+      fullPath: '/blog/shower-glass-installation-guide-dubai'
+      preLoaderRoute: typeof BlogShowerGlassInstallationGuideDubaiRouteImport
+      parentRoute: typeof BlogRoute
+    }
+    '/blog/office-glass-partition-cost-dubai': {
+      id: '/blog/office-glass-partition-cost-dubai'
+      path: '/office-glass-partition-cost-dubai'
+      fullPath: '/blog/office-glass-partition-cost-dubai'
+      preLoaderRoute: typeof BlogOfficeGlassPartitionCostDubaiRouteImport
+      parentRoute: typeof BlogRoute
+    }
+    '/blog/glass-shopfront-installation-guide': {
+      id: '/blog/glass-shopfront-installation-guide'
+      path: '/glass-shopfront-installation-guide'
+      fullPath: '/blog/glass-shopfront-installation-guide'
+      preLoaderRoute: typeof BlogGlassShopfrontInstallationGuideRouteImport
+      parentRoute: typeof BlogRoute
+    }
     '/blog/glass-partitions-dubai-office-guide': {
       id: '/blog/glass-partitions-dubai-office-guide'
       path: '/glass-partitions-dubai-office-guide'
@@ -828,6 +934,20 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof BlogFramelessShowerEnclosuresDubaiGuideRouteImport
       parentRoute: typeof BlogRoute
     }
+    '/blog/best-glass-partition-company-dubai': {
+      id: '/blog/best-glass-partition-company-dubai'
+      path: '/best-glass-partition-company-dubai'
+      fullPath: '/blog/best-glass-partition-company-dubai'
+      preLoaderRoute: typeof BlogBestGlassPartitionCompanyDubaiRouteImport
+      parentRoute: typeof BlogRoute
+    }
+    '/blog/aluminium-fabrication-services-dubai': {
+      id: '/blog/aluminium-fabrication-services-dubai'
+      path: '/aluminium-fabrication-services-dubai'
+      fullPath: '/blog/aluminium-fabrication-services-dubai'
+      preLoaderRoute: typeof BlogAluminiumFabricationServicesDubaiRouteImport
+      parentRoute: typeof BlogRoute
+    }
     '/api/chat': {
       id: '/api/chat'
       path: '/api/chat'
@@ -839,15 +959,30 @@ declare module '@tanstack/react-router' {
 }
 
 interface BlogRouteChildren {
+  BlogAluminiumFabricationServicesDubaiRoute: typeof BlogAluminiumFabricationServicesDubaiRoute
+  BlogBestGlassPartitionCompanyDubaiRoute: typeof BlogBestGlassPartitionCompanyDubaiRoute
   BlogFramelessShowerEnclosuresDubaiGuideRoute: typeof BlogFramelessShowerEnclosuresDubaiGuideRoute
   BlogGlassPartitionsDubaiOfficeGuideRoute: typeof BlogGlassPartitionsDubaiOfficeGuideRoute
+  BlogGlassShopfrontInstallationGuideRoute: typeof BlogGlassShopfrontInstallationGuideRoute
+  BlogOfficeGlassPartitionCostDubaiRoute: typeof BlogOfficeGlassPartitionCostDubaiRoute
+  BlogShowerGlassInstallationGuideDubaiRoute: typeof BlogShowerGlassInstallationGuideDubaiRoute
 }
 
 const BlogRouteChildren: BlogRouteChildren = {
+  BlogAluminiumFabricationServicesDubaiRoute:
+    BlogAluminiumFabricationServicesDubaiRoute,
+  BlogBestGlassPartitionCompanyDubaiRoute:
+    BlogBestGlassPartitionCompanyDubaiRoute,
   BlogFramelessShowerEnclosuresDubaiGuideRoute:
     BlogFramelessShowerEnclosuresDubaiGuideRoute,
   BlogGlassPartitionsDubaiOfficeGuideRoute:
     BlogGlassPartitionsDubaiOfficeGuideRoute,
+  BlogGlassShopfrontInstallationGuideRoute:
+    BlogGlassShopfrontInstallationGuideRoute,
+  BlogOfficeGlassPartitionCostDubaiRoute:
+    BlogOfficeGlassPartitionCostDubaiRoute,
+  BlogShowerGlassInstallationGuideDubaiRoute:
+    BlogShowerGlassInstallationGuideDubaiRoute,
 }
 
 const BlogRouteWithChildren = BlogRoute._addFileChildren(BlogRouteChildren)
@@ -903,6 +1038,7 @@ const rootRouteChildren: RootRouteChildren = {
   AboutRoute: AboutRoute,
   AluminiumFabricationDubaiRoute: AluminiumFabricationDubaiRoute,
   AluminiumWorksDubaiRoute: AluminiumWorksDubaiRoute,
+  AreasWeServeRoute: AreasWeServeRoute,
   BlogRoute: BlogRouteWithChildren,
   ContactRoute: ContactRoute,
   GlassDoorInstallationDubaiRoute: GlassDoorInstallationDubaiRoute,
