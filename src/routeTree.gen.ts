@@ -18,7 +18,15 @@ import { Route as OfficeGlassPartitionDubaiRouteImport } from './routes/office-g
 import { Route as GlassShopfrontDubaiRouteImport } from './routes/glass-shopfront-dubai'
 import { Route as GlassServicesRouteImport } from './routes/glass-services'
 import { Route as GlassRailingDubaiRouteImport } from './routes/glass-railing-dubai'
+import { Route as GlassPartitionSharjahRouteImport } from './routes/glass-partition-sharjah'
+import { Route as GlassPartitionJvcRouteImport } from './routes/glass-partition-jvc'
+import { Route as GlassPartitionDubaiMarinaRouteImport } from './routes/glass-partition-dubai-marina'
 import { Route as GlassPartitionDubaiRouteImport } from './routes/glass-partition-dubai'
+import { Route as GlassPartitionDeiraRouteImport } from './routes/glass-partition-deira'
+import { Route as GlassPartitionBusinessBayRouteImport } from './routes/glass-partition-business-bay'
+import { Route as GlassPartitionAlQusaisRouteImport } from './routes/glass-partition-al-qusais'
+import { Route as GlassPartitionAlNahdaRouteImport } from './routes/glass-partition-al-nahda'
+import { Route as GlassPartitionAjmanRouteImport } from './routes/glass-partition-ajman'
 import { Route as GlassFacadeDubaiRouteImport } from './routes/glass-facade-dubai'
 import { Route as GlassDoorInstallationDubaiRouteImport } from './routes/glass-door-installation-dubai'
 import { Route as ContactRouteImport } from './routes/contact'
@@ -85,9 +93,51 @@ const GlassRailingDubaiRoute = GlassRailingDubaiRouteImport.update({
   path: '/glass-railing-dubai',
   getParentRoute: () => rootRouteImport,
 } as any)
+const GlassPartitionSharjahRoute = GlassPartitionSharjahRouteImport.update({
+  id: '/glass-partition-sharjah',
+  path: '/glass-partition-sharjah',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const GlassPartitionJvcRoute = GlassPartitionJvcRouteImport.update({
+  id: '/glass-partition-jvc',
+  path: '/glass-partition-jvc',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const GlassPartitionDubaiMarinaRoute =
+  GlassPartitionDubaiMarinaRouteImport.update({
+    id: '/glass-partition-dubai-marina',
+    path: '/glass-partition-dubai-marina',
+    getParentRoute: () => rootRouteImport,
+  } as any)
 const GlassPartitionDubaiRoute = GlassPartitionDubaiRouteImport.update({
   id: '/glass-partition-dubai',
   path: '/glass-partition-dubai',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const GlassPartitionDeiraRoute = GlassPartitionDeiraRouteImport.update({
+  id: '/glass-partition-deira',
+  path: '/glass-partition-deira',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const GlassPartitionBusinessBayRoute =
+  GlassPartitionBusinessBayRouteImport.update({
+    id: '/glass-partition-business-bay',
+    path: '/glass-partition-business-bay',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const GlassPartitionAlQusaisRoute = GlassPartitionAlQusaisRouteImport.update({
+  id: '/glass-partition-al-qusais',
+  path: '/glass-partition-al-qusais',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const GlassPartitionAlNahdaRoute = GlassPartitionAlNahdaRouteImport.update({
+  id: '/glass-partition-al-nahda',
+  path: '/glass-partition-al-nahda',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const GlassPartitionAjmanRoute = GlassPartitionAjmanRouteImport.update({
+  id: '/glass-partition-ajman',
+  path: '/glass-partition-ajman',
   getParentRoute: () => rootRouteImport,
 } as any)
 const GlassFacadeDubaiRoute = GlassFacadeDubaiRouteImport.update({
@@ -200,7 +250,15 @@ export interface FileRoutesByFullPath {
   '/contact': typeof ContactRoute
   '/glass-door-installation-dubai': typeof GlassDoorInstallationDubaiRoute
   '/glass-facade-dubai': typeof GlassFacadeDubaiRoute
+  '/glass-partition-ajman': typeof GlassPartitionAjmanRoute
+  '/glass-partition-al-nahda': typeof GlassPartitionAlNahdaRoute
+  '/glass-partition-al-qusais': typeof GlassPartitionAlQusaisRoute
+  '/glass-partition-business-bay': typeof GlassPartitionBusinessBayRoute
+  '/glass-partition-deira': typeof GlassPartitionDeiraRoute
   '/glass-partition-dubai': typeof GlassPartitionDubaiRoute
+  '/glass-partition-dubai-marina': typeof GlassPartitionDubaiMarinaRoute
+  '/glass-partition-jvc': typeof GlassPartitionJvcRoute
+  '/glass-partition-sharjah': typeof GlassPartitionSharjahRoute
   '/glass-railing-dubai': typeof GlassRailingDubaiRoute
   '/glass-services': typeof GlassServicesRoute
   '/glass-shopfront-dubai': typeof GlassShopfrontDubaiRoute
@@ -230,7 +288,15 @@ export interface FileRoutesByTo {
   '/contact': typeof ContactRoute
   '/glass-door-installation-dubai': typeof GlassDoorInstallationDubaiRoute
   '/glass-facade-dubai': typeof GlassFacadeDubaiRoute
+  '/glass-partition-ajman': typeof GlassPartitionAjmanRoute
+  '/glass-partition-al-nahda': typeof GlassPartitionAlNahdaRoute
+  '/glass-partition-al-qusais': typeof GlassPartitionAlQusaisRoute
+  '/glass-partition-business-bay': typeof GlassPartitionBusinessBayRoute
+  '/glass-partition-deira': typeof GlassPartitionDeiraRoute
   '/glass-partition-dubai': typeof GlassPartitionDubaiRoute
+  '/glass-partition-dubai-marina': typeof GlassPartitionDubaiMarinaRoute
+  '/glass-partition-jvc': typeof GlassPartitionJvcRoute
+  '/glass-partition-sharjah': typeof GlassPartitionSharjahRoute
   '/glass-railing-dubai': typeof GlassRailingDubaiRoute
   '/glass-services': typeof GlassServicesRoute
   '/glass-shopfront-dubai': typeof GlassShopfrontDubaiRoute
@@ -260,7 +326,15 @@ export interface FileRoutesById {
   '/contact': typeof ContactRoute
   '/glass-door-installation-dubai': typeof GlassDoorInstallationDubaiRoute
   '/glass-facade-dubai': typeof GlassFacadeDubaiRoute
+  '/glass-partition-ajman': typeof GlassPartitionAjmanRoute
+  '/glass-partition-al-nahda': typeof GlassPartitionAlNahdaRoute
+  '/glass-partition-al-qusais': typeof GlassPartitionAlQusaisRoute
+  '/glass-partition-business-bay': typeof GlassPartitionBusinessBayRoute
+  '/glass-partition-deira': typeof GlassPartitionDeiraRoute
   '/glass-partition-dubai': typeof GlassPartitionDubaiRoute
+  '/glass-partition-dubai-marina': typeof GlassPartitionDubaiMarinaRoute
+  '/glass-partition-jvc': typeof GlassPartitionJvcRoute
+  '/glass-partition-sharjah': typeof GlassPartitionSharjahRoute
   '/glass-railing-dubai': typeof GlassRailingDubaiRoute
   '/glass-services': typeof GlassServicesRoute
   '/glass-shopfront-dubai': typeof GlassShopfrontDubaiRoute
@@ -292,7 +366,15 @@ export interface FileRouteTypes {
     | '/contact'
     | '/glass-door-installation-dubai'
     | '/glass-facade-dubai'
+    | '/glass-partition-ajman'
+    | '/glass-partition-al-nahda'
+    | '/glass-partition-al-qusais'
+    | '/glass-partition-business-bay'
+    | '/glass-partition-deira'
     | '/glass-partition-dubai'
+    | '/glass-partition-dubai-marina'
+    | '/glass-partition-jvc'
+    | '/glass-partition-sharjah'
     | '/glass-railing-dubai'
     | '/glass-services'
     | '/glass-shopfront-dubai'
@@ -322,7 +404,15 @@ export interface FileRouteTypes {
     | '/contact'
     | '/glass-door-installation-dubai'
     | '/glass-facade-dubai'
+    | '/glass-partition-ajman'
+    | '/glass-partition-al-nahda'
+    | '/glass-partition-al-qusais'
+    | '/glass-partition-business-bay'
+    | '/glass-partition-deira'
     | '/glass-partition-dubai'
+    | '/glass-partition-dubai-marina'
+    | '/glass-partition-jvc'
+    | '/glass-partition-sharjah'
     | '/glass-railing-dubai'
     | '/glass-services'
     | '/glass-shopfront-dubai'
@@ -351,7 +441,15 @@ export interface FileRouteTypes {
     | '/contact'
     | '/glass-door-installation-dubai'
     | '/glass-facade-dubai'
+    | '/glass-partition-ajman'
+    | '/glass-partition-al-nahda'
+    | '/glass-partition-al-qusais'
+    | '/glass-partition-business-bay'
+    | '/glass-partition-deira'
     | '/glass-partition-dubai'
+    | '/glass-partition-dubai-marina'
+    | '/glass-partition-jvc'
+    | '/glass-partition-sharjah'
     | '/glass-railing-dubai'
     | '/glass-services'
     | '/glass-shopfront-dubai'
@@ -382,7 +480,15 @@ export interface RootRouteChildren {
   ContactRoute: typeof ContactRoute
   GlassDoorInstallationDubaiRoute: typeof GlassDoorInstallationDubaiRoute
   GlassFacadeDubaiRoute: typeof GlassFacadeDubaiRoute
+  GlassPartitionAjmanRoute: typeof GlassPartitionAjmanRoute
+  GlassPartitionAlNahdaRoute: typeof GlassPartitionAlNahdaRoute
+  GlassPartitionAlQusaisRoute: typeof GlassPartitionAlQusaisRoute
+  GlassPartitionBusinessBayRoute: typeof GlassPartitionBusinessBayRoute
+  GlassPartitionDeiraRoute: typeof GlassPartitionDeiraRoute
   GlassPartitionDubaiRoute: typeof GlassPartitionDubaiRoute
+  GlassPartitionDubaiMarinaRoute: typeof GlassPartitionDubaiMarinaRoute
+  GlassPartitionJvcRoute: typeof GlassPartitionJvcRoute
+  GlassPartitionSharjahRoute: typeof GlassPartitionSharjahRoute
   GlassRailingDubaiRoute: typeof GlassRailingDubaiRoute
   GlassServicesRoute: typeof GlassServicesRoute
   GlassShopfrontDubaiRoute: typeof GlassShopfrontDubaiRoute
@@ -460,11 +566,67 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof GlassRailingDubaiRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/glass-partition-sharjah': {
+      id: '/glass-partition-sharjah'
+      path: '/glass-partition-sharjah'
+      fullPath: '/glass-partition-sharjah'
+      preLoaderRoute: typeof GlassPartitionSharjahRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/glass-partition-jvc': {
+      id: '/glass-partition-jvc'
+      path: '/glass-partition-jvc'
+      fullPath: '/glass-partition-jvc'
+      preLoaderRoute: typeof GlassPartitionJvcRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/glass-partition-dubai-marina': {
+      id: '/glass-partition-dubai-marina'
+      path: '/glass-partition-dubai-marina'
+      fullPath: '/glass-partition-dubai-marina'
+      preLoaderRoute: typeof GlassPartitionDubaiMarinaRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/glass-partition-dubai': {
       id: '/glass-partition-dubai'
       path: '/glass-partition-dubai'
       fullPath: '/glass-partition-dubai'
       preLoaderRoute: typeof GlassPartitionDubaiRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/glass-partition-deira': {
+      id: '/glass-partition-deira'
+      path: '/glass-partition-deira'
+      fullPath: '/glass-partition-deira'
+      preLoaderRoute: typeof GlassPartitionDeiraRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/glass-partition-business-bay': {
+      id: '/glass-partition-business-bay'
+      path: '/glass-partition-business-bay'
+      fullPath: '/glass-partition-business-bay'
+      preLoaderRoute: typeof GlassPartitionBusinessBayRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/glass-partition-al-qusais': {
+      id: '/glass-partition-al-qusais'
+      path: '/glass-partition-al-qusais'
+      fullPath: '/glass-partition-al-qusais'
+      preLoaderRoute: typeof GlassPartitionAlQusaisRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/glass-partition-al-nahda': {
+      id: '/glass-partition-al-nahda'
+      path: '/glass-partition-al-nahda'
+      fullPath: '/glass-partition-al-nahda'
+      preLoaderRoute: typeof GlassPartitionAlNahdaRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/glass-partition-ajman': {
+      id: '/glass-partition-ajman'
+      path: '/glass-partition-ajman'
+      fullPath: '/glass-partition-ajman'
+      preLoaderRoute: typeof GlassPartitionAjmanRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/glass-facade-dubai': {
@@ -644,7 +806,15 @@ const rootRouteChildren: RootRouteChildren = {
   ContactRoute: ContactRoute,
   GlassDoorInstallationDubaiRoute: GlassDoorInstallationDubaiRoute,
   GlassFacadeDubaiRoute: GlassFacadeDubaiRoute,
+  GlassPartitionAjmanRoute: GlassPartitionAjmanRoute,
+  GlassPartitionAlNahdaRoute: GlassPartitionAlNahdaRoute,
+  GlassPartitionAlQusaisRoute: GlassPartitionAlQusaisRoute,
+  GlassPartitionBusinessBayRoute: GlassPartitionBusinessBayRoute,
+  GlassPartitionDeiraRoute: GlassPartitionDeiraRoute,
   GlassPartitionDubaiRoute: GlassPartitionDubaiRoute,
+  GlassPartitionDubaiMarinaRoute: GlassPartitionDubaiMarinaRoute,
+  GlassPartitionJvcRoute: GlassPartitionJvcRoute,
+  GlassPartitionSharjahRoute: GlassPartitionSharjahRoute,
   GlassRailingDubaiRoute: GlassRailingDubaiRoute,
   GlassServicesRoute: GlassServicesRoute,
   GlassShopfrontDubaiRoute: GlassShopfrontDubaiRoute,
