@@ -15,9 +15,9 @@ export const Route = createFileRoute("/about")({
       { name: "description", content: D },
       { property: "og:title", content: T },
       { property: "og:description", content: D },
-      { property: "og:url", content: "/about" },
+      { property: "og:url", content: "https://glasseruae.com/about" },
     ],
-    links: [{ rel: "canonical", href: "/about" }],
+    links: [{ rel: "canonical", href: "https://glasseruae.com/about" }],
   }),
   component: () => (
     <Layout>
