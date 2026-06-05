@@ -12,9 +12,9 @@ export const Route = createFileRoute("/contact")({
       { name: "description", content: D },
       { property: "og:title", content: T },
       { property: "og:description", content: D },
-      { property: "og:url", content: "/contact" },
+      { property: "og:url", content: "https://glasseruae.com/contact" },
     ],
-    links: [{ rel: "canonical", href: "/contact" }],
+    links: [{ rel: "canonical", href: "https://glasseruae.com/contact" }],
     scripts: [
       {
         type: "application/ld+json",
