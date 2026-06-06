@@ -15,6 +15,8 @@ import { Route as ShowerGlassDubaiRouteImport } from './routes/shower-glass-duba
 import { Route as ServicesRouteImport } from './routes/services'
 import { Route as ProjectsRouteImport } from './routes/projects'
 import { Route as OfficeGlassPartitionDubaiRouteImport } from './routes/office-glass-partition-dubai'
+import { Route as IndexDothtmlRouteImport } from './routes/index[.]html'
+import { Route as HomeRouteImport } from './routes/home'
 import { Route as GlassShopfrontDubaiRouteImport } from './routes/glass-shopfront-dubai'
 import { Route as GlassServicesRouteImport } from './routes/glass-services'
 import { Route as GlassRailingDubaiRouteImport } from './routes/glass-railing-dubai'
@@ -88,6 +90,16 @@ const OfficeGlassPartitionDubaiRoute =
     path: '/office-glass-partition-dubai',
     getParentRoute: () => rootRouteImport,
   } as any)
+const IndexDothtmlRoute = IndexDothtmlRouteImport.update({
+  id: '/index.html',
+  path: '/index.html',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const HomeRoute = HomeRouteImport.update({
+  id: '/home',
+  path: '/home',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const GlassShopfrontDubaiRoute = GlassShopfrontDubaiRouteImport.update({
   id: '/glass-shopfront-dubai',
   path: '/glass-shopfront-dubai',
@@ -332,6 +344,8 @@ export interface FileRoutesByFullPath {
   '/glass-railing-dubai': typeof GlassRailingDubaiRoute
   '/glass-services': typeof GlassServicesRoute
   '/glass-shopfront-dubai': typeof GlassShopfrontDubaiRoute
+  '/home': typeof HomeRoute
+  '/index.html': typeof IndexDothtmlRoute
   '/office-glass-partition-dubai': typeof OfficeGlassPartitionDubaiRoute
   '/projects': typeof ProjectsRouteWithChildren
   '/services': typeof ServicesRouteWithChildren
@@ -380,6 +394,8 @@ export interface FileRoutesByTo {
   '/glass-railing-dubai': typeof GlassRailingDubaiRoute
   '/glass-services': typeof GlassServicesRoute
   '/glass-shopfront-dubai': typeof GlassShopfrontDubaiRoute
+  '/home': typeof HomeRoute
+  '/index.html': typeof IndexDothtmlRoute
   '/office-glass-partition-dubai': typeof OfficeGlassPartitionDubaiRoute
   '/projects': typeof ProjectsRouteWithChildren
   '/shower-glass-dubai': typeof ShowerGlassDubaiRoute
@@ -428,6 +444,8 @@ export interface FileRoutesById {
   '/glass-railing-dubai': typeof GlassRailingDubaiRoute
   '/glass-services': typeof GlassServicesRoute
   '/glass-shopfront-dubai': typeof GlassShopfrontDubaiRoute
+  '/home': typeof HomeRoute
+  '/index.html': typeof IndexDothtmlRoute
   '/office-glass-partition-dubai': typeof OfficeGlassPartitionDubaiRoute
   '/projects': typeof ProjectsRouteWithChildren
   '/services': typeof ServicesRouteWithChildren
@@ -478,6 +496,8 @@ export interface FileRouteTypes {
     | '/glass-railing-dubai'
     | '/glass-services'
     | '/glass-shopfront-dubai'
+    | '/home'
+    | '/index.html'
     | '/office-glass-partition-dubai'
     | '/projects'
     | '/services'
@@ -526,6 +546,8 @@ export interface FileRouteTypes {
     | '/glass-railing-dubai'
     | '/glass-services'
     | '/glass-shopfront-dubai'
+    | '/home'
+    | '/index.html'
     | '/office-glass-partition-dubai'
     | '/projects'
     | '/shower-glass-dubai'
@@ -573,6 +595,8 @@ export interface FileRouteTypes {
     | '/glass-railing-dubai'
     | '/glass-services'
     | '/glass-shopfront-dubai'
+    | '/home'
+    | '/index.html'
     | '/office-glass-partition-dubai'
     | '/projects'
     | '/services'
@@ -622,6 +646,8 @@ export interface RootRouteChildren {
   GlassRailingDubaiRoute: typeof GlassRailingDubaiRoute
   GlassServicesRoute: typeof GlassServicesRoute
   GlassShopfrontDubaiRoute: typeof GlassShopfrontDubaiRoute
+  HomeRoute: typeof HomeRoute
+  IndexDothtmlRoute: typeof IndexDothtmlRoute
   OfficeGlassPartitionDubaiRoute: typeof OfficeGlassPartitionDubaiRoute
   ProjectsRoute: typeof ProjectsRouteWithChildren
   ServicesRoute: typeof ServicesRouteWithChildren
@@ -673,6 +699,20 @@ declare module '@tanstack/react-router' {
       path: '/office-glass-partition-dubai'
       fullPath: '/office-glass-partition-dubai'
       preLoaderRoute: typeof OfficeGlassPartitionDubaiRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/index.html': {
+      id: '/index.html'
+      path: '/index.html'
+      fullPath: '/index.html'
+      preLoaderRoute: typeof IndexDothtmlRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/home': {
+      id: '/home'
+      path: '/home'
+      fullPath: '/home'
+      preLoaderRoute: typeof HomeRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/glass-shopfront-dubai': {
@@ -1055,6 +1095,8 @@ const rootRouteChildren: RootRouteChildren = {
   GlassRailingDubaiRoute: GlassRailingDubaiRoute,
   GlassServicesRoute: GlassServicesRoute,
   GlassShopfrontDubaiRoute: GlassShopfrontDubaiRoute,
+  HomeRoute: HomeRoute,
+  IndexDothtmlRoute: IndexDothtmlRoute,
   OfficeGlassPartitionDubaiRoute: OfficeGlassPartitionDubaiRoute,
   ProjectsRoute: ProjectsRouteWithChildren,
   ServicesRoute: ServicesRouteWithChildren,
