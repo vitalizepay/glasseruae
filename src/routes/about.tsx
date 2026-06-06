@@ -6,7 +6,7 @@ import { Testimonials } from "@/components/site/Testimonials";
 import { CTA } from "@/components/site/CTA";
 
 const T = "About Glasser UAE — Dubai Glass & Aluminium Experts";
-const D = "Glasser Technical Works LLC — 15+ years of premium glass and aluminium installations for homes, offices and hotels across the UAE.";
+const D = "Glasser Technical Works LLC — 7+ years of premium glass and aluminium installations for homes, offices and hotels across the UAE.";
 
 export const Route = createFileRoute("/about")({
   head: () => ({
