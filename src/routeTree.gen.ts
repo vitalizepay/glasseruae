@@ -9,6 +9,7 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
+import { Route as TamilfoodmenuRouteImport } from './routes/tamilfoodmenu'
 import { Route as SkylightInstallationDubaiRouteImport } from './routes/skylight-installation-dubai'
 import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
 import { Route as ShowerGlassDubaiRouteImport } from './routes/shower-glass-dubai'
@@ -58,6 +59,11 @@ import { Route as BlogBestGlassPartitionCompanyDubaiRouteImport } from './routes
 import { Route as BlogAluminiumFabricationServicesDubaiRouteImport } from './routes/blog.aluminium-fabrication-services-dubai'
 import { Route as ApiChatRouteImport } from './routes/api/chat'
 
+const TamilfoodmenuRoute = TamilfoodmenuRouteImport.update({
+  id: '/tamilfoodmenu',
+  path: '/tamilfoodmenu',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const SkylightInstallationDubaiRoute =
   SkylightInstallationDubaiRouteImport.update({
     id: '/skylight-installation-dubai',
@@ -352,6 +358,7 @@ export interface FileRoutesByFullPath {
   '/shower-glass-dubai': typeof ShowerGlassDubaiRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/skylight-installation-dubai': typeof SkylightInstallationDubaiRoute
+  '/tamilfoodmenu': typeof TamilfoodmenuRoute
   '/api/chat': typeof ApiChatRoute
   '/blog/aluminium-fabrication-services-dubai': typeof BlogAluminiumFabricationServicesDubaiRoute
   '/blog/best-glass-partition-company-dubai': typeof BlogBestGlassPartitionCompanyDubaiRoute
@@ -401,6 +408,7 @@ export interface FileRoutesByTo {
   '/shower-glass-dubai': typeof ShowerGlassDubaiRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/skylight-installation-dubai': typeof SkylightInstallationDubaiRoute
+  '/tamilfoodmenu': typeof TamilfoodmenuRoute
   '/api/chat': typeof ApiChatRoute
   '/blog/aluminium-fabrication-services-dubai': typeof BlogAluminiumFabricationServicesDubaiRoute
   '/blog/best-glass-partition-company-dubai': typeof BlogBestGlassPartitionCompanyDubaiRoute
@@ -452,6 +460,7 @@ export interface FileRoutesById {
   '/shower-glass-dubai': typeof ShowerGlassDubaiRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/skylight-installation-dubai': typeof SkylightInstallationDubaiRoute
+  '/tamilfoodmenu': typeof TamilfoodmenuRoute
   '/api/chat': typeof ApiChatRoute
   '/blog/aluminium-fabrication-services-dubai': typeof BlogAluminiumFabricationServicesDubaiRoute
   '/blog/best-glass-partition-company-dubai': typeof BlogBestGlassPartitionCompanyDubaiRoute
@@ -504,6 +513,7 @@ export interface FileRouteTypes {
     | '/shower-glass-dubai'
     | '/sitemap.xml'
     | '/skylight-installation-dubai'
+    | '/tamilfoodmenu'
     | '/api/chat'
     | '/blog/aluminium-fabrication-services-dubai'
     | '/blog/best-glass-partition-company-dubai'
@@ -553,6 +563,7 @@ export interface FileRouteTypes {
     | '/shower-glass-dubai'
     | '/sitemap.xml'
     | '/skylight-installation-dubai'
+    | '/tamilfoodmenu'
     | '/api/chat'
     | '/blog/aluminium-fabrication-services-dubai'
     | '/blog/best-glass-partition-company-dubai'
@@ -603,6 +614,7 @@ export interface FileRouteTypes {
     | '/shower-glass-dubai'
     | '/sitemap.xml'
     | '/skylight-installation-dubai'
+    | '/tamilfoodmenu'
     | '/api/chat'
     | '/blog/aluminium-fabrication-services-dubai'
     | '/blog/best-glass-partition-company-dubai'
@@ -654,11 +666,19 @@ export interface RootRouteChildren {
   ShowerGlassDubaiRoute: typeof ShowerGlassDubaiRoute
   SitemapDotxmlRoute: typeof SitemapDotxmlRoute
   SkylightInstallationDubaiRoute: typeof SkylightInstallationDubaiRoute
+  TamilfoodmenuRoute: typeof TamilfoodmenuRoute
   ApiChatRoute: typeof ApiChatRoute
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
+    '/tamilfoodmenu': {
+      id: '/tamilfoodmenu'
+      path: '/tamilfoodmenu'
+      fullPath: '/tamilfoodmenu'
+      preLoaderRoute: typeof TamilfoodmenuRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/skylight-installation-dubai': {
       id: '/skylight-installation-dubai'
       path: '/skylight-installation-dubai'
@@ -1103,8 +1123,19 @@ const rootRouteChildren: RootRouteChildren = {
   ShowerGlassDubaiRoute: ShowerGlassDubaiRoute,
   SitemapDotxmlRoute: SitemapDotxmlRoute,
   SkylightInstallationDubaiRoute: SkylightInstallationDubaiRoute,
+  TamilfoodmenuRoute: TamilfoodmenuRoute,
   ApiChatRoute: ApiChatRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
   ._addFileTypes<FileRouteTypes>()
+
+import type { getRouter } from './router.tsx'
+import type { startInstance } from './start.ts'
+declare module '@tanstack/react-start' {
+  interface Register {
+    ssr: true
+    router: Awaited<ReturnType<typeof getRouter>>
+    config: Awaited<ReturnType<typeof startInstance.getOptions>>
+  }
+}
