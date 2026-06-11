@@ -41,6 +41,9 @@ const PATHS: { path: string; priority: string }[] = [
   { path: "/glass-partition-sharjah", priority: "0.85" },
   { path: "/glass-partition-ajman", priority: "0.85" },
 
+  { path: "/projects/office-glass-partition-installation-dubai", priority: "0.8" },
+  { path: "/projects/luxury-frameless-villa-glass-dubai", priority: "0.8" },
+  { path: "/projects/premium-waterfront-glass-palm-jumeirah", priority: "0.8" },
   { path: "/projects/office-glass-partition-al-qusais", priority: "0.7" },
   { path: "/projects/shower-glass-installation-jvc", priority: "0.7" },
   { path: "/projects/aluminium-shopfront-sharjah", priority: "0.7" },
