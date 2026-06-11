@@ -38,6 +38,9 @@ export const SEO_LOCATIONS = [
 ] as const;
 
 export const SEO_PROJECTS = [
+  { to: "/projects/office-glass-partition-installation-dubai", label: "Office Glass Partition Installation — Dubai" },
+  { to: "/projects/luxury-frameless-villa-glass-dubai", label: "Luxury Frameless Villa Glass — Dubai" },
+  { to: "/projects/premium-waterfront-glass-palm-jumeirah", label: "Premium Waterfront Glass — Palm Jumeirah" },
   { to: "/projects/office-glass-partition-al-qusais", label: "Office Glass Partition — Al Qusais" },
   { to: "/projects/shower-glass-installation-jvc", label: "Shower Glass Installation — JVC" },
   { to: "/projects/aluminium-shopfront-sharjah", label: "Aluminium Shopfront — Sharjah" },

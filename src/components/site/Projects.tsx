@@ -1,13 +1,14 @@
 import { motion } from "framer-motion";
+import { Link } from "@tanstack/react-router";
 import { ArrowUpRight } from "lucide-react";
-import villa from "@/assets/project-villa.jpg";
-import office from "@/assets/project-office.jpg";
-import hotel from "@/assets/project-hotel.jpg";
+import office from "@/assets/office-glass-partition-black-frame.jpg.asset.json";
+import villa from "@/assets/luxury-frameless-villa-glass.jpg.asset.json";
+import waterfront from "@/assets/waterfront-villa-glass-palm-jumeirah.jpg.asset.json";
 
 const PROJECTS = [
-  { img: villa, title: "Luxury Villa Facade", cat: "Residential · Emirates Hills", year: "2024" },
-  { img: office, title: "Corporate Office Partitions", cat: "Commercial · DIFC", year: "2024" },
-  { img: hotel, title: "Hospitality Lobby", cat: "Hotel · Downtown Dubai", year: "2023" },
+  { img: office.url, alt: "Office Glass Partition Dubai with black aluminium frame", title: "Office Glass Partition Installation", cat: "Commercial · Dubai", year: "2025", to: "/projects/office-glass-partition-installation-dubai" },
+  { img: villa.url, alt: "Luxury Frameless Villa Glass Installation Dubai", title: "Luxury Frameless Villa Glass", cat: "Residential · Dubai Waterfront", year: "2025", to: "/projects/luxury-frameless-villa-glass-dubai" },
+  { img: waterfront.url, alt: "Villa Glass Installation Dubai — Palm Jumeirah waterfront", title: "Premium Waterfront Glass Works", cat: "Villa · Palm Jumeirah", year: "2025", to: "/projects/premium-waterfront-glass-palm-jumeirah" },
 ];
 
 export function Projects() {
@@ -36,10 +37,11 @@ export function Projects() {
               transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
               className="group relative overflow-hidden rounded-[2rem] bg-stone"
             >
+              <Link to={p.to} className="absolute inset-0 z-10" aria-label={p.title} />
               <div className="relative aspect-[21/9] overflow-hidden">
                 <img
                   src={p.img}
-                  alt={p.title}
+                  alt={p.alt}
                   className="w-full h-full object-cover transition-transform duration-[1400ms] group-hover:scale-105"
                   loading="lazy"
                 />

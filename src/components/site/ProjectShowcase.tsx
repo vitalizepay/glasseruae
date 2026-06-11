@@ -98,9 +98,9 @@ export function ProjectShowcase(p: ProjectShowcaseProps) {
       <section className="py-20 bg-navy text-white">
         <div className="container mx-auto px-6 max-w-3xl text-center">
           <h2 className="text-3xl md:text-5xl font-light">Have a similar project?</h2>
-          <p className="mt-4 text-white/70 font-light">Tell us about your space — we'll send a fixed-price quote within 24 hours.</p>
+          <p className="mt-4 text-white/70 font-light">Tell us about your space — we'll arrange a free on-site visit within 24 hours.</p>
           <Link to="/contact" className="mt-8 inline-flex items-center gap-2 px-7 py-3.5 rounded-full bg-orange text-orange-foreground font-medium hover:bg-orange/90 transition">
-            Request a quote <ArrowRight size={16} />
+            Request Free Site Visit <ArrowRight size={16} />
           </Link>
         </div>
       </section>
