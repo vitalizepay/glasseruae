@@ -1,27 +1,38 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { useState, useMemo } from "react";
-import { Phone, MessageCircle, Search, MapPin } from "lucide-react";
+import { useState, useMemo, useEffect } from "react";
+import { Phone, MessageCircle, Search, MapPin, Navigation, ArrowUp } from "lucide-react";
 
-const CATEGORIES = [
+const PHONE_TEL = "+97165220875";
+const PHONE_DISPLAY = "+971 6 522 0875";
+const WA_NUM = "971544205511";
+const WA_DISPLAY = "+971 54 420 5511";
+const DIRECTIONS_URL =
+  "https://www.google.com/maps/dir/?api=1&destination=Fajr+Al+Nahda+Restaurant+Sharjah";
+
+type Item = { name: string; price: number };
+type Category = { name: string; icon: string; items: Item[] };
+
+const CATEGORIES: Category[] = [
   {
     name: "Breakfast",
+    icon: "🌅",
     items: [
-      { name: "Idli Set (3 Pcs)", price: 6 },
-      { name: "Mini Tiffin", price: 6 },
-      { name: "Vada Set (3 Pcs)", price: 6 },
+      { name: "Idli Set (3 pcs)", price: 6 },
+      { name: "Idli Vada (2 Idli + 1 Vada)", price: 6 },
+      { name: "Vada Set (3 pcs)", price: 6 },
       { name: "Sambar Vada", price: 3 },
-      { name: "Poori Masala", price: 6 },
-      { name: "Set Dosa", price: 6 },
-      { name: "Plain Dosa", price: 4 },
-      { name: "Idiyappam", price: 6 },
+      { name: "Pongal + Vada", price: 6 },
+      { name: "Set Dosa (2 pcs)", price: 6 },
+      { name: "Poori Set", price: 7 },
+      { name: "Idiyappam (3 pcs)", price: 6 },
+      { name: "Plain Roast", price: 5 },
       { name: "Ghee Roast", price: 8 },
-      { name: "Plain Roast", price: 8 },
       { name: "Onion Roast", price: 8 },
-      { name: "Rava Roast", price: 8 },
+      { name: "Rava Upma", price: 6 },
       { name: "Semiya Kichadi", price: 6 },
-      { name: "Rava Masala Dosa", price: 8 },
+      { name: "Mysore Masala Dosa", price: 8 },
       { name: "Masala Dosa", price: 7 },
-      { name: "Onion Dosa", price: 7 },
+      { name: "Paper Dosa", price: 10 },
       { name: "Egg Dosa", price: 8 },
       { name: "Onion Uthappam", price: 7 },
       { name: "Tomato Uthappam", price: 7 },
@@ -33,299 +44,413 @@ const CATEGORIES = [
   },
   {
     name: "Special Dosa",
+    icon: "🥞",
     items: [
+      { name: "Mutton Dosa", price: 14 },
       { name: "Chicken Dosa", price: 10 },
       { name: "Mushroom Dosa", price: 9 },
-      { name: "Mutton Dosa", price: 14 },
-      { name: "Fish Dosa", price: 14 },
+      { name: "Paneer Dosa", price: 9 },
       { name: "Prawn Dosa", price: 14 },
     ],
   },
   {
-    name: "South Indian Thali",
+    name: "Thali",
+    icon: "🍱",
     items: [
-      { name: "Veg Thali", price: 13 },
-      { name: "South Indian Thali", price: 15 },
-      { name: "Variety Rice + Chicken Curry", price: 10 },
+      { name: "South Indian Thali Veg", price: 13 },
+      { name: "South Indian Thali Chicken/Fish", price: 15 },
+      { name: "Variety Rice", price: 10 },
     ],
   },
   {
-    name: "Special Dum Biryani",
+    name: "Biryani",
+    icon: "🍚",
     items: [
+      { name: "Chicken 65 Biryani", price: 19 },
       { name: "Chicken Biryani", price: 17 },
       { name: "Mutton Biryani", price: 19 },
       { name: "Egg Biryani", price: 13 },
+      { name: "Prawns Biryani", price: 18 },
       { name: "Fish Biryani", price: 17 },
-      { name: "Prawn Biryani", price: 17 },
       { name: "Plain Biryani", price: 11 },
     ],
   },
   {
     name: "Fried Rice",
+    icon: "🍛",
     items: [
       { name: "Vegetable Fried Rice", price: 12 },
-      { name: "Chicken Fried Rice", price: 15 },
-      { name: "Egg Fried Rice", price: 13 },
-      { name: "Ginger Fried Rice", price: 11 },
+      { name: "Ghee Rice", price: 11 },
+      { name: "Jeera Rice", price: 11 },
       { name: "Gobi Fried Rice", price: 13 },
+      { name: "Ginger Fried Rice", price: 11 },
+      { name: "Egg Fried Rice", price: 13 },
+      { name: "Chicken Fried Rice", price: 15 },
       { name: "Mutton Fried Rice", price: 16 },
-      { name: "Mixed Fried Rice", price: 19 },
+      { name: "Mix Fried Rice", price: 19 },
       { name: "Schezwan Egg Fried Rice", price: 14 },
-      { name: "Schezwan Chicken Fried Rice", price: 17 },
+      { name: "Schezwan Chicken Fried Rice", price: 16 },
       { name: "Schezwan Mutton Fried Rice", price: 17 },
-      { name: "Prawn Fried Rice", price: 19 },
+      { name: "Prawns Fried Rice", price: 19 },
     ],
   },
   {
     name: "Noodles",
+    icon: "🍜",
     items: [
-      { name: "Vegetable Noodles", price: 13 },
+      { name: "Veg Noodles", price: 12 },
       { name: "Egg Noodles", price: 13 },
+      { name: "Mix Noodles", price: 18 },
       { name: "Chicken Noodles", price: 15 },
       { name: "Mutton Noodles", price: 16 },
       { name: "Prawn Noodles", price: 16 },
+      { name: "Schezwan Veg Noodles", price: 13 },
+      { name: "Schezwan Egg Noodles", price: 14 },
+      { name: "Schezwan Chicken Noodles", price: 16 },
+      { name: "Schezwan Mutton Noodles", price: 17 },
     ],
   },
   {
-    name: "Dinner & Parotta",
+    name: "Dinner",
+    icon: "🫓",
     items: [
       { name: "Parotta", price: 1.5 },
-      { name: "Parotta Set", price: 2 },
-      { name: "Wheat Parotta", price: 1 },
+      { name: "Parotta Set", price: 6 },
+      { name: "Wheat Parotta", price: 2 },
+      { name: "Wheat Parotta Set", price: 7 },
+      { name: "Chapathi", price: 1 },
+      { name: "Chapathi Set", price: 6 },
+      { name: "Egg Lappa", price: 7 },
+      { name: "Vege Plain Parotta", price: 4 },
+      { name: "Egg Vege Parotta", price: 6 },
       { name: "Egg Kothu Parotta", price: 13 },
-      { name: "Chicken Kothu Parotta", price: 16 },
-      { name: "Mutton Kothu Parotta", price: 16 },
+      { name: "Kothu Parotta Vegetable", price: 12 },
+      { name: "Kothu Parotta Chicken", price: 14 },
+      { name: "Kothu Parotta Mutton", price: 16 },
+      { name: "Kothu Parotta Prawn", price: 17 },
       { name: "Mix Kothu Parotta", price: 16 },
+      { name: "Chicken Lappa", price: 10 },
+      { name: "Chicken Murtaba", price: 10 },
     ],
   },
   {
-    name: "Vegetable Dishes",
+    name: "Special Items",
+    icon: "⭐",
     items: [
-      { name: "Green Peas Masala", price: 8 },
-      { name: "Gobi 65", price: 13 },
-      { name: "Mix Vegetable", price: 8 },
-      { name: "Paneer Masala", price: 14 },
-      { name: "Mushroom Masala", price: 13 },
-      { name: "Kadai Paneer", price: 14 },
-      { name: "Butter Paneer", price: 13 },
-      { name: "Dal Fry", price: 10 },
+      { name: "Kada 65", price: 12 },
+      { name: "Kada Masala", price: 12 },
+      { name: "Kada Pepper Dry & Masala", price: 12 },
     ],
   },
   {
-    name: "Chicken Dishes",
+    name: "FNR Special",
+    icon: "👑",
     items: [
-      { name: "Chicken Chilli", price: 14 },
-      { name: "Chicken Curry", price: 14 },
-      { name: "Chicken Masala", price: 14 },
-      { name: "Chicken 65", price: 14 },
-      { name: "Chicken Garlic", price: 14 },
-      { name: "Chicken Butter", price: 14 },
-      { name: "Chicken Pepper", price: 14 },
-    ],
-  },
-  {
-    name: "Mutton Dishes",
-    items: [
-      { name: "Mutton Curry", price: 16 },
-      { name: "Mutton Masala", price: 16 },
-      { name: "Mutton Sukka", price: 16 },
-      { name: "Mutton Pepper Fry", price: 16 },
-    ],
-  },
-  {
-    name: "Seafood",
-    items: [
-      { name: "Fish Fry", price: 12 },
-      { name: "Fish Chilli", price: 14 },
-      { name: "Fish Masala", price: 16 },
-      { name: "Prawns Masala", price: 16 },
-      { name: "Prawns Ginger", price: 16 },
-      { name: "Prawns Sukka", price: 16 },
-    ],
-  },
-  {
-    name: "Egg Dishes",
-    items: [
-      { name: "Egg Roast", price: 6 },
-      { name: "Egg Curry", price: 6 },
-      { name: "Single Omelette", price: 3 },
-      { name: "Double Omelette", price: 6 },
-      { name: "Half Boil", price: 2 },
-      { name: "Egg Kalakki", price: 3 },
-    ],
-  },
-  {
-    name: "Soups",
-    items: [
-      { name: "Vegetable Soup", price: 6 },
-      { name: "Chicken Soup", price: 8 },
-      { name: "Mutton Soup", price: 7 },
-      { name: "Nandu Soup", price: 15 },
-    ],
-  },
-  {
-    name: "Hot & Cold Drinks",
-    items: [
-      { name: "Fresh Milk", price: 1 },
-      { name: "Coffee", price: 3 },
-      { name: "Tea", price: 1 },
-      { name: "Soft Drinks", price: 3 },
-      { name: "Badam Milk", price: 3 },
-      { name: "Sukku Milk", price: 2 },
-    ],
-  },
-  {
-    name: "Chef Special",
-    items: [
-      { name: "Crab Roast", price: 15 },
+      { name: "Crab Masala", price: 15 },
       { name: "Mutton Liver", price: 13 },
-      { name: "Mutton Brain", price: 13 },
+      { name: "Mutton Boti", price: 13 },
       { name: "Mutton Paya", price: 11 },
-      { name: "Chicken 555", price: 15 },
-      { name: "Chicken Chettinad", price: 17 },
+      { name: "Mutton Head", price: 15 },
+      { name: "Chicken 555 Dry", price: 15 },
+      { name: "Chicken Chettinadu", price: 15 },
+      { name: "Chicken Chinthamani", price: 17 },
+      { name: "Chicken Monika Dry", price: 15 },
+      { name: "Chicken Maharaja Dry", price: 15 },
+      { name: "Chicken Nattukozhi", price: 15 },
+      { name: "Squid Roast", price: 15 },
     ],
   },
 ];
 
+const slug = (s: string) => s.toLowerCase().replace(/[^a-z0-9]+/g, "-");
+
 export const Route = createFileRoute("/tamilfoodmenu")({
   head: () => ({
     meta: [
-      { title: "FAJR AL NAHDA RESTAURANT — Tamil, South Indian, Arabian & Chinese Cuisine" },
-      { name: "description", content: "Menu for FAJR AL NAHDA RESTAURANT in Al Nahda, Sharjah. Breakfast, Biryani, Fried Rice, Parotta, Chicken, Mutton, Seafood & more." },
-      { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { name: "theme-color", content: "#ffffff" },
-      { property: "og:title", content: "FAJR AL NAHDA RESTAURANT" },
-      { property: "og:description", content: "Authentic Tamil, South Indian, Arabian & Chinese Cuisine — Al Nahda, Sharjah" },
+      { title: "Fajr Al Nahda Restaurant | Tamil Restaurant in Sharjah" },
+      {
+        name: "description",
+        content:
+          "Authentic Tamil, South Indian, Arabian and Chinese Cuisine in Sharjah. Breakfast, Biryani, Dosa, Parotta, Seafood, Monthly Mess and Home Delivery Available.",
+      },
+      {
+        name: "keywords",
+        content:
+          "Tamil Restaurant Sharjah, South Indian Restaurant Sharjah, Breakfast Sharjah, Biryani Sharjah, Parotta Sharjah, Tamil Food UAE, Monthly Mess Sharjah, Home Delivery Sharjah",
+      },
+      { name: "viewport", content: "width=device-width, initial-scale=1, maximum-scale=5" },
+      { name: "theme-color", content: "#C62828" },
+      { property: "og:title", content: "Fajr Al Nahda Restaurant | Tamil Restaurant in Sharjah" },
+      {
+        property: "og:description",
+        content:
+          "Authentic Tamil, South Indian, Arabian & Chinese Cuisine — Al Nahda, Sharjah. Monthly mess and home delivery available.",
+      },
+      { property: "og:type", content: "restaurant" },
     ],
-    links: [{ rel: "canonical", href: "https://glasseruae.com/tamilfoodmenu" }],
+    links: [
+      { rel: "canonical", href: "https://glasseruae.com/tamilfoodmenu" },
+      { rel: "preconnect", href: "https://fonts.googleapis.com" },
+      { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },
+      {
+        rel: "stylesheet",
+        href: "https://fonts.googleapis.com/css2?family=Yatra+One&family=Poppins:wght@400;500;600;700&display=swap",
+      },
+    ],
   }),
   component: TamilFoodMenuPage,
 });
 
 function TamilFoodMenuPage() {
   const [query, setQuery] = useState("");
-  const [activeCategory, setActiveCategory] = useState<string | null>(null);
+  const [activeCat, setActiveCat] = useState<string>(CATEGORIES[0].name);
+  const [showTop, setShowTop] = useState(false);
 
-  const filteredCategories = useMemo(() => {
+  useEffect(() => {
+    const onScroll = () => setShowTop(window.scrollY > 600);
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+
+  const filtered = useMemo(() => {
     if (!query.trim()) return CATEGORIES;
     const q = query.toLowerCase();
-    return CATEGORIES.map((cat) => ({
-      ...cat,
-      items: cat.items.filter(
-        (item) =>
-          item.name.toLowerCase().includes(q) ||
-          cat.name.toLowerCase().includes(q)
+    return CATEGORIES.map((c) => ({
+      ...c,
+      items: c.items.filter(
+        (i) => i.name.toLowerCase().includes(q) || c.name.toLowerCase().includes(q),
       ),
-    })).filter((cat) => cat.items.length > 0);
+    })).filter((c) => c.items.length > 0);
   }, [query]);
 
-  const handleCategoryClick = (name: string) => {
-    setActiveCategory(name);
-    const el = document.getElementById(`cat-${name}`);
+  const jumpTo = (name: string) => {
+    setActiveCat(name);
+    const el = document.getElementById(`cat-${slug(name)}`);
     if (el) {
-      const y = el.getBoundingClientRect().top + window.scrollY - 116; // offset for sticky header
-      window.scrollTo({ top: y, behavior: "instant" });
+      const y = el.getBoundingClientRect().top + window.scrollY - 130;
+      window.scrollTo({ top: y, behavior: "smooth" });
     }
   };
 
+  const fmt = (p: number) => (p % 1 === 0 ? p.toFixed(0) : p.toFixed(2));
+
   return (
-    <div className="min-h-screen bg-white text-gray-900 font-sans pb-24">
-      {/* Header */}
-      <header className="bg-white border-b border-gray-200 sticky top-0 z-30">
-        <div className="max-w-3xl mx-auto px-4 pt-5 pb-3">
-          <h1 className="text-center text-2xl sm:text-3xl font-bold tracking-tight text-gray-900">
-            FAJR AL NAHDA RESTAURANT
+    <div
+      className="min-h-screen pb-28"
+      style={{
+        background: "#FFFDF7",
+        color: "#222222",
+        fontFamily: "'Poppins', system-ui, sans-serif",
+      }}
+    >
+      <style>{`
+        .font-display { font-family: 'Yatra One', 'Poppins', serif; letter-spacing: 0.5px; }
+        .tamil-pattern {
+          background-color: #C62828;
+          background-image:
+            radial-gradient(circle at 20% 20%, rgba(255,255,255,0.08) 2px, transparent 3px),
+            radial-gradient(circle at 80% 50%, rgba(255,152,0,0.18) 2px, transparent 3px),
+            radial-gradient(circle at 40% 80%, rgba(255,255,255,0.08) 2px, transparent 3px);
+          background-size: 40px 40px, 60px 60px, 50px 50px;
+        }
+        .hero-bg {
+          background:
+            linear-gradient(rgba(198,40,40,0.85), rgba(198,40,40,0.75)),
+            url('https://images.unsplash.com/photo-1606491956689-2ea866880c84?auto=format&fit=crop&w=1080&q=70') center/cover;
+        }
+        .scrollbar-hide::-webkit-scrollbar { display: none; }
+        .scrollbar-hide { -ms-overflow-style: none; scrollbar-width: none; }
+        html { scroll-behavior: smooth; }
+      `}</style>
+
+      {/* Hero Header */}
+      <header className="hero-bg text-white">
+        <div className="max-w-2xl mx-auto px-4 pt-7 pb-6 text-center">
+          <div className="mx-auto w-20 h-20 rounded-full bg-white/95 flex items-center justify-center shadow-lg mb-3">
+            <span className="text-4xl">🍛</span>
+          </div>
+          <h1 className="font-display text-3xl sm:text-4xl leading-tight" style={{ color: "#FFFDF7" }}>
+            FAJR AL NAHDA
+            <br />
+            <span style={{ color: "#FF9800" }}>RESTAURANT</span>
           </h1>
-          <p className="text-center text-sm sm:text-base text-gray-600 mt-1">
-            Authentic Tamil, South Indian, Arabian & Chinese Cuisine
+          <p className="mt-2 text-sm sm:text-base text-white/95 italic">
+            Authentic Tamil, South Indian,
+            <br className="sm:hidden" /> Arabian & Chinese Cuisine
           </p>
-          <div className="mt-3 flex flex-col items-center gap-1 text-sm text-gray-700">
-            <div className="flex items-center gap-1.5">
-              <MapPin size={14} className="text-red-600" />
-              <span>Al Tohira Building, Shop No. 2, Al Nahda, Sharjah, UAE</span>
+          <div className="mt-3 flex items-start justify-center gap-1.5 text-sm text-white/95">
+            <MapPin size={16} className="mt-0.5 shrink-0" style={{ color: "#FF9800" }} />
+            <span>
+              Al Tohira Building, Shop No.2,
+              <br className="sm:hidden" /> Al Nahda, Sharjah, UAE
+            </span>
+          </div>
+
+          {/* Action buttons */}
+          <div className="mt-5 grid grid-cols-3 gap-2">
+            <a
+              href={DIRECTIONS_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex flex-col items-center justify-center gap-1 rounded-xl bg-white/15 backdrop-blur border border-white/25 py-2.5 px-2 text-xs font-semibold text-white active:scale-95 transition"
+            >
+              <Navigation size={18} style={{ color: "#FF9800" }} />
+              Directions
+            </a>
+            <a
+              href={`tel:${PHONE_TEL}`}
+              className="flex flex-col items-center justify-center gap-1 rounded-xl py-2.5 px-2 text-xs font-bold text-white active:scale-95 transition"
+              style={{ background: "#FF9800" }}
+            >
+              <Phone size={18} />
+              Call Now
+            </a>
+            <a
+              href={`https://wa.me/${WA_NUM}?text=${encodeURIComponent("Hi, I'd like to place an order from Fajr Al Nahda Restaurant.")}`}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex flex-col items-center justify-center gap-1 rounded-xl py-2.5 px-2 text-xs font-bold text-white active:scale-95 transition"
+              style={{ background: "#25D366" }}
+            >
+              <MessageCircle size={18} />
+              WhatsApp
+            </a>
+          </div>
+        </div>
+      </header>
+
+      {/* Special Banner */}
+      <section className="px-4 -mt-3">
+        <div
+          className="max-w-2xl mx-auto rounded-2xl shadow-md p-4 border"
+          style={{ background: "#F5E6C8", borderColor: "#E8D4A8" }}
+        >
+          <div className="flex items-center gap-2 mb-2">
+            <span className="text-xl">🍛</span>
+            <p className="text-sm font-bold" style={{ color: "#C62828" }}>
+              HOME DELIVERY AVAILABLE
+            </p>
+          </div>
+          <div className="border-t pt-3" style={{ borderColor: "rgba(198,40,40,0.2)" }}>
+            <div className="flex items-center gap-2 mb-2">
+              <span className="text-xl">🥘</span>
+              <p className="text-sm font-bold" style={{ color: "#C62828" }}>
+                MONTHLY MESS AVAILABLE
+              </p>
             </div>
-            <div className="flex flex-wrap justify-center gap-3 mt-1">
-              <a href="tel:+97165220875" className="flex items-center gap-1 text-gray-800 hover:text-red-600">
-                <Phone size={14} />
-                <span>+971 6 522 0875</span>
+            <ul className="space-y-1 text-sm" style={{ color: "#222" }}>
+              <li className="flex justify-between">
+                <span>3 Times Food</span>
+                <span className="font-bold" style={{ color: "#C62828" }}>AED 470</span>
+              </li>
+              <li className="flex justify-between">
+                <span>2 Times Food</span>
+                <span className="font-bold" style={{ color: "#C62828" }}>AED 370</span>
+              </li>
+              <li className="flex justify-between">
+                <span>1 Time Food</span>
+                <span className="font-bold" style={{ color: "#C62828" }}>AED 220</span>
+              </li>
+            </ul>
+            <div className="mt-3 grid grid-cols-2 gap-2">
+              <a
+                href={`tel:${PHONE_TEL}`}
+                className="flex items-center justify-center gap-1.5 rounded-lg py-2 text-xs font-bold text-white"
+                style={{ background: "#C62828" }}
+              >
+                <Phone size={13} /> Call to Subscribe
               </a>
-              <a href="https://wa.me/971544205511" target="_blank" rel="noopener noreferrer" className="flex items-center gap-1 text-gray-800 hover:text-green-600">
-                <MessageCircle size={14} />
-                <span>+971 54 420 5511</span>
+              <a
+                href={`https://wa.me/${WA_NUM}?text=${encodeURIComponent("Hi, I'd like to subscribe to your monthly mess plan.")}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center justify-center gap-1.5 rounded-lg py-2 text-xs font-bold text-white"
+                style={{ background: "#25D366" }}
+              >
+                <MessageCircle size={13} /> WhatsApp
               </a>
             </div>
           </div>
         </div>
+      </section>
 
-        {/* Search */}
-        <div className="max-w-3xl mx-auto px-4 pb-3">
+      {/* Sticky Search + Category Nav */}
+      <div
+        className="sticky top-0 z-30 mt-5 tamil-pattern shadow-md"
+        style={{ background: "#C62828" }}
+      >
+        <div className="max-w-2xl mx-auto px-4 py-3">
           <div className="relative">
             <Search size={16} className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400" />
             <input
-              type="text"
+              type="search"
               value={query}
               onChange={(e) => setQuery(e.target.value)}
-              placeholder="Search menu items..."
-              className="w-full pl-9 pr-4 py-2 rounded-lg border border-gray-300 bg-white text-sm focus:outline-none focus:ring-2 focus:ring-red-500 focus:border-transparent"
+              placeholder="Search your favorite food..."
+              className="w-full pl-9 pr-4 py-2.5 rounded-full border-0 bg-white text-sm shadow-sm focus:outline-none focus:ring-2"
+              style={{ outlineColor: "#FF9800" }}
             />
           </div>
         </div>
-
-        {/* Category Nav */}
-        <nav className="max-w-3xl mx-auto px-4 pb-3">
-          <div className="flex gap-2 overflow-x-auto pb-1 scrollbar-hide">
+        <nav className="max-w-2xl mx-auto px-4 pb-3">
+          <div className="flex gap-2 overflow-x-auto scrollbar-hide">
             {CATEGORIES.map((cat) => {
-              const isActive = activeCategory === cat.name;
-              const hasResults = filteredCategories.some((c) => c.name === cat.name);
+              const isActive = activeCat === cat.name;
               return (
                 <button
                   key={cat.name}
-                  onClick={() => handleCategoryClick(cat.name)}
-                  disabled={!hasResults && !!query.trim()}
+                  onClick={() => jumpTo(cat.name)}
                   className={[
-                    "shrink-0 px-3 py-1.5 rounded-full text-xs font-semibold border transition",
+                    "shrink-0 px-3.5 py-1.5 rounded-full text-xs font-semibold border transition active:scale-95 whitespace-nowrap",
                     isActive
-                      ? "bg-red-600 text-white border-red-600"
-                      : hasResults
-                      ? "bg-white text-gray-700 border-gray-300 hover:border-red-500 hover:text-red-600"
-                      : "bg-gray-100 text-gray-400 border-gray-200 cursor-not-allowed",
+                      ? "text-white border-white shadow"
+                      : "bg-white/10 text-white/95 border-white/30 hover:bg-white/20",
                   ].join(" ")}
+                  style={isActive ? { background: "#FF9800", borderColor: "#FF9800" } : undefined}
                 >
+                  <span className="mr-1">{cat.icon}</span>
                   {cat.name}
                 </button>
               );
             })}
           </div>
         </nav>
-      </header>
+      </div>
 
-      {/* Menu Content */}
-      <main className="max-w-3xl mx-auto px-4 pt-6">
-        {filteredCategories.length === 0 ? (
-          <div className="text-center py-12 text-gray-500 text-sm">
-            No items match your search.
+      {/* Menu */}
+      <main className="max-w-2xl mx-auto px-4 pt-6">
+        {filtered.length === 0 ? (
+          <div className="text-center py-16 text-sm" style={{ color: "#888" }}>
+            No items match "{query}".
           </div>
         ) : (
-          filteredCategories.map((cat) => (
-            <section
-              key={cat.name}
-              id={`cat-${cat.name}`}
-              className="mb-8 scroll-mt-32"
-            >
-              <h2 className="text-lg font-bold text-gray-900 border-b-2 border-red-600 pb-1 mb-3 uppercase tracking-wide">
-                {cat.name}
-              </h2>
-              <ul className="divide-y divide-gray-100">
+          filtered.map((cat) => (
+            <section key={cat.name} id={`cat-${slug(cat.name)}`} className="mb-8 scroll-mt-32">
+              <div className="flex items-center gap-2 mb-3">
+                <span className="text-2xl">{cat.icon}</span>
+                <h2
+                  className="font-display text-xl uppercase tracking-wide"
+                  style={{ color: "#C62828" }}
+                >
+                  {cat.name}
+                </h2>
+                <div className="flex-1 h-px" style={{ background: "#F5E6C8" }} />
+              </div>
+              <ul className="space-y-2">
                 {cat.items.map((item) => (
                   <li
                     key={item.name}
-                    className="flex items-center justify-between py-2.5"
+                    className="flex items-center justify-between gap-3 rounded-xl bg-white p-3 shadow-sm border"
+                    style={{ borderColor: "#F5E6C8" }}
                   >
-                    <span className="text-sm sm:text-base text-gray-800 pr-4">
+                    <span className="text-sm sm:text-base min-w-0 flex-1" style={{ color: "#222" }}>
                       {item.name}
                     </span>
-                    <span className="text-sm sm:text-base font-semibold text-red-700 shrink-0 whitespace-nowrap">
-                      AED {item.price.toFixed(item.price % 1 !== 0 ? 2 : 0)}
+                    <span
+                      className="text-sm font-bold shrink-0 px-2.5 py-1 rounded-lg"
+                      style={{ background: "#F5E6C8", color: "#C62828" }}
+                    >
+                      AED {fmt(item.price)}
                     </span>
                   </li>
                 ))}
@@ -336,33 +461,88 @@ function TamilFoodMenuPage() {
       </main>
 
       {/* Footer */}
-      <footer className="border-t border-gray-200 bg-gray-50 mt-8 py-6 text-center text-sm text-gray-700">
-        <p className="font-semibold text-gray-900">FAJR AL NAHDA RESTAURANT</p>
-        <p className="mt-1">Al Tohira Building, Shop No. 2, Al Nahda, Sharjah, UAE</p>
-        <div className="mt-2 flex flex-wrap justify-center gap-4">
-          <a href="tel:+97165220875" className="hover:text-red-600">☎ +971 6 522 0875</a>
-          <a href="https://wa.me/971544205511" target="_blank" rel="noopener noreferrer" className="hover:text-green-600">
-            📱 +971 54 420 5511
-          </a>
+      <footer
+        className="mt-10 pt-8 pb-6 text-center tamil-pattern text-white"
+        style={{ background: "#C62828" }}
+      >
+        <div className="max-w-2xl mx-auto px-4">
+          <h3 className="font-display text-xl" style={{ color: "#FF9800" }}>
+            FAJR AL NAHDA RESTAURANT
+          </h3>
+          <p className="text-xs italic mt-1 text-white/90">
+            Authentic Tamil, South Indian, Arabian & Chinese Cuisine
+          </p>
+          <div className="mt-4 space-y-1.5 text-sm">
+            <p className="flex items-center justify-center gap-1.5">
+              <MapPin size={14} /> Al Nahda, Sharjah, UAE
+            </p>
+            <p>
+              <a href={`tel:${PHONE_TEL}`} className="hover:underline">
+                📞 {PHONE_DISPLAY}
+              </a>
+            </p>
+            <p>
+              <a
+                href={`https://wa.me/${WA_NUM}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:underline"
+              >
+                💬 {WA_DISPLAY}
+              </a>
+            </p>
+          </div>
+          <p className="text-xs mt-5 text-white/70">
+            © 2026 FAJR AL NAHDA RESTAURANT
+          </p>
         </div>
       </footer>
 
-      {/* Sticky Action Bar */}
-      <div className="fixed bottom-0 left-0 right-0 z-40 bg-white/95 backdrop-blur-sm border-t border-gray-200">
-        <div className="max-w-3xl mx-auto px-4 py-2.5 flex gap-3">
+      {/* Floating Directions */}
+      <a
+        href={DIRECTIONS_URL}
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="Get Directions"
+        className="fixed right-4 bottom-24 z-40 w-12 h-12 rounded-full shadow-lg flex items-center justify-center text-white active:scale-95"
+        style={{ background: "#FF9800" }}
+      >
+        <Navigation size={20} />
+      </a>
+
+      {/* Back to top */}
+      {showTop && (
+        <button
+          onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+          aria-label="Back to top"
+          className="fixed left-4 bottom-24 z-40 w-11 h-11 rounded-full shadow-lg flex items-center justify-center text-white active:scale-95"
+          style={{ background: "#222" }}
+        >
+          <ArrowUp size={18} />
+        </button>
+      )}
+
+      {/* Sticky bottom Call / WhatsApp */}
+      <div
+        className="fixed bottom-0 left-0 right-0 z-40 border-t shadow-2xl"
+        style={{ background: "#FFFDF7", borderColor: "#F5E6C8" }}
+      >
+        <div className="max-w-2xl mx-auto px-3 py-2.5 grid grid-cols-2 gap-2">
           <a
-            href="tel:+97165220875"
-            className="flex-1 flex items-center justify-center gap-2 rounded-lg bg-red-600 text-white py-2.5 text-sm font-semibold hover:bg-red-700"
+            href={`tel:${PHONE_TEL}`}
+            className="flex items-center justify-center gap-2 rounded-xl py-3 text-sm font-bold text-white active:scale-95"
+            style={{ background: "#C62828" }}
           >
-            <Phone size={16} /> Call
+            <Phone size={16} /> Call Now
           </a>
           <a
-            href="https://wa.me/971544205511"
+            href={`https://wa.me/${WA_NUM}?text=${encodeURIComponent("Hi, I'd like to place an order from Fajr Al Nahda Restaurant.")}`}
             target="_blank"
             rel="noopener noreferrer"
-            className="flex-1 flex items-center justify-center gap-2 rounded-lg bg-green-600 text-white py-2.5 text-sm font-semibold hover:bg-green-700"
+            className="flex items-center justify-center gap-2 rounded-xl py-3 text-sm font-bold text-white active:scale-95"
+            style={{ background: "#25D366" }}
           >
-            <MessageCircle size={16} /> WhatsApp
+            <MessageCircle size={16} /> WhatsApp Order
           </a>
         </div>
       </div>
