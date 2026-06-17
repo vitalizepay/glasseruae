@@ -14,7 +14,33 @@ export type Database = {
   }
   public: {
     Tables: {
-      [_ in never]: never
+      glass_enquiries: {
+        Row: {
+          created_at: string
+          full_name: string
+          id: string
+          phone: string
+          project_details: string | null
+          project_location: string | null
+        }
+        Insert: {
+          created_at?: string
+          full_name: string
+          id?: string
+          phone: string
+          project_details?: string | null
+          project_location?: string | null
+        }
+        Update: {
+          created_at?: string
+          full_name?: string
+          id?: string
+          phone?: string
+          project_details?: string | null
+          project_location?: string | null
+        }
+        Relationships: []
+      }
     }
     Views: {
       [_ in never]: never
