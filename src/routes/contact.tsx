@@ -3,7 +3,7 @@ import { Layout } from "@/components/site/Layout";
 import { ContactSection } from "@/components/site/ContactSection";
 
 const T = "Contact Glasser UAE — Free Glass & Aluminium Quote";
-const D = "Call +971 56 840 0838 or email sales@glasseruae.com. Free site survey and quote for glass partitions, shower enclosures, aluminium doors & windows in the UAE.";
+const D = "Call +971 56 840 0838 or email senthil@glasseruae.com. Free site survey and quote for glass partitions, shower enclosures, aluminium doors & windows in the UAE.";
 
 export const Route = createFileRoute("/contact")({
   head: () => ({
@@ -23,7 +23,7 @@ export const Route = createFileRoute("/contact")({
           "@type": "LocalBusiness",
           name: "Glasser Technical Works LLC",
           telephone: "+971568400838",
-          email: "sales@glasseruae.com",
+          email: "senthil@glasseruae.com",
           url: "https://glasseruae.com/contact",
           address: {
             "@type": "PostalAddress",
