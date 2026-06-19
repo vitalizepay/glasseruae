@@ -15,14 +15,18 @@ export function Projects() {
   return (
     <section id="projects" className="py-24 md:py-36 bg-background">
       <div className="container mx-auto px-6">
-        <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-16">
-          <div className="max-w-2xl">
-            <span className="text-[11px] uppercase tracking-[0.3em] text-muted-foreground">Featured Work</span>
-            <h2 className="text-4xl md:text-6xl mt-4 text-navy text-balance font-light">
-              Projects shaping the UAE skyline
-            </h2>
-          </div>
-          <p className="text-muted-foreground max-w-md font-light">
+        <div className="flex items-center justify-between text-[11px] uppercase tracking-[0.32em] text-navy/60 mb-12">
+          <span>(04) — Featured Work</span>
+          <span className="hidden md:inline">Selected — 2025</span>
+        </div>
+        <div className="grid lg:grid-cols-12 gap-10 items-end mb-16">
+          <h2
+            className="lg:col-span-8 text-navy text-balance font-light leading-[0.95] tracking-[-0.03em]"
+            style={{ fontSize: "clamp(2.25rem, 6vw, 5.5rem)" }}
+          >
+            Projects shaping the <em className="italic font-normal">UAE skyline</em>
+          </h2>
+          <p className="lg:col-span-4 text-muted-foreground font-light text-base md:text-lg leading-relaxed">
             A curated selection of luxury villas, offices and hospitality landmarks where craftsmanship meets architecture.
           </p>
         </div>

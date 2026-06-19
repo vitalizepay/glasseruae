@@ -14,30 +14,50 @@ export function WhyUs() {
   return (
     <section className="py-24 md:py-36 bg-background">
       <div className="container mx-auto px-6">
-        <div className="max-w-3xl mb-16">
-          <span className="text-[11px] uppercase tracking-[0.3em] text-muted-foreground">Why Glasser</span>
-          <h2 className="text-4xl md:text-6xl mt-4 text-navy text-balance font-light">
-            Built on trust, finished with precision
+        <div className="flex items-center justify-between text-[11px] uppercase tracking-[0.32em] text-navy/60 mb-12">
+          <span>(05) — Why Glasser</span>
+          <span className="hidden md:inline">Six commitments</span>
+        </div>
+
+        <div className="grid lg:grid-cols-12 gap-14 mb-16">
+          <h2
+            className="lg:col-span-8 text-navy text-balance font-light leading-[0.95] tracking-[-0.03em]"
+            style={{ fontSize: "clamp(2.25rem, 6vw, 5.5rem)" }}
+          >
+            Built on <em className="italic font-normal">trust</em>, finished with <em className="italic font-normal">precision</em>
           </h2>
+          <p className="lg:col-span-4 lg:self-end text-muted-foreground font-light text-base md:text-lg leading-relaxed">
+            What clients across the UAE come back for — the standard we hold on every project, every time.
+          </p>
         </div>
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-px bg-border rounded-3xl overflow-hidden border border-border">
+
+        <ul className="border-t border-navy/10">
           {POINTS.map((p, i) => (
-            <motion.div
+            <motion.li
               key={p.title}
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 0, y: 16 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: i * 0.04 }}
-              className="group bg-white p-10 hover:bg-surface transition-colors duration-500"
+              viewport={{ once: true, margin: "-60px" }}
+              transition={{ duration: 0.6, delay: i * 0.05 }}
+              className="grid grid-cols-[3rem_1fr] md:grid-cols-[4rem_1fr_2fr_auto] items-center gap-6 md:gap-10 py-7 md:py-9 border-b border-navy/10 group"
             >
-              <div className="w-11 h-11 rounded-full bg-stone flex items-center justify-center text-navy">
-                <p.icon size={20} strokeWidth={1.5} />
-              </div>
-              <h3 className="mt-6 text-xl font-medium text-navy">{p.title}</h3>
-              <p className="mt-2 text-muted-foreground font-light leading-relaxed">{p.desc}</p>
-            </motion.div>
+              <span className="text-[11px] uppercase tracking-[0.28em] text-navy/40 tabular-nums">
+                {String(i + 1).padStart(2, "0")}
+              </span>
+              <h3
+                className="text-navy font-light leading-tight tracking-[-0.02em]"
+                style={{ fontSize: "clamp(1.5rem, 3vw, 2.5rem)" }}
+              >
+                <em className="italic font-normal">{p.title}</em>
+              </h3>
+              <p className="hidden md:block text-muted-foreground font-light leading-relaxed max-w-md">{p.desc}</p>
+              <span className="hidden md:flex w-11 h-11 rounded-full bg-stone items-center justify-center text-navy group-hover:bg-navy group-hover:text-white transition">
+                <p.icon size={18} strokeWidth={1.5} />
+              </span>
+              <p className="col-span-2 md:hidden -mt-2 text-sm text-muted-foreground font-light">{p.desc}</p>
+            </motion.li>
           ))}
-        </div>
+        </ul>
       </div>
     </section>
   );
