@@ -1,10 +1,19 @@
 import { Link } from "@tanstack/react-router";
 import { ArrowRight } from "lucide-react";
+import { motion } from "framer-motion";
+import { RevealWords } from "./motion-primitives";
 
 export function CTA() {
   return (
     <section className="py-28 md:py-44 bg-navy text-white relative overflow-hidden">
-      <div className="container mx-auto px-6">
+      {/* Slow drifting glow */}
+      <motion.div
+        aria-hidden
+        className="absolute -top-40 -right-40 w-[40rem] h-[40rem] rounded-full bg-orange/10 blur-3xl"
+        animate={{ x: [0, 40, 0], y: [0, 30, 0] }}
+        transition={{ duration: 14, repeat: Infinity, ease: "easeInOut" }}
+      />
+      <div className="container mx-auto px-6 relative">
         <div className="flex items-center justify-between text-[11px] uppercase tracking-[0.32em] text-white/50 mb-12">
           <span>(07) — Start your project</span>
           <span className="hidden md:inline">Free consultation · 24h response</span>
@@ -13,7 +22,9 @@ export function CTA() {
           className="text-balance font-light leading-[0.92] tracking-[-0.03em] max-w-6xl"
           style={{ fontSize: "clamp(2.75rem, 9vw, 8.5rem)" }}
         >
-          Let&rsquo;s build something <em className="italic font-normal">exceptional</em>
+          <RevealWords as="span" text="Let's build something" className="inline" />
+          {" "}
+          <RevealWords as="span" text="exceptional" italic delay={0.3} className="inline" />
         </h2>
         <div className="mt-12 grid md:grid-cols-12 gap-10 items-end border-t border-white/15 pt-10">
           <p className="md:col-span-6 text-lg md:text-xl text-white/70 font-light leading-relaxed">
