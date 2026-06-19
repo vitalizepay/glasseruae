@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { Link } from "@tanstack/react-router";
 import { ArrowUpRight } from "lucide-react";
+import { RevealWords } from "./motion-primitives";
 import partition from "@/assets/service-partition.jpg";
 import aluminium from "@/assets/service-aluminium.jpg";
 import shower from "@/assets/service-shower.jpg";
