@@ -39,7 +39,9 @@ export function Testimonials() {
           className="text-navy text-balance font-light leading-[0.95] tracking-[-0.03em] max-w-5xl"
           style={{ fontSize: "clamp(2.25rem, 6vw, 5.5rem)" }}
         >
-          Trusted <em className="italic font-normal">across the Emirates</em>
+          <RevealWords as="span" text="Trusted" className="inline" />
+          {" "}
+          <RevealWords as="span" text="across the Emirates" italic delay={0.15} className="inline" />
         </h2>
       </div>
 
