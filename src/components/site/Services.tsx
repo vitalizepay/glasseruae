@@ -9,64 +9,92 @@ import office from "@/assets/project-office.jpg";
 import villa from "@/assets/project-villa.jpg";
 
 const SERVICES = [
-  { img: partition, title: "Frameless Glass Partitions", desc: "Seamless office and residential partitions in crystal-clear tempered glass." },
-  { img: aluminium, title: "Aluminium Doors", desc: "Sliding, pivot and folding aluminium systems in premium architectural finishes." },
-  { img: office, title: "Aluminium Windows", desc: "Thermal-break window systems engineered for the UAE climate." },
-  { img: shower, title: "Shower Enclosures", desc: "Frameless luxury enclosures crafted to your bathroom dimensions." },
-  { img: mirror, title: "Custom Mirrors", desc: "Bespoke mirror installations for hospitality, retail and private homes." },
-  { img: villa, title: "Glass Facades", desc: "Structural curtain-wall facades for villas, offices and commercial towers." },
+  { img: partition, title: "Frameless Glass Partitions", short: "Partitions", desc: "Seamless office and residential partitions in crystal-clear tempered glass." },
+  { img: aluminium, title: "Aluminium Doors", short: "Doors", desc: "Sliding, pivot and folding aluminium systems in premium architectural finishes." },
+  { img: office, title: "Aluminium Windows", short: "Windows", desc: "Thermal-break window systems engineered for the UAE climate." },
+  { img: shower, title: "Shower Enclosures", short: "Showers", desc: "Frameless luxury enclosures crafted to your bathroom dimensions." },
+  { img: mirror, title: "Custom Mirrors", short: "Mirrors", desc: "Bespoke mirror installations for hospitality, retail and private homes." },
+  { img: villa, title: "Glass Facades", short: "Facades", desc: "Structural curtain-wall facades for villas, offices and commercial towers." },
 ];
 
 export function Services() {
   return (
-    <section id="services" className="py-24 md:py-36 bg-surface">
+    <section id="services" className="py-24 md:py-36 bg-navy text-white relative overflow-hidden">
       <div className="container mx-auto px-6">
-        <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-16">
-          <div className="max-w-2xl">
-            <span className="text-[11px] uppercase tracking-[0.3em] text-muted-foreground">What we do</span>
-            <h2 className="text-4xl md:text-6xl mt-4 text-navy text-balance font-light">
-              Bespoke glass &amp; aluminium, end to end
+        {/* Section header */}
+        <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-16 md:mb-24">
+          <div>
+            <span className="text-[11px] uppercase tracking-[0.32em] text-white/50">(02) — What we do</span>
+            <h2
+              className="mt-6 font-light leading-[0.95] tracking-[-0.03em] text-balance max-w-4xl"
+              style={{ fontSize: "clamp(2.25rem, 6vw, 5.5rem)" }}
+            >
+              Bespoke <em className="italic font-normal">glass &amp; aluminium</em>, end to end
             </h2>
           </div>
-          <p className="text-muted-foreground max-w-md font-light">
+          <p className="text-white/60 max-w-sm font-light text-base md:text-lg leading-relaxed">
             From concept and engineering to delivery and installation — six disciplines, one specialist team.
           </p>
         </div>
 
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        {/* Editorial row list */}
+        <ul className="border-t border-white/10">
           {SERVICES.map((s, i) => (
-            <motion.article
+            <motion.li
               key={s.title}
-              initial={{ opacity: 0, y: 24 }}
+              initial={{ opacity: 0, y: 18 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-80px" }}
-              transition={{ duration: 0.7, delay: (i % 3) * 0.08, ease: [0.22, 1, 0.36, 1] }}
-              className="group bg-white rounded-3xl overflow-hidden border border-border hover:-translate-y-1 transition-all duration-500 shadow-glass hover:shadow-soft"
+              viewport={{ once: true, margin: "-60px" }}
+              transition={{ duration: 0.7, delay: i * 0.05, ease: [0.22, 1, 0.36, 1] }}
+              className="group relative border-b border-white/10"
             >
-              <div className="relative aspect-[4/3] overflow-hidden bg-stone">
-                <img
-                  src={s.img}
-                  alt={s.title}
-                  className="w-full h-full object-cover transition-transform duration-[1200ms] group-hover:scale-105"
-                  loading="lazy"
-                />
-              </div>
-              <div className="p-7">
-                <div className="flex items-start justify-between gap-4">
-                  <h3 className="text-xl text-navy font-medium">{s.title}</h3>
-                  <span className="w-9 h-9 rounded-full border border-border flex items-center justify-center text-navy/60 group-hover:bg-navy group-hover:text-white group-hover:border-navy transition">
-                    <ArrowUpRight size={16} />
-                  </span>
+              <Link
+                to="/services"
+                className="grid grid-cols-[auto_1fr_auto] md:grid-cols-[3rem_1fr_1.6fr_auto] items-center gap-4 md:gap-10 py-8 md:py-10 relative"
+              >
+                {/* Hover image reveal */}
+                <div
+                  aria-hidden
+                  className="pointer-events-none absolute right-24 md:right-44 top-1/2 -translate-y-1/2 w-48 h-32 md:w-72 md:h-48 rounded-2xl overflow-hidden opacity-0 scale-95 group-hover:opacity-100 group-hover:scale-100 transition-all duration-700 ring-1 ring-white/10 z-10"
+                >
+                  <img src={s.img} alt="" className="w-full h-full object-cover" loading="lazy" />
                 </div>
-                <p className="mt-3 text-sm text-muted-foreground leading-relaxed font-light">{s.desc}</p>
-              </div>
-            </motion.article>
-          ))}
-        </div>
 
-        <div className="mt-14 text-center">
-          <Link to="/services" className="inline-flex items-center gap-2 text-sm font-medium text-navy border-b border-navy/30 hover:border-navy pb-1 transition">
-            Explore all services <ArrowUpRight size={14} />
+                <span className="text-[11px] uppercase tracking-[0.28em] text-white/40 tabular-nums">
+                  {String(i + 1).padStart(2, "0")}
+                </span>
+
+                <p className="hidden md:block text-sm text-white/60 font-light max-w-xs leading-relaxed">
+                  {s.desc}
+                </p>
+
+                <h3
+                  className="font-light leading-none tracking-[-0.03em] text-white transition-transform duration-500 group-hover:-translate-x-2"
+                  style={{ fontSize: "clamp(2rem, 5.5vw, 4.5rem)" }}
+                >
+                  <em className="italic font-normal">{s.title}</em>
+                </h3>
+
+                <span className="shrink-0 w-12 h-12 md:w-14 md:h-14 rounded-full border border-white/20 flex items-center justify-center group-hover:bg-white group-hover:text-navy group-hover:border-white transition">
+                  <ArrowUpRight size={18} className="transition-transform duration-500 group-hover:-rotate-45" />
+                </span>
+              </Link>
+              {/* Mobile description */}
+              <p className="md:hidden -mt-4 pb-6 text-sm text-white/55 font-light pr-16">{s.desc}</p>
+            </motion.li>
+          ))}
+        </ul>
+
+        <div className="mt-16 flex items-center justify-between gap-6 flex-wrap">
+          <p className="text-white/50 text-sm max-w-md font-light">
+            Every project is engineered, fabricated and installed by our in-house specialist team.
+          </p>
+          <Link
+            to="/services"
+            className="group inline-flex items-center gap-2 px-7 py-3.5 rounded-full bg-white text-navy text-sm font-medium hover:bg-white/90 transition"
+          >
+            Explore all services
+            <ArrowUpRight size={16} className="group-hover:rotate-45 transition-transform duration-500" />
           </Link>
         </div>
       </div>
