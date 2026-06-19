@@ -1,4 +1,6 @@
 import { Star } from "lucide-react";
+import { RevealWords } from "./motion-primitives";
+
 
 const REVIEWS = [
   { name: "Ahmed Al Mansoori", role: "Villa Owner · Emirates Hills", text: "Glasser transformed our entire ground floor with frameless glass partitions. Flawless finish, punctual delivery." },
