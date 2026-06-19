@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { Link } from "@tanstack/react-router";
 import { ArrowUpRight } from "lucide-react";
+import { RevealWords } from "./motion-primitives";
 import partition from "@/assets/service-partition.jpg";
 import aluminium from "@/assets/service-aluminium.jpg";
 import shower from "@/assets/service-shower.jpg";
@@ -29,7 +30,11 @@ export function Services() {
               className="mt-6 font-light leading-[0.95] tracking-[-0.03em] text-balance max-w-4xl"
               style={{ fontSize: "clamp(2.25rem, 6vw, 5.5rem)" }}
             >
-              Bespoke <em className="italic font-normal">glass &amp; aluminium</em>, end to end
+              <RevealWords as="span" text="Bespoke" className="inline" />
+              {" "}
+              <RevealWords as="span" text="glass & aluminium," italic delay={0.15} className="inline" />
+              {" "}
+              <RevealWords as="span" text="end to end" delay={0.4} className="inline" />
             </h2>
           </div>
           <p className="text-white/60 max-w-sm font-light text-base md:text-lg leading-relaxed">
