@@ -70,12 +70,14 @@ export function Projects() {
           <span className="hidden md:inline">Selected — 2025</span>
         </div>
         <div className="grid lg:grid-cols-12 gap-10 items-end mb-16">
-          <RevealWords
-            as="h2"
-            text="Projects shaping the UAE skyline"
+          <h2
             className="lg:col-span-8 text-navy text-balance font-light leading-[0.95] tracking-[-0.03em]"
             style={{ fontSize: "clamp(2.25rem, 6vw, 5.5rem)" }}
-          />
+          >
+            <RevealWords as="span" text="Projects shaping the" className="inline" />
+            {" "}
+            <RevealWords as="span" text="UAE skyline" italic delay={0.25} className="inline" />
+          </h2>
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
