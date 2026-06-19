@@ -1,6 +1,4 @@
 import { Star } from "lucide-react";
-import { RevealWords } from "./motion-primitives";
-
 
 const REVIEWS = [
   { name: "Ahmed Al Mansoori", role: "Villa Owner · Emirates Hills", text: "Glasser transformed our entire ground floor with frameless glass partitions. Flawless finish, punctual delivery." },
@@ -29,25 +27,17 @@ function Card({ r }: { r: typeof REVIEWS[number] }) {
 export function Testimonials() {
   const loop = [...REVIEWS, ...REVIEWS];
   return (
-    <section className="py-24 md:py-36 bg-surface overflow-hidden">
+    <section className="py-24 md:py-36 bg-background overflow-hidden">
       <div className="container mx-auto px-6 mb-14">
-        <div className="flex items-center justify-between text-[11px] uppercase tracking-[0.32em] text-navy/60 mb-10">
-          <span>(06) — Client Voices</span>
-          <span className="hidden md:inline">Verified reviews</span>
+        <div className="max-w-2xl">
+          <span className="text-[11px] uppercase tracking-[0.3em] text-muted-foreground">Client Voices</span>
+          <h2 className="text-4xl md:text-6xl mt-4 text-navy text-balance font-light">Trusted across the Emirates</h2>
         </div>
-        <h2
-          className="text-navy text-balance font-light leading-[0.95] tracking-[-0.03em] max-w-5xl"
-          style={{ fontSize: "clamp(2.25rem, 6vw, 5.5rem)" }}
-        >
-          <RevealWords as="span" text="Trusted" className="inline" />
-          {" "}
-          <RevealWords as="span" text="across the Emirates" italic delay={0.15} className="inline" />
-        </h2>
       </div>
 
       <div className="relative">
-        <div className="absolute inset-y-0 left-0 w-24 bg-gradient-to-r from-surface to-transparent z-10 pointer-events-none" />
-        <div className="absolute inset-y-0 right-0 w-24 bg-gradient-to-l from-surface to-transparent z-10 pointer-events-none" />
+        <div className="absolute inset-y-0 left-0 w-24 bg-gradient-to-r from-background to-transparent z-10 pointer-events-none" />
+        <div className="absolute inset-y-0 right-0 w-24 bg-gradient-to-l from-background to-transparent z-10 pointer-events-none" />
         <div className="flex gap-6 w-max animate-marquee">
           {loop.map((r, i) => <Card key={i} r={r} />)}
         </div>

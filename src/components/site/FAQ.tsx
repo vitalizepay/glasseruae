@@ -14,21 +14,16 @@ export const FAQS = [
 export function FAQ() {
   const [open, setOpen] = useState<number | null>(0);
   return (
-    <section className="py-24 md:py-36 bg-background">
+    <section className="py-24 md:py-36 bg-surface">
       <div className="container mx-auto px-6 grid lg:grid-cols-12 gap-12">
-        <div className="lg:col-span-5">
-          <div className="text-[11px] uppercase tracking-[0.32em] text-navy/60 mb-8">(08) — FAQ</div>
-          <h2
-            className="text-navy text-balance font-light leading-[0.95] tracking-[-0.03em]"
-            style={{ fontSize: "clamp(2.25rem, 5vw, 4.5rem)" }}
-          >
-            Questions, <em className="italic font-normal">answered.</em>
-          </h2>
-          <p className="mt-6 text-muted-foreground font-light leading-relaxed">
+        <div className="lg:col-span-4">
+          <span className="text-[11px] uppercase tracking-[0.3em] text-muted-foreground">FAQ</span>
+          <h2 className="text-4xl md:text-5xl mt-4 text-navy text-balance font-light">Questions, answered.</h2>
+          <p className="mt-5 text-muted-foreground font-light">
             Everything you need to know before commissioning a glass or aluminium project in the UAE.
           </p>
         </div>
-        <div className="lg:col-span-7">
+        <div className="lg:col-span-8">
           <div className="border-t border-border">
             {FAQS.map((f, i) => {
               const isOpen = open === i;

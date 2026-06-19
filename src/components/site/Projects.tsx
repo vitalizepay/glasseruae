@@ -1,56 +1,6 @@
-import { motion, useScroll, useTransform } from "framer-motion";
+import { motion } from "framer-motion";
 import { Link } from "@tanstack/react-router";
 import { ArrowUpRight } from "lucide-react";
-import { useRef } from "react";
-import { RevealWords } from "./motion-primitives";
-
-function ProjectCard({ p, i }: { p: typeof PROJECTS[number]; i: number }) {
-  const ref = useRef<HTMLDivElement>(null);
-  const { scrollYProgress } = useScroll({ target: ref, offset: ["start end", "end start"] });
-  const y = useTransform(scrollYProgress, [0, 1], ["-10%", "12%"]);
-  const scale = useTransform(scrollYProgress, [0, 1], [1.15, 1.05]);
-
-  return (
-    <motion.article
-      initial={{ opacity: 0, y: 40 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, margin: "-80px" }}
-      transition={{ duration: 0.9, delay: i * 0.08, ease: [0.22, 1, 0.36, 1] }}
-      className="group relative overflow-hidden rounded-[2rem] bg-stone"
-    >
-      <Link to={p.to} className="absolute inset-0 z-10" aria-label={p.title} />
-      <div ref={ref} className="relative aspect-[21/9] overflow-hidden">
-        <motion.img
-          src={p.img}
-          alt={p.alt}
-          style={{ y, scale }}
-          className="w-full h-full object-cover will-change-transform transition-transform duration-[1400ms] group-hover:scale-110"
-          loading="lazy"
-        />
-        <div className="absolute inset-0 bg-gradient-to-t from-navy/70 via-navy/10 to-transparent opacity-60 group-hover:opacity-90 transition-opacity duration-700" />
-      </div>
-      <div className="absolute inset-x-0 bottom-0 p-8 md:p-12 text-white">
-        <div className="flex items-end justify-between gap-6">
-          <div>
-            <div className="text-[11px] uppercase tracking-[0.3em] text-white/70">{p.cat} · {p.year}</div>
-            <h3 className="mt-3 text-3xl md:text-5xl font-light text-balance">{p.title}</h3>
-          </div>
-          <span className="hidden md:flex w-14 h-14 rounded-full bg-white text-navy items-center justify-center shrink-0 translate-y-2 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500">
-            <ArrowUpRight size={20} />
-          </span>
-        </div>
-        <div className="mt-6 max-w-2xl text-sm text-white/0 group-hover:text-white/80 transition-colors duration-500 leading-relaxed">
-          <span className="opacity-0 group-hover:opacity-100 transition-opacity duration-700 delay-100">
-            Engineered glass and aluminium delivered to architectural specification, installed on schedule.
-          </span>
-        </div>
-      </div>
-      <div className="absolute top-6 left-6 text-xs uppercase tracking-[0.3em] text-white/80">
-        {String(i + 1).padStart(2, "0")} / 03
-      </div>
-    </motion.article>
-  );
-}
 import office from "@/assets/office-glass-partition-black-frame.jpg.asset.json";
 import villa from "@/assets/luxury-frameless-villa-glass.jpg.asset.json";
 import waterfront from "@/assets/waterfront-villa-glass-palm-jumeirah.jpg.asset.json";
@@ -65,33 +15,56 @@ export function Projects() {
   return (
     <section id="projects" className="py-24 md:py-36 bg-background">
       <div className="container mx-auto px-6">
-        <div className="flex items-center justify-between text-[11px] uppercase tracking-[0.32em] text-navy/60 mb-12">
-          <span>(04) — Featured Work</span>
-          <span className="hidden md:inline">Selected — 2025</span>
-        </div>
-        <div className="grid lg:grid-cols-12 gap-10 items-end mb-16">
-          <h2
-            className="lg:col-span-8 text-navy text-balance font-light leading-[0.95] tracking-[-0.03em]"
-            style={{ fontSize: "clamp(2.25rem, 6vw, 5.5rem)" }}
-          >
-            <RevealWords as="span" text="Projects shaping the" className="inline" />
-            {" "}
-            <RevealWords as="span" text="UAE skyline" italic delay={0.25} className="inline" />
-          </h2>
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-60px" }}
-            transition={{ duration: 0.9, delay: 0.3 }}
-            className="lg:col-span-4 text-muted-foreground font-light text-base md:text-lg leading-relaxed"
-          >
+        <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-16">
+          <div className="max-w-2xl">
+            <span className="text-[11px] uppercase tracking-[0.3em] text-muted-foreground">Featured Work</span>
+            <h2 className="text-4xl md:text-6xl mt-4 text-navy text-balance font-light">
+              Projects shaping the UAE skyline
+            </h2>
+          </div>
+          <p className="text-muted-foreground max-w-md font-light">
             A curated selection of luxury villas, offices and hospitality landmarks where craftsmanship meets architecture.
-          </motion.p>
+          </p>
         </div>
 
         <div className="space-y-8">
           {PROJECTS.map((p, i) => (
-            <ProjectCard key={p.title} p={p} i={i} />
+            <motion.article
+              key={p.title}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-80px" }}
+              transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
+              className="group relative overflow-hidden rounded-[2rem] bg-stone"
+            >
+              <Link to={p.to} className="absolute inset-0 z-10" aria-label={p.title} />
+              <div className="relative aspect-[21/9] overflow-hidden">
+                <img
+                  src={p.img}
+                  alt={p.alt}
+                  className="w-full h-full object-cover transition-transform duration-[1400ms] group-hover:scale-105"
+                  loading="lazy"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-navy/70 via-navy/10 to-transparent opacity-60 group-hover:opacity-90 transition-opacity duration-700" />
+              </div>
+              <div className="absolute inset-x-0 bottom-0 p-8 md:p-12 text-white">
+                <div className="flex items-end justify-between gap-6">
+                  <div>
+                    <div className="text-[11px] uppercase tracking-[0.3em] text-white/70">{p.cat} · {p.year}</div>
+                    <h3 className="mt-3 text-3xl md:text-5xl font-light text-balance">{p.title}</h3>
+                  </div>
+                  <span className="hidden md:flex w-14 h-14 rounded-full bg-white text-navy items-center justify-center shrink-0 translate-y-2 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500">
+                    <ArrowUpRight size={20} />
+                  </span>
+                </div>
+                <div className="mt-6 max-w-2xl text-sm text-white/0 group-hover:text-white/80 transition-colors duration-500 leading-relaxed">
+                  <span className="opacity-0 group-hover:opacity-100 transition-opacity duration-700 delay-100">
+                    Engineered glass and aluminium delivered to architectural specification, installed on schedule.
+                  </span>
+                </div>
+              </div>
+              <div className="absolute top-{i} left-6 top-6 text-xs uppercase tracking-[0.3em] text-white/80 hidden">{String(i + 1).padStart(2, "0")}</div>
+            </motion.article>
           ))}
         </div>
       </div>

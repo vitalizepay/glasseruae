@@ -31,18 +31,15 @@ function Counter({ to, suffix }: { to: number; suffix: string }) {
 
 export function TrustBar() {
   return (
-    <section className="bg-background border-y border-navy/10">
-      <div className="container mx-auto px-6 py-14 md:py-20">
-        <div className="grid grid-cols-2 md:grid-cols-4">
-          {STATS.map((s, i) => (
-            <div
-              key={s.label}
-              className={`px-4 md:px-8 py-6 md:py-0 ${i > 0 ? "md:border-l border-navy/10" : ""}`}
-            >
-              <div className="font-display text-navy font-light leading-none tracking-[-0.03em]" style={{ fontSize: "clamp(2.5rem, 5vw, 4.5rem)" }}>
+    <section className="bg-white border-y border-border">
+      <div className="container mx-auto px-6 py-12 md:py-16">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-y-10 gap-x-6">
+          {STATS.map((s) => (
+            <div key={s.label} className="text-center md:border-l md:first:border-l-0 md:border-border">
+              <div className="text-4xl md:text-5xl font-display text-navy font-light">
                 <Counter to={s.value} suffix={s.suffix} />
               </div>
-              <div className="mt-4 text-[10px] md:text-xs uppercase tracking-[0.28em] text-navy/55">{s.label}</div>
+              <div className="mt-2 text-xs uppercase tracking-[0.22em] text-muted-foreground">{s.label}</div>
             </div>
           ))}
         </div>
