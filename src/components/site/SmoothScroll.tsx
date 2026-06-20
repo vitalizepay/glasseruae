@@ -13,8 +13,8 @@ export function SmoothScroll() {
     if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
 
     const lenis = new Lenis({
-      lerp: 0.28,              // near-native responsiveness
-      wheelMultiplier: 1.8,    // big travel per wheel notch
+      lerp: 0.42,              // very snappy — close to native
+      wheelMultiplier: 2.2,    // big travel per wheel notch
       touchMultiplier: 1.8,
       smoothWheel: true,
       syncTouch: false,
