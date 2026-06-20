@@ -63,7 +63,7 @@ export function About() {
   }, []);
 
   return (
-    <section
+    <section data-no-auto-reveal
       ref={ref}
       id="about"
       className="py-28 md:py-44 bg-background overflow-hidden"

@@ -39,7 +39,7 @@ export function FAQ() {
   }, []);
 
   return (
-    <section ref={ref} className="py-28 md:py-44 bg-surface overflow-hidden">
+    <section data-no-auto-reveal ref={ref} className="py-28 md:py-44 bg-surface overflow-hidden">
       <div className="container mx-auto px-6 grid lg:grid-cols-12 gap-12 lg:gap-20">
         <div className="lg:col-span-5">
           <div data-faq-side className="text-[11px] uppercase tracking-[0.4em] text-muted-foreground">— FAQ</div>

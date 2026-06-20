@@ -53,7 +53,7 @@ export function Hero() {
   }, []);
 
   return (
-    <section
+    <section data-no-auto-reveal
       ref={root}
       className="relative min-h-[100svh] flex items-end overflow-hidden bg-navy text-white"
     >
