@@ -63,10 +63,10 @@ export function Projects() {
       <div className="container mx-auto px-6">
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-8 mb-20">
           <div className="max-w-3xl">
-            <span data-prj-head className="text-[11px] uppercase tracking-[0.4em] text-muted-foreground">— Featured Work</span>
-            <h2 data-prj-head className="text-4xl md:text-7xl mt-6 text-navy text-balance font-light leading-[1.02]">
-              Projects shaping the<br className="hidden md:block" />
-              <em className="not-italic font-extralight">UAE skyline.</em>
+            <div data-prj-head className="text-[11px] uppercase tracking-[0.4em] text-muted-foreground">— Featured Work</div>
+            <h2 className="text-4xl md:text-7xl mt-6 text-navy text-balance font-light leading-[1.02]">
+              <SplitWords text="Projects shaping the" className="block" />
+              <SplitWords text="UAE skyline." className="block italic font-extralight" delay={0.15} />
             </h2>
           </div>
           <p data-prj-head className="text-muted-foreground max-w-sm font-light">
