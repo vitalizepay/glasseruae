@@ -1,6 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { Layout } from "@/components/site/Layout";
 import { Services } from "@/components/site/Services";
+import { Reveal, SplitWords } from "@/components/site/Reveal";
 import { CTA } from "@/components/site/CTA";
 
 const T = "Glass & Aluminium Services in Dubai | Glasser UAE";
