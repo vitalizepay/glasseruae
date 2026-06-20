@@ -3,6 +3,7 @@ import { Link } from "@tanstack/react-router";
 import { ArrowUpRight } from "lucide-react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { SplitWords } from "./Reveal";
 import office from "@/assets/office-glass-partition-black-frame.jpg.asset.json";
 import villa from "@/assets/luxury-frameless-villa-glass.jpg.asset.json";
 import waterfront from "@/assets/waterfront-villa-glass-palm-jumeirah.jpg.asset.json";

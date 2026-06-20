@@ -3,6 +3,7 @@ import { Link } from "@tanstack/react-router";
 import { ArrowUpRight } from "lucide-react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { SplitWords } from "./Reveal";
 import partition from "@/assets/service-partition.jpg";
 import aluminium from "@/assets/service-aluminium.jpg";
 import shower from "@/assets/service-shower.jpg";
@@ -46,10 +47,10 @@ export function Services() {
       <div className="container mx-auto px-6">
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-8 mb-20">
           <div className="max-w-3xl">
-            <span data-svc-head className="text-[11px] uppercase tracking-[0.4em] text-muted-foreground">— What we do</span>
-            <h2 data-svc-head className="text-4xl md:text-7xl mt-6 text-navy text-balance font-light leading-[1.02]">
-              Bespoke glass &amp; aluminium,<br className="hidden md:block" />
-              <em className="not-italic font-extralight">end to end.</em>
+            <div data-svc-head className="text-[11px] uppercase tracking-[0.4em] text-muted-foreground">— What we do</div>
+            <h2 className="text-4xl md:text-7xl mt-6 text-navy text-balance font-light leading-[1.02]">
+              <SplitWords text="Bespoke glass & aluminium," className="block" />
+              <SplitWords text="end to end." className="block italic font-extralight" delay={0.15} />
             </h2>
           </div>
           <p data-svc-head className="text-muted-foreground max-w-sm font-light text-base">
