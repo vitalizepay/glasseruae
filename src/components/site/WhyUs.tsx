@@ -44,7 +44,7 @@ export function WhyUs() {
   }, []);
 
   return (
-    <section ref={ref} className="py-28 md:py-44 bg-background overflow-hidden">
+    <section data-no-auto-reveal ref={ref} className="py-28 md:py-44 bg-background overflow-hidden">
       <div className="container mx-auto px-6">
         <div className="max-w-3xl mb-20">
           <div data-why-eyebrow className="text-[11px] uppercase tracking-[0.4em] text-muted-foreground">— Why Glasser</div>

@@ -47,7 +47,7 @@ export function Testimonials() {
   }, []);
 
   return (
-    <section ref={ref} className="py-28 md:py-44 bg-background overflow-hidden">
+    <section data-no-auto-reveal ref={ref} className="py-28 md:py-44 bg-background overflow-hidden">
       <div className="container mx-auto px-6 mb-16">
         <div className="max-w-3xl">
           <div data-tst-eyebrow className="text-[11px] uppercase tracking-[0.4em] text-muted-foreground">— Client Voices</div>

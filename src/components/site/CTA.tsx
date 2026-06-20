@@ -23,7 +23,7 @@ export function CTA() {
   }, []);
 
   return (
-    <section ref={ref} className="py-28 md:py-44 bg-surface overflow-hidden">
+    <section data-no-auto-reveal ref={ref} className="py-28 md:py-44 bg-surface overflow-hidden">
       <div className="container mx-auto px-6 text-center max-w-4xl">
         <div data-cta-el className="text-[11px] uppercase tracking-[0.4em] text-muted-foreground">— Start your project</div>
         <h2 className="text-4xl md:text-7xl lg:text-8xl mt-6 text-navy text-balance font-light leading-[0.98]">

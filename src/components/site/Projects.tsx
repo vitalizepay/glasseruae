@@ -59,7 +59,7 @@ export function Projects() {
   }, []);
 
   return (
-    <section ref={ref} id="projects" className="py-28 md:py-44 bg-background overflow-hidden">
+    <section data-no-auto-reveal ref={ref} id="projects" className="py-28 md:py-44 bg-background overflow-hidden">
       <div className="container mx-auto px-6">
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-8 mb-20">
           <div className="max-w-3xl">
