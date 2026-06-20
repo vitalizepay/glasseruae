@@ -10,7 +10,7 @@ import { Testimonials } from "@/components/site/Testimonials";
 import { FAQ } from "@/components/site/FAQ";
 import { CTA } from "@/components/site/CTA";
 import { ContactSection } from "@/components/site/ContactSection";
-import heroImage from "@/assets/hero-dubai.jpg";
+import heroImage from "@/assets/hero-cinematic.jpg";
 
 const TITLE = "Glass Partition & Aluminium Works Company in Dubai | Glasser UAE";
 const DESC = "Glasser Technical Works provides glass partitions, shower glass, aluminium fabrication, glass railings and commercial glass solutions across Dubai, Sharjah and UAE.";
