@@ -9,21 +9,31 @@ if (typeof window !== "undefined") {
 
 export function SmoothScroll() {
   useEffect(() => {
+    // Respect reduced-motion users — fall back to native scroll
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+
     const lenis = new Lenis({
-      duration: 1.4,
-      easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+      lerp: 0.12,              // snappier follow than long duration easing
+      wheelMultiplier: 1.05,
+      touchMultiplier: 1.2,
       smoothWheel: true,
+      syncTouch: false,         // native momentum on touch — no lag on mobile
     });
 
     lenis.on("scroll", ScrollTrigger.update);
 
+    let rafId = 0;
     const raf = (time: number) => {
       lenis.raf(time);
-      requestAnimationFrame(raf);
+      rafId = requestAnimationFrame(raf);
     };
-    requestAnimationFrame(raf);
+    rafId = requestAnimationFrame(raf);
+
+    // Tell GSAP to use Lenis position for scroll calculations
+    gsap.ticker.lagSmoothing(0);
 
     return () => {
+      cancelAnimationFrame(rafId);
       lenis.destroy();
     };
   }, []);

@@ -29,16 +29,15 @@ export function Hero() {
         { scale: 1.1, duration: 2.4, ease: "expo.out" },
       );
 
-      // Parallax scrub on scroll
+      // Parallax scrub on scroll — light (only translate, smoothed)
       gsap.to(imgRef.current, {
-        yPercent: 18,
-        scale: 1.25,
+        yPercent: 14,
         ease: "none",
         scrollTrigger: {
           trigger: root.current,
           start: "top top",
           end: "bottom top",
-          scrub: true,
+          scrub: 1,
         },
       });
 

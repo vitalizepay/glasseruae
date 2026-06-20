@@ -31,12 +31,11 @@ export function About() {
         if (img) {
           gsap.fromTo(
             img,
-            { scale: 1.3, yPercent: -8 },
+            { yPercent: -6 },
             {
-              scale: 1.05,
-              yPercent: 8,
+              yPercent: 6,
               ease: "none",
-              scrollTrigger: { trigger: ref.current, start: "top bottom", end: "bottom top", scrub: true },
+              scrollTrigger: { trigger: ref.current, start: "top bottom", end: "bottom top", scrub: 1 },
             },
           );
         }
