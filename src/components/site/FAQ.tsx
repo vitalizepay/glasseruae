@@ -1,6 +1,13 @@
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Plus, Minus } from "lucide-react";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { SplitWords } from "./Reveal";
+
+if (typeof window !== "undefined") {
+  gsap.registerPlugin(ScrollTrigger);
+}
 
 export const FAQS = [
   { q: "Which areas in the UAE does Glasser serve?", a: "We deliver and install across all seven Emirates — Dubai, Abu Dhabi, Sharjah, Ajman, Ras Al Khaimah, Fujairah and Umm Al Quwain — with most projects concentrated in Dubai and Abu Dhabi." },
@@ -12,29 +19,50 @@ export const FAQS = [
 ];
 
 export function FAQ() {
+  const ref = useRef<HTMLElement | null>(null);
   const [open, setOpen] = useState<number | null>(0);
+
+  useEffect(() => {
+    const ctx = gsap.context(() => {
+      gsap.from("[data-faq-side]", {
+        opacity: 0, y: 40, duration: 1.1, ease: "expo.out", stagger: 0.1,
+        scrollTrigger: { trigger: ref.current, start: "top 80%", once: true },
+      });
+      gsap.utils.toArray<HTMLElement>("[data-faq-row]").forEach((el, i) => {
+        gsap.from(el, {
+          opacity: 0, y: 40, duration: 0.9, ease: "expo.out", delay: i * 0.06,
+          scrollTrigger: { trigger: el, start: "top 92%", once: true },
+        });
+      });
+    }, ref);
+    return () => ctx.revert();
+  }, []);
+
   return (
-    <section className="py-24 md:py-36 bg-surface">
-      <div className="container mx-auto px-6 grid lg:grid-cols-12 gap-12">
-        <div className="lg:col-span-4">
-          <span className="text-[11px] uppercase tracking-[0.3em] text-muted-foreground">FAQ</span>
-          <h2 className="text-4xl md:text-5xl mt-4 text-navy text-balance font-light">Questions, answered.</h2>
-          <p className="mt-5 text-muted-foreground font-light">
+    <section ref={ref} className="py-28 md:py-44 bg-surface overflow-hidden">
+      <div className="container mx-auto px-6 grid lg:grid-cols-12 gap-12 lg:gap-20">
+        <div className="lg:col-span-5">
+          <div data-faq-side className="text-[11px] uppercase tracking-[0.4em] text-muted-foreground">— FAQ</div>
+          <h2 data-faq-side className="text-4xl md:text-6xl mt-6 text-navy text-balance font-light leading-[1.05]">
+            <SplitWords text="Questions," className="block" />
+            <SplitWords text="answered." className="block italic font-extralight" delay={0.12} />
+          </h2>
+          <p data-faq-side className="mt-6 text-muted-foreground font-light">
             Everything you need to know before commissioning a glass or aluminium project in the UAE.
           </p>
         </div>
-        <div className="lg:col-span-8">
+        <div className="lg:col-span-7">
           <div className="border-t border-border">
             {FAQS.map((f, i) => {
               const isOpen = open === i;
               return (
-                <div key={f.q} className="border-b border-border">
+                <div key={f.q} data-faq-row className="border-b border-border">
                   <button
                     onClick={() => setOpen(isOpen ? null : i)}
-                    className="w-full py-6 flex items-center justify-between gap-6 text-left group"
+                    className="w-full py-7 flex items-center justify-between gap-6 text-left group"
                   >
-                    <span className="text-lg md:text-xl text-navy font-medium">{f.q}</span>
-                    <span className="w-9 h-9 rounded-full bg-white border border-border flex items-center justify-center text-navy shrink-0 group-hover:bg-navy group-hover:text-white transition">
+                    <span className="text-lg md:text-2xl text-navy font-light">{f.q}</span>
+                    <span className="w-10 h-10 rounded-full bg-white border border-border flex items-center justify-center text-navy shrink-0 group-hover:bg-navy group-hover:text-white transition-all duration-500">
                       {isOpen ? <Minus size={16} /> : <Plus size={16} />}
                     </span>
                   </button>
@@ -44,10 +72,10 @@ export function FAQ() {
                         initial={{ height: 0, opacity: 0 }}
                         animate={{ height: "auto", opacity: 1 }}
                         exit={{ height: 0, opacity: 0 }}
-                        transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
+                        transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
                         className="overflow-hidden"
                       >
-                        <p className="pb-6 pr-12 text-muted-foreground leading-relaxed font-light">{f.a}</p>
+                        <p className="pb-7 pr-12 text-muted-foreground leading-relaxed font-light text-lg">{f.a}</p>
                       </motion.div>
                     )}
                   </AnimatePresence>

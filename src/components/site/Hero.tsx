@@ -3,6 +3,7 @@ import { Link } from "@tanstack/react-router";
 import { ArrowRight, Play } from "lucide-react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { SplitWords } from "./Reveal";
 import heroImage from "@/assets/hero-cinematic.jpg";
 
 if (typeof window !== "undefined") {
@@ -11,35 +12,43 @@ if (typeof window !== "undefined") {
 
 export function Hero() {
   const root = useRef<HTMLElement | null>(null);
+  const imgWrap = useRef<HTMLDivElement | null>(null);
   const imgRef = useRef<HTMLImageElement | null>(null);
 
   useEffect(() => {
     const ctx = gsap.context(() => {
-      // Slow cinematic image scale + parallax on scroll
+      // Cinematic mask reveal of the hero image on mount
+      gsap.fromTo(
+        imgWrap.current,
+        { clipPath: "inset(8% 8% 8% 8% round 2rem)" },
+        { clipPath: "inset(0% 0% 0% 0% round 0rem)", duration: 2.2, ease: "expo.out" },
+      );
       gsap.fromTo(
         imgRef.current,
-        { scale: 1.15, yPercent: 0 },
-        {
-          scale: 1.25,
-          yPercent: 12,
-          ease: "none",
-          scrollTrigger: {
-            trigger: root.current,
-            start: "top top",
-            end: "bottom top",
-            scrub: true,
-          },
-        },
+        { scale: 1.35 },
+        { scale: 1.1, duration: 2.4, ease: "expo.out" },
       );
 
-      // Initial entrance — line-by-line reveal
+      // Parallax scrub on scroll
+      gsap.to(imgRef.current, {
+        yPercent: 18,
+        scale: 1.25,
+        ease: "none",
+        scrollTrigger: {
+          trigger: root.current,
+          start: "top top",
+          end: "bottom top",
+          scrub: true,
+        },
+      });
+
+      // Entrance tween for surrounding UI
       const tl = gsap.timeline({ defaults: { ease: "expo.out" } });
-      tl.from("[data-hero-eyebrow]", { opacity: 0, y: 24, duration: 1.1 })
-        .from("[data-hero-line]", { opacity: 0, y: 80, duration: 1.4, stagger: 0.12 }, "-=0.8")
-        .from("[data-hero-sub]", { opacity: 0, y: 24, duration: 1.2 }, "-=0.9")
-        .from("[data-hero-cta]", { opacity: 0, y: 20, duration: 1, stagger: 0.1 }, "-=0.9")
-        .from("[data-hero-meta]", { opacity: 0, y: 20, duration: 1, stagger: 0.1 }, "-=0.9")
-        .from("[data-hero-scroll]", { opacity: 0, duration: 1.2 }, "-=0.6");
+      tl.from("[data-hero-eyebrow]", { opacity: 0, y: 24, duration: 1.2 }, 0.2)
+        .from("[data-hero-meta]", { opacity: 0, y: 24, duration: 1.2 }, 0.3)
+        .from("[data-hero-sub]", { opacity: 0, y: 24, duration: 1.2 }, 1.4)
+        .from("[data-hero-cta] > *", { opacity: 0, y: 24, duration: 1, stagger: 0.12 }, 1.5)
+        .from("[data-hero-scroll]", { opacity: 0, duration: 1.4 }, 1.8);
     }, root);
     return () => ctx.revert();
   }, []);
@@ -49,8 +58,8 @@ export function Hero() {
       ref={root}
       className="relative min-h-[100svh] flex items-end overflow-hidden bg-navy text-white"
     >
-      {/* Cinematic fullscreen image */}
-      <div className="absolute inset-0 overflow-hidden">
+      {/* Cinematic fullscreen image with clip reveal */}
+      <div ref={imgWrap} className="absolute inset-0 overflow-hidden will-change-[clip-path]">
         <img
           ref={imgRef}
           src={heroImage}
@@ -61,12 +70,11 @@ export function Hero() {
           fetchPriority="high"
           decoding="async"
         />
-        {/* Editorial gradient washes */}
         <div className="absolute inset-0 bg-gradient-to-t from-navy via-navy/40 to-navy/10" />
         <div className="absolute inset-0 bg-gradient-to-r from-navy/60 via-transparent to-transparent" />
       </div>
 
-      {/* Top hairline + eyebrow */}
+      {/* Top eyebrow row */}
       <div className="absolute top-28 left-0 right-0 z-10">
         <div className="container mx-auto px-6 flex items-center justify-between">
           <span
@@ -80,25 +88,25 @@ export function Hero() {
             data-hero-meta
             className="hidden md:inline-flex items-center gap-3 text-[10px] uppercase tracking-[0.42em] text-white/60"
           >
-            UAE · Architectural Glass & Aluminium
+            UAE · Architectural Glass &amp; Aluminium
             <span className="w-8 h-px bg-white/50" />
           </span>
         </div>
       </div>
 
-      {/* Cinematic headline block */}
+      {/* Headline */}
       <div className="container mx-auto px-6 relative z-10 pb-24 md:pb-32">
         <div className="max-w-6xl">
           <h1 className="font-display font-light tracking-[-0.03em] text-balance text-white leading-[0.95] text-[clamp(3rem,9vw,9rem)]">
-            <span className="block overflow-hidden">
-              <span data-hero-line className="block">Architectural</span>
-            </span>
-            <span className="block overflow-hidden">
-              <span data-hero-line className="block italic font-extralight">glass &amp; aluminium</span>
-            </span>
-            <span className="block overflow-hidden">
-              <span data-hero-line className="block">for the modern UAE.</span>
-            </span>
+            <SplitWords text="Architectural" className="block" delay={0.4} stagger={0.06} start="top 100%" />
+            <SplitWords
+              text="glass & aluminium"
+              className="block italic font-extralight"
+              delay={0.6}
+              stagger={0.06}
+              start="top 100%"
+            />
+            <SplitWords text="for the modern UAE." className="block" delay={0.85} stagger={0.06} start="top 100%" />
           </h1>
 
           <div className="mt-10 grid md:grid-cols-12 gap-8 items-end">
@@ -130,7 +138,6 @@ export function Hero() {
         </div>
       </div>
 
-      {/* Scroll cue */}
       <div
         data-hero-scroll
         className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10 text-white/60 text-[10px] uppercase tracking-[0.5em] flex flex-col items-center gap-3"
