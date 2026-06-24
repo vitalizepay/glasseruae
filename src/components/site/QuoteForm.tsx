@@ -38,15 +38,16 @@ export function QuoteForm({ defaultService = "", defaultLocation = "" }: QuoteFo
       <h3 className="text-2xl text-navy font-medium">Get a free quote</h3>
       <p className="text-sm text-muted-foreground -mt-1">Reply within 1 business hour. Free site survey across the UAE.</p>
       <div className="grid sm:grid-cols-2 gap-3 mt-2">
-        <input required name="name" placeholder="Full name" maxLength={100} className="px-4 py-3 rounded-xl border border-border bg-background text-sm" />
-        <input required name="phone" placeholder="Phone (+971…)" maxLength={30} className="px-4 py-3 rounded-xl border border-border bg-background text-sm" />
+        <input required name="name" aria-label="Full name" placeholder="Full name" maxLength={100} className="px-4 py-3 rounded-xl border border-border bg-background text-sm" />
+        <input required name="phone" aria-label="Phone number" placeholder="Phone (+971…)" maxLength={30} className="px-4 py-3 rounded-xl border border-border bg-background text-sm" />
       </div>
-      <input name="email" type="email" placeholder="Email" maxLength={120} className="px-4 py-3 rounded-xl border border-border bg-background text-sm" />
+      <input name="email" type="email" aria-label="Email address" placeholder="Email" maxLength={120} className="px-4 py-3 rounded-xl border border-border bg-background text-sm" />
       <div className="grid sm:grid-cols-2 gap-3">
-        <input name="service" defaultValue={defaultService} placeholder="Service" maxLength={80} className="px-4 py-3 rounded-xl border border-border bg-background text-sm" />
-        <input name="location" defaultValue={defaultLocation} placeholder="Location" maxLength={80} className="px-4 py-3 rounded-xl border border-border bg-background text-sm" />
+        <input name="service" aria-label="Service required" defaultValue={defaultService} placeholder="Service" maxLength={80} className="px-4 py-3 rounded-xl border border-border bg-background text-sm" />
+        <input name="location" aria-label="Project location" defaultValue={defaultLocation} placeholder="Location" maxLength={80} className="px-4 py-3 rounded-xl border border-border bg-background text-sm" />
       </div>
-      <textarea name="message" rows={4} placeholder="Project details…" maxLength={800} className="px-4 py-3 rounded-xl border border-border bg-background text-sm" />
+      <textarea name="message" aria-label="Project details" rows={4} placeholder="Project details…" maxLength={800} className="px-4 py-3 rounded-xl border border-border bg-background text-sm" />
+
       <button type="submit" className="mt-2 inline-flex items-center justify-center gap-2 px-6 py-3 rounded-full bg-navy text-navy-foreground font-medium hover:bg-navy/90 transition">
         Send request <Send size={14} />
       </button>
