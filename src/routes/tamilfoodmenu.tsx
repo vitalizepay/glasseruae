@@ -197,7 +197,40 @@ export const Route = createFileRoute("/tamilfoodmenu")({
         href: "https://fonts.googleapis.com/css2?family=Yatra+One&family=Poppins:wght@400;500;600;700&display=swap",
       },
     ],
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "Restaurant",
+          name: "Fajr Al Nahda Restaurant",
+          servesCuisine: ["Tamil", "South Indian", "Arabian", "Chinese"],
+          telephone: "+971 6 522 0875",
+          url: "https://glasseruae.com/tamilfoodmenu",
+          address: {
+            "@type": "PostalAddress",
+            streetAddress: "Al Nahda",
+            addressLocality: "Sharjah",
+            addressCountry: "AE",
+          },
+          hasMenu: {
+            "@type": "Menu",
+            name: "Fajr Al Nahda Menu",
+            hasMenuSection: CATEGORIES.map((c) => ({
+              "@type": "MenuSection",
+              name: c.name,
+              hasMenuItem: c.items.map((i) => ({
+                "@type": "MenuItem",
+                name: i.name,
+                offers: { "@type": "Offer", price: i.price, priceCurrency: "AED" },
+              })),
+            })),
+          },
+        }),
+      },
+    ],
   }),
+
   component: TamilFoodMenuPage,
 });
 
