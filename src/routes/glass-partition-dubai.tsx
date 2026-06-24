@@ -3,7 +3,7 @@ import { SeoLanding } from "@/components/site/SeoLanding";
 import { SERVICE_AREAS, SEO_PROJECTS, faqJsonLd, serviceJsonLd } from "@/lib/seo";
 import { breadcrumbJsonLd } from "@/components/site/Breadcrumbs";
 
-const T = "Glass Partition Dubai | Frameless Office Partitions | Glasser UAE";
+const T = "Glass Partition Dubai | Frameless Offices | Glasser UAE";
 const D = "Premium glass partition installation in Dubai. Frameless, framed, acoustic & demountable systems for offices, clinics and retail. Free site survey across the UAE.";
 const URL = "https://glasseruae.com/glass-partition-dubai";
 
