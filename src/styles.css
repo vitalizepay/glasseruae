@@ -39,6 +39,9 @@
   --color-orange-foreground: var(--orange-foreground);
   --color-surface: var(--surface);
   --color-stone: var(--stone);
+  --color-gold: var(--gold);
+  --color-gold-soft: var(--gold-soft);
+  --color-ember: var(--ember);
 }
 
 :root {
