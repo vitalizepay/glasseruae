@@ -13,9 +13,11 @@ export function SmoothScroll() {
     if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
 
     const lenis = new Lenis({
-      lerp: 0.42,              // very snappy — close to native
-      wheelMultiplier: 2.2,    // big travel per wheel notch
-      touchMultiplier: 1.8,
+      lerp: 0.08,
+      duration: 1.2,
+      easing: (t: number) => 1 - Math.pow(1 - t, 5), // easeOutExpo-like
+      wheelMultiplier: 1,
+      touchMultiplier: 1.6,
       smoothWheel: true,
       syncTouch: false,
     });
