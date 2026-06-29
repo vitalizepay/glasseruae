@@ -76,19 +76,19 @@ export function Hero() {
       </div>
 
       {/* Main content */}
-      <div className="relative z-10 h-full container mx-auto px-6 md:px-10 flex items-center">
-        <div className="w-full max-w-[640px] pt-24 md:pt-0">
+      <div className="relative z-10 h-full container mx-auto px-6 md:px-10 flex items-center pt-28 md:pt-32 pb-16">
+        <div className="w-full max-w-[640px]">
           <div
             data-h-rule
-            className="h-px w-24 bg-gradient-to-r from-[#c7a36b] to-transparent mb-8 md:mb-10"
+            className="h-px w-24 bg-gradient-to-r from-[#c7a36b] to-transparent mb-6 md:mb-8"
           />
 
           <h1
             className="font-display font-light text-white text-balance"
             style={{
-              lineHeight: 0.92,
+              lineHeight: 0.95,
               letterSpacing: "-0.025em",
-              fontSize: "clamp(3rem, 8.5vw, 9rem)",
+              fontSize: "clamp(2.5rem, 6.8vw, 7rem)",
             }}
           >
             <SplitWords text="Invisible Luxury." className="block" delay={0.4} stagger={0.06} start="top 100%" />
