@@ -131,6 +131,7 @@ function Index() {
   return (
     <Layout>
       <Hero />
+      <SelectedWork />
       <TrustBar />
       <About />
       <Services />
