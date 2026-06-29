@@ -28,14 +28,14 @@ type Item = {
 };
 
 const ITEMS: Item[] = [
-  { src: img1.url, cat: "Staircase",         title: "Frameless Glass Balustrade",   loc: "Private Villa",     span: "md:col-span-7", ratio: "aspect-[4/5]" },
-  { src: img2.url, cat: "Staircase",         title: "Floating Stair Railing",       loc: "Private Residence", span: "md:col-span-5", ratio: "aspect-[4/5]" },
-  { src: img3.url, cat: "Bathroom",          title: "Mirror & Shower Glass",        loc: "Penthouse",         span: "md:col-span-5", ratio: "aspect-[4/5]" },
-  { src: img4.url, cat: "Shower Glass",      title: "Frameless Shower Enclosure",   loc: "Master Bath",       span: "md:col-span-7", ratio: "aspect-[4/5]" },
-  { src: img5.url, cat: "Mirrors",           title: "Decorative Feature Mirror",    loc: "Living Space",      span: "md:col-span-6", ratio: "aspect-[4/5]" },
-  { src: img6.url, cat: "Mirrors",           title: "Full-Height Feature Mirror",   loc: "Entrance Foyer",    span: "md:col-span-6", ratio: "aspect-[4/5]" },
-  { src: img7.url, cat: "Back-Painted Glass", title: "Antique Mirror Panel",        loc: "Feature Wall",      span: "md:col-span-7", ratio: "aspect-[4/5]" },
-  { src: img8.url, cat: "Mirrors",           title: "LED Backlit Mirror",           loc: "Guest Bathroom",    span: "md:col-span-5", ratio: "aspect-[4/5]" },
+  { src: img1.url, cat: "Frameless Glass",     title: "Curved Staircase Glazing",     loc: "Private Villa · Dubai",   span: "md:col-span-7", ratio: "aspect-[4/5]" },
+  { src: img2.url, cat: "Glass Balustrade",    title: "Floating Stair Railing",       loc: "Private Residence · UAE", span: "md:col-span-5", ratio: "aspect-[4/5]" },
+  { src: img3.url, cat: "Bathroom Glass",      title: "Mirror & Shower Enclosure",    loc: "Penthouse · Downtown",    span: "md:col-span-5", ratio: "aspect-[4/5]" },
+  { src: img4.url, cat: "Shower Enclosure",    title: "Frameless Walk-In Shower",     loc: "Master Bathroom",         span: "md:col-span-7", ratio: "aspect-[4/5]" },
+  { src: img5.url, cat: "Custom Mirror",       title: "Decorative Feature Mirror",    loc: "Living Space",            span: "md:col-span-6", ratio: "aspect-[4/5]" },
+  { src: img6.url, cat: "Architectural Mirror",title: "Full-Height Feature Mirror",   loc: "Entrance Foyer",          span: "md:col-span-6", ratio: "aspect-[4/5]" },
+  { src: img7.url, cat: "Back-Painted Glass",  title: "Antique Mirror Panel",         loc: "Feature Wall",            span: "md:col-span-7", ratio: "aspect-[4/5]" },
+  { src: img8.url, cat: "LED Mirror",          title: "Backlit Vanity Mirror",        loc: "Guest Bathroom",          span: "md:col-span-5", ratio: "aspect-[4/5]" },
 ];
 
 export function SelectedWork() {
