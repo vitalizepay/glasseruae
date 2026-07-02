@@ -4,18 +4,24 @@ import { ArrowUpRight } from "lucide-react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { SplitWords } from "./Reveal";
-import office from "@/assets/office-glass-partition-black-frame.jpg.asset.json";
-import villa from "@/assets/luxury-frameless-villa-glass.jpg.asset.json";
-import waterfront from "@/assets/waterfront-villa-glass-palm-jumeirah.jpg.asset.json";
+import staircase from "@/assets/landing/staircase.jpg";
+import partition from "@/assets/landing/partition.jpg";
+import shower from "@/assets/landing/shower.jpg";
+import mirror from "@/assets/landing/mirror.jpg";
+import railing from "@/assets/landing/railing.jpg";
+import tower from "@/assets/landing/tower.jpg";
 
 if (typeof window !== "undefined") {
   gsap.registerPlugin(ScrollTrigger);
 }
 
 const PROJECTS = [
-  { img: office.url, alt: "Office Glass Partition Dubai with black aluminium frame", title: "Office Glass Partition Installation", cat: "Commercial · Dubai", year: "2025", to: "/projects/office-glass-partition-installation-dubai" },
-  { img: villa.url, alt: "Luxury Frameless Villa Glass Installation Dubai", title: "Luxury Frameless Villa Glass", cat: "Residential · Dubai Waterfront", year: "2025", to: "/projects/luxury-frameless-villa-glass-dubai" },
-  { img: waterfront.url, alt: "Villa Glass Installation Dubai — Palm Jumeirah waterfront", title: "Premium Waterfront Glass Works", cat: "Villa · Palm Jumeirah", year: "2025", to: "/projects/premium-waterfront-glass-palm-jumeirah" },
+  { img: staircase, alt: "Frameless Staircase Balustrade — Palm Jumeirah Villa", title: "Frameless Staircase Balustrade", cat: "Railings · Palm Jumeirah", year: "2025", to: "/projects/luxury-frameless-villa-glass-dubai" },
+  { img: partition, alt: "Branded Office Partition — Jumeirah HQ, Dubai", title: "Branded Office Partition", cat: "Partitions · Jumeirah HQ", year: "2025", to: "/projects/office-glass-partition-installation-dubai" },
+  { img: shower, alt: "Frameless Shower Enclosure — Emirates Hills Penthouse", title: "Frameless Shower Enclosure", cat: "Showers · Emirates Hills", year: "2025", to: "/projects/premium-waterfront-glass-palm-jumeirah" },
+  { img: mirror, alt: "Backlit LED Mirror Feature — Downtown Dubai Suite", title: "Backlit LED Mirror Feature", cat: "Mirrors · Downtown Dubai", year: "2025", to: "/projects/luxury-frameless-villa-glass-dubai" },
+  { img: railing, alt: "Skyline Glass Balustrade — Business Bay Penthouse", title: "Skyline Glass Balustrade", cat: "Railings · Business Bay", year: "2025", to: "/projects/premium-waterfront-glass-palm-jumeirah" },
+  { img: tower, alt: "Curtain Wall Aluminium System — DIFC Commercial Tower", title: "Curtain Wall Aluminium System", cat: "Commercial · DIFC", year: "2025", to: "/projects/office-glass-partition-installation-dubai" },
 ];
 
 export function Projects() {

@@ -4,12 +4,12 @@ import { ArrowUpRight } from "lucide-react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { SplitWords } from "./Reveal";
-import partition from "@/assets/service-partition.jpg";
-import aluminium from "@/assets/service-aluminium.jpg";
-import shower from "@/assets/service-shower.jpg";
-import mirror from "@/assets/service-mirror.jpg";
-import office from "@/assets/project-office.jpg";
-import villa from "@/assets/project-villa.jpg";
+import partition from "@/assets/landing/partition.jpg";
+import tower from "@/assets/landing/tower.jpg";
+import staircase from "@/assets/landing/staircase.jpg";
+import shower from "@/assets/landing/shower.jpg";
+import mirror from "@/assets/landing/mirror.jpg";
+import railing from "@/assets/landing/railing.jpg";
 
 if (typeof window !== "undefined") {
   gsap.registerPlugin(ScrollTrigger);
@@ -17,11 +17,11 @@ if (typeof window !== "undefined") {
 
 const SERVICES = [
   { img: partition, title: "Frameless Glass Partitions", desc: "Seamless office and residential partitions in crystal-clear tempered glass." },
-  { img: aluminium, title: "Aluminium Doors", desc: "Sliding, pivot and folding aluminium systems in premium architectural finishes." },
-  { img: office, title: "Aluminium Windows", desc: "Thermal-break window systems engineered for the UAE climate." },
+  { img: staircase, title: "Glass Railings & Balustrades", desc: "Frameless staircase and balcony balustrades engineered for safety and clarity." },
   { img: shower, title: "Shower Enclosures", desc: "Frameless luxury enclosures crafted to your bathroom dimensions." },
-  { img: mirror, title: "Custom Mirrors", desc: "Bespoke mirror installations for hospitality, retail and private homes." },
-  { img: villa, title: "Glass Facades", desc: "Structural curtain-wall facades for villas, offices and commercial towers." },
+  { img: mirror, title: "LED Mirrors & Mirror Features", desc: "Backlit mirrors and decorative mirror walls cut to the millimetre." },
+  { img: railing, title: "Office & Commercial Glass", desc: "Fit-out partitions, branded glass and architectural graphics." },
+  { img: tower, title: "Aluminium Works", desc: "Windows, doors, façades, and bespoke aluminium fabrication." },
 ];
 
 export function Services() {

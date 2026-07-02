@@ -1,17 +1,16 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { Layout } from "@/components/site/Layout";
 import { Hero } from "@/components/site/Hero";
-import { SelectedWork } from "@/components/site/SelectedWork";
-import { TrustBar } from "@/components/site/TrustBar";
 import { About } from "@/components/site/About";
 import { Services } from "@/components/site/Services";
 import { Projects } from "@/components/site/Projects";
+import { Process } from "@/components/site/Process";
 import { WhyUs } from "@/components/site/WhyUs";
 import { Testimonials } from "@/components/site/Testimonials";
 import { FAQ } from "@/components/site/FAQ";
 import { CTA } from "@/components/site/CTA";
 import { ContactSection } from "@/components/site/ContactSection";
-import heroImage from "@/assets/hero-cinematic.jpg";
+import heroImage from "@/assets/landing/staircase.jpg";
 
 const TITLE = "Glass Partition & Aluminium Works Dubai | Glasser UAE";
 const DESC = "Glasser Technical Works provides glass partitions, shower glass, aluminium fabrication, glass railings and commercial glass solutions across Dubai, Sharjah and UAE.";
@@ -131,11 +130,10 @@ function Index() {
   return (
     <Layout>
       <Hero />
-      <SelectedWork />
-      <TrustBar />
       <About />
       <Services />
       <Projects />
+      <Process />
       <WhyUs />
       <Testimonials />
       <FAQ />
