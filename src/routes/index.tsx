@@ -130,11 +130,10 @@ function Index() {
   return (
     <Layout>
       <Hero />
-      <SelectedWork />
-      <TrustBar />
       <About />
       <Services />
       <Projects />
+      <Process />
       <WhyUs />
       <Testimonials />
       <FAQ />
