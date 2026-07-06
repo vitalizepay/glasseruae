@@ -33,11 +33,12 @@ type Project = {
   category: string;
   scope: string;
   description: string;
+  images?: string[];
 };
 
 const PROJECTS: Project[] = [
-  { title: "Abu Dhabi Terminals Project", location: "Abu Dhabi", category: "Commercial Infrastructure", scope: "Glass Partitions • Curved Glass", description: "Premium glass partition and curved architectural glazing for one of Abu Dhabi's major terminal facilities, delivering durability, openness and a modern architectural appearance." },
-  { title: "Abu Dhabi Terminal Curved Glass", location: "Abu Dhabi", category: "Commercial", scope: "Curved Glass Systems", description: "Specialized curved glass fabrication and installation completed with precision engineering to meet demanding architectural specifications." },
+  { title: "Abu Dhabi Terminals Project", location: "Abu Dhabi", category: "Commercial Infrastructure", scope: "Glass Partitions • Curved Glass", description: "Premium glass partition and curved architectural glazing for one of Abu Dhabi's major terminal facilities, delivering durability, openness and a modern architectural appearance.", images: [adt1.url, adt2.url, adt3.url] },
+  { title: "Abu Dhabi Terminal Curved Glass", location: "Abu Dhabi", category: "Commercial", scope: "Curved Glass Systems", description: "Specialized curved glass fabrication and installation completed with precision engineering to meet demanding architectural specifications.", images: [adc1.url, adc2.url, adc3.url] },
   { title: "Dubai Creek Harbour Luxury Bars", location: "Dubai Creek Harbour", category: "Hospitality", scope: "Golden Mirrors • Beveled Mirrors", description: "Luxury decorative mirrors designed and installed to enhance premium hospitality interiors with elegant reflective finishes." },
   { title: "Al Barsha Gym", location: "Al Barsha", category: "Fitness", scope: "Gym Mirrors • Shower Glass", description: "Complete installation of full-height gym mirrors and frameless shower glass creating a clean, modern fitness environment." },
   { title: "JLT Commercial Tower", location: "JLT", category: "Commercial", scope: "Glass Partitions • Golden Cladding • Fused Glass", description: "Contemporary commercial interiors featuring frameless partitions, decorative fused glass and premium metallic cladding finishes." },
