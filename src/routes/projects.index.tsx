@@ -1,6 +1,6 @@
-import { useEffect, useRef, useState } from "react";
+import { useState } from "react";
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { motion, AnimatePresence, useInView, useMotionValue, useTransform, animate } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import { ArrowRight, ArrowUpRight, MapPin, CheckCircle2, ChevronLeft, ChevronRight } from "lucide-react";
 import { Layout } from "@/components/site/Layout";
 import staircase from "@/assets/landing/staircase.jpg";
@@ -18,6 +18,13 @@ import adc3 from "@/assets/projects/ad-curved-3.jpg.asset.json";
 import gym1 from "@/assets/projects/al-barsha-gym-1.jpg.asset.json";
 import gym2 from "@/assets/projects/al-barsha-gym-2.jpg.asset.json";
 import gym3 from "@/assets/projects/al-barsha-gym-3.jpg.asset.json";
+import jlt1 from "@/assets/projects/jlt-tower-1.jpg.asset.json";
+import jlt2 from "@/assets/projects/jlt-tower-2.jpg.asset.json";
+import jlt3 from "@/assets/projects/jlt-tower-3.jpg.asset.json";
+import khw1 from "@/assets/projects/khawaneej-1.jpg.asset.json";
+import khw2 from "@/assets/projects/khawaneej-2.jpg.asset.json";
+import khw3 from "@/assets/projects/khawaneej-3.jpg.asset.json";
+import meydan1 from "@/assets/projects/meydan-1.jpg.asset.json";
 
 const TEAL = "#3fd0c9";
 
@@ -41,9 +48,9 @@ const PROJECTS: Project[] = [
   { title: "Abu Dhabi Terminal Curved Glass", location: "Abu Dhabi", category: "Commercial", scope: "Curved Glass Systems", description: "Specialized curved glass fabrication and installation completed with precision engineering to meet demanding architectural specifications.", images: [adc1.url, adc2.url, adc3.url] },
   { title: "Dubai Creek Harbour Luxury Bars", location: "Dubai Creek Harbour", category: "Hospitality", scope: "Golden Mirrors • Beveled Mirrors", description: "Luxury decorative mirrors designed and installed to enhance premium hospitality interiors with elegant reflective finishes." },
   { title: "Al Barsha Gym", location: "Al Barsha", category: "Fitness", scope: "Gym Mirrors • Shower Glass", description: "Complete installation of full-height gym mirrors and frameless shower glass creating a clean, modern fitness environment.", images: [gym1.url, gym2.url, gym3.url] },
-  { title: "JLT Commercial Tower", location: "JLT", category: "Commercial", scope: "Glass Partitions • Golden Cladding • Fused Glass", description: "Contemporary commercial interiors featuring frameless partitions, decorative fused glass and premium metallic cladding finishes." },
-  { title: "Khawaneej Luxury Villa", location: "Al Khawaneej", category: "Luxury Villa", scope: "Back Painted Glass • Glass Handrails", description: "Luxury villa completed with elegant back-painted glass walls, frameless handrails and bespoke architectural glazing." },
-  { title: "Meydan One Villa", location: "Meydan", category: "Residential", scope: "Mirrors • Shower Glass • Handrails", description: "Premium residential glazing package combining luxury mirrors, frameless shower enclosures and elegant glass railings." },
+  { title: "JLT Commercial Tower", location: "JLT", category: "Commercial", scope: "Glass Partitions • Golden Cladding • Fused Glass", description: "Contemporary commercial interiors featuring frameless partitions, decorative fused glass and premium metallic cladding finishes.", images: [jlt1.url, jlt2.url, jlt3.url] },
+  { title: "Khawaneej Luxury Villa", location: "Al Khawaneej", category: "Luxury Villa", scope: "Back Painted Glass • Glass Handrails", description: "Luxury villa completed with elegant back-painted glass walls, frameless handrails and bespoke architectural glazing.", images: [khw1.url, khw2.url, khw3.url] },
+  { title: "Meydan One Villa", location: "Meydan", category: "Residential", scope: "Mirrors • Shower Glass • Handrails", description: "Premium residential glazing package combining luxury mirrors, frameless shower enclosures and elegant glass railings.", images: [meydan1.url] },
   { title: "Dubai Khawaneej Villa", location: "Dubai", category: "Luxury Residence", scope: "Steel Handrails • Back Painted Glass", description: "Modern villa featuring decorative back-painted glass installations with custom fabricated steel and glass handrail systems." },
   { title: "Dubai Creek Restaurants", location: "Dubai Creek", category: "Restaurant", scope: "Glass Partitions • Decorative Glass", description: "Elegant restaurant interiors designed using frameless partitions and decorative back-painted glass to create a sophisticated dining atmosphere." },
   { title: "Palm Jumeirah Beauty Salon", location: "Palm Jumeirah", category: "Beauty & Wellness", scope: "Designer Mirrors", description: "Premium salon mirrors installed to maximize natural light while delivering a luxurious customer experience." },
@@ -71,145 +78,6 @@ const PROJECTS: Project[] = [
   { title: "Residential Shower Glass", location: "Dubai", category: "Residential", scope: "Frameless Shower Glass • Mirrors", description: "Modern residential bathroom solutions featuring premium tempered glass shower enclosures and custom-cut mirrors." },
 ];
 
-function Counter({ to, suffix = "" }: { to: number; suffix?: string }) {
-  const ref = useRef<HTMLSpanElement>(null);
-  const inView = useInView(ref, { once: true, margin: "-50px" });
-  const count = useMotionValue(0);
-  const rounded = useTransform(count, (v) => Math.round(v).toString());
-  useEffect(() => {
-    if (inView) {
-      const c = animate(count, to, { duration: 2.2, ease: [0.22, 1, 0.36, 1] });
-      return () => c.stop();
-    }
-  }, [inView, to, count]);
-  return (
-    <span ref={ref} className="inline-flex items-baseline">
-      <motion.span>{rounded}</motion.span>
-      <span>{suffix}</span>
-    </span>
-  );
-}
-
-function HeroSection() {
-  return (
-    <section className="relative min-h-[80svh] w-full overflow-hidden bg-[#0a0a0a] text-white flex items-center">
-      <div className="absolute inset-0">
-        <img
-          src={tower}
-          alt="Luxury architectural glass facade in Dubai"
-          className="absolute inset-0 w-full h-full object-cover"
-        />
-        <div
-          className="absolute inset-0"
-          style={{
-            background:
-              "linear-gradient(180deg, rgba(0,0,0,0.55), rgba(0,0,0,0.65) 55%, rgba(0,0,0,0.85))",
-          }}
-        />
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(0,0,0,0)_40%,rgba(0,0,0,0.6)_100%)]" />
-      </div>
-
-      <div className="relative z-10 container mx-auto px-6 md:px-10 pt-40 pb-20">
-        <motion.div
-          initial={{ opacity: 0, y: 12 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.9, ease: [0.16, 1, 0.3, 1] }}
-          className="text-[10px] sm:text-[11px] font-mono tracking-[0.35em] uppercase"
-          style={{ color: TEAL }}
-        >
-          Portfolio · 500+ Projects Delivered
-        </motion.div>
-
-        <motion.h1
-          initial={{ opacity: 0, y: 30, filter: "blur(10px)" }}
-          animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
-          transition={{ duration: 1.1, ease: [0.16, 1, 0.3, 1], delay: 0.2 }}
-          className="mt-6 md:mt-8 font-display font-medium text-white text-balance max-w-[1100px]"
-          style={{ lineHeight: 1.02, letterSpacing: "-0.02em", fontSize: "clamp(2.5rem, 7vw, 6rem)" }}
-        >
-          Our <span className="italic" style={{ color: TEAL }}>premium</span> projects
-        </motion.h1>
-
-        <motion.p
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.9, ease: [0.16, 1, 0.3, 1], delay: 0.55 }}
-          className="mt-7 md:mt-9 text-[15px] sm:text-[17px] font-light text-white/85 max-w-[780px] leading-[1.75]"
-        >
-          For over 7 years, Glasser Technical Works has delivered premium Glass &amp; Aluminium
-          solutions across the UAE. From luxury villas and commercial towers to restaurants, gyms,
-          retail stores and corporate offices, every project reflects our commitment to exceptional
-          craftsmanship, precision engineering and customer satisfaction. Today, we are proud to
-          have completed 500+ successful projects across the UAE — below is a curated collection of
-          32 that showcase the quality we deliver every day.
-        </motion.p>
-      </div>
-    </section>
-  );
-}
-
-const STATS = [
-  { value: 500, suffix: "+", label: "Completed Projects" },
-  { value: 7, suffix: "+", label: "Years of Experience" },
-  { value: 100, suffix: "%", label: "Client Satisfaction" },
-];
-
-function StatsSection() {
-  return (
-    <section className="relative bg-[#0a0a0a] text-white py-16 md:py-24 overflow-hidden">
-      <div
-        className="absolute inset-0 opacity-40 pointer-events-none"
-        style={{
-          background:
-            "radial-gradient(600px circle at 20% 30%, rgba(63,208,201,0.18), transparent 60%), radial-gradient(600px circle at 80% 70%, rgba(30,107,255,0.15), transparent 60%)",
-        }}
-      />
-      <div className="container mx-auto px-6 md:px-10 relative">
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-5">
-          {STATS.map((s, i) => (
-            <motion.div
-              key={s.label}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-50px" }}
-              transition={{ duration: 0.7, delay: i * 0.1, ease: [0.16, 1, 0.3, 1] }}
-              className="relative rounded-2xl p-8 md:p-10 backdrop-blur-xl bg-white/5 border border-white/10 hover:border-white/20 transition-colors"
-              style={{ boxShadow: "0 30px 60px -30px rgba(0,0,0,0.6)" }}
-            >
-              <div
-                className="font-display font-light text-white"
-                style={{ fontSize: "clamp(2.25rem, 4.5vw, 3.5rem)", letterSpacing: "-0.02em" }}
-              >
-                <Counter to={s.value} suffix={s.suffix} />
-              </div>
-              <div className="mt-3 text-[11px] uppercase tracking-[0.28em] text-white/70">
-                {s.label}
-              </div>
-            </motion.div>
-          ))}
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-50px" }}
-            transition={{ duration: 0.7, delay: 0.3, ease: [0.16, 1, 0.3, 1] }}
-            className="relative rounded-2xl p-8 md:p-10 backdrop-blur-xl bg-white/5 border border-white/10 hover:border-white/20 transition-colors"
-            style={{ boxShadow: "0 30px 60px -30px rgba(0,0,0,0.6)" }}
-          >
-            <div
-              className="font-display font-light text-white"
-              style={{ fontSize: "clamp(1.5rem, 3vw, 2.25rem)", letterSpacing: "-0.02em" }}
-            >
-              UAE Wide
-            </div>
-            <div className="mt-3 text-[11px] uppercase tracking-[0.28em] text-white/70">
-              Dubai • Abu Dhabi • Sharjah
-            </div>
-          </motion.div>
-        </div>
-      </div>
-    </section>
-  );
-}
 
 function ProjectMedia({ p, fallback }: { p: Project; fallback: string }) {
   const imgs = p.images && p.images.length > 0 ? p.images : [fallback];
@@ -347,7 +215,7 @@ function ProjectCard({ p, i }: { p: Project; i: number }) {
 
 function ProjectsGrid() {
   return (
-    <section className="py-24 md:py-32 bg-background">
+    <section className="pt-[60px] md:pt-20 pb-24 md:pb-32 bg-background">
       <div className="container mx-auto px-6 md:px-10">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -359,18 +227,20 @@ function ProjectsGrid() {
           <div className="text-[11px] uppercase tracking-[0.35em] text-muted-foreground">
             — Featured Projects
           </div>
-          <h2
+          <h1
             className="mt-5 font-display font-light text-navy text-balance"
             style={{ fontSize: "clamp(2rem, 5vw, 4rem)", lineHeight: 1.05, letterSpacing: "-0.02em" }}
           >
             Featured Projects
-          </h2>
+          </h1>
           <p className="mt-6 text-muted-foreground font-light text-lg leading-relaxed">
-            Explore a selection of 32 featured projects from our portfolio of more than 500
-            completed projects across the UAE. Every installation demonstrates our expertise in
-            luxury architectural glass, aluminium fabrication and bespoke interior solutions.
+            Explore 32 featured projects from our portfolio of over 500 successfully completed
+            Glass &amp; Aluminium projects across the UAE. From luxury villas and commercial towers
+            to retail stores, restaurants, offices and hospitality spaces, each project showcases
+            our commitment to precision, craftsmanship and premium architectural finishes.
           </p>
         </motion.div>
+
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 md:gap-7">
           {PROJECTS.map((p, i) => (
@@ -464,8 +334,6 @@ function CtaSection() {
 function ProjectsPage() {
   return (
     <Layout>
-      <HeroSection />
-      <StatsSection />
       <ProjectsGrid />
       <CtaSection />
     </Layout>
