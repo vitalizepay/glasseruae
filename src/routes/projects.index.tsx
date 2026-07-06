@@ -1,6 +1,6 @@
-import { useEffect, useRef, useState } from "react";
+import { useState } from "react";
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { motion, AnimatePresence, useInView, useMotionValue, useTransform, animate } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import { ArrowRight, ArrowUpRight, MapPin, CheckCircle2, ChevronLeft, ChevronRight } from "lucide-react";
 import { Layout } from "@/components/site/Layout";
 import staircase from "@/assets/landing/staircase.jpg";
@@ -18,6 +18,13 @@ import adc3 from "@/assets/projects/ad-curved-3.jpg.asset.json";
 import gym1 from "@/assets/projects/al-barsha-gym-1.jpg.asset.json";
 import gym2 from "@/assets/projects/al-barsha-gym-2.jpg.asset.json";
 import gym3 from "@/assets/projects/al-barsha-gym-3.jpg.asset.json";
+import jlt1 from "@/assets/projects/jlt-tower-1.jpg.asset.json";
+import jlt2 from "@/assets/projects/jlt-tower-2.jpg.asset.json";
+import jlt3 from "@/assets/projects/jlt-tower-3.jpg.asset.json";
+import khw1 from "@/assets/projects/khawaneej-1.jpg.asset.json";
+import khw2 from "@/assets/projects/khawaneej-2.jpg.asset.json";
+import khw3 from "@/assets/projects/khawaneej-3.jpg.asset.json";
+import meydan1 from "@/assets/projects/meydan-1.jpg.asset.json";
 
 const TEAL = "#3fd0c9";
 
