@@ -219,42 +219,112 @@ function ProjectCard({ p, i }: { p: Project; i: number }) {
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: "-60px" }}
       transition={{ duration: 0.7, delay: (i % 4) * 0.08, ease: [0.16, 1, 0.3, 1] }}
-      className="group relative flex flex-col rounded-2xl overflow-hidden bg-white border border-black/5 hover:-translate-y-1.5 transition-all duration-500"
-      style={{ boxShadow: "0 20px 40px -25px rgba(10,20,40,0.25)" }}
-    >
-      <div className="relative aspect-[4/3] overflow-hidden bg-stone">
-        <img
-          src={img}
+function ProjectMedia({ p, fallback }: { p: Project; fallback: string }) {
+  const imgs = p.images && p.images.length > 0 ? p.images : [fallback];
+  const [idx, setIdx] = useState(0);
+  const multi = imgs.length > 1;
+
+  const go = (next: number) => setIdx((next + imgs.length) % imgs.length);
+
+  return (
+    <div className="relative aspect-[4/3] overflow-hidden bg-stone">
+      <AnimatePresence initial={false} mode="popLayout">
+        <motion.img
+          key={imgs[idx]}
+          src={imgs[idx]}
           alt={`${p.title} — ${p.scope} in ${p.location}`}
           loading="lazy"
-          className="w-full h-full object-cover transition-transform duration-[900ms] ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:scale-110"
-        />
-        {/* glass reflection sweep */}
-        <span
-          aria-hidden
-          className="pointer-events-none absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-[1200ms]"
-          style={{
-            background:
-              "linear-gradient(115deg, transparent 30%, rgba(255,255,255,0.35) 50%, transparent 70%)",
+          drag={multi ? "x" : false}
+          dragConstraints={{ left: 0, right: 0 }}
+          dragElastic={0.2}
+          onDragEnd={(_, info) => {
+            if (info.offset.x < -60) go(idx + 1);
+            else if (info.offset.x > 60) go(idx - 1);
           }}
+          initial={{ opacity: 0, scale: 1.02 }}
+          animate={{ opacity: 1, scale: 1 }}
+          exit={{ opacity: 0 }}
+          transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
+          className="absolute inset-0 w-full h-full object-cover transition-transform duration-[900ms] ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:scale-110 touch-pan-y select-none"
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-navy/60 via-transparent to-transparent" />
-        <div className="absolute top-3 left-3">
-          <span
-            className="inline-flex items-center gap-1.5 rounded-full px-3 py-1 text-[10px] font-medium uppercase tracking-[0.18em] backdrop-blur-md bg-white/85 text-navy border border-white/60"
-          >
-            {p.category}
-          </span>
-        </div>
-        <div className="absolute top-3 right-3">
-          <span
-            className="inline-flex items-center gap-1 rounded-full px-2.5 py-1 text-[10px] font-medium backdrop-blur-md border"
-            style={{ background: `${TEAL}22`, color: TEAL, borderColor: `${TEAL}55` }}
-          >
-            <CheckCircle2 size={11} /> Completed
-          </span>
-        </div>
+      </AnimatePresence>
+
+      {/* glass reflection sweep */}
+      <span
+        aria-hidden
+        className="pointer-events-none absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-[1200ms]"
+        style={{
+          background:
+            "linear-gradient(115deg, transparent 30%, rgba(255,255,255,0.35) 50%, transparent 70%)",
+        }}
+      />
+      <div className="absolute inset-0 bg-gradient-to-t from-navy/60 via-transparent to-transparent pointer-events-none" />
+
+      <div className="absolute top-3 left-3 pointer-events-none">
+        <span className="inline-flex items-center gap-1.5 rounded-full px-3 py-1 text-[10px] font-medium uppercase tracking-[0.18em] backdrop-blur-md bg-white/85 text-navy border border-white/60">
+          {p.category}
+        </span>
       </div>
+      <div className="absolute top-3 right-3 pointer-events-none">
+        <span
+          className="inline-flex items-center gap-1 rounded-full px-2.5 py-1 text-[10px] font-medium backdrop-blur-md border"
+          style={{ background: `${TEAL}22`, color: TEAL, borderColor: `${TEAL}55` }}
+        >
+          <CheckCircle2 size={11} /> Completed
+        </span>
+      </div>
+
+      {multi && (
+        <>
+          <button
+            type="button"
+            aria-label="Previous image"
+            onClick={(e) => { e.preventDefault(); e.stopPropagation(); go(idx - 1); }}
+            className="absolute left-2 top-1/2 -translate-y-1/2 w-9 h-9 rounded-full grid place-items-center bg-black/40 hover:bg-black/60 text-white backdrop-blur-md border border-white/20 opacity-0 group-hover:opacity-100 focus-visible:opacity-100 transition-opacity duration-300"
+          >
+            <ChevronLeft size={16} />
+          </button>
+          <button
+            type="button"
+            aria-label="Next image"
+            onClick={(e) => { e.preventDefault(); e.stopPropagation(); go(idx + 1); }}
+            className="absolute right-2 top-1/2 -translate-y-1/2 w-9 h-9 rounded-full grid place-items-center bg-black/40 hover:bg-black/60 text-white backdrop-blur-md border border-white/20 opacity-0 group-hover:opacity-100 focus-visible:opacity-100 transition-opacity duration-300"
+          >
+            <ChevronRight size={16} />
+          </button>
+          <div className="absolute bottom-3 left-1/2 -translate-x-1/2 flex items-center gap-1.5">
+            {imgs.map((_, i) => (
+              <button
+                key={i}
+                type="button"
+                aria-label={`Image ${i + 1}`}
+                onClick={(e) => { e.preventDefault(); e.stopPropagation(); setIdx(i); }}
+                className="h-1.5 rounded-full transition-all duration-300"
+                style={{
+                  width: i === idx ? 20 : 6,
+                  background: i === idx ? TEAL : "rgba(255,255,255,0.6)",
+                }}
+              />
+            ))}
+          </div>
+        </>
+      )}
+    </div>
+  );
+}
+
+function ProjectCard({ p, i }: { p: Project; i: number }) {
+  const img = IMAGES[i % IMAGES.length];
+  return (
+    <motion.article
+      initial={{ opacity: 0, y: 40 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, margin: "-60px" }}
+      transition={{ duration: 0.7, delay: (i % 4) * 0.08, ease: [0.16, 1, 0.3, 1] }}
+      className="group relative flex flex-col rounded-2xl overflow-hidden bg-white border border-black/5 hover:-translate-y-1.5 hover:border-[color:var(--teal)]/40 transition-all duration-500"
+      style={{ boxShadow: "0 20px 40px -25px rgba(10,20,40,0.25)", ["--teal" as string]: TEAL }}
+    >
+      <ProjectMedia p={p} fallback={img} />
 
       <div className="flex flex-col flex-1 p-6">
         <div className="flex items-center gap-1.5 text-[11px] uppercase tracking-[0.22em] text-muted-foreground">
