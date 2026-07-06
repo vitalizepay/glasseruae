@@ -211,14 +211,6 @@ function StatsSection() {
   );
 }
 
-function ProjectCard({ p, i }: { p: Project; i: number }) {
-  const img = IMAGES[i % IMAGES.length];
-  return (
-    <motion.article
-      initial={{ opacity: 0, y: 40 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, margin: "-60px" }}
-      transition={{ duration: 0.7, delay: (i % 4) * 0.08, ease: [0.16, 1, 0.3, 1] }}
 function ProjectMedia({ p, fallback }: { p: Project; fallback: string }) {
   const imgs = p.images && p.images.length > 0 ? p.images : [fallback];
   const [idx, setIdx] = useState(0);
