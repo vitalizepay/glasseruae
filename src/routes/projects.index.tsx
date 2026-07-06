@@ -215,7 +215,7 @@ function ProjectCard({ p, i }: { p: Project; i: number }) {
 
 function ProjectsGrid() {
   return (
-    <section className="py-24 md:py-32 bg-background">
+    <section className="pt-[60px] md:pt-20 pb-24 md:pb-32 bg-background">
       <div className="container mx-auto px-6 md:px-10">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -227,18 +227,20 @@ function ProjectsGrid() {
           <div className="text-[11px] uppercase tracking-[0.35em] text-muted-foreground">
             — Featured Projects
           </div>
-          <h2
+          <h1
             className="mt-5 font-display font-light text-navy text-balance"
             style={{ fontSize: "clamp(2rem, 5vw, 4rem)", lineHeight: 1.05, letterSpacing: "-0.02em" }}
           >
             Featured Projects
-          </h2>
+          </h1>
           <p className="mt-6 text-muted-foreground font-light text-lg leading-relaxed">
-            Explore a selection of 32 featured projects from our portfolio of more than 500
-            completed projects across the UAE. Every installation demonstrates our expertise in
-            luxury architectural glass, aluminium fabrication and bespoke interior solutions.
+            Explore 32 featured projects from our portfolio of over 500 successfully completed
+            Glass &amp; Aluminium projects across the UAE. From luxury villas and commercial towers
+            to retail stores, restaurants, offices and hospitality spaces, each project showcases
+            our commitment to precision, craftsmanship and premium architectural finishes.
           </p>
         </motion.div>
+
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 md:gap-7">
           {PROJECTS.map((p, i) => (
