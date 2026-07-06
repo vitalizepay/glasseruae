@@ -334,8 +334,6 @@ function CtaSection() {
 function ProjectsPage() {
   return (
     <Layout>
-      <HeroSection />
-      <StatsSection />
       <ProjectsGrid />
       <CtaSection />
     </Layout>
