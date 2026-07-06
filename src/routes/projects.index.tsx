@@ -1,7 +1,7 @@
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { motion, useInView, useMotionValue, useTransform, animate } from "framer-motion";
-import { ArrowRight, ArrowUpRight, MapPin, CheckCircle2 } from "lucide-react";
+import { motion, AnimatePresence, useInView, useMotionValue, useTransform, animate } from "framer-motion";
+import { ArrowRight, ArrowUpRight, MapPin, CheckCircle2, ChevronLeft, ChevronRight } from "lucide-react";
 import { Layout } from "@/components/site/Layout";
 import staircase from "@/assets/landing/staircase.jpg";
 import partition from "@/assets/landing/partition.jpg";
@@ -9,6 +9,15 @@ import shower from "@/assets/landing/shower.jpg";
 import mirror from "@/assets/landing/mirror.jpg";
 import railing from "@/assets/landing/railing.jpg";
 import tower from "@/assets/landing/tower.jpg";
+import adt1 from "@/assets/projects/abu-dhabi-terminals-1.jpg.asset.json";
+import adt2 from "@/assets/projects/abu-dhabi-terminals-2.jpg.asset.json";
+import adt3 from "@/assets/projects/abu-dhabi-terminals-3.jpg.asset.json";
+import adc1 from "@/assets/projects/ad-curved-1.jpg.asset.json";
+import adc2 from "@/assets/projects/ad-curved-2.jpg.asset.json";
+import adc3 from "@/assets/projects/ad-curved-3.jpg.asset.json";
+import gym1 from "@/assets/projects/al-barsha-gym-1.jpg.asset.json";
+import gym2 from "@/assets/projects/al-barsha-gym-2.jpg.asset.json";
+import gym3 from "@/assets/projects/al-barsha-gym-3.jpg.asset.json";
 
 const TEAL = "#3fd0c9";
 
