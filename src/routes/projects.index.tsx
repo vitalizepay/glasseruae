@@ -1,7 +1,7 @@
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { motion, useInView, useMotionValue, useTransform, animate } from "framer-motion";
-import { ArrowRight, ArrowUpRight, MapPin, CheckCircle2 } from "lucide-react";
+import { motion, AnimatePresence, useInView, useMotionValue, useTransform, animate } from "framer-motion";
+import { ArrowRight, ArrowUpRight, MapPin, CheckCircle2, ChevronLeft, ChevronRight } from "lucide-react";
 import { Layout } from "@/components/site/Layout";
 import staircase from "@/assets/landing/staircase.jpg";
 import partition from "@/assets/landing/partition.jpg";
@@ -9,6 +9,15 @@ import shower from "@/assets/landing/shower.jpg";
 import mirror from "@/assets/landing/mirror.jpg";
 import railing from "@/assets/landing/railing.jpg";
 import tower from "@/assets/landing/tower.jpg";
+import adt1 from "@/assets/projects/abu-dhabi-terminals-1.jpg.asset.json";
+import adt2 from "@/assets/projects/abu-dhabi-terminals-2.jpg.asset.json";
+import adt3 from "@/assets/projects/abu-dhabi-terminals-3.jpg.asset.json";
+import adc1 from "@/assets/projects/ad-curved-1.jpg.asset.json";
+import adc2 from "@/assets/projects/ad-curved-2.jpg.asset.json";
+import adc3 from "@/assets/projects/ad-curved-3.jpg.asset.json";
+import gym1 from "@/assets/projects/al-barsha-gym-1.jpg.asset.json";
+import gym2 from "@/assets/projects/al-barsha-gym-2.jpg.asset.json";
+import gym3 from "@/assets/projects/al-barsha-gym-3.jpg.asset.json";
 
 const TEAL = "#3fd0c9";
 
@@ -24,13 +33,14 @@ type Project = {
   category: string;
   scope: string;
   description: string;
+  images?: string[];
 };
 
 const PROJECTS: Project[] = [
-  { title: "Abu Dhabi Terminals Project", location: "Abu Dhabi", category: "Commercial Infrastructure", scope: "Glass Partitions • Curved Glass", description: "Premium glass partition and curved architectural glazing for one of Abu Dhabi's major terminal facilities, delivering durability, openness and a modern architectural appearance." },
-  { title: "Abu Dhabi Terminal Curved Glass", location: "Abu Dhabi", category: "Commercial", scope: "Curved Glass Systems", description: "Specialized curved glass fabrication and installation completed with precision engineering to meet demanding architectural specifications." },
+  { title: "Abu Dhabi Terminals Project", location: "Abu Dhabi", category: "Commercial Infrastructure", scope: "Glass Partitions • Curved Glass", description: "Premium glass partition and curved architectural glazing for one of Abu Dhabi's major terminal facilities, delivering durability, openness and a modern architectural appearance.", images: [adt1.url, adt2.url, adt3.url] },
+  { title: "Abu Dhabi Terminal Curved Glass", location: "Abu Dhabi", category: "Commercial", scope: "Curved Glass Systems", description: "Specialized curved glass fabrication and installation completed with precision engineering to meet demanding architectural specifications.", images: [adc1.url, adc2.url, adc3.url] },
   { title: "Dubai Creek Harbour Luxury Bars", location: "Dubai Creek Harbour", category: "Hospitality", scope: "Golden Mirrors • Beveled Mirrors", description: "Luxury decorative mirrors designed and installed to enhance premium hospitality interiors with elegant reflective finishes." },
-  { title: "Al Barsha Gym", location: "Al Barsha", category: "Fitness", scope: "Gym Mirrors • Shower Glass", description: "Complete installation of full-height gym mirrors and frameless shower glass creating a clean, modern fitness environment." },
+  { title: "Al Barsha Gym", location: "Al Barsha", category: "Fitness", scope: "Gym Mirrors • Shower Glass", description: "Complete installation of full-height gym mirrors and frameless shower glass creating a clean, modern fitness environment.", images: [gym1.url, gym2.url, gym3.url] },
   { title: "JLT Commercial Tower", location: "JLT", category: "Commercial", scope: "Glass Partitions • Golden Cladding • Fused Glass", description: "Contemporary commercial interiors featuring frameless partitions, decorative fused glass and premium metallic cladding finishes." },
   { title: "Khawaneej Luxury Villa", location: "Al Khawaneej", category: "Luxury Villa", scope: "Back Painted Glass • Glass Handrails", description: "Luxury villa completed with elegant back-painted glass walls, frameless handrails and bespoke architectural glazing." },
   { title: "Meydan One Villa", location: "Meydan", category: "Residential", scope: "Mirrors • Shower Glass • Handrails", description: "Premium residential glazing package combining luxury mirrors, frameless shower enclosures and elegant glass railings." },
@@ -201,6 +211,100 @@ function StatsSection() {
   );
 }
 
+function ProjectMedia({ p, fallback }: { p: Project; fallback: string }) {
+  const imgs = p.images && p.images.length > 0 ? p.images : [fallback];
+  const [idx, setIdx] = useState(0);
+  const multi = imgs.length > 1;
+
+  const go = (next: number) => setIdx((next + imgs.length) % imgs.length);
+
+  return (
+    <div className="relative aspect-[4/3] overflow-hidden bg-stone">
+      <AnimatePresence initial={false} mode="popLayout">
+        <motion.img
+          key={imgs[idx]}
+          src={imgs[idx]}
+          alt={`${p.title} — ${p.scope} in ${p.location}`}
+          loading="lazy"
+          drag={multi ? "x" : false}
+          dragConstraints={{ left: 0, right: 0 }}
+          dragElastic={0.2}
+          onDragEnd={(_, info) => {
+            if (info.offset.x < -60) go(idx + 1);
+            else if (info.offset.x > 60) go(idx - 1);
+          }}
+          initial={{ opacity: 0, scale: 1.02 }}
+          animate={{ opacity: 1, scale: 1 }}
+          exit={{ opacity: 0 }}
+          transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
+          className="absolute inset-0 w-full h-full object-cover transition-transform duration-[900ms] ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:scale-110 touch-pan-y select-none"
+        />
+      </AnimatePresence>
+
+      {/* glass reflection sweep */}
+      <span
+        aria-hidden
+        className="pointer-events-none absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-[1200ms]"
+        style={{
+          background:
+            "linear-gradient(115deg, transparent 30%, rgba(255,255,255,0.35) 50%, transparent 70%)",
+        }}
+      />
+      <div className="absolute inset-0 bg-gradient-to-t from-navy/60 via-transparent to-transparent pointer-events-none" />
+
+      <div className="absolute top-3 left-3 pointer-events-none">
+        <span className="inline-flex items-center gap-1.5 rounded-full px-3 py-1 text-[10px] font-medium uppercase tracking-[0.18em] backdrop-blur-md bg-white/85 text-navy border border-white/60">
+          {p.category}
+        </span>
+      </div>
+      <div className="absolute top-3 right-3 pointer-events-none">
+        <span
+          className="inline-flex items-center gap-1 rounded-full px-2.5 py-1 text-[10px] font-medium backdrop-blur-md border"
+          style={{ background: `${TEAL}22`, color: TEAL, borderColor: `${TEAL}55` }}
+        >
+          <CheckCircle2 size={11} /> Completed
+        </span>
+      </div>
+
+      {multi && (
+        <>
+          <button
+            type="button"
+            aria-label="Previous image"
+            onClick={(e) => { e.preventDefault(); e.stopPropagation(); go(idx - 1); }}
+            className="absolute left-2 top-1/2 -translate-y-1/2 w-9 h-9 rounded-full grid place-items-center bg-black/40 hover:bg-black/60 text-white backdrop-blur-md border border-white/20 opacity-0 group-hover:opacity-100 focus-visible:opacity-100 transition-opacity duration-300"
+          >
+            <ChevronLeft size={16} />
+          </button>
+          <button
+            type="button"
+            aria-label="Next image"
+            onClick={(e) => { e.preventDefault(); e.stopPropagation(); go(idx + 1); }}
+            className="absolute right-2 top-1/2 -translate-y-1/2 w-9 h-9 rounded-full grid place-items-center bg-black/40 hover:bg-black/60 text-white backdrop-blur-md border border-white/20 opacity-0 group-hover:opacity-100 focus-visible:opacity-100 transition-opacity duration-300"
+          >
+            <ChevronRight size={16} />
+          </button>
+          <div className="absolute bottom-3 left-1/2 -translate-x-1/2 flex items-center gap-1.5">
+            {imgs.map((_, i) => (
+              <button
+                key={i}
+                type="button"
+                aria-label={`Image ${i + 1}`}
+                onClick={(e) => { e.preventDefault(); e.stopPropagation(); setIdx(i); }}
+                className="h-1.5 rounded-full transition-all duration-300"
+                style={{
+                  width: i === idx ? 20 : 6,
+                  background: i === idx ? TEAL : "rgba(255,255,255,0.6)",
+                }}
+              />
+            ))}
+          </div>
+        </>
+      )}
+    </div>
+  );
+}
+
 function ProjectCard({ p, i }: { p: Project; i: number }) {
   const img = IMAGES[i % IMAGES.length];
   return (
@@ -209,42 +313,10 @@ function ProjectCard({ p, i }: { p: Project; i: number }) {
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: "-60px" }}
       transition={{ duration: 0.7, delay: (i % 4) * 0.08, ease: [0.16, 1, 0.3, 1] }}
-      className="group relative flex flex-col rounded-2xl overflow-hidden bg-white border border-black/5 hover:-translate-y-1.5 transition-all duration-500"
-      style={{ boxShadow: "0 20px 40px -25px rgba(10,20,40,0.25)" }}
+      className="group relative flex flex-col rounded-2xl overflow-hidden bg-white border border-black/5 hover:-translate-y-1.5 hover:border-[color:var(--teal)]/40 transition-all duration-500"
+      style={{ boxShadow: "0 20px 40px -25px rgba(10,20,40,0.25)", ["--teal" as string]: TEAL }}
     >
-      <div className="relative aspect-[4/3] overflow-hidden bg-stone">
-        <img
-          src={img}
-          alt={`${p.title} — ${p.scope} in ${p.location}`}
-          loading="lazy"
-          className="w-full h-full object-cover transition-transform duration-[900ms] ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:scale-110"
-        />
-        {/* glass reflection sweep */}
-        <span
-          aria-hidden
-          className="pointer-events-none absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-[1200ms]"
-          style={{
-            background:
-              "linear-gradient(115deg, transparent 30%, rgba(255,255,255,0.35) 50%, transparent 70%)",
-          }}
-        />
-        <div className="absolute inset-0 bg-gradient-to-t from-navy/60 via-transparent to-transparent" />
-        <div className="absolute top-3 left-3">
-          <span
-            className="inline-flex items-center gap-1.5 rounded-full px-3 py-1 text-[10px] font-medium uppercase tracking-[0.18em] backdrop-blur-md bg-white/85 text-navy border border-white/60"
-          >
-            {p.category}
-          </span>
-        </div>
-        <div className="absolute top-3 right-3">
-          <span
-            className="inline-flex items-center gap-1 rounded-full px-2.5 py-1 text-[10px] font-medium backdrop-blur-md border"
-            style={{ background: `${TEAL}22`, color: TEAL, borderColor: `${TEAL}55` }}
-          >
-            <CheckCircle2 size={11} /> Completed
-          </span>
-        </div>
-      </div>
+      <ProjectMedia p={p} fallback={img} />
 
       <div className="flex flex-col flex-1 p-6">
         <div className="flex items-center gap-1.5 text-[11px] uppercase tracking-[0.22em] text-muted-foreground">
