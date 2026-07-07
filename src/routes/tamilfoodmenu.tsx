@@ -194,7 +194,7 @@ export const Route = createFileRoute("/tamilfoodmenu")({
         content:
           "Authentic Tamil, South Indian, Arabian & Chinese Cuisine — Al Nahda, Sharjah. Monthly mess and home delivery available.",
       },
-      { property: "og:type", content: "restaurant" },
+      { property: "og:type", content: "website" },
       { property: "og:image", content: biryani },
       { name: "twitter:image", content: biryani },
     ],

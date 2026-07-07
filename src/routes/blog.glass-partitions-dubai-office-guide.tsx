@@ -1,7 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { BlogPost } from "@/components/site/BlogPost";
 
-const T = "How to Choose the Right Glass Partition for Your Dubai Office | Glasser UAE";
+const T = "Choosing the Right Office Glass Partition Dubai";
 const D = "Thinking about glass partitions for your Dubai office? This guide covers types, costs, acoustic options and what to expect from installation in the UAE.";
 const URL = "https://glasseruae.com/blog/glass-partitions-dubai-office-guide";
 

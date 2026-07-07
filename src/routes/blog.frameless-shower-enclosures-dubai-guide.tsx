@@ -1,7 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { BlogPost } from "@/components/site/BlogPost";
 
-const T = "Frameless Shower Enclosures Dubai: What to Expect from Installation | Glasser UAE";
+const T = "Frameless Shower Enclosures Dubai Guide | Glasser UAE";
 const D = "Planning a frameless shower enclosure in Dubai? This guide covers glass types, costs, installation timeline and what to ask your installer.";
 const URL = "https://glasseruae.com/blog/frameless-shower-enclosures-dubai-guide";
 

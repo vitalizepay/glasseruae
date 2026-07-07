@@ -1,7 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { BlogPost } from "@/components/site/BlogPost";
 
-const T = "Best Glass Partition Company in Dubai (2026 Guide) | Glasser UAE";
+const T = "Best Glass Partition Company Dubai (2026) | Glasser";
 const D = "How to choose the best glass partition company in Dubai — what to check, average pricing, red flags, and why Glasser UAE leads the market for office partition fit-outs.";
 const URL = "https://glasseruae.com/blog/best-glass-partition-company-dubai";
 
