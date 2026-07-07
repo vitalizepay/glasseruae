@@ -25,6 +25,21 @@ import khw1 from "@/assets/projects/khawaneej-1.jpg.asset.json";
 import khw2 from "@/assets/projects/khawaneej-2.jpg.asset.json";
 import khw3 from "@/assets/projects/khawaneej-3.jpg.asset.json";
 import meydan1 from "@/assets/projects/meydan-1.jpg.asset.json";
+import meydan2 from "@/assets/projects/meydan-2.jpg.asset.json";
+import dkv1 from "@/assets/projects/dubai-khawaneej-villa-1.jpg.asset.json";
+import dkv2 from "@/assets/projects/dubai-khawaneej-villa-2.jpg.asset.json";
+import dkv3 from "@/assets/projects/dubai-khawaneej-villa-3.jpg.asset.json";
+import pjbs1 from "@/assets/projects/palm-jumeirah-beauty-salon-1.jpg.asset.json";
+import pjbs2 from "@/assets/projects/palm-jumeirah-beauty-salon-2.jpg.asset.json";
+import bpg1 from "@/assets/projects/back-painted-glass-1.jpg.asset.json";
+import bpg2 from "@/assets/projects/back-painted-glass-2.jpg.asset.json";
+import jvcAcp from "@/assets/projects/jvc-acp-cladding-1.jpg.asset.json";
+import jumeirahOffice from "@/assets/projects/jumeirah-office-partition.jpg.asset.json";
+import dcRestaurants from "@/assets/projects/dubai-creek-restaurants.jpg.asset.json";
+import officePartitions from "@/assets/projects/office-glass-partitions-corporate.jpg.asset.json";
+import dubaiHillsVilla from "@/assets/projects/dubai-hills-villa.jpg.asset.json";
+
+
 
 const TEAL = "#3fd0c9";
 
