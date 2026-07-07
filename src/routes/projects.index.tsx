@@ -197,7 +197,7 @@ function ProjectCard({ p, i }: { p: Project; i: number }) {
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: "-60px" }}
       transition={{ duration: 0.7, delay: (i % 4) * 0.08, ease: [0.16, 1, 0.3, 1] }}
-      className="group relative flex flex-col rounded-2xl overflow-hidden bg-white border border-black/5 hover:-translate-y-1.5 hover:border-[color:var(--teal)]/40 transition-all duration-500"
+      className="group relative flex flex-col rounded-2xl overflow-hidden bg-white border border-black/5 hover:-translate-y-2 hover:border-[color:var(--teal)]/50 transition-all duration-[350ms] ease-out hover:shadow-[0_40px_70px_-25px_rgba(10,20,40,0.35)]"
       style={{ boxShadow: "0 20px 40px -25px rgba(10,20,40,0.25)", ["--teal" as string]: TEAL }}
     >
       <ProjectMedia p={p} fallback={img} />
@@ -206,9 +206,10 @@ function ProjectCard({ p, i }: { p: Project; i: number }) {
         <div className="flex items-center gap-1.5 text-[11px] uppercase tracking-[0.22em] text-muted-foreground">
           <MapPin size={11} /> {p.location}
         </div>
-        <h3 className="mt-3 text-xl font-display font-medium text-navy leading-snug text-balance">
+        <h3 className="mt-3 text-xl font-display font-medium text-navy group-hover:text-[color:var(--teal)] leading-snug text-balance transition-colors duration-[350ms]" style={{ ["--teal" as string]: TEAL }}>
           {p.title}
         </h3>
+
         <div className="mt-2 text-[12px] font-medium text-navy/70">{p.scope}</div>
         <p className="mt-3 text-sm text-muted-foreground font-light leading-relaxed line-clamp-3">
           {p.description}
