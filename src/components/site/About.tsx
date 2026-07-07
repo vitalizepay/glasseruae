@@ -75,9 +75,15 @@ export function About() {
           <div data-about-img className="absolute top-0 left-0 w-[68%] h-[72%] rounded-[2rem] overflow-hidden shadow-soft">
             <img src={partition} alt="Frameless glass partition by Glasser" className="w-full h-full object-cover will-change-transform" loading="lazy" />
           </div>
-          <div data-about-img className="absolute bottom-0 right-0 w-[55%] h-[58%] rounded-[2rem] overflow-hidden shadow-elegant ring-8 ring-background">
-            <img src={aboutDetail} alt="Architectural detail of a glass and aluminium partition" className="w-full h-full object-cover will-change-transform" loading="lazy" />
+          <div data-about-img className="absolute bottom-0 right-0 w-[58%] h-[62%] rounded-[2rem] overflow-hidden shadow-elegant ring-8 ring-background">
+            <img src={aboutDetail} alt="Luxury Dubai penthouse with frameless glass partitions and skyline views by Glasser" className="w-full h-full object-cover will-change-transform" loading="lazy" />
+            <div className="absolute inset-0 bg-gradient-to-t from-navy/70 via-navy/10 to-transparent pointer-events-none" />
+            <div className="absolute bottom-0 left-0 right-0 p-5 md:p-6 text-white pointer-events-none">
+              <div className="text-[10px] uppercase tracking-[0.32em] text-white/80">— Signature Project</div>
+              <div className="mt-2 font-display text-lg md:text-xl font-light leading-tight">Frameless glazing for a<br/>Dubai skyline penthouse</div>
+            </div>
           </div>
+
         </div>
 
         <div className="lg:col-span-6">
