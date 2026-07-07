@@ -1,120 +1,71 @@
-import { useEffect, useRef } from "react";
-import { gsap } from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { SplitWords } from "./Reveal";
-import partition from "@/assets/service-partition.jpg";
-import aboutDetailAsset from "@/assets/about-detail-new.jpg.asset.json";
-const aboutDetail = aboutDetailAsset.url;
+import {
+  Layers,
+  Building2,
+  Waves,
+  Volume2,
+  Droplets,
+  Fence,
+  PanelsTopLeft,
+} from "lucide-react";
 
-
-if (typeof window !== "undefined") {
-  gsap.registerPlugin(ScrollTrigger);
-}
+const FEATURES = [
+  { icon: Layers, title: "Frameless Glass Partitions" },
+  { icon: Building2, title: "Office Glass Partitions" },
+  { icon: Waves, title: "Curved Glass Solutions" },
+  { icon: Volume2, title: "Acoustic & Soundproof Glass" },
+  { icon: Droplets, title: "Shower Glass Enclosures" },
+  { icon: Fence, title: "Glass Railings & Balustrades" },
+  { icon: PanelsTopLeft, title: "Glass Facades & Curtain Wall Systems" },
+];
 
 export function About() {
-  const ref = useRef<HTMLElement | null>(null);
-
-  useEffect(() => {
-    const ctx = gsap.context(() => {
-      // Image clip reveal + slow parallax
-      gsap.utils.toArray<HTMLElement>("[data-about-img]").forEach((wrap, i) => {
-        const img = wrap.querySelector<HTMLImageElement>("img");
-        gsap.fromTo(
-          wrap,
-          { clipPath: "inset(100% 0 0 0)" },
-          {
-            clipPath: "inset(0% 0 0 0)",
-            duration: 1.6,
-            ease: "expo.out",
-            delay: i * 0.15,
-            scrollTrigger: { trigger: ref.current, start: "top 75%", once: true },
-          },
-        );
-        if (img) {
-          gsap.fromTo(
-            img,
-            { yPercent: -6 },
-            {
-              yPercent: 6,
-              ease: "none",
-              scrollTrigger: { trigger: ref.current, start: "top bottom", end: "bottom top", scrub: 1 },
-            },
-          );
-        }
-      });
-
-      gsap.from("[data-about-line]", {
-        opacity: 0, y: 36, duration: 1.1, ease: "expo.out", stagger: 0.12,
-        scrollTrigger: { trigger: ref.current, start: "top 70%", once: true },
-      });
-
-      // Stat counters
-      gsap.utils.toArray<HTMLElement>("[data-counter]").forEach((el) => {
-        const target = Number(el.dataset.counter ?? 0);
-        const obj = { v: 0 };
-        gsap.to(obj, {
-          v: target,
-          duration: 2.2,
-          ease: "expo.out",
-          onUpdate: () => { el.textContent = Math.round(obj.v).toString(); },
-          scrollTrigger: { trigger: el, start: "top 90%", once: true },
-        });
-      });
-    }, ref);
-    return () => ctx.revert();
-  }, []);
-
   return (
-    <section data-no-auto-reveal
-      ref={ref}
+    <section
       id="about"
-      className="py-28 md:py-44 bg-background overflow-hidden"
+      className="py-24 md:py-36 bg-background overflow-hidden"
     >
-      <div className="container mx-auto px-6 grid lg:grid-cols-12 gap-14 lg:gap-20 items-center">
-        <div className="lg:col-span-6 relative h-[560px] md:h-[680px]">
-          <div data-about-img className="absolute top-0 left-0 w-[68%] h-[72%] rounded-[2rem] overflow-hidden shadow-soft">
-            <img src={partition} alt="Frameless glass partition by Glasser" className="w-full h-full object-cover will-change-transform" loading="lazy" />
+      <div className="container mx-auto px-6">
+        <div className="max-w-4xl">
+          <div className="text-[11px] uppercase tracking-[0.4em] text-muted-foreground">
+            — Glasser Technical Works LLC
           </div>
-          <div data-about-img className="absolute bottom-0 right-0 w-[58%] h-[62%] rounded-[2rem] overflow-hidden shadow-elegant ring-8 ring-background">
-            <img src={aboutDetail} alt="Luxury Dubai penthouse with frameless glass partitions and skyline views by Glasser" className="w-full h-full object-cover will-change-transform" loading="lazy" />
-            <div className="absolute inset-0 bg-gradient-to-t from-navy/70 via-navy/10 to-transparent pointer-events-none" />
-            <div className="absolute bottom-0 left-0 right-0 p-5 md:p-6 text-white pointer-events-none">
-              <div className="text-[10px] uppercase tracking-[0.32em] text-white/80">— Signature Project</div>
-              <div className="mt-2 font-display text-lg md:text-xl font-light leading-tight">Frameless glazing for a<br/>Dubai skyline penthouse</div>
-            </div>
-          </div>
-
+          <h2 className="text-4xl md:text-6xl mt-6 text-navy text-balance font-light leading-[1.05]">
+            Premium Glass & Aluminium Solutions{" "}
+            <span className="italic font-extralight">
+              Across Dubai & UAE
+            </span>
+          </h2>
+          <p className="mt-8 text-lg text-muted-foreground leading-relaxed font-light">
+            Glasser Technical Works LLC — 7+ Years, 1200+ Projects across the
+            UAE — delivers premium architectural glass and aluminium solutions
+            for luxury villas, corporate offices, hotels, retail spaces,
+            restaurants, and commercial developments across Dubai and the
+            Emirates. We specialise in Frameless Glass Partitions, Office Glass
+            Partitions, Curved Glass Solutions, Acoustic & Soundproof Glass,
+            Shower Glass Enclosures, Glass Railings & Balustrades, and Glass
+            Facades & Curtain Wall Systems. Every project is custom-designed,
+            precision-engineered, and installed with exceptional craftsmanship,
+            durability, and modern architectural excellence.
+          </p>
         </div>
 
-        <div className="lg:col-span-6">
-          <div data-about-line className="text-[11px] uppercase tracking-[0.4em] text-muted-foreground">— About Glasser</div>
-          <h2 className="text-4xl md:text-6xl mt-6 text-navy text-balance font-light leading-[1.05]">
-            <SplitWords text="Crafting luxury glass spaces" className="block" />
-            <SplitWords text="across the Emirates." className="block italic font-extralight" delay={0.15} />
-          </h2>
-          <p data-about-line className="mt-8 text-lg text-muted-foreground leading-relaxed font-light">
-            Glasser Technical Works LLC has been transforming Dubai's most ambitious residential,
-            commercial and hospitality spaces for over 7 years. Our specialists combine European
-            engineering with regional craftsmanship.
-          </p>
-          <p data-about-line className="mt-4 text-muted-foreground leading-relaxed font-light">
-            We partner directly with developers, architects, interior designers and homeowners —
-            from concept through to flawless on-site execution.
-          </p>
-          <div data-about-line className="mt-12 grid grid-cols-3 gap-8 max-w-md">
-            <div>
-              <div className="font-display text-4xl text-navy"><span data-counter="7">0</span>+</div>
-              <div className="mt-2 text-[10px] uppercase tracking-[0.3em] text-muted-foreground">Years</div>
+        <div className="mt-14 md:mt-20 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 md:gap-6">
+          {FEATURES.map(({ icon: Icon, title }, i) => (
+            <div
+              key={title}
+              className={`group relative rounded-3xl border border-border bg-surface/60 backdrop-blur-sm p-7 md:p-8 transition-all duration-500 hover:-translate-y-1 hover:shadow-[0_30px_60px_-25px_rgba(10,20,40,0.35)] hover:border-navy/30 ${
+                i === 6 ? "lg:col-start-2" : ""
+              }`}
+            >
+              <div className="w-12 h-12 rounded-2xl bg-navy/5 text-navy flex items-center justify-center transition-colors duration-500 group-hover:bg-navy group-hover:text-white">
+                <Icon size={22} strokeWidth={1.5} />
+              </div>
+              <h3 className="mt-6 font-display text-lg md:text-xl font-medium text-navy leading-snug">
+                {title}
+              </h3>
+              <span className="mt-5 block h-px w-10 bg-navy/20 transition-all duration-500 group-hover:w-16 group-hover:bg-navy" />
             </div>
-            <div>
-              <div className="font-display text-4xl text-navy"><span data-counter="1200">0</span></div>
-              <div className="mt-2 text-[10px] uppercase tracking-[0.3em] text-muted-foreground">Projects</div>
-            </div>
-            <div>
-              <div className="font-display text-4xl text-navy">UAE</div>
-              <div className="mt-2 text-[10px] uppercase tracking-[0.3em] text-muted-foreground">7 Emirates</div>
-            </div>
-          </div>
+          ))}
         </div>
       </div>
     </section>
