@@ -99,8 +99,12 @@ export function Navbar() {
       }`}
     >
       <div className="container mx-auto px-6 flex items-center justify-between">
-        <Link to="/" className="flex items-center gap-3">
-          <img src={logo} alt="Glasser Technical Works" className="h-10 w-auto" width={120} height={40} />
+        <Link to="/" className="flex items-center gap-3 min-w-0">
+          <img src={logo} alt="Glasser Technical Works" className="h-10 w-auto shrink-0" width={120} height={40} />
+          <span className="hidden sm:flex flex-col leading-tight min-w-0">
+            <span className="font-display text-navy text-base md:text-lg font-semibold tracking-tight truncate">Glasser</span>
+            <span className="text-navy/60 text-[10px] md:text-[11px] font-light tracking-[0.18em] uppercase truncate">Technical Works LLC</span>
+          </span>
         </Link>
 
         <nav className="hidden lg:flex items-center gap-1">
@@ -118,12 +122,14 @@ export function Navbar() {
           ))}
         </nav>
 
-        <Link
-          to="/contact"
+        <a
+          href="https://wa.me/971568400838?text=Hi%20Glasser%2C%20I%27d%20like%20a%20free%20quote."
+          target="_blank"
+          rel="noopener noreferrer"
           className="hidden lg:inline-flex items-center px-5 py-2.5 rounded-full bg-navy text-navy-foreground text-sm font-medium hover:bg-navy/90 transition"
         >
           Get Free Quote
-        </Link>
+        </a>
 
         <button
           ref={triggerRef}
@@ -197,13 +203,15 @@ export function Navbar() {
           </nav>
 
           <div className="px-6 pb-8 pt-2">
-            <Link
-              to="/contact"
+            <a
+              href="https://wa.me/971568400838?text=Hi%20Glasser%2C%20I%27d%20like%20a%20free%20quote."
+              target="_blank"
+              rel="noopener noreferrer"
               onClick={() => setOpen(false)}
               className="block w-full text-center px-6 py-4 rounded-full bg-navy text-navy-foreground font-medium hover:bg-navy/90 transition"
             >
               Get Free Quote
-            </Link>
+            </a>
           </div>
         </div>
       </div>

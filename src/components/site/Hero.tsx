@@ -189,8 +189,10 @@ export function Hero() {
           className="mt-9 md:mt-11 flex flex-col sm:flex-row items-stretch sm:items-center gap-3"
         >
           {/* Primary — blue gradient + ripple */}
-          <Link
-            to="/contact"
+          <a
+            href="https://wa.me/971568400838?text=Hi%20Glasser%2C%20I%27d%20like%20a%20free%20quote."
+            target="_blank"
+            rel="noopener noreferrer"
             className="group relative inline-flex items-center justify-center gap-3 h-[54px] px-8 rounded-full text-white text-[13px] font-medium tracking-wide overflow-hidden transition-transform duration-500 hover:-translate-y-0.5"
             style={{
               background: "linear-gradient(135deg, #1e6bff 0%, #3fd0c9 100%)",
@@ -207,7 +209,7 @@ export function Hero() {
                   "linear-gradient(115deg, transparent 30%, rgba(255,255,255,0.35) 50%, transparent 70%)",
               }}
             />
-          </Link>
+          </a>
 
           {/* Secondary — glassmorphism + animated border */}
           <Link
