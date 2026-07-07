@@ -3,7 +3,9 @@ import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { SplitWords } from "./Reveal";
 import partition from "@/assets/service-partition.jpg";
-import aboutDetail from "@/assets/about-detail.jpg";
+import aboutDetailAsset from "@/assets/about-detail-new.jpg.asset.json";
+const aboutDetail = aboutDetailAsset.url;
+
 
 if (typeof window !== "undefined") {
   gsap.registerPlugin(ScrollTrigger);
