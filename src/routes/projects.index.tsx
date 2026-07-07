@@ -134,7 +134,7 @@ function ProjectMedia({ p, fallback }: { p: Project; fallback: string }) {
             "linear-gradient(115deg, transparent 30%, rgba(255,255,255,0.35) 50%, transparent 70%)",
         }}
       />
-      <div className="absolute inset-0 bg-gradient-to-t from-navy/60 via-transparent to-transparent pointer-events-none" />
+      <div className="absolute inset-0 bg-gradient-to-t from-navy/60 via-navy/10 to-transparent group-hover:from-navy/80 group-hover:via-navy/25 transition-all duration-[350ms] pointer-events-none" />
 
       <div className="absolute top-3 left-3 pointer-events-none">
         <span className="inline-flex items-center gap-1.5 rounded-full px-3 py-1 text-[10px] font-medium uppercase tracking-[0.18em] backdrop-blur-md bg-white/85 text-navy border border-white/60">
