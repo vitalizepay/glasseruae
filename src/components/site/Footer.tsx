@@ -53,7 +53,7 @@ export function Footer() {
             <h4 className="text-sm font-semibold uppercase tracking-wider mb-4 text-orange">Contact</h4>
             <ul className="space-y-3 text-sm text-white/70">
               <li className="flex gap-3"><Phone size={16} className="text-orange shrink-0 mt-0.5" /><a href="tel:+971568400838">+971 56 840 0838</a></li>
-              <li className="flex gap-3"><Mail size={16} className="text-orange shrink-0 mt-0.5" /><a href="mailto:senthil@glasseruae.com">senthil@glasseruae.com</a></li>
+              <li className="flex gap-3"><Mail size={16} className="text-orange shrink-0 mt-0.5" /><a href="mailto:ramesh@glasseruae.com">ramesh@glasseruae.com</a></li>
               <li className="flex gap-3"><MapPin size={16} className="text-orange shrink-0 mt-0.5" /><span>Al Hilal Bldg, Al Nahda St, Al Qusais, Dubai, PO 235485, UAE</span></li>
             </ul>
           </div>

@@ -203,13 +203,15 @@ export function Navbar() {
           </nav>
 
           <div className="px-6 pb-8 pt-2">
-            <Link
-              to="/contact"
+            <a
+              href="https://wa.me/971568400838?text=Hi%20Glasser%2C%20I%27d%20like%20a%20free%20quote."
+              target="_blank"
+              rel="noopener noreferrer"
               onClick={() => setOpen(false)}
               className="block w-full text-center px-6 py-4 rounded-full bg-navy text-navy-foreground font-medium hover:bg-navy/90 transition"
             >
               Get Free Quote
-            </Link>
+            </a>
           </div>
         </div>
       </div>

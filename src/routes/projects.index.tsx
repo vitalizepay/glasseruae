@@ -316,8 +316,10 @@ function CtaSection() {
           </p>
 
           <div className="mt-11 flex flex-col sm:flex-row items-stretch sm:items-center justify-center gap-3">
-            <Link
-              to="/contact"
+            <a
+              href="https://wa.me/971568400838?text=Hi%20Glasser%2C%20I%27d%20like%20a%20free%20quote."
+              target="_blank"
+              rel="noopener noreferrer"
               className="group relative inline-flex items-center justify-center gap-3 h-[54px] px-8 rounded-full text-white text-[13px] font-medium tracking-wide overflow-hidden transition-transform duration-500 hover:-translate-y-0.5"
               style={{
                 background: "linear-gradient(135deg, #1e6bff 0%, #3fd0c9 100%)",
@@ -334,13 +336,15 @@ function CtaSection() {
                     "linear-gradient(115deg, transparent 30%, rgba(255,255,255,0.35) 50%, transparent 70%)",
                 }}
               />
-            </Link>
-            <Link
-              to="/contact"
+            </a>
+            <a
+              href="https://wa.me/971568400838"
+              target="_blank"
+              rel="noopener noreferrer"
               className="group relative inline-flex items-center justify-center h-[54px] px-8 rounded-full text-white text-[13px] font-medium tracking-wide backdrop-blur-xl bg-white/10 border border-white/30 hover:bg-white/15 transition-all duration-500 overflow-hidden"
             >
               <span className="relative z-10">Contact Us</span>
-            </Link>
+            </a>
           </div>
         </motion.div>
       </div>
