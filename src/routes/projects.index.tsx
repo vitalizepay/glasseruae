@@ -25,6 +25,21 @@ import khw1 from "@/assets/projects/khawaneej-1.jpg.asset.json";
 import khw2 from "@/assets/projects/khawaneej-2.jpg.asset.json";
 import khw3 from "@/assets/projects/khawaneej-3.jpg.asset.json";
 import meydan1 from "@/assets/projects/meydan-1.jpg.asset.json";
+import meydan2 from "@/assets/projects/meydan-2.jpg.asset.json";
+import dkv1 from "@/assets/projects/dubai-khawaneej-villa-1.jpg.asset.json";
+import dkv2 from "@/assets/projects/dubai-khawaneej-villa-2.jpg.asset.json";
+import dkv3 from "@/assets/projects/dubai-khawaneej-villa-3.jpg.asset.json";
+import pjbs1 from "@/assets/projects/palm-jumeirah-beauty-salon-1.jpg.asset.json";
+import pjbs2 from "@/assets/projects/palm-jumeirah-beauty-salon-2.jpg.asset.json";
+import bpg1 from "@/assets/projects/back-painted-glass-1.jpg.asset.json";
+import bpg2 from "@/assets/projects/back-painted-glass-2.jpg.asset.json";
+import jvcAcp from "@/assets/projects/jvc-acp-cladding-1.jpg.asset.json";
+import jumeirahOffice from "@/assets/projects/jumeirah-office-partition.jpg.asset.json";
+import dcRestaurants from "@/assets/projects/dubai-creek-restaurants.jpg.asset.json";
+import officePartitions from "@/assets/projects/office-glass-partitions-corporate.jpg.asset.json";
+import dubaiHillsVilla from "@/assets/projects/dubai-hills-villa.jpg.asset.json";
+
+
 
 const TEAL = "#3fd0c9";
 
@@ -50,14 +65,15 @@ const PROJECTS: Project[] = [
   { title: "Al Barsha Gym", location: "Al Barsha", category: "Fitness", scope: "Gym Mirrors • Shower Glass", description: "Complete installation of full-height gym mirrors and frameless shower glass creating a clean, modern fitness environment.", images: [gym1.url, gym2.url, gym3.url] },
   { title: "JLT Commercial Tower", location: "JLT", category: "Commercial", scope: "Glass Partitions • Golden Cladding • Fused Glass", description: "Contemporary commercial interiors featuring frameless partitions, decorative fused glass and premium metallic cladding finishes.", images: [jlt1.url, jlt2.url, jlt3.url] },
   { title: "Khawaneej Luxury Villa", location: "Al Khawaneej", category: "Luxury Villa", scope: "Back Painted Glass • Glass Handrails", description: "Luxury villa completed with elegant back-painted glass walls, frameless handrails and bespoke architectural glazing.", images: [khw1.url, khw2.url, khw3.url] },
-  { title: "Meydan One Villa", location: "Meydan", category: "Residential", scope: "Mirrors • Shower Glass • Handrails", description: "Premium residential glazing package combining luxury mirrors, frameless shower enclosures and elegant glass railings.", images: [meydan1.url] },
-  { title: "Dubai Khawaneej Villa", location: "Dubai", category: "Luxury Residence", scope: "Steel Handrails • Back Painted Glass", description: "Modern villa featuring decorative back-painted glass installations with custom fabricated steel and glass handrail systems." },
-  { title: "Dubai Creek Restaurants", location: "Dubai Creek", category: "Restaurant", scope: "Glass Partitions • Decorative Glass", description: "Elegant restaurant interiors designed using frameless partitions and decorative back-painted glass to create a sophisticated dining atmosphere." },
-  { title: "Palm Jumeirah Beauty Salon", location: "Palm Jumeirah", category: "Beauty & Wellness", scope: "Designer Mirrors", description: "Premium salon mirrors installed to maximize natural light while delivering a luxurious customer experience." },
-  { title: "Back Painted Glass Project", location: "Dubai", category: "Interior Glass", scope: "Decorative Glass", description: "Custom coloured glass installations designed for kitchens, feature walls and luxury commercial interiors." },
-  { title: "JVC ACP Cladding", location: "Jumeirah Village Circle", category: "Exterior", scope: "ACP Cladding", description: "Modern aluminium composite cladding providing a sleek architectural appearance with long-term durability." },
-  { title: "Office Glass Partitions", location: "Dubai", category: "Corporate Office", scope: "Glass Partitions", description: "Modern office fit-out utilizing frameless glass systems that maximize natural light and workspace collaboration." },
-  { title: "Dubai Hills Villa", location: "Dubai Hills", category: "Luxury Villa", scope: "Mirrors • Shower Glass", description: "Luxury residential project featuring elegant mirrors and frameless shower enclosures with premium finishing." },
+  { title: "Meydan One Villa", location: "Meydan", category: "Residential", scope: "Mirrors • Shower Glass • Handrails", description: "Premium residential glazing package combining luxury mirrors, frameless shower enclosures and elegant glass railings.", images: [meydan1.url, meydan2.url] },
+  { title: "Dubai Khawaneej Villa", location: "Dubai", category: "Luxury Residence", scope: "Steel Handrails • Back Painted Glass", description: "Modern villa featuring decorative back-painted glass installations with custom fabricated steel and glass handrail systems.", images: [dkv1.url, dkv2.url, dkv3.url] },
+  { title: "Dubai Creek Restaurants", location: "Dubai Creek", category: "Restaurant", scope: "Glass Partitions • Decorative Glass", description: "Elegant restaurant interiors designed using frameless partitions and decorative back-painted glass to create a sophisticated dining atmosphere.", images: [dcRestaurants.url] },
+  { title: "Palm Jumeirah Beauty Salon", location: "Palm Jumeirah", category: "Beauty & Wellness", scope: "Designer Mirrors", description: "Premium salon mirrors installed to maximize natural light while delivering a luxurious customer experience.", images: [pjbs1.url, pjbs2.url] },
+  { title: "Back Painted Glass Project", location: "Dubai", category: "Interior Glass", scope: "Decorative Glass", description: "Custom coloured glass installations designed for kitchens, feature walls and luxury commercial interiors.", images: [bpg1.url, bpg2.url] },
+  { title: "JVC ACP Cladding", location: "Jumeirah Village Circle", category: "Exterior", scope: "ACP Cladding", description: "Modern aluminium composite cladding providing a sleek architectural appearance with long-term durability.", images: [jvcAcp.url] },
+  { title: "Office Glass Partitions", location: "Dubai", category: "Corporate Office", scope: "Glass Partitions", description: "Modern office fit-out utilizing frameless glass systems that maximize natural light and workspace collaboration.", images: [officePartitions.url, jumeirahOffice.url] },
+  { title: "Dubai Hills Villa", location: "Dubai Hills", category: "Luxury Villa", scope: "Mirrors • Shower Glass", description: "Luxury residential project featuring elegant mirrors and frameless shower enclosures with premium finishing.", images: [dubaiHillsVilla.url] },
+
   { title: "Sharjah Luxury Villa", location: "Sharjah", category: "Residential", scope: "Luxury Mirrors", description: "Custom mirror installations adding sophistication and spaciousness to luxury residential interiors." },
   { title: "Sharjah Antique Mirror Villa", location: "Sharjah", category: "Luxury Villa", scope: "Antique Mirrors", description: "Decorative antique mirror panels designed to create timeless elegance and luxury throughout the residence." },
   { title: "Jumeirah Island Villa", location: "Jumeirah Islands", category: "Luxury Residence", scope: "Mirrors • Shower Glass", description: "Contemporary villa completed with frameless glazing solutions, bespoke mirrors and luxury bathroom glass systems." },
@@ -87,7 +103,7 @@ function ProjectMedia({ p, fallback }: { p: Project; fallback: string }) {
   const go = (next: number) => setIdx((next + imgs.length) % imgs.length);
 
   return (
-    <div className="relative aspect-[4/3] overflow-hidden bg-stone">
+    <div className="relative aspect-[4/5] overflow-hidden bg-stone">
       <AnimatePresence initial={false} mode="popLayout">
         <motion.img
           key={imgs[idx]}
@@ -118,7 +134,7 @@ function ProjectMedia({ p, fallback }: { p: Project; fallback: string }) {
             "linear-gradient(115deg, transparent 30%, rgba(255,255,255,0.35) 50%, transparent 70%)",
         }}
       />
-      <div className="absolute inset-0 bg-gradient-to-t from-navy/60 via-transparent to-transparent pointer-events-none" />
+      <div className="absolute inset-0 bg-gradient-to-t from-navy/60 via-navy/10 to-transparent group-hover:from-navy/80 group-hover:via-navy/25 transition-all duration-[350ms] pointer-events-none" />
 
       <div className="absolute top-3 left-3 pointer-events-none">
         <span className="inline-flex items-center gap-1.5 rounded-full px-3 py-1 text-[10px] font-medium uppercase tracking-[0.18em] backdrop-blur-md bg-white/85 text-navy border border-white/60">
@@ -181,7 +197,7 @@ function ProjectCard({ p, i }: { p: Project; i: number }) {
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: "-60px" }}
       transition={{ duration: 0.7, delay: (i % 4) * 0.08, ease: [0.16, 1, 0.3, 1] }}
-      className="group relative flex flex-col rounded-2xl overflow-hidden bg-white border border-black/5 hover:-translate-y-1.5 hover:border-[color:var(--teal)]/40 transition-all duration-500"
+      className="group relative flex flex-col rounded-2xl overflow-hidden bg-white border border-black/5 hover:-translate-y-2 hover:border-[color:var(--teal)]/50 transition-all duration-[350ms] ease-out hover:shadow-[0_40px_70px_-25px_rgba(10,20,40,0.35)]"
       style={{ boxShadow: "0 20px 40px -25px rgba(10,20,40,0.25)", ["--teal" as string]: TEAL }}
     >
       <ProjectMedia p={p} fallback={img} />
@@ -190,9 +206,10 @@ function ProjectCard({ p, i }: { p: Project; i: number }) {
         <div className="flex items-center gap-1.5 text-[11px] uppercase tracking-[0.22em] text-muted-foreground">
           <MapPin size={11} /> {p.location}
         </div>
-        <h3 className="mt-3 text-xl font-display font-medium text-navy leading-snug text-balance">
+        <h3 className="mt-3 text-xl font-display font-medium text-navy group-hover:text-[color:var(--teal)] leading-snug text-balance transition-colors duration-[350ms]" style={{ ["--teal" as string]: TEAL }}>
           {p.title}
         </h3>
+
         <div className="mt-2 text-[12px] font-medium text-navy/70">{p.scope}</div>
         <p className="mt-3 text-sm text-muted-foreground font-light leading-relaxed line-clamp-3">
           {p.description}
