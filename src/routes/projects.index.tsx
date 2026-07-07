@@ -103,7 +103,7 @@ function ProjectMedia({ p, fallback }: { p: Project; fallback: string }) {
   const go = (next: number) => setIdx((next + imgs.length) % imgs.length);
 
   return (
-    <div className="relative aspect-[4/3] overflow-hidden bg-stone">
+    <div className="relative aspect-[4/5] overflow-hidden bg-stone">
       <AnimatePresence initial={false} mode="popLayout">
         <motion.img
           key={imgs[idx]}
