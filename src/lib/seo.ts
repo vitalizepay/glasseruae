@@ -81,3 +81,84 @@ export function faqJsonLd(faqs: { q: string; a: string }[]) {
     })),
   };
 }
+
+const SITE_ORIGIN = "https://glasseruae.com";
+const PUBLISHER = {
+  "@type": "Organization",
+  name: "Glasser Technical Works LLC",
+  url: SITE_ORIGIN,
+  logo: {
+    "@type": "ImageObject",
+    url: `${SITE_ORIGIN}/glasser-logo.png`,
+  },
+};
+
+export interface BlogHeadInput {
+  slug: string;
+  title: string; // H1 / headline
+  description: string; // 150–160 char meta
+  image: string; // absolute or root-relative
+  datePublished: string; // ISO
+  dateModified?: string; // ISO
+  faqs?: { q: string; a: string }[];
+}
+
+export function buildBlogHead(input: BlogHeadInput) {
+  const url = `${SITE_ORIGIN}/blog/${input.slug}`;
+  const image = input.image.startsWith("http") ? input.image : `${SITE_ORIGIN}${input.image}`;
+  const seoTitle = `${input.title} | Glasser UAE`;
+  const modified = input.dateModified ?? input.datePublished;
+
+  const blogPosting = {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    headline: input.title,
+    description: input.description,
+    image,
+    url,
+    mainEntityOfPage: url,
+    datePublished: input.datePublished,
+    dateModified: modified,
+    author: PUBLISHER,
+    publisher: PUBLISHER,
+  };
+
+  const breadcrumbs = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "Home", item: SITE_ORIGIN },
+      { "@type": "ListItem", position: 2, name: "Blog", item: `${SITE_ORIGIN}/blog` },
+      { "@type": "ListItem", position: 3, name: input.title, item: url },
+    ],
+  };
+
+  const scripts: { type: string; children: string }[] = [
+    { type: "application/ld+json", children: JSON.stringify(blogPosting) },
+    { type: "application/ld+json", children: JSON.stringify(breadcrumbs) },
+  ];
+  if (input.faqs?.length) {
+    scripts.push({ type: "application/ld+json", children: JSON.stringify(faqJsonLd(input.faqs)) });
+  }
+
+  return {
+    meta: [
+      { title: seoTitle },
+      { name: "description", content: input.description },
+      { property: "og:title", content: seoTitle },
+      { property: "og:description", content: input.description },
+      { property: "og:url", content: url },
+      { property: "og:type", content: "article" },
+      { property: "og:image", content: image },
+      { property: "og:site_name", content: "Glasser UAE" },
+      { property: "article:published_time", content: input.datePublished },
+      { property: "article:modified_time", content: modified },
+      { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:title", content: seoTitle },
+      { name: "twitter:description", content: input.description },
+      { name: "twitter:image", content: image },
+    ],
+    links: [{ rel: "canonical", href: url }],
+    scripts,
+  };
+}

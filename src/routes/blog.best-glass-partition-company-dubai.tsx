@@ -1,9 +1,13 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { BlogPost } from "@/components/site/BlogPost";
+import { buildBlogHead } from "@/lib/seo";
+import image from "@/assets/project-office.jpg";
 
-const T = "Best Glass Partition Company Dubai (2026) | Glasser";
-const D = "How to choose the best glass partition company in Dubai — what to check, average pricing, red flags, and why Glasser UAE leads the market for office partition fit-outs.";
-const URL = "https://glasseruae.com/blog/best-glass-partition-company-dubai";
+const SLUG = "best-glass-partition-company-dubai";
+const TITLE = "Best Glass Partition Company in Dubai (2026 Guide)";
+const DESC = "Vet Dubai glass partition companies in 2026: trade licence and insurance checks, in-house fabrication, itemised pricing, warranty terms and red flags to avoid.";
+const PUBLISHED = "2026-03-04";
+const MODIFIED = "2026-06-05";
 
 const FAQS = [
   { q: "How do I verify a glass partition company in Dubai?", a: "Check Dubai trade licence, public liability insurance, completed-project references, written warranty terms and supplier accreditation with major aluminium system houses." },
@@ -11,17 +15,21 @@ const FAQS = [
 ];
 
 export const Route = createFileRoute("/blog/best-glass-partition-company-dubai")({
-  head: () => ({
-    meta: [{ title: T }, { name: "description", content: D }, { property: "og:title", content: T }, { property: "og:description", content: D }, { property: "og:url", content: URL }, { property: "og:type", content: "article" }],
-    links: [{ rel: "canonical", href: URL }],
-    scripts: [
-      { type: "application/ld+json", children: JSON.stringify({ "@context": "https://schema.org", "@type": "BlogPosting", headline: "Best Glass Partition Company in Dubai (2026 Guide)", url: URL, author: { "@type": "Organization", name: "Glasser UAE" } }) },
-      { type: "application/ld+json", children: JSON.stringify({ "@context": "https://schema.org", "@type": "FAQPage", mainEntity: FAQS.map((f) => ({ "@type": "Question", name: f.q, acceptedAnswer: { "@type": "Answer", text: f.a } })) }) },
-    ],
-  }),
+  head: () =>
+    buildBlogHead({
+      slug: SLUG,
+      title: TITLE,
+      description: DESC,
+      image,
+      datePublished: PUBLISHED,
+      dateModified: MODIFIED,
+      faqs: FAQS,
+    }),
   component: () => (
     <BlogPost
-      h1="Best Glass Partition Company in Dubai (2026 Guide)"
+      h1={TITLE}
+      image={image}
+      imageAlt="Corporate office fitted with premium frameless glass partitions in Dubai"
       intro="Choosing the right glass partition company in Dubai matters more than most fit-out decisions. The partitions are highly visible, structurally bonded into your space, and expensive to redo. This guide explains exactly what to check before signing a quote."
       sections={[
         { heading: "Trade Licence & Insurance", paragraphs: ["The first check is the simplest — every Dubai contractor must hold a valid trade licence covering glass and aluminium works, plus public liability insurance of at least AED 1 million. Ask for both documents up front. A reputable company sends them within minutes."] },
@@ -29,6 +37,15 @@ export const Route = createFileRoute("/blog/best-glass-partition-company-dubai")
         { heading: "Project References", paragraphs: ["Ask for 3 references from the past 12 months in your sector (office, retail, clinic). A serious supplier will share them and welcome the call. Hesitation is a red flag."] },
         { heading: "Pricing Transparency", paragraphs: ["A good Dubai partition quote is itemised: glass type and thickness per square metre, door hardware per leaf, approvals scope, installation and snagging. Vague single-line quotes hide costs that resurface later."] },
         { heading: "Why Glasser UAE", paragraphs: ["Since 2019 Glasser Technical Works has delivered 500+ projects across the UAE — corporate HQs, F&B chains, clinics and luxury villas. Licensed, insured, in-house fabrication, transparent quotes, signed warranty on every install."] },
+      ]}
+      serviceLinks={[
+        { to: "/services/frameless-glass-partitions-dubai", label: "Frameless Glass Partitions" },
+        { to: "/office-glass-partition-dubai", label: "Office Glass Partition Dubai" },
+        { to: "/glass-partition-dubai", label: "Glass Partition Dubai" },
+      ]}
+      related={[
+        { to: "/blog/office-glass-partition-cost-dubai", label: "Office Glass Partition Cost in Dubai (2026)" },
+        { to: "/blog/glass-partitions-dubai-office-guide", label: "How to Choose the Right Glass Partition for Your Dubai Office" },
       ]}
       faqs={FAQS}
       ctaHeading="Looking for a partition partner in Dubai?"

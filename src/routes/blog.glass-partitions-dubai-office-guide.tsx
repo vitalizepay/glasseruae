@@ -1,9 +1,13 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { BlogPost } from "@/components/site/BlogPost";
+import { buildBlogHead } from "@/lib/seo";
+import image from "@/assets/service-partition.jpg";
 
-const T = "Choosing the Right Office Glass Partition Dubai";
-const D = "Thinking about glass partitions for your Dubai office? This guide covers types, costs, acoustic options and what to expect from installation in the UAE.";
-const URL = "https://glasseruae.com/blog/glass-partitions-dubai-office-guide";
+const SLUG = "glass-partitions-dubai-office-guide";
+const TITLE = "How to Choose the Right Glass Partition for Your Dubai Office";
+const DESC = "Compare frameless vs framed office glass partitions in Dubai: acoustic ratings, 2026 per-sqm pricing, permits, install timelines and what to ask suppliers.";
+const PUBLISHED = "2026-01-14";
+const MODIFIED = "2026-06-05";
 
 const FAQS = [
   { q: "How long does a glass partition project take in Dubai?", a: "Most standard office partition projects take 7–14 days from initial survey to completed installation." },
@@ -13,44 +17,21 @@ const FAQS = [
 ];
 
 export const Route = createFileRoute("/blog/glass-partitions-dubai-office-guide")({
-  head: () => ({
-    meta: [
-      { title: T },
-      { name: "description", content: D },
-      { property: "og:title", content: T },
-      { property: "og:description", content: D },
-      { property: "og:url", content: URL },
-      { property: "og:type", content: "article" },
-    ],
-    links: [{ rel: "canonical", href: URL }],
-    scripts: [
-      {
-        type: "application/ld+json",
-        children: JSON.stringify({
-          "@context": "https://schema.org",
-          "@type": "Article",
-          headline: "How to Choose the Right Glass Partition for Your Dubai Office",
-          url: URL,
-          author: { "@type": "Organization", name: "Glasser UAE" },
-        }),
-      },
-      {
-        type: "application/ld+json",
-        children: JSON.stringify({
-          "@context": "https://schema.org",
-          "@type": "FAQPage",
-          mainEntity: FAQS.map((f) => ({
-            "@type": "Question",
-            name: f.q,
-            acceptedAnswer: { "@type": "Answer", text: f.a },
-          })),
-        }),
-      },
-    ],
-  }),
+  head: () =>
+    buildBlogHead({
+      slug: SLUG,
+      title: TITLE,
+      description: DESC,
+      image,
+      datePublished: PUBLISHED,
+      dateModified: MODIFIED,
+      faqs: FAQS,
+    }),
   component: () => (
     <BlogPost
-      h1="How to Choose the Right Glass Partition for Your Dubai Office"
+      h1={TITLE}
+      image={image}
+      imageAlt="Frameless glass partition installed in a Dubai office meeting room"
       intro="If you are planning an office fit-out or renovation in Dubai, glass partitions are one of the most impactful upgrades you can make. They flood your workspace with natural light, create a sense of openness, and signal a premium environment to clients and staff alike."
       sections={[
         {
@@ -90,6 +71,15 @@ export const Route = createFileRoute("/blog/glass-partitions-dubai-office-guide"
             "When selecting a glass partition contractor in Dubai, look for a licensed insured company, a portfolio of completed commercial projects, references from architects or designers, transparent pricing with a written quotation, and a warranty on materials and installation. Glasser Technical Works LLC has been installing glass partitions across Dubai, Abu Dhabi, and Sharjah since 2019.",
           ],
         },
+      ]}
+      serviceLinks={[
+        { to: "/services/frameless-glass-partitions-dubai", label: "Frameless Glass Partitions" },
+        { to: "/office-glass-partition-dubai", label: "Office Glass Partition Dubai" },
+        { to: "/glass-door-installation-dubai", label: "Glass Door Installation" },
+      ]}
+      related={[
+        { to: "/blog/office-glass-partition-cost-dubai", label: "Office Glass Partition Cost in Dubai (2026)" },
+        { to: "/blog/best-glass-partition-company-dubai", label: "Best Glass Partition Company in Dubai (2026 Guide)" },
       ]}
       faqs={FAQS}
       ctaHeading="Ready to transform your Dubai office?"
