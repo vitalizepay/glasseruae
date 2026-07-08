@@ -1,6 +1,7 @@
 import { Link } from "@tanstack/react-router";
 import { Layout } from "@/components/site/Layout";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, ShieldCheck } from "lucide-react";
+import type { ReactNode } from "react";
 
 export interface BlogFAQ {
   q: string;
@@ -35,6 +36,36 @@ export interface BlogPostProps {
   related?: BlogRelatedPost[];
 }
 
+// Parse inline markdown-style links [text](/path) and render as router Links.
+function renderParagraph(text: string): ReactNode {
+  const parts: ReactNode[] = [];
+  const re = /\[([^\]]+)\]\(([^)]+)\)/g;
+  let last = 0;
+  let m: RegExpExecArray | null;
+  let key = 0;
+  while ((m = re.exec(text)) !== null) {
+    if (m.index > last) parts.push(text.slice(last, m.index));
+    const label = m[1];
+    const href = m[2];
+    if (href.startsWith("/")) {
+      parts.push(
+        <Link key={key++} to={href} className="text-orange underline decoration-orange/40 underline-offset-4 hover:decoration-orange">
+          {label}
+        </Link>,
+      );
+    } else {
+      parts.push(
+        <a key={key++} href={href} className="text-orange underline decoration-orange/40 underline-offset-4 hover:decoration-orange">
+          {label}
+        </a>,
+      );
+    }
+    last = m.index + m[0].length;
+  }
+  if (last < text.length) parts.push(text.slice(last));
+  return parts;
+}
+
 export function BlogPost({
   h1,
   intro,
@@ -66,7 +97,14 @@ export function BlogPost({
           </nav>
           <span className="text-[11px] uppercase tracking-[0.3em] text-orange font-semibold">Guide</span>
           <h1 className="text-4xl md:text-5xl text-navy mt-4 font-light leading-tight">{h1}</h1>
-          <p className="mt-6 text-lg text-muted-foreground leading-relaxed font-light">{intro}</p>
+          <p className="mt-6 text-lg text-muted-foreground leading-relaxed font-light">{renderParagraph(intro)}</p>
+          <div className="mt-6 flex items-center gap-3 text-xs text-muted-foreground">
+            <div className="w-9 h-9 rounded-full bg-navy text-white flex items-center justify-center font-semibold">GT</div>
+            <div>
+              <p className="text-navy font-medium">Glasser Technical Works Team</p>
+              <p>UAE glass &amp; aluminium specialists since 2019</p>
+            </div>
+          </div>
         </div>
       </article>
 
@@ -90,7 +128,7 @@ export function BlogPost({
             <div key={i}>
               {s.heading && <h2 className="text-2xl md:text-3xl text-navy font-medium mb-4">{s.heading}</h2>}
               {s.paragraphs.map((p, j) => (
-                <p key={j} className="text-muted-foreground font-light leading-relaxed mb-4">{p}</p>
+                <p key={j} className="text-muted-foreground font-light leading-relaxed mb-4">{renderParagraph(p)}</p>
               ))}
             </div>
           ))}
@@ -129,6 +167,20 @@ export function BlogPost({
               </div>
             </div>
           )}
+
+          <aside className="p-6 rounded-2xl bg-navy text-white/90 flex gap-4 items-start">
+            <ShieldCheck className="text-orange shrink-0 mt-0.5" size={22} />
+            <div className="text-sm leading-relaxed font-light">
+              <p className="text-white font-medium mb-1">About the author</p>
+              <p>
+                Written by the Glasser Technical Works team — a licensed Dubai glass and aluminium
+                contractor operating from Al Qusais since 2019, with 500+ delivered projects across
+                the UAE. Reach us on{" "}
+                <a href="tel:+971568400838" className="underline decoration-orange/60 hover:text-orange">+971 56 840 0838</a>{" "}
+                or <a href="mailto:ramesh@glasseruae.com" className="underline decoration-orange/60 hover:text-orange">ramesh@glasseruae.com</a>.
+              </p>
+            </div>
+          </aside>
         </div>
       </section>
 
