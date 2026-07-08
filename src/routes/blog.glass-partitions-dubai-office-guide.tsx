@@ -32,17 +32,17 @@ export const Route = createFileRoute("/blog/glass-partitions-dubai-office-guide"
       h1={TITLE}
       image={image}
       imageAlt="Frameless glass partition installed in a Dubai office meeting room"
-      intro="If you are planning an office fit-out or renovation in Dubai, glass partitions are one of the most impactful upgrades you can make. They flood your workspace with natural light, create a sense of openness, and signal a premium environment to clients and staff alike."
+      intro="If you are planning an [office glass partition Dubai](/office-glass-partition-dubai) fit-out or renovation, glass partitions are one of the most impactful upgrades you can make. They flood your workspace with natural light, create a sense of openness, and signal a premium environment to clients and staff alike."
       sections={[
         {
           heading: "What Are Frameless Glass Partitions?",
           paragraphs: [
-            "Frameless glass partitions are floor-to-ceiling panels of tempered safety glass installed without visible aluminium framing. The result is a completely seamless, transparent wall that divides a space without closing it off.",
+            "[Frameless glass partitions](/services/frameless-glass-partitions-dubai) are floor-to-ceiling panels of tempered safety glass installed without visible aluminium framing. The result is a completely seamless, transparent wall that divides a space without closing it off.",
             "They are the most popular choice for Dubai offices because they maximise natural light, create private meeting rooms without a closed feel, look premium in client-facing environments like DIFC and Business Bay, and are easy to reconfigure if your office layout changes.",
           ],
         },
         {
-          heading: "Framed vs Frameless — Which Is Right for You?",
+          heading: "Framed vs Frameless — Which Glass Partition Is Right for Your Dubai Office?",
           paragraphs: [
             "Frameless partitions suit open-plan offices, creative studios, law firms, and any space where aesthetics matter. They cost slightly more but deliver a significantly more premium finish. Framed aluminium partitions suit industrial or budget-conscious fit-outs where speed and price take priority. For most Dubai commercial spaces, frameless is the right choice.",
           ],
@@ -56,13 +56,13 @@ export const Route = createFileRoute("/blog/glass-partitions-dubai-office-guide"
         {
           heading: "How Much Do Glass Partitions Cost in Dubai?",
           paragraphs: [
-            "Glass partition pricing in Dubai typically ranges from AED 350 to AED 850 per square metre depending on glass thickness, frameless vs framed, single vs double glazing, door type, and finishing hardware. A typical 50-square-metre office partition project in Dubai costs between AED 17,500 and AED 42,500 fully installed.",
+            "Glass partition pricing in Dubai typically ranges from AED 350 to AED 850 per square metre depending on glass thickness, frameless vs framed, single vs double glazing, door type, and finishing hardware. A typical 50-square-metre office partition project in Dubai costs between AED 17,500 and AED 42,500 fully installed — see our detailed [office glass partition cost](/blog/office-glass-partition-cost-dubai) breakdown.",
           ],
         },
         {
           heading: "What to Expect from Installation",
           paragraphs: [
-            "A professional glass partition installation in Dubai follows these stages: site survey, engineering and fabrication, installation (typically 1–3 days), and snagging and handover. At Glasser UAE, we complete most Dubai office partition projects within 7–14 days from survey to handover.",
+            "A professional glass partition installation in Dubai follows these stages: site survey, engineering and fabrication, installation (typically 1–3 days), and snagging and handover. Include matching [glass doors](/glass-door-installation-dubai) in the same visit to avoid a second mobilisation. At Glasser UAE, we complete most Dubai office partition projects within 7–14 days from survey to handover.",
           ],
         },
         {

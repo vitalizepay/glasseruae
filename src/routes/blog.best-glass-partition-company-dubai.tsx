@@ -30,12 +30,12 @@ export const Route = createFileRoute("/blog/best-glass-partition-company-dubai")
       h1={TITLE}
       image={image}
       imageAlt="Corporate office fitted with premium frameless glass partitions in Dubai"
-      intro="Choosing the right glass partition company in Dubai matters more than most fit-out decisions. The partitions are highly visible, structurally bonded into your space, and expensive to redo. This guide explains exactly what to check before signing a quote."
+      intro="Choosing the [best glass partition company in Dubai](/services/frameless-glass-partitions-dubai) matters more than most fit-out decisions. The partitions are highly visible, structurally bonded into your space, and expensive to redo. This 2026 guide explains exactly what to check before signing a quote."
       sections={[
         { heading: "Trade Licence & Insurance", paragraphs: ["The first check is the simplest — every Dubai contractor must hold a valid trade licence covering glass and aluminium works, plus public liability insurance of at least AED 1 million. Ask for both documents up front. A reputable company sends them within minutes."] },
-        { heading: "In-House Fabrication vs Subcontracting", paragraphs: ["Companies that own a workshop control quality and timeline. Subcontracted suppliers add cost, lengthen lead times and dilute accountability when issues arise. Glasser fabricates every project at our Al Qusais workshop."] },
+        { heading: "In-House Fabrication vs Subcontracting", paragraphs: ["Companies that own a workshop control quality and timeline. Subcontracted suppliers add cost, lengthen lead times and dilute accountability when issues arise. Glasser fabricates every project at our Al Qusais workshop, including [office glass partitions](/office-glass-partition-dubai) and full [aluminium works](/aluminium-works-dubai)."] },
         { heading: "Project References", paragraphs: ["Ask for 3 references from the past 12 months in your sector (office, retail, clinic). A serious supplier will share them and welcome the call. Hesitation is a red flag."] },
-        { heading: "Pricing Transparency", paragraphs: ["A good Dubai partition quote is itemised: glass type and thickness per square metre, door hardware per leaf, approvals scope, installation and snagging. Vague single-line quotes hide costs that resurface later."] },
+        { heading: "Pricing Transparency", paragraphs: ["A good Dubai partition quote is itemised: glass type and thickness per square metre, door hardware per leaf, approvals scope, installation and snagging. Vague single-line quotes hide costs that resurface later — the detailed [office glass partition cost](/blog/office-glass-partition-cost-dubai) breakdown shows what an itemised quote should look like."] },
         { heading: "Why Glasser UAE", paragraphs: ["Since 2019 Glasser Technical Works has delivered 500+ projects across the UAE — corporate HQs, F&B chains, clinics and luxury villas. Licensed, insured, in-house fabrication, transparent quotes, signed warranty on every install."] },
       ]}
       serviceLinks={[
