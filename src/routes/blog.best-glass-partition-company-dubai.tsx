@@ -46,6 +46,8 @@ export const Route = createFileRoute("/blog/best-glass-partition-company-dubai")
       related={[
         { to: "/blog/office-glass-partition-cost-dubai", label: "Office Glass Partition Cost in Dubai (2026)" },
         { to: "/blog/glass-partitions-dubai-office-guide", label: "How to Choose the Right Glass Partition for Your Dubai Office" },
+        { to: "/blog/acoustic-glass-dubai", label: "Acoustic Glass in Dubai: How Soundproof Glass Works" },
+        { to: "/blog/curved-glass-dubai", label: "Curved Glass in Dubai: Uses, Fabrication and Cost Guide" },
       ]}
       faqs={FAQS}
       ctaHeading="Looking for a partition partner in Dubai?"
