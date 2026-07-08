@@ -69,7 +69,7 @@ function BlogPage() {
           {POSTS.map((p) => (
             <Link key={p.slug} to={p.to} className="group rounded-2xl overflow-hidden border border-border bg-white hover:shadow-elegant transition-shadow">
               <div className="aspect-[4/3] overflow-hidden">
-                <img src={p.img} alt={p.title} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" loading="lazy" />
+                <img src={p.img} alt={p.alt} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" loading="lazy" />
               </div>
               <div className="p-6">
                 <span className="text-xs uppercase tracking-widest text-orange font-semibold">{p.cat}</span>
