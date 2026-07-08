@@ -58,6 +58,9 @@ const PATHS: { path: string; priority: string }[] = [
   { path: "/blog/shower-glass-installation-guide-dubai", priority: "0.75" },
   { path: "/blog/glass-shopfront-installation-guide", priority: "0.75" },
   { path: "/blog/aluminium-fabrication-services-dubai", priority: "0.75" },
+  { path: "/blog/curved-glass-dubai", priority: "0.8" },
+  { path: "/blog/acoustic-glass-dubai", priority: "0.8" },
+  { path: "/blog/back-painted-glass-dubai", priority: "0.8" },
 ];
 
 export const Route = createFileRoute("/sitemap.xml")({

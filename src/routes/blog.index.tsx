@@ -7,12 +7,18 @@ import office from "@/assets/project-office.jpg";
 import hotel from "@/assets/project-hotel.jpg";
 import villa from "@/assets/project-villa.jpg";
 import hero from "@/assets/hero-dubai.jpg";
+import curved from "@/assets/projects/ad-curved-1.jpg.asset.json";
+import acoustic from "@/assets/projects/jumeirah-office-partition.jpg.asset.json";
+import backpainted from "@/assets/projects/back-painted-glass-1.jpg.asset.json";
 
 const T = "Blog — Glass & Aluminium Insights from Dubai | Glasser UAE";
 const D = "Trends, guides and design ideas for glass partitions, shower enclosures, aluminium windows and mirror installations across the UAE.";
 const URL = "https://glasseruae.com/blog";
 
 const POSTS = [
+  { slug: "curved-glass-dubai", title: "Curved Glass in Dubai: Uses, Fabrication and Cost Guide", img: curved.url, alt: "Curved glass facade on a Dubai commercial building", cat: "Guide", to: "/blog/curved-glass-dubai" as const },
+  { slug: "acoustic-glass-dubai", title: "Acoustic Glass in Dubai: How Soundproof Glass Works", img: acoustic.url, alt: "Acoustic glass partition in a Dubai office", cat: "Guide", to: "/blog/acoustic-glass-dubai" as const },
+  { slug: "back-painted-glass-dubai", title: "Back Painted Glass in Dubai: Colours, Uses and Cost", img: backpainted.url, alt: "Back painted glass splashback in a Dubai kitchen", cat: "Guide", to: "/blog/back-painted-glass-dubai" as const },
   { slug: "glass-partitions-dubai-office-guide", title: "How to Choose the Right Glass Partition for Your Dubai Office", img: partition, alt: "Frameless glass partition in a Dubai office", cat: "Guide", to: "/blog/glass-partitions-dubai-office-guide" as const },
   { slug: "frameless-shower-enclosures-dubai-guide", title: "Frameless Shower Enclosures Dubai: What to Expect from Installation", img: shower, alt: "Frameless tempered glass shower enclosure", cat: "Guide", to: "/blog/frameless-shower-enclosures-dubai-guide" as const },
   { slug: "best-glass-partition-company-dubai", title: "Best Glass Partition Company in Dubai (2026 Guide)", img: office, alt: "Corporate Dubai office with glass partition rooms", cat: "Guide", to: "/blog/best-glass-partition-company-dubai" as const },

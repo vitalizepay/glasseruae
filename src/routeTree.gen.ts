@@ -60,8 +60,11 @@ import { Route as BlogOfficeGlassPartitionCostDubaiRouteImport } from './routes/
 import { Route as BlogGlassShopfrontInstallationGuideRouteImport } from './routes/blog.glass-shopfront-installation-guide'
 import { Route as BlogGlassPartitionsDubaiOfficeGuideRouteImport } from './routes/blog.glass-partitions-dubai-office-guide'
 import { Route as BlogFramelessShowerEnclosuresDubaiGuideRouteImport } from './routes/blog.frameless-shower-enclosures-dubai-guide'
+import { Route as BlogCurvedGlassDubaiRouteImport } from './routes/blog.curved-glass-dubai'
 import { Route as BlogBestGlassPartitionCompanyDubaiRouteImport } from './routes/blog.best-glass-partition-company-dubai'
+import { Route as BlogBackPaintedGlassDubaiRouteImport } from './routes/blog.back-painted-glass-dubai'
 import { Route as BlogAluminiumFabricationServicesDubaiRouteImport } from './routes/blog.aluminium-fabrication-services-dubai'
+import { Route as BlogAcousticGlassDubaiRouteImport } from './routes/blog.acoustic-glass-dubai'
 import { Route as ApiChatRouteImport } from './routes/api/chat'
 
 const TamilfoodmenuRoute = TamilfoodmenuRouteImport.update({
@@ -343,10 +346,21 @@ const BlogFramelessShowerEnclosuresDubaiGuideRoute =
     path: '/frameless-shower-enclosures-dubai-guide',
     getParentRoute: () => BlogRoute,
   } as any)
+const BlogCurvedGlassDubaiRoute = BlogCurvedGlassDubaiRouteImport.update({
+  id: '/curved-glass-dubai',
+  path: '/curved-glass-dubai',
+  getParentRoute: () => BlogRoute,
+} as any)
 const BlogBestGlassPartitionCompanyDubaiRoute =
   BlogBestGlassPartitionCompanyDubaiRouteImport.update({
     id: '/best-glass-partition-company-dubai',
     path: '/best-glass-partition-company-dubai',
+    getParentRoute: () => BlogRoute,
+  } as any)
+const BlogBackPaintedGlassDubaiRoute =
+  BlogBackPaintedGlassDubaiRouteImport.update({
+    id: '/back-painted-glass-dubai',
+    path: '/back-painted-glass-dubai',
     getParentRoute: () => BlogRoute,
   } as any)
 const BlogAluminiumFabricationServicesDubaiRoute =
@@ -355,6 +369,11 @@ const BlogAluminiumFabricationServicesDubaiRoute =
     path: '/aluminium-fabrication-services-dubai',
     getParentRoute: () => BlogRoute,
   } as any)
+const BlogAcousticGlassDubaiRoute = BlogAcousticGlassDubaiRouteImport.update({
+  id: '/acoustic-glass-dubai',
+  path: '/acoustic-glass-dubai',
+  getParentRoute: () => BlogRoute,
+} as any)
 const ApiChatRoute = ApiChatRouteImport.update({
   id: '/api/chat',
   path: '/api/chat',
@@ -393,8 +412,11 @@ export interface FileRoutesByFullPath {
   '/skylight-installation-dubai': typeof SkylightInstallationDubaiRoute
   '/tamilfoodmenu': typeof TamilfoodmenuRoute
   '/api/chat': typeof ApiChatRoute
+  '/blog/acoustic-glass-dubai': typeof BlogAcousticGlassDubaiRoute
   '/blog/aluminium-fabrication-services-dubai': typeof BlogAluminiumFabricationServicesDubaiRoute
+  '/blog/back-painted-glass-dubai': typeof BlogBackPaintedGlassDubaiRoute
   '/blog/best-glass-partition-company-dubai': typeof BlogBestGlassPartitionCompanyDubaiRoute
+  '/blog/curved-glass-dubai': typeof BlogCurvedGlassDubaiRoute
   '/blog/frameless-shower-enclosures-dubai-guide': typeof BlogFramelessShowerEnclosuresDubaiGuideRoute
   '/blog/glass-partitions-dubai-office-guide': typeof BlogGlassPartitionsDubaiOfficeGuideRoute
   '/blog/glass-shopfront-installation-guide': typeof BlogGlassShopfrontInstallationGuideRoute
@@ -446,8 +468,11 @@ export interface FileRoutesByTo {
   '/skylight-installation-dubai': typeof SkylightInstallationDubaiRoute
   '/tamilfoodmenu': typeof TamilfoodmenuRoute
   '/api/chat': typeof ApiChatRoute
+  '/blog/acoustic-glass-dubai': typeof BlogAcousticGlassDubaiRoute
   '/blog/aluminium-fabrication-services-dubai': typeof BlogAluminiumFabricationServicesDubaiRoute
+  '/blog/back-painted-glass-dubai': typeof BlogBackPaintedGlassDubaiRoute
   '/blog/best-glass-partition-company-dubai': typeof BlogBestGlassPartitionCompanyDubaiRoute
+  '/blog/curved-glass-dubai': typeof BlogCurvedGlassDubaiRoute
   '/blog/frameless-shower-enclosures-dubai-guide': typeof BlogFramelessShowerEnclosuresDubaiGuideRoute
   '/blog/glass-partitions-dubai-office-guide': typeof BlogGlassPartitionsDubaiOfficeGuideRoute
   '/blog/glass-shopfront-installation-guide': typeof BlogGlassShopfrontInstallationGuideRoute
@@ -503,8 +528,11 @@ export interface FileRoutesById {
   '/skylight-installation-dubai': typeof SkylightInstallationDubaiRoute
   '/tamilfoodmenu': typeof TamilfoodmenuRoute
   '/api/chat': typeof ApiChatRoute
+  '/blog/acoustic-glass-dubai': typeof BlogAcousticGlassDubaiRoute
   '/blog/aluminium-fabrication-services-dubai': typeof BlogAluminiumFabricationServicesDubaiRoute
+  '/blog/back-painted-glass-dubai': typeof BlogBackPaintedGlassDubaiRoute
   '/blog/best-glass-partition-company-dubai': typeof BlogBestGlassPartitionCompanyDubaiRoute
+  '/blog/curved-glass-dubai': typeof BlogCurvedGlassDubaiRoute
   '/blog/frameless-shower-enclosures-dubai-guide': typeof BlogFramelessShowerEnclosuresDubaiGuideRoute
   '/blog/glass-partitions-dubai-office-guide': typeof BlogGlassPartitionsDubaiOfficeGuideRoute
   '/blog/glass-shopfront-installation-guide': typeof BlogGlassShopfrontInstallationGuideRoute
@@ -561,8 +589,11 @@ export interface FileRouteTypes {
     | '/skylight-installation-dubai'
     | '/tamilfoodmenu'
     | '/api/chat'
+    | '/blog/acoustic-glass-dubai'
     | '/blog/aluminium-fabrication-services-dubai'
+    | '/blog/back-painted-glass-dubai'
     | '/blog/best-glass-partition-company-dubai'
+    | '/blog/curved-glass-dubai'
     | '/blog/frameless-shower-enclosures-dubai-guide'
     | '/blog/glass-partitions-dubai-office-guide'
     | '/blog/glass-shopfront-installation-guide'
@@ -614,8 +645,11 @@ export interface FileRouteTypes {
     | '/skylight-installation-dubai'
     | '/tamilfoodmenu'
     | '/api/chat'
+    | '/blog/acoustic-glass-dubai'
     | '/blog/aluminium-fabrication-services-dubai'
+    | '/blog/back-painted-glass-dubai'
     | '/blog/best-glass-partition-company-dubai'
+    | '/blog/curved-glass-dubai'
     | '/blog/frameless-shower-enclosures-dubai-guide'
     | '/blog/glass-partitions-dubai-office-guide'
     | '/blog/glass-shopfront-installation-guide'
@@ -670,8 +704,11 @@ export interface FileRouteTypes {
     | '/skylight-installation-dubai'
     | '/tamilfoodmenu'
     | '/api/chat'
+    | '/blog/acoustic-glass-dubai'
     | '/blog/aluminium-fabrication-services-dubai'
+    | '/blog/back-painted-glass-dubai'
     | '/blog/best-glass-partition-company-dubai'
+    | '/blog/curved-glass-dubai'
     | '/blog/frameless-shower-enclosures-dubai-guide'
     | '/blog/glass-partitions-dubai-office-guide'
     | '/blog/glass-shopfront-installation-guide'
@@ -1088,6 +1125,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof BlogFramelessShowerEnclosuresDubaiGuideRouteImport
       parentRoute: typeof BlogRoute
     }
+    '/blog/curved-glass-dubai': {
+      id: '/blog/curved-glass-dubai'
+      path: '/curved-glass-dubai'
+      fullPath: '/blog/curved-glass-dubai'
+      preLoaderRoute: typeof BlogCurvedGlassDubaiRouteImport
+      parentRoute: typeof BlogRoute
+    }
     '/blog/best-glass-partition-company-dubai': {
       id: '/blog/best-glass-partition-company-dubai'
       path: '/best-glass-partition-company-dubai'
@@ -1095,11 +1139,25 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof BlogBestGlassPartitionCompanyDubaiRouteImport
       parentRoute: typeof BlogRoute
     }
+    '/blog/back-painted-glass-dubai': {
+      id: '/blog/back-painted-glass-dubai'
+      path: '/back-painted-glass-dubai'
+      fullPath: '/blog/back-painted-glass-dubai'
+      preLoaderRoute: typeof BlogBackPaintedGlassDubaiRouteImport
+      parentRoute: typeof BlogRoute
+    }
     '/blog/aluminium-fabrication-services-dubai': {
       id: '/blog/aluminium-fabrication-services-dubai'
       path: '/aluminium-fabrication-services-dubai'
       fullPath: '/blog/aluminium-fabrication-services-dubai'
       preLoaderRoute: typeof BlogAluminiumFabricationServicesDubaiRouteImport
+      parentRoute: typeof BlogRoute
+    }
+    '/blog/acoustic-glass-dubai': {
+      id: '/blog/acoustic-glass-dubai'
+      path: '/acoustic-glass-dubai'
+      fullPath: '/blog/acoustic-glass-dubai'
+      preLoaderRoute: typeof BlogAcousticGlassDubaiRouteImport
       parentRoute: typeof BlogRoute
     }
     '/api/chat': {
@@ -1113,8 +1171,11 @@ declare module '@tanstack/react-router' {
 }
 
 interface BlogRouteChildren {
+  BlogAcousticGlassDubaiRoute: typeof BlogAcousticGlassDubaiRoute
   BlogAluminiumFabricationServicesDubaiRoute: typeof BlogAluminiumFabricationServicesDubaiRoute
+  BlogBackPaintedGlassDubaiRoute: typeof BlogBackPaintedGlassDubaiRoute
   BlogBestGlassPartitionCompanyDubaiRoute: typeof BlogBestGlassPartitionCompanyDubaiRoute
+  BlogCurvedGlassDubaiRoute: typeof BlogCurvedGlassDubaiRoute
   BlogFramelessShowerEnclosuresDubaiGuideRoute: typeof BlogFramelessShowerEnclosuresDubaiGuideRoute
   BlogGlassPartitionsDubaiOfficeGuideRoute: typeof BlogGlassPartitionsDubaiOfficeGuideRoute
   BlogGlassShopfrontInstallationGuideRoute: typeof BlogGlassShopfrontInstallationGuideRoute
@@ -1124,10 +1185,13 @@ interface BlogRouteChildren {
 }
 
 const BlogRouteChildren: BlogRouteChildren = {
+  BlogAcousticGlassDubaiRoute: BlogAcousticGlassDubaiRoute,
   BlogAluminiumFabricationServicesDubaiRoute:
     BlogAluminiumFabricationServicesDubaiRoute,
+  BlogBackPaintedGlassDubaiRoute: BlogBackPaintedGlassDubaiRoute,
   BlogBestGlassPartitionCompanyDubaiRoute:
     BlogBestGlassPartitionCompanyDubaiRoute,
+  BlogCurvedGlassDubaiRoute: BlogCurvedGlassDubaiRoute,
   BlogFramelessShowerEnclosuresDubaiGuideRoute:
     BlogFramelessShowerEnclosuresDubaiGuideRoute,
   BlogGlassPartitionsDubaiOfficeGuideRoute:
@@ -1236,13 +1300,3 @@ const rootRouteChildren: RootRouteChildren = {
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
   ._addFileTypes<FileRouteTypes>()
-
-import type { getRouter } from './router.tsx'
-import type { startInstance } from './start.ts'
-declare module '@tanstack/react-start' {
-  interface Register {
-    ssr: true
-    router: Awaited<ReturnType<typeof getRouter>>
-    config: Awaited<ReturnType<typeof startInstance.getOptions>>
-  }
-}
