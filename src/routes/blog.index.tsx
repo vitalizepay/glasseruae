@@ -3,22 +3,25 @@ import { Layout } from "@/components/site/Layout";
 import partition from "@/assets/service-partition.jpg";
 import shower from "@/assets/service-shower.jpg";
 import aluminium from "@/assets/service-aluminium.jpg";
-import mirror from "@/assets/service-mirror.jpg";
 import office from "@/assets/project-office.jpg";
+import hotel from "@/assets/project-hotel.jpg";
+import villa from "@/assets/project-villa.jpg";
+import hero from "@/assets/hero-dubai.jpg";
 
 const T = "Blog — Glass & Aluminium Insights from Dubai | Glasser UAE";
 const D = "Trends, guides and design ideas for glass partitions, shower enclosures, aluminium windows and mirror installations across the UAE.";
 const URL = "https://glasseruae.com/blog";
 
 const POSTS = [
-  { slug: "glass-partitions-dubai-office-guide", title: "How to Choose the Right Glass Partition for Your Dubai Office", img: partition, cat: "Guide", to: "/blog/glass-partitions-dubai-office-guide" as const },
-  { slug: "frameless-shower-enclosures-dubai-guide", title: "Frameless Shower Enclosures Dubai: What to Expect from Installation", img: shower, cat: "Guide", to: "/blog/frameless-shower-enclosures-dubai-guide" as const },
-  { slug: "best-glass-partition-company-dubai", title: "Best Glass Partition Company in Dubai (2026 Guide)", img: partition, cat: "Guide", to: "/blog/best-glass-partition-company-dubai" as const },
-  { slug: "office-glass-partition-cost-dubai", title: "Office Glass Partition Cost in Dubai (2026)", img: office, cat: "Pricing", to: "/blog/office-glass-partition-cost-dubai" as const },
-  { slug: "shower-glass-installation-guide-dubai", title: "Shower Glass Installation Guide Dubai", img: shower, cat: "Guide", to: "/blog/shower-glass-installation-guide-dubai" as const },
-  { slug: "glass-shopfront-installation-guide", title: "Glass Shopfront Installation Guide Dubai", img: aluminium, cat: "Retail", to: "/blog/glass-shopfront-installation-guide" as const },
-  { slug: "aluminium-fabrication-services-dubai", title: "Aluminium Fabrication Services in Dubai", img: mirror, cat: "Aluminium", to: "/blog/aluminium-fabrication-services-dubai" as const },
+  { slug: "glass-partitions-dubai-office-guide", title: "How to Choose the Right Glass Partition for Your Dubai Office", img: partition, alt: "Frameless glass partition in a Dubai office", cat: "Guide", to: "/blog/glass-partitions-dubai-office-guide" as const },
+  { slug: "frameless-shower-enclosures-dubai-guide", title: "Frameless Shower Enclosures Dubai: What to Expect from Installation", img: shower, alt: "Frameless tempered glass shower enclosure", cat: "Guide", to: "/blog/frameless-shower-enclosures-dubai-guide" as const },
+  { slug: "best-glass-partition-company-dubai", title: "Best Glass Partition Company in Dubai (2026 Guide)", img: office, alt: "Corporate Dubai office with glass partition rooms", cat: "Guide", to: "/blog/best-glass-partition-company-dubai" as const },
+  { slug: "office-glass-partition-cost-dubai", title: "Office Glass Partition Cost in Dubai (2026)", img: hotel, alt: "Premium office interior with glass partitions", cat: "Pricing", to: "/blog/office-glass-partition-cost-dubai" as const },
+  { slug: "shower-glass-installation-guide-dubai", title: "Shower Glass Installation Guide Dubai", img: villa, alt: "Luxury villa bathroom shower glass installation", cat: "Guide", to: "/blog/shower-glass-installation-guide-dubai" as const },
+  { slug: "glass-shopfront-installation-guide", title: "Glass Shopfront Installation Guide Dubai", img: aluminium, alt: "Glass shopfront installation at a Dubai retail unit", cat: "Retail", to: "/blog/glass-shopfront-installation-guide" as const },
+  { slug: "aluminium-fabrication-services-dubai", title: "Aluminium Fabrication Services in Dubai", img: hero, alt: "Aluminium fabrication for architectural projects in Dubai", cat: "Aluminium", to: "/blog/aluminium-fabrication-services-dubai" as const },
 ];
+
 
 export const Route = createFileRoute("/blog/")({
   head: () => ({
