@@ -58,9 +58,14 @@ export function Footer() {
             </ul>
           </div>
         </div>
-        <div className="border-t border-white/10 mt-12 pt-6 flex flex-col md:flex-row justify-between gap-3 text-xs text-white/80">
-          <p>© {new Date().getFullYear()} Glasser Technical Works LLC. All rights reserved.</p>
-          <p>Dubai · Abu Dhabi · Sharjah · Ajman · UAE</p>
+        <div className="border-t border-white/10 mt-12 pt-6 flex flex-col gap-3 text-xs text-white/80">
+          <p className="text-white/70">
+            Glasser Technical Works LLC · Licensed Dubai glass &amp; aluminium contractor · Established 2019 · 500+ projects delivered across the UAE
+          </p>
+          <div className="flex flex-col md:flex-row justify-between gap-3">
+            <p>© {new Date().getFullYear()} Glasser Technical Works LLC. All rights reserved.</p>
+            <p>Dubai · Abu Dhabi · Sharjah · Ajman · UAE</p>
+          </div>
         </div>
       </div>
     </footer>
