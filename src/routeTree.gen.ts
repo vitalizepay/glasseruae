@@ -57,6 +57,7 @@ import { Route as ProjectsGlassRailingDubaiMarinaRouteImport } from './routes/pr
 import { Route as ProjectsAluminiumShopfrontSharjahRouteImport } from './routes/projects.aluminium-shopfront-sharjah'
 import { Route as BlogShowerGlassInstallationGuideDubaiRouteImport } from './routes/blog.shower-glass-installation-guide-dubai'
 import { Route as BlogOfficeGlassPartitionCostDubaiRouteImport } from './routes/blog.office-glass-partition-cost-dubai'
+import { Route as BlogMirrorSuppliersDubaiRouteImport } from './routes/blog.mirror-suppliers-dubai'
 import { Route as BlogGlassShopfrontInstallationGuideRouteImport } from './routes/blog.glass-shopfront-installation-guide'
 import { Route as BlogGlassPartitionsDubaiOfficeGuideRouteImport } from './routes/blog.glass-partitions-dubai-office-guide'
 import { Route as BlogFramelessShowerEnclosuresDubaiGuideRouteImport } from './routes/blog.frameless-shower-enclosures-dubai-guide'
@@ -328,6 +329,12 @@ const BlogOfficeGlassPartitionCostDubaiRoute =
     path: '/office-glass-partition-cost-dubai',
     getParentRoute: () => BlogRoute,
   } as any)
+const BlogMirrorSuppliersDubaiRoute =
+  BlogMirrorSuppliersDubaiRouteImport.update({
+    id: '/mirror-suppliers-dubai',
+    path: '/mirror-suppliers-dubai',
+    getParentRoute: () => BlogRoute,
+  } as any)
 const BlogGlassShopfrontInstallationGuideRoute =
   BlogGlassShopfrontInstallationGuideRouteImport.update({
     id: '/glass-shopfront-installation-guide',
@@ -420,6 +427,7 @@ export interface FileRoutesByFullPath {
   '/blog/frameless-shower-enclosures-dubai-guide': typeof BlogFramelessShowerEnclosuresDubaiGuideRoute
   '/blog/glass-partitions-dubai-office-guide': typeof BlogGlassPartitionsDubaiOfficeGuideRoute
   '/blog/glass-shopfront-installation-guide': typeof BlogGlassShopfrontInstallationGuideRoute
+  '/blog/mirror-suppliers-dubai': typeof BlogMirrorSuppliersDubaiRoute
   '/blog/office-glass-partition-cost-dubai': typeof BlogOfficeGlassPartitionCostDubaiRoute
   '/blog/shower-glass-installation-guide-dubai': typeof BlogShowerGlassInstallationGuideDubaiRoute
   '/projects/aluminium-shopfront-sharjah': typeof ProjectsAluminiumShopfrontSharjahRoute
@@ -476,6 +484,7 @@ export interface FileRoutesByTo {
   '/blog/frameless-shower-enclosures-dubai-guide': typeof BlogFramelessShowerEnclosuresDubaiGuideRoute
   '/blog/glass-partitions-dubai-office-guide': typeof BlogGlassPartitionsDubaiOfficeGuideRoute
   '/blog/glass-shopfront-installation-guide': typeof BlogGlassShopfrontInstallationGuideRoute
+  '/blog/mirror-suppliers-dubai': typeof BlogMirrorSuppliersDubaiRoute
   '/blog/office-glass-partition-cost-dubai': typeof BlogOfficeGlassPartitionCostDubaiRoute
   '/blog/shower-glass-installation-guide-dubai': typeof BlogShowerGlassInstallationGuideDubaiRoute
   '/projects/aluminium-shopfront-sharjah': typeof ProjectsAluminiumShopfrontSharjahRoute
@@ -536,6 +545,7 @@ export interface FileRoutesById {
   '/blog/frameless-shower-enclosures-dubai-guide': typeof BlogFramelessShowerEnclosuresDubaiGuideRoute
   '/blog/glass-partitions-dubai-office-guide': typeof BlogGlassPartitionsDubaiOfficeGuideRoute
   '/blog/glass-shopfront-installation-guide': typeof BlogGlassShopfrontInstallationGuideRoute
+  '/blog/mirror-suppliers-dubai': typeof BlogMirrorSuppliersDubaiRoute
   '/blog/office-glass-partition-cost-dubai': typeof BlogOfficeGlassPartitionCostDubaiRoute
   '/blog/shower-glass-installation-guide-dubai': typeof BlogShowerGlassInstallationGuideDubaiRoute
   '/projects/aluminium-shopfront-sharjah': typeof ProjectsAluminiumShopfrontSharjahRoute
@@ -597,6 +607,7 @@ export interface FileRouteTypes {
     | '/blog/frameless-shower-enclosures-dubai-guide'
     | '/blog/glass-partitions-dubai-office-guide'
     | '/blog/glass-shopfront-installation-guide'
+    | '/blog/mirror-suppliers-dubai'
     | '/blog/office-glass-partition-cost-dubai'
     | '/blog/shower-glass-installation-guide-dubai'
     | '/projects/aluminium-shopfront-sharjah'
@@ -653,6 +664,7 @@ export interface FileRouteTypes {
     | '/blog/frameless-shower-enclosures-dubai-guide'
     | '/blog/glass-partitions-dubai-office-guide'
     | '/blog/glass-shopfront-installation-guide'
+    | '/blog/mirror-suppliers-dubai'
     | '/blog/office-glass-partition-cost-dubai'
     | '/blog/shower-glass-installation-guide-dubai'
     | '/projects/aluminium-shopfront-sharjah'
@@ -712,6 +724,7 @@ export interface FileRouteTypes {
     | '/blog/frameless-shower-enclosures-dubai-guide'
     | '/blog/glass-partitions-dubai-office-guide'
     | '/blog/glass-shopfront-installation-guide'
+    | '/blog/mirror-suppliers-dubai'
     | '/blog/office-glass-partition-cost-dubai'
     | '/blog/shower-glass-installation-guide-dubai'
     | '/projects/aluminium-shopfront-sharjah'
@@ -1104,6 +1117,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof BlogOfficeGlassPartitionCostDubaiRouteImport
       parentRoute: typeof BlogRoute
     }
+    '/blog/mirror-suppliers-dubai': {
+      id: '/blog/mirror-suppliers-dubai'
+      path: '/mirror-suppliers-dubai'
+      fullPath: '/blog/mirror-suppliers-dubai'
+      preLoaderRoute: typeof BlogMirrorSuppliersDubaiRouteImport
+      parentRoute: typeof BlogRoute
+    }
     '/blog/glass-shopfront-installation-guide': {
       id: '/blog/glass-shopfront-installation-guide'
       path: '/glass-shopfront-installation-guide'
@@ -1179,6 +1199,7 @@ interface BlogRouteChildren {
   BlogFramelessShowerEnclosuresDubaiGuideRoute: typeof BlogFramelessShowerEnclosuresDubaiGuideRoute
   BlogGlassPartitionsDubaiOfficeGuideRoute: typeof BlogGlassPartitionsDubaiOfficeGuideRoute
   BlogGlassShopfrontInstallationGuideRoute: typeof BlogGlassShopfrontInstallationGuideRoute
+  BlogMirrorSuppliersDubaiRoute: typeof BlogMirrorSuppliersDubaiRoute
   BlogOfficeGlassPartitionCostDubaiRoute: typeof BlogOfficeGlassPartitionCostDubaiRoute
   BlogShowerGlassInstallationGuideDubaiRoute: typeof BlogShowerGlassInstallationGuideDubaiRoute
   BlogIndexRoute: typeof BlogIndexRoute
@@ -1198,6 +1219,7 @@ const BlogRouteChildren: BlogRouteChildren = {
     BlogGlassPartitionsDubaiOfficeGuideRoute,
   BlogGlassShopfrontInstallationGuideRoute:
     BlogGlassShopfrontInstallationGuideRoute,
+  BlogMirrorSuppliersDubaiRoute: BlogMirrorSuppliersDubaiRoute,
   BlogOfficeGlassPartitionCostDubaiRoute:
     BlogOfficeGlassPartitionCostDubaiRoute,
   BlogShowerGlassInstallationGuideDubaiRoute:
@@ -1300,13 +1322,3 @@ const rootRouteChildren: RootRouteChildren = {
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
   ._addFileTypes<FileRouteTypes>()
-
-import type { getRouter } from './router.tsx'
-import type { startInstance } from './start.ts'
-declare module '@tanstack/react-start' {
-  interface Register {
-    ssr: true
-    router: Awaited<ReturnType<typeof getRouter>>
-    config: Awaited<ReturnType<typeof startInstance.getOptions>>
-  }
-}

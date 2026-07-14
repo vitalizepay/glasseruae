@@ -87,9 +87,9 @@ export const Route = createFileRoute("/blog/back-painted-glass-dubai")({
         { to: "/services", label: "Services Overview" },
       ]}
       related={[
+        { to: "/blog/mirror-suppliers-dubai", label: "Mirror Suppliers in Dubai: The Complete Buyer's Guide" },
         { to: "/blog/curved-glass-dubai", label: "Curved Glass in Dubai: Uses, Fabrication and Cost Guide" },
         { to: "/blog/acoustic-glass-dubai", label: "Acoustic Glass in Dubai: How Soundproof Glass Works" },
-        { to: "/blog/glass-partitions-dubai-office-guide", label: "How to Choose the Right Glass Partition for Your Dubai Office" },
       ]}
       faqs={FAQS}
       ctaHeading="Considering back painted glass?"
