@@ -11,7 +11,11 @@ export interface BlogFAQ {
 export interface BlogSection {
   heading?: string;
   paragraphs: string[];
+  lang?: string;
+  dir?: "rtl" | "ltr";
+  image?: { src: string; alt: string };
 }
+
 
 export interface BlogInternalLink {
   to: string;
