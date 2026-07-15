@@ -11,7 +11,11 @@ export interface BlogFAQ {
 export interface BlogSection {
   heading?: string;
   paragraphs: string[];
+  lang?: string;
+  dir?: "rtl" | "ltr";
+  image?: { src: string; alt: string };
 }
+
 
 export interface BlogInternalLink {
   to: string;
@@ -125,13 +129,22 @@ export function BlogPost({
       <section className="py-12 bg-background">
         <div className="container mx-auto px-6 max-w-3xl space-y-10">
           {sections.map((s, i) => (
-            <div key={i}>
+            <div key={i} lang={s.lang} dir={s.dir}>
               {s.heading && <h2 className="text-2xl md:text-3xl text-navy font-medium mb-4">{s.heading}</h2>}
               {s.paragraphs.map((p, j) => (
                 <p key={j} className="text-muted-foreground font-light leading-relaxed mb-4">{renderParagraph(p)}</p>
               ))}
+              {s.image && (
+                <img
+                  src={s.image.src}
+                  alt={s.image.alt}
+                  className="w-full h-auto rounded-2xl object-cover aspect-[16/9] my-6"
+                  loading="lazy"
+                />
+              )}
             </div>
           ))}
+
 
           {serviceLinks && serviceLinks.length > 0 && (
             <div className="p-6 rounded-2xl bg-surface border border-border">
