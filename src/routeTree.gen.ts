@@ -61,6 +61,7 @@ import { Route as BlogMirrorSuppliersDubaiRouteImport } from './routes/blog.mirr
 import { Route as BlogGlassShopfrontInstallationGuideRouteImport } from './routes/blog.glass-shopfront-installation-guide'
 import { Route as BlogGlassPartitionsDubaiOfficeGuideRouteImport } from './routes/blog.glass-partitions-dubai-office-guide'
 import { Route as BlogFramelessShowerEnclosuresDubaiGuideRouteImport } from './routes/blog.frameless-shower-enclosures-dubai-guide'
+import { Route as BlogCurvedGlassPartitionsDubaiRouteImport } from './routes/blog.curved-glass-partitions-dubai'
 import { Route as BlogCurvedGlassDubaiRouteImport } from './routes/blog.curved-glass-dubai'
 import { Route as BlogBestGlassPartitionCompanyDubaiRouteImport } from './routes/blog.best-glass-partition-company-dubai'
 import { Route as BlogBackPaintedGlassDubaiRouteImport } from './routes/blog.back-painted-glass-dubai'
@@ -353,6 +354,12 @@ const BlogFramelessShowerEnclosuresDubaiGuideRoute =
     path: '/frameless-shower-enclosures-dubai-guide',
     getParentRoute: () => BlogRoute,
   } as any)
+const BlogCurvedGlassPartitionsDubaiRoute =
+  BlogCurvedGlassPartitionsDubaiRouteImport.update({
+    id: '/curved-glass-partitions-dubai',
+    path: '/curved-glass-partitions-dubai',
+    getParentRoute: () => BlogRoute,
+  } as any)
 const BlogCurvedGlassDubaiRoute = BlogCurvedGlassDubaiRouteImport.update({
   id: '/curved-glass-dubai',
   path: '/curved-glass-dubai',
@@ -424,6 +431,7 @@ export interface FileRoutesByFullPath {
   '/blog/back-painted-glass-dubai': typeof BlogBackPaintedGlassDubaiRoute
   '/blog/best-glass-partition-company-dubai': typeof BlogBestGlassPartitionCompanyDubaiRoute
   '/blog/curved-glass-dubai': typeof BlogCurvedGlassDubaiRoute
+  '/blog/curved-glass-partitions-dubai': typeof BlogCurvedGlassPartitionsDubaiRoute
   '/blog/frameless-shower-enclosures-dubai-guide': typeof BlogFramelessShowerEnclosuresDubaiGuideRoute
   '/blog/glass-partitions-dubai-office-guide': typeof BlogGlassPartitionsDubaiOfficeGuideRoute
   '/blog/glass-shopfront-installation-guide': typeof BlogGlassShopfrontInstallationGuideRoute
@@ -481,6 +489,7 @@ export interface FileRoutesByTo {
   '/blog/back-painted-glass-dubai': typeof BlogBackPaintedGlassDubaiRoute
   '/blog/best-glass-partition-company-dubai': typeof BlogBestGlassPartitionCompanyDubaiRoute
   '/blog/curved-glass-dubai': typeof BlogCurvedGlassDubaiRoute
+  '/blog/curved-glass-partitions-dubai': typeof BlogCurvedGlassPartitionsDubaiRoute
   '/blog/frameless-shower-enclosures-dubai-guide': typeof BlogFramelessShowerEnclosuresDubaiGuideRoute
   '/blog/glass-partitions-dubai-office-guide': typeof BlogGlassPartitionsDubaiOfficeGuideRoute
   '/blog/glass-shopfront-installation-guide': typeof BlogGlassShopfrontInstallationGuideRoute
@@ -542,6 +551,7 @@ export interface FileRoutesById {
   '/blog/back-painted-glass-dubai': typeof BlogBackPaintedGlassDubaiRoute
   '/blog/best-glass-partition-company-dubai': typeof BlogBestGlassPartitionCompanyDubaiRoute
   '/blog/curved-glass-dubai': typeof BlogCurvedGlassDubaiRoute
+  '/blog/curved-glass-partitions-dubai': typeof BlogCurvedGlassPartitionsDubaiRoute
   '/blog/frameless-shower-enclosures-dubai-guide': typeof BlogFramelessShowerEnclosuresDubaiGuideRoute
   '/blog/glass-partitions-dubai-office-guide': typeof BlogGlassPartitionsDubaiOfficeGuideRoute
   '/blog/glass-shopfront-installation-guide': typeof BlogGlassShopfrontInstallationGuideRoute
@@ -604,6 +614,7 @@ export interface FileRouteTypes {
     | '/blog/back-painted-glass-dubai'
     | '/blog/best-glass-partition-company-dubai'
     | '/blog/curved-glass-dubai'
+    | '/blog/curved-glass-partitions-dubai'
     | '/blog/frameless-shower-enclosures-dubai-guide'
     | '/blog/glass-partitions-dubai-office-guide'
     | '/blog/glass-shopfront-installation-guide'
@@ -661,6 +672,7 @@ export interface FileRouteTypes {
     | '/blog/back-painted-glass-dubai'
     | '/blog/best-glass-partition-company-dubai'
     | '/blog/curved-glass-dubai'
+    | '/blog/curved-glass-partitions-dubai'
     | '/blog/frameless-shower-enclosures-dubai-guide'
     | '/blog/glass-partitions-dubai-office-guide'
     | '/blog/glass-shopfront-installation-guide'
@@ -721,6 +733,7 @@ export interface FileRouteTypes {
     | '/blog/back-painted-glass-dubai'
     | '/blog/best-glass-partition-company-dubai'
     | '/blog/curved-glass-dubai'
+    | '/blog/curved-glass-partitions-dubai'
     | '/blog/frameless-shower-enclosures-dubai-guide'
     | '/blog/glass-partitions-dubai-office-guide'
     | '/blog/glass-shopfront-installation-guide'
@@ -1145,6 +1158,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof BlogFramelessShowerEnclosuresDubaiGuideRouteImport
       parentRoute: typeof BlogRoute
     }
+    '/blog/curved-glass-partitions-dubai': {
+      id: '/blog/curved-glass-partitions-dubai'
+      path: '/curved-glass-partitions-dubai'
+      fullPath: '/blog/curved-glass-partitions-dubai'
+      preLoaderRoute: typeof BlogCurvedGlassPartitionsDubaiRouteImport
+      parentRoute: typeof BlogRoute
+    }
     '/blog/curved-glass-dubai': {
       id: '/blog/curved-glass-dubai'
       path: '/curved-glass-dubai'
@@ -1196,6 +1216,7 @@ interface BlogRouteChildren {
   BlogBackPaintedGlassDubaiRoute: typeof BlogBackPaintedGlassDubaiRoute
   BlogBestGlassPartitionCompanyDubaiRoute: typeof BlogBestGlassPartitionCompanyDubaiRoute
   BlogCurvedGlassDubaiRoute: typeof BlogCurvedGlassDubaiRoute
+  BlogCurvedGlassPartitionsDubaiRoute: typeof BlogCurvedGlassPartitionsDubaiRoute
   BlogFramelessShowerEnclosuresDubaiGuideRoute: typeof BlogFramelessShowerEnclosuresDubaiGuideRoute
   BlogGlassPartitionsDubaiOfficeGuideRoute: typeof BlogGlassPartitionsDubaiOfficeGuideRoute
   BlogGlassShopfrontInstallationGuideRoute: typeof BlogGlassShopfrontInstallationGuideRoute
@@ -1213,6 +1234,7 @@ const BlogRouteChildren: BlogRouteChildren = {
   BlogBestGlassPartitionCompanyDubaiRoute:
     BlogBestGlassPartitionCompanyDubaiRoute,
   BlogCurvedGlassDubaiRoute: BlogCurvedGlassDubaiRoute,
+  BlogCurvedGlassPartitionsDubaiRoute: BlogCurvedGlassPartitionsDubaiRoute,
   BlogFramelessShowerEnclosuresDubaiGuideRoute:
     BlogFramelessShowerEnclosuresDubaiGuideRoute,
   BlogGlassPartitionsDubaiOfficeGuideRoute:
