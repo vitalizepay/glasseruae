@@ -76,7 +76,7 @@ export function ContactSection() {
             {[
               { icon: MapPin, title: "Address", text: "Al Hilal Bldg, Al Nahda St, Al Qusais, Dubai, PO 235485, UAE" },
               { icon: Phone, title: "Phone", text: "+971 56 840 0838", href: "tel:+971568400838" },
-              { icon: Mail, title: "Email", text: "ramesh@glasseruae.com", href: "mailto:ramesh@glasseruae.com" },
+              { icon: Mail, title: "Email", text: "sales@glasseruae.com", href: "mailto:sales@glasseruae.com" },
               { icon: Clock, title: "Hours", text: "Saturday – Thursday · 8:00 AM – 7:00 PM" },
             ].map((c) => (
               <div key={c.title} className="flex gap-4 pb-8 border-b border-border last:border-b-0">

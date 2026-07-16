@@ -57,7 +57,7 @@ gtag('config', 'G-VEJ92D45PT');`,
           logo: "https://glasseruae.com/assets/glasser-logo-CdC4CQ8d.png",
           description: "Dubai specialists in frameless glass partitions, aluminium doors and windows, shower enclosures, mirrors and glass facades across the UAE since 2019.",
           telephone: "+971568400838",
-          email: "ramesh@glasseruae.com",
+          email: "sales@glasseruae.com",
           foundingDate: "2019",
           address: {
             "@type": "PostalAddress",

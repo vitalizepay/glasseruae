@@ -190,7 +190,7 @@ export function BlogPost({
                 contractor operating from Al Qusais since 2019, with 500+ delivered projects across
                 the UAE. Reach us on{" "}
                 <a href="tel:+971568400838" className="underline decoration-orange/60 hover:text-orange">+971 56 840 0838</a>{" "}
-                or <a href="mailto:ramesh@glasseruae.com" className="underline decoration-orange/60 hover:text-orange">ramesh@glasseruae.com</a>.
+                or <a href="mailto:sales@glasseruae.com" className="underline decoration-orange/60 hover:text-orange">sales@glasseruae.com</a>.
               </p>
             </div>
           </aside>
