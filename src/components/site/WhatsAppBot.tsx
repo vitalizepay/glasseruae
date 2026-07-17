@@ -3,7 +3,10 @@ import { MessageCircle, X, Send } from "lucide-react";
 
 const PHONE = "971568400838";
 
+const DEFAULT_MSG = "Hi, I'd like a quote for glass/aluminium work";
+
 const QUICK = [
+  DEFAULT_MSG,
   "I need a quote for frameless glass partitions",
   "I want shower enclosure installation",
   "Aluminium doors & windows for my villa",
