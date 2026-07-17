@@ -34,7 +34,7 @@ export const Route = createFileRoute("/blog/aluminium-fabrication-services-dubai
       h1={TITLE}
       image={image}
       imageAlt="Aluminium fabrication workshop producing architectural profiles for Dubai projects"
-      intro="[Aluminium fabrication in Dubai](/aluminium-fabrication-dubai) is the backbone of modern UAE construction — from villa windows to tower facades, from mall shopfronts to villa pergolas. A serious fabrication partner isn't just cutting extrusions to length; they own the CNC workshop, finish line, quality documentation and site coordination end-to-end. This guide covers what a proper Dubai aluminium fabricator delivers, the fabrication scope worth expecting, finish standards, and why in-house capability matters far more than headline pricing.",
+      intro="[Aluminium fabrication in Dubai](/aluminium-fabrication-dubai) is the backbone of modern UAE construction — from villa windows to tower facades, from mall shopfronts to villa pergolas. A serious fabrication partner isn't just cutting extrusions to length; they own the CNC workshop, finish line, quality documentation and site coordination end-to-end. This guide covers what a proper Dubai aluminium fabricator delivers, the fabrication scope worth expecting, finish standards, and why in-house capability matters far more than headline pricing."
       sections={[
         {
           heading: "Full Aluminium Fabrication Scope",

@@ -34,7 +34,7 @@ export const Route = createFileRoute("/blog/glass-shopfront-installation-guide")
       h1={TITLE}
       image={image}
       imageAlt="Frameless glass shopfront installation at a Dubai mall retail unit"
-      intro="A new [glass shopfront in Dubai](/glass-shopfront-dubai) is the single highest-impact change a retailer can make to footfall and brand perception. But shopfronts in Dubai sit at the intersection of landlord design manuals, Dubai Municipality permits, security-glass specifications and tight overnight installation windows — get any of those wrong and you either fail approval or delay opening. This guide covers every practical decision for a Dubai shopfront install in 2026.",
+      intro="A new [glass shopfront in Dubai](/glass-shopfront-dubai) is the single highest-impact change a retailer can make to footfall and brand perception. But shopfronts in Dubai sit at the intersection of landlord design manuals, Dubai Municipality permits, security-glass specifications and tight overnight installation windows — get any of those wrong and you either fail approval or delay opening. This guide covers every practical decision for a Dubai shopfront install in 2026."
       sections={[
         {
           heading: "Shopfront Types — Frameless, Framed and Curved",

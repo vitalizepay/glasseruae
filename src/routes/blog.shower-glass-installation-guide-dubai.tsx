@@ -34,7 +34,7 @@ export const Route = createFileRoute("/blog/shower-glass-installation-guide-duba
       h1={TITLE}
       image={image}
       imageAlt="Luxury villa bathroom with a custom walk-in shower glass installation in Dubai"
-      intro="A frameless [shower glass Dubai](/shower-glass-dubai) install transforms a bathroom — but only if the glass thickness, hardware quality and waterproofing detailing are specified correctly for Dubai's hard water, humid climate and unique villa-vs-apartment site conditions. This guide walks through every decision an owner or interior designer needs to make before signing off a shower glass quote in the UAE.",
+      intro="A frameless [shower glass Dubai](/shower-glass-dubai) install transforms a bathroom — but only if the glass thickness, hardware quality and waterproofing detailing are specified correctly for Dubai's hard water, humid climate and unique villa-vs-apartment site conditions. This guide walks through every decision an owner or interior designer needs to make before signing off a shower glass quote in the UAE."
       sections={[
         {
           heading: "Choose the Right Shower Glass Configuration",
