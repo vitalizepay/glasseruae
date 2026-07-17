@@ -16,7 +16,8 @@ export function ContactSection() {
     const fd = new FormData(e.currentTarget);
     const full_name = String(fd.get("full_name") || "").trim().slice(0, 120);
     const phone = String(fd.get("phone") || "").trim().slice(0, 40);
-    const project_location = String(fd.get("project_location") || "").trim().slice(0, 160);
+    const service_needed = String(fd.get("service_needed") || "").trim().slice(0, 80);
+    const project_location = String(fd.get("project_location") || "").trim().slice(0, 80);
     const project_details = String(fd.get("project_details") || "").trim().slice(0, 1500);
 
     if (!full_name || !phone) {
