@@ -34,6 +34,7 @@ export const Route = createFileRoute("/services/shower-enclosures-dubai")({
         "Easy-clean nano coating available",
       ]}
       related={relatedFor(SLUG)}
+      guide={{ to: "/blog/shower-glass-installation-guide-dubai", label: "Shower Glass Installation Guide Dubai" }}
       faqs={[
         { q: "How much does a frameless shower enclosure cost in Dubai?", a: "Frameless shower enclosures in Dubai range from AED 2,500 to AED 8,000+ depending on size, glass thickness, and hardware. We provide free measurements and written quotations." },
         { q: "What glass is used for shower enclosures in the UAE?", a: "We use 8mm and 10mm toughened tempered safety glass with marine-grade corrosion-resistant hardware throughout." },

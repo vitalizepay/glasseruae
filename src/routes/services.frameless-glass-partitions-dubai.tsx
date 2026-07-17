@@ -34,6 +34,7 @@ export const Route = createFileRoute("/services/frameless-glass-partitions-dubai
         "Integrated doors, sliders and pivot openings",
       ]}
       related={relatedFor(SLUG)}
+      guide={{ to: "/blog/glass-partitions-dubai-office-guide", label: "How to Choose the Right Glass Partition for Your Dubai Office" }}
       faqs={[
         { q: "How much do frameless glass partitions cost in Dubai?", a: "Frameless glass partitions in Dubai typically cost between AED 350 and AED 850 per square metre, fully installed. Glasser UAE provides free site surveys and written quotations." },
         { q: "How long does glass partition installation take in Dubai?", a: "Most office and residential partition projects take 7–14 days from initial survey to completed installation." },

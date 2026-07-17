@@ -34,6 +34,7 @@ export const Route = createFileRoute("/services/glass-facades-dubai")({
         "Coordination with main contractors and consultants",
       ]}
       related={relatedFor(SLUG)}
+      guide={{ to: "/blog/curved-glass-dubai", label: "Curved Glass Dubai — Complete Design Guide" }}
       faqs={[
         { q: "What is a structural glass facade?", a: "A structural glass facade is a building envelope system where glass panels are supported by a structural framework — either a curtain wall, spider fitting system, or structural silicone glazing — creating an all-glass exterior wall." },
         { q: "Do you install glass facades on Dubai villas?", a: "Yes. We install glass facade and curtain wall systems on residential villas, commercial buildings, and mixed-use towers across Dubai and Abu Dhabi." },
