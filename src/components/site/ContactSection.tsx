@@ -128,7 +128,36 @@ export function ContactSection() {
                 <div className="mt-8 grid sm:grid-cols-2 gap-5">
                   <Field label="Full Name *" name="full_name" required />
                   <Field label="Mobile Number *" name="phone" type="tel" required />
-                  <Field label="Project Location" name="project_location" className="sm:col-span-2" />
+                  <div>
+                    <label htmlFor="service_needed" className="block text-[11px] font-medium uppercase tracking-[0.22em] text-muted-foreground mb-2">Service Needed</label>
+                    <select id="service_needed" name="service_needed" defaultValue="" className="w-full bg-white border border-border rounded-2xl px-4 py-3.5 text-navy focus:outline-none focus:ring-2 focus:ring-navy/20">
+                      <option value="" disabled>Select a service</option>
+                      <option>Frameless Glass Partitions</option>
+                      <option>Office Glass Partitions</option>
+                      <option>Shower Enclosures</option>
+                      <option>Aluminium Doors</option>
+                      <option>Aluminium Windows</option>
+                      <option>Glass Facades</option>
+                      <option>Custom Mirrors</option>
+                      <option>Glass Shopfront</option>
+                      <option>Glass Railing</option>
+                      <option>Other</option>
+                    </select>
+                  </div>
+                  <div>
+                    <label htmlFor="project_location" className="block text-[11px] font-medium uppercase tracking-[0.22em] text-muted-foreground mb-2">Project Location</label>
+                    <select id="project_location" name="project_location" defaultValue="" className="w-full bg-white border border-border rounded-2xl px-4 py-3.5 text-navy focus:outline-none focus:ring-2 focus:ring-navy/20">
+                      <option value="" disabled>Select a location</option>
+                      <option>Dubai</option>
+                      <option>Sharjah</option>
+                      <option>Abu Dhabi</option>
+                      <option>Ajman</option>
+                      <option>Ras Al Khaimah</option>
+                      <option>Fujairah</option>
+                      <option>Umm Al Quwain</option>
+                      <option>Other</option>
+                    </select>
+                  </div>
                   <div className="sm:col-span-2">
                     <label htmlFor="project_details" className="block text-[11px] font-medium uppercase tracking-[0.22em] text-muted-foreground mb-2">Project Details</label>
                     <textarea
