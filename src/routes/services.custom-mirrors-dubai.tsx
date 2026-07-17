@@ -34,6 +34,7 @@ export const Route = createFileRoute("/services/custom-mirrors-dubai")({
         "Backlit and antique mirror options on request",
       ]}
       related={relatedFor(SLUG)}
+      guide={{ to: "/blog/mirror-suppliers-dubai", label: "Mirror Suppliers in Dubai — Complete Buyer's Guide" }}
       faqs={[
         { q: "What sizes of custom mirrors do you make in Dubai?", a: "We manufacture custom mirrors in any size and shape — from small decorative pieces to large full-wall installations for hotels, gyms, and retail spaces." },
         { q: "How long does a custom mirror take to manufacture and install in Dubai?", a: "Most custom mirrors are fabricated and installed within 5–10 working days depending on size and complexity." },

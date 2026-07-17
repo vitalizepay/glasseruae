@@ -20,9 +20,10 @@ export interface ServicePageProps {
   features: string[];
   related: RelatedService[];
   faqs?: ServiceFAQ[];
+  guide?: { to: string; label: string };
 }
 
-export function ServicePage({ h1, eyebrow, intro, featuresHeading, features, related, faqs }: ServicePageProps) {
+export function ServicePage({ h1, eyebrow, intro, featuresHeading, features, related, faqs, guide }: ServicePageProps) {
   return (
     <Layout>
       <section className="pt-32 pb-16 bg-surface">
@@ -30,6 +31,14 @@ export function ServicePage({ h1, eyebrow, intro, featuresHeading, features, rel
           <span className="text-[11px] uppercase tracking-[0.3em] text-orange font-semibold">{eyebrow}</span>
           <h1 className="text-4xl md:text-6xl text-navy mt-4 font-light">{h1}</h1>
           <p className="mt-6 text-lg text-muted-foreground leading-relaxed font-light">{intro}</p>
+          {guide && (
+            <Link
+              to={guide.to}
+              className="mt-6 inline-flex items-center gap-2 text-navy hover:text-orange font-medium text-sm underline decoration-orange/40 underline-offset-4"
+            >
+              Read our guide: {guide.label} <ArrowRight size={14} />
+            </Link>
+          )}
         </div>
       </section>
 

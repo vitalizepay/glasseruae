@@ -34,6 +34,7 @@ export const Route = createFileRoute("/services/aluminium-windows-dubai")({
         "Compliance with Dubai Municipality regulations",
       ]}
       related={relatedFor(SLUG)}
+      guide={{ to: "/blog/aluminium-fabrication-services-dubai", label: "Aluminium Fabrication Services in Dubai" }}
       faqs={[
         { q: "Why choose aluminium windows for Dubai villas?", a: "Aluminium windows are corrosion-resistant, low-maintenance and can be fitted with thermal-break technology to reduce heat transfer and cooling costs significantly." },
         { q: "What is a thermal-break aluminium window?", a: "A thermal-break window has a non-conductive barrier inside the aluminium frame that reduces heat transfer. In Dubai's climate this can reduce cooling costs by up to 30%." },

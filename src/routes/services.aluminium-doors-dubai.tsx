@@ -34,6 +34,7 @@ export const Route = createFileRoute("/services/aluminium-doors-dubai")({
         "Integrated security locking and smart access options",
       ]}
       related={relatedFor(SLUG)}
+      guide={{ to: "/blog/aluminium-fabrication-services-dubai", label: "Aluminium Fabrication Services in Dubai" }}
       faqs={[
         { q: "What types of aluminium doors do you supply in Dubai?", a: "We supply and install sliding doors, pivot doors, folding doors, and bifold aluminium door systems in a range of premium architectural finishes." },
         { q: "Are aluminium doors suitable for Dubai's climate?", a: "Yes. Aluminium is naturally corrosion-resistant and performs exceptionally well in the UAE's heat and humidity. Our door systems are engineered specifically for Gulf conditions." },

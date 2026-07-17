@@ -129,18 +129,34 @@ export function BlogPost({
       <section className="py-12 bg-background">
         <div className="container mx-auto px-6 max-w-3xl space-y-10">
           {sections.map((s, i) => (
-            <div key={i} lang={s.lang} dir={s.dir}>
-              {s.heading && <h2 className="text-2xl md:text-3xl text-navy font-medium mb-4">{s.heading}</h2>}
-              {s.paragraphs.map((p, j) => (
-                <p key={j} className="text-muted-foreground font-light leading-relaxed mb-4">{renderParagraph(p)}</p>
-              ))}
-              {s.image && (
-                <img
-                  src={s.image.src}
-                  alt={s.image.alt}
-                  className="w-full h-auto rounded-2xl object-cover aspect-[16/9] my-6"
-                  loading="lazy"
-                />
+            <div key={i}>
+              <div lang={s.lang} dir={s.dir}>
+                {s.heading && <h2 className="text-2xl md:text-3xl text-navy font-medium mb-4">{s.heading}</h2>}
+                {s.paragraphs.map((p, j) => (
+                  <p key={j} className="text-muted-foreground font-light leading-relaxed mb-4">{renderParagraph(p)}</p>
+                ))}
+                {s.image && (
+                  <img
+                    src={s.image.src}
+                    alt={s.image.alt}
+                    className="w-full h-auto rounded-2xl object-cover aspect-[16/9] my-6"
+                    loading="lazy"
+                  />
+                )}
+              </div>
+              {sections.length > 2 && i === Math.floor(sections.length / 2) - 1 && (
+                <div className="mt-8 p-6 md:p-8 rounded-2xl bg-navy text-white flex flex-col sm:flex-row sm:items-center gap-4 sm:justify-between">
+                  <div>
+                    <p className="text-white font-medium text-lg">Planning a project in the UAE?</p>
+                    <p className="text-white/70 text-sm font-light mt-1">Free site survey and fixed-price quote within 24 hours.</p>
+                  </div>
+                  <Link
+                    to="/contact"
+                    className="shrink-0 inline-flex items-center gap-2 px-6 py-3 rounded-full bg-orange text-orange-foreground font-medium hover:bg-orange/90 transition"
+                  >
+                    Get Free Quote <ArrowRight size={16} />
+                  </Link>
+                </div>
               )}
             </div>
           ))}
