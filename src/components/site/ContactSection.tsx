@@ -29,7 +29,7 @@ export function ContactSection() {
     try {
       const { error: dbErr } = await supabase
         .from("glass_enquiries")
-        .insert({ full_name, phone, project_location: project_location || null, project_details: project_details || null });
+        .insert({ full_name, phone, project_location: project_location || null, project_details: [service_needed && `Service: ${service_needed}`, project_details].filter(Boolean).join("\n\n") || null });
       if (dbErr) throw dbErr;
 
       const lines = [
@@ -37,6 +37,7 @@ export function ContactSection() {
         "",
         `Name: ${full_name}`,
         `Mobile: ${phone}`,
+        `Service Needed: ${service_needed || "-"}`,
         `Location: ${project_location || "-"}`,
         `Project Details: ${project_details || "-"}`,
         "",
