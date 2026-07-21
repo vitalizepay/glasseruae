@@ -63,6 +63,7 @@ const PATHS: { path: string; priority: string }[] = [
   { path: "/blog/back-painted-glass-dubai", priority: "0.8" },
   { path: "/blog/mirror-suppliers-dubai", priority: "0.8" },
   { path: "/blog/curved-glass-partitions-dubai", priority: "0.8" },
+  { path: "/blog/curved-glass-partition-ideas-dubai", priority: "0.8" },
 ];
 
 export const Route = createFileRoute("/sitemap.xml")({
