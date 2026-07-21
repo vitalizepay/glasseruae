@@ -17,6 +17,7 @@ const D = "Trends, guides and design ideas for glass partitions, shower enclosur
 const URL = "https://glasseruae.com/blog";
 
 const POSTS = [
+  { slug: "curved-glass-partition-ideas-dubai", title: "Curved Glass Partition Ideas & Benefits for Dubai Offices", img: curved.url, alt: "Curved glass partition design in a premium Dubai office reception", cat: "Design", to: "/blog/curved-glass-partition-ideas-dubai" as const },
   { slug: "curved-glass-partitions-dubai", title: "Curved Glass Partitions in Dubai: A Practical Guide", img: curved.url, alt: "Curved glass partition in a Dubai office interior", cat: "Guide", to: "/blog/curved-glass-partitions-dubai" as const },
   { slug: "curved-glass-dubai", title: "Curved Glass in Dubai: Uses, Fabrication and Cost Guide", img: curved.url, alt: "Curved glass facade on a Dubai commercial building", cat: "Guide", to: "/blog/curved-glass-dubai" as const },
   { slug: "acoustic-glass-dubai", title: "Acoustic Glass in Dubai: How Soundproof Glass Works", img: acoustic.url, alt: "Acoustic glass partition in a Dubai office", cat: "Guide", to: "/blog/acoustic-glass-dubai" as const },

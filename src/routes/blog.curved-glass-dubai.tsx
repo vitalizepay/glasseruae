@@ -114,9 +114,9 @@ export const Route = createFileRoute("/blog/curved-glass-dubai")({
         { to: "/services/glass-facades-dubai", label: "Glass Facades Service" },
       ]}
       related={[
+        { to: "/blog/curved-glass-partition-ideas-dubai", label: "Curved Glass Partition Ideas & Benefits for Dubai Offices" },
         { to: "/blog/acoustic-glass-dubai", label: "Acoustic Glass in Dubai: How Soundproof Glass Works" },
         { to: "/blog/back-painted-glass-dubai", label: "Back Painted Glass in Dubai: Colours, Uses and Cost" },
-        { to: "/blog/glass-partitions-dubai-office-guide", label: "How to Choose the Right Glass Partition for Your Dubai Office" },
       ]}
       faqs={FAQS}
       ctaHeading="Planning a curved glass project in Dubai?"
