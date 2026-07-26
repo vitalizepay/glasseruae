@@ -34,6 +34,7 @@ export const Route = createFileRoute("/services/")({
         </Reveal>
       </div>
       <Services />
+      <ServicesAccordion />
       <CTA />
     </Layout>
   ),
