@@ -1,6 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { Layout } from "@/components/site/Layout";
 import { Services } from "@/components/site/Services";
+import { ServicesAccordion } from "@/components/site/ServicesAccordion";
 import { Reveal, SplitWords } from "@/components/site/Reveal";
 import { CTA } from "@/components/site/CTA";
 
