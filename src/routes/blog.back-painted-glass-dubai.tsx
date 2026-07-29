@@ -7,7 +7,7 @@ const SLUG = "back-painted-glass-dubai";
 const TITLE = "Back Painted Glass in Dubai: Colours, Uses and Cost";
 const DESC = "Back painted glass in Dubai — kitchen splashbacks, feature walls, wardrobes and retail. Colour options, ceramic vs PU finishes, installation and cost per sqm.";
 const PUBLISHED = "2026-06-24";
-const MODIFIED = "2026-07-08";
+const MODIFIED = "2026-07-29";
 
 const FAQS = [
   { q: "What is back painted glass?", a: "Back painted glass is toughened or annealed float glass with an opaque coating applied to the rear face. You see the colour through the front of the glass, giving a smooth, glossy, seamless finish that is impossible to achieve with paint on a wall or tiles with grout." },
@@ -120,6 +120,7 @@ export const Route = createFileRoute("/blog/back-painted-glass-dubai")({
       ]}
       serviceLinks={[
         { to: "/services/custom-mirrors-dubai", label: "Custom Mirrors" },
+        { to: "/services/shower-enclosures-dubai", label: "Shower Enclosures" },
         { to: "/glass-services", label: "All Glass Services" },
         { to: "/services", label: "Services Overview" },
       ]}

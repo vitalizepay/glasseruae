@@ -7,7 +7,7 @@ const SLUG = "curved-glass-dubai";
 const TITLE = "Curved Glass Dubai: Fabrication, Applications and Cost Guide";
 const DESC = "Curved glass Dubai guide — hot-bent vs cold-bent, tempered vs laminated, facade and interior uses, AED/sqm pricing and how to choose a curved glass supplier in Dubai.";
 const PUBLISHED = "2026-06-24";
-const MODIFIED = "2026-07-10";
+const MODIFIED = "2026-07-29";
 
 const FAQS = [
   { q: "What is the minimum bending radius for curved glass in Dubai?", a: "For 6mm hot-bent toughened curved glass the practical minimum radius is around 300–400mm. Ten to twelve millimetre laminated curved glass typically needs 600–1,200mm depending on panel size. Cold-bent glass used on facades is limited to gentler curves — usually a radius no tighter than 2,000–3,000mm — because the panel is held in curvature by the frame rather than reshaped in a furnace." },
