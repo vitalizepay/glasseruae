@@ -105,6 +105,24 @@ export const Route = createFileRoute("/blog/curved-glass-dubai")({
             "The best advice on curved glass Dubai projects is simple: bring the specialist in early. Curved glass decisions cascade into structural steel positions, floor levels, ceiling heights and lighting details that are painful and expensive to change once the shell is built. A one-hour design conversation at concept stage saves weeks of RFI at installation stage.",
           ],
         },
+        {
+          heading: "Curved Glass Performance in the Dubai Climate",
+          paragraphs: [
+            "Any glass specified for a UAE building has to answer three climate questions before anything else: how much solar heat does it let through, how much does it move as the day heats up, and how does it behave in a sandstorm. Curved glass answers all three the same way flat glass does — through coatings, cavity build-up and lamination — but the geometry changes how those layers are applied and how carefully they have to be checked.",
+            "Low-E and solar-control coatings are applied to flat sheets before bending. On hot-bent curved glass the coating goes through the bending furnace with the glass, so only bendable (heat-treatable) coating families can be used. That is the single most common specification clash we see on curved glass Dubai projects: an architect selects a high-performance soft-coat product from a flat-glass datasheet, and it turns out that coating is not available in a bendable variant. Selecting from the heat-treatable coating range at concept stage avoids a late redesign of the whole facade's thermal model. Typical achievable numbers on a curved double-glazed unit in Dubai are a shading coefficient around 0.24–0.30 with visible light transmission of 40–55% — close enough to flat-glass equivalents that the energy model rarely needs reworking.",
+            "Thermal movement matters more on curves than on flat panels. A curved panel restrained in a rigid frame cannot relieve expansion by flexing the way a flat panel can, so glazing gaskets, structural silicone joints and setting blocks all need slightly more generous tolerances. On south and west elevations in Dubai, where surface temperatures on dark-coated glass can exceed 75°C in July, we specify heat-soaked toughened glass and confirm the thermal stress calculation for each curved panel type rather than relying on a blanket facade assumption.",
+            "Sand abrasion is the quiet long-term risk. Fine airborne sand scours the outer surface of any exposed glass, and curved panels facing prevailing north-westerly winds catch more of it than flat panels set back behind reveals. Specify a hard-coat (pyrolytic) outer surface where curved glass sits in an exposed, unshaded position, and plan a regular cleaning cycle — abrasive damage on curved panels is far more expensive to replace than on flat ones.",
+          ],
+        },
+        {
+          heading: "Common Curved Glass Mistakes on Dubai Projects",
+          paragraphs: [
+            "The most expensive mistake is measuring late. Curved glass has to be templated from the built structure, not from drawings, because a 10mm deviation in a steel curve becomes a visible 10mm gap in the glass. On every curved project we insist on a physical survey after the substrate is complete and before the bending line is booked. Skipping that step is how projects end up with a 4–6 week rebending delay at the worst possible point in the programme.",
+            "The second mistake is under-specifying the radius. Tight radii look striking on a render but drive cost, distortion and breakage risk sharply upward — below roughly 600mm on 10mm glass you move into specialist territory with materially higher scrap rates. Where the architectural intent allows, easing the radius by even 200–300mm often halves the fabrication difficulty with no visible change to the finished space.",
+            "Third is mixing suppliers across one elevation. Bending furnaces have their own signatures — slight differences in optical distortion, edge roll-off and coating appearance. Two panels of identical specification from two different fabricators, installed side by side on a Sheikh Zayed Road elevation, will read as different in raking sunlight. Keep a single curved run with a single fabricator wherever possible.",
+            "Fourth is ignoring handling and access. Curved panels cannot be tilted through a doorway or stood on edge in a stairwell the way flat panels can. On villa staircases and interior features we plan the delivery route, crane or glazing-robot access and temporary protection before the panel is even fabricated. A perfectly made curved panel that cannot physically reach its opening is still a scrapped panel.",
+          ],
+        },
       ]}
       serviceLinks={[
         { to: "/glass-facade-dubai", label: "Glass Facade Dubai" },
