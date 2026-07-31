@@ -38,7 +38,26 @@ export interface BlogPostProps {
   imageAlt?: string;
   serviceLinks?: BlogInternalLink[];
   related?: BlogRelatedPost[];
+  /** Answer-first summary shown above the article body (AEO / featured snippet). */
+  quickAnswer?: string;
+  /** ISO date shown next to reading time. */
+  updated?: string;
 }
+
+export function slugifyHeading(text: string): string {
+  return text
+    .toLowerCase()
+    .replace(/[^a-z0-9\u0600-\u06FF]+/g, "-")
+    .replace(/^-+|-+$/g, "");
+}
+
+function readingTime(intro: string, sections: BlogSection[]): number {
+  const words =
+    intro.split(/\s+/).length +
+    sections.reduce((n, s) => n + s.paragraphs.join(" ").split(/\s+/).length, 0);
+  return Math.max(1, Math.round(words / 220));
+}
+
 
 // Parse inline markdown-style links [text](/path) and render as router Links.
 function renderParagraph(text: string): ReactNode {
@@ -81,8 +100,13 @@ export function BlogPost({
   imageAlt,
   serviceLinks,
   related,
+  quickAnswer,
+  updated,
 }: BlogPostProps) {
+  const minutes = readingTime(intro, sections);
+  const toc = sections.filter((s) => s.heading).map((s) => s.heading as string);
   return (
+
     <Layout>
       <article className="pt-32 pb-8 bg-surface">
         <div className="container mx-auto px-6 max-w-3xl">
@@ -106,11 +130,15 @@ export function BlogPost({
             <div className="w-9 h-9 rounded-full bg-navy text-white flex items-center justify-center font-semibold">GT</div>
             <div>
               <p className="text-navy font-medium">Glasser Technical Works Team</p>
-              <p>UAE glass &amp; aluminium specialists since 2019</p>
+              <p>
+                UAE glass &amp; aluminium specialists since 2019
+                {updated ? ` · Updated ${updated}` : ""} · {minutes} min read
+              </p>
             </div>
           </div>
         </div>
       </article>
+
 
       {image && (
         <div className="bg-surface pb-8">
@@ -128,10 +156,35 @@ export function BlogPost({
 
       <section className="py-12 bg-background">
         <div className="container mx-auto px-6 max-w-3xl space-y-10">
+          {quickAnswer && (
+            <div className="p-6 rounded-2xl border-l-4 border-orange bg-surface">
+              <p className="text-[11px] uppercase tracking-[0.25em] text-orange font-semibold mb-2">Quick answer</p>
+              <p className="text-navy font-light leading-relaxed">{renderParagraph(quickAnswer)}</p>
+            </div>
+          )}
+
+          {toc.length >= 4 && (
+            <nav aria-label="Table of contents" className="p-6 rounded-2xl bg-surface border border-border">
+              <h2 className="text-lg text-navy font-medium mb-3">On this page</h2>
+              <ol className="space-y-1.5 list-decimal list-inside">
+                {toc.map((t) => (
+                  <li key={t} className="text-sm text-muted-foreground">
+                    <a href={`#${slugifyHeading(t)}`} className="hover:text-orange">{t}</a>
+                  </li>
+                ))}
+              </ol>
+            </nav>
+          )}
+
           {sections.map((s, i) => (
             <div key={i}>
               <div lang={s.lang} dir={s.dir}>
-                {s.heading && <h2 className="text-2xl md:text-3xl text-navy font-medium mb-4">{s.heading}</h2>}
+                {s.heading && (
+                  <h2 id={slugifyHeading(s.heading)} className="scroll-mt-28 text-2xl md:text-3xl text-navy font-medium mb-4">
+                    {s.heading}
+                  </h2>
+                )}
+
                 {s.paragraphs.map((p, j) => (
                   <p key={j} className="text-muted-foreground font-light leading-relaxed mb-4">{renderParagraph(p)}</p>
                 ))}
