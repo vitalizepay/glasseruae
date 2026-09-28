@@ -69,6 +69,7 @@ import { Route as BlogCurvedGlassDubaiRouteImport } from './routes/blog.curved-g
 import { Route as BlogBestGlassPartitionCompanyDubaiRouteImport } from './routes/blog.best-glass-partition-company-dubai'
 import { Route as BlogBackPaintedGlassDubaiRouteImport } from './routes/blog.back-painted-glass-dubai'
 import { Route as BlogAluminiumFabricationServicesDubaiRouteImport } from './routes/blog.aluminium-fabrication-services-dubai'
+import { Route as BlogAcousticGlassPartitionDubaiRouteImport } from './routes/blog.acoustic-glass-partition-dubai'
 import { Route as BlogAcousticGlassDubaiRouteImport } from './routes/blog.acoustic-glass-dubai'
 import { Route as ApiChatRouteImport } from './routes/api/chat'
 
@@ -403,6 +404,12 @@ const BlogAluminiumFabricationServicesDubaiRoute =
     path: '/aluminium-fabrication-services-dubai',
     getParentRoute: () => BlogRoute,
   } as any)
+const BlogAcousticGlassPartitionDubaiRoute =
+  BlogAcousticGlassPartitionDubaiRouteImport.update({
+    id: '/acoustic-glass-partition-dubai',
+    path: '/acoustic-glass-partition-dubai',
+    getParentRoute: () => BlogRoute,
+  } as any)
 const BlogAcousticGlassDubaiRoute = BlogAcousticGlassDubaiRouteImport.update({
   id: '/acoustic-glass-dubai',
   path: '/acoustic-glass-dubai',
@@ -447,6 +454,7 @@ export interface FileRoutesByFullPath {
   '/tamilfoodmenu': typeof TamilfoodmenuRoute
   '/api/chat': typeof ApiChatRoute
   '/blog/acoustic-glass-dubai': typeof BlogAcousticGlassDubaiRoute
+  '/blog/acoustic-glass-partition-dubai': typeof BlogAcousticGlassPartitionDubaiRoute
   '/blog/aluminium-fabrication-services-dubai': typeof BlogAluminiumFabricationServicesDubaiRoute
   '/blog/back-painted-glass-dubai': typeof BlogBackPaintedGlassDubaiRoute
   '/blog/best-glass-partition-company-dubai': typeof BlogBestGlassPartitionCompanyDubaiRoute
@@ -508,6 +516,7 @@ export interface FileRoutesByTo {
   '/tamilfoodmenu': typeof TamilfoodmenuRoute
   '/api/chat': typeof ApiChatRoute
   '/blog/acoustic-glass-dubai': typeof BlogAcousticGlassDubaiRoute
+  '/blog/acoustic-glass-partition-dubai': typeof BlogAcousticGlassPartitionDubaiRoute
   '/blog/aluminium-fabrication-services-dubai': typeof BlogAluminiumFabricationServicesDubaiRoute
   '/blog/back-painted-glass-dubai': typeof BlogBackPaintedGlassDubaiRoute
   '/blog/best-glass-partition-company-dubai': typeof BlogBestGlassPartitionCompanyDubaiRoute
@@ -573,6 +582,7 @@ export interface FileRoutesById {
   '/tamilfoodmenu': typeof TamilfoodmenuRoute
   '/api/chat': typeof ApiChatRoute
   '/blog/acoustic-glass-dubai': typeof BlogAcousticGlassDubaiRoute
+  '/blog/acoustic-glass-partition-dubai': typeof BlogAcousticGlassPartitionDubaiRoute
   '/blog/aluminium-fabrication-services-dubai': typeof BlogAluminiumFabricationServicesDubaiRoute
   '/blog/back-painted-glass-dubai': typeof BlogBackPaintedGlassDubaiRoute
   '/blog/best-glass-partition-company-dubai': typeof BlogBestGlassPartitionCompanyDubaiRoute
@@ -639,6 +649,7 @@ export interface FileRouteTypes {
     | '/tamilfoodmenu'
     | '/api/chat'
     | '/blog/acoustic-glass-dubai'
+    | '/blog/acoustic-glass-partition-dubai'
     | '/blog/aluminium-fabrication-services-dubai'
     | '/blog/back-painted-glass-dubai'
     | '/blog/best-glass-partition-company-dubai'
@@ -700,6 +711,7 @@ export interface FileRouteTypes {
     | '/tamilfoodmenu'
     | '/api/chat'
     | '/blog/acoustic-glass-dubai'
+    | '/blog/acoustic-glass-partition-dubai'
     | '/blog/aluminium-fabrication-services-dubai'
     | '/blog/back-painted-glass-dubai'
     | '/blog/best-glass-partition-company-dubai'
@@ -764,6 +776,7 @@ export interface FileRouteTypes {
     | '/tamilfoodmenu'
     | '/api/chat'
     | '/blog/acoustic-glass-dubai'
+    | '/blog/acoustic-glass-partition-dubai'
     | '/blog/aluminium-fabrication-services-dubai'
     | '/blog/back-painted-glass-dubai'
     | '/blog/best-glass-partition-company-dubai'
@@ -1252,6 +1265,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof BlogAluminiumFabricationServicesDubaiRouteImport
       parentRoute: typeof BlogRoute
     }
+    '/blog/acoustic-glass-partition-dubai': {
+      id: '/blog/acoustic-glass-partition-dubai'
+      path: '/acoustic-glass-partition-dubai'
+      fullPath: '/blog/acoustic-glass-partition-dubai'
+      preLoaderRoute: typeof BlogAcousticGlassPartitionDubaiRouteImport
+      parentRoute: typeof BlogRoute
+    }
     '/blog/acoustic-glass-dubai': {
       id: '/blog/acoustic-glass-dubai'
       path: '/acoustic-glass-dubai'
@@ -1271,6 +1291,7 @@ declare module '@tanstack/react-router' {
 
 interface BlogRouteChildren {
   BlogAcousticGlassDubaiRoute: typeof BlogAcousticGlassDubaiRoute
+  BlogAcousticGlassPartitionDubaiRoute: typeof BlogAcousticGlassPartitionDubaiRoute
   BlogAluminiumFabricationServicesDubaiRoute: typeof BlogAluminiumFabricationServicesDubaiRoute
   BlogBackPaintedGlassDubaiRoute: typeof BlogBackPaintedGlassDubaiRoute
   BlogBestGlassPartitionCompanyDubaiRoute: typeof BlogBestGlassPartitionCompanyDubaiRoute
@@ -1290,6 +1311,7 @@ interface BlogRouteChildren {
 
 const BlogRouteChildren: BlogRouteChildren = {
   BlogAcousticGlassDubaiRoute: BlogAcousticGlassDubaiRoute,
+  BlogAcousticGlassPartitionDubaiRoute: BlogAcousticGlassPartitionDubaiRoute,
   BlogAluminiumFabricationServicesDubaiRoute:
     BlogAluminiumFabricationServicesDubaiRoute,
   BlogBackPaintedGlassDubaiRoute: BlogBackPaintedGlassDubaiRoute,
@@ -1410,3 +1432,13 @@ const rootRouteChildren: RootRouteChildren = {
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
   ._addFileTypes<FileRouteTypes>()
+
+import type { getRouter } from './router.tsx'
+import type { startInstance } from './start.ts'
+declare module '@tanstack/react-start' {
+  interface Register {
+    ssr: true
+    router: Awaited<ReturnType<typeof getRouter>>
+    config: Awaited<ReturnType<typeof startInstance.getOptions>>
+  }
+}
