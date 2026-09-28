@@ -21,7 +21,7 @@ const D = "Trends, guides and design ideas for glass partitions, shower enclosur
 const URL = "https://glasseruae.com/blog";
 
 const POSTS = [
-  { slug: "acoustic-glass-partition-dubai", title: "Acoustic Glass Partition Dubai: Complete Guide (2026)", img: acousticPartition.url, alt: "Acoustic glass partition Dubai — frameless glass boardroom with black aluminium framing in a premium Dubai office", cat: "Guide", to: "/blog/acoustic-glass-partition-dubai" as const },
+  { slug: "acoustic-glass-partition-dubai", title: "Acoustic Glass Partition Dubai: Complete Guide (2026)", img: acousticPartition, alt: "Acoustic glass partition Dubai — frameless glass boardroom with black aluminium framing in a premium Dubai office", cat: "Guide", to: "/blog/acoustic-glass-partition-dubai" as const },
   { slug: "glass-and-aluminium-works-dubai", title: "Glass & Aluminium Works in Dubai: The Complete 2026 Guide", img: pillar.url, alt: "Frameless glass partitions with black aluminium framing in a premium Dubai office", cat: "Guide", to: "/blog/glass-and-aluminium-works-dubai" as const },
   { slug: "smart-glass-dubai", title: "Smart Glass in Dubai: Switchable Privacy Glass Guide (2026)", img: smart.url, alt: "Switchable smart glass boardroom in a Dubai office", cat: "Guide", to: "/blog/smart-glass-dubai" as const },
 
