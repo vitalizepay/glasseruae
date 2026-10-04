@@ -82,7 +82,7 @@ export function faqJsonLd(faqs: { q: string; a: string }[]) {
   };
 }
 
-const SITE_ORIGIN = "https://glasseruae.com";
+const SITE_ORIGIN = "https://www.glasseruae.com";
 const PUBLISHER = {
   "@type": "Organization",
   name: "Glasser Technical Works LLC",
