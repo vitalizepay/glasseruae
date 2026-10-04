@@ -78,6 +78,7 @@ export const Route = createFileRoute("/blog/glass-partitions-dubai-office-guide"
         { to: "/glass-door-installation-dubai", label: "Glass Door Installation" },
       ]}
       related={[
+        { to: "/blog/aed-300k-glass-partition-projects-dubai", label: "AED 300K+ Glass Partition Projects in Dubai" },
         { to: "/blog/office-glass-partition-cost-dubai", label: "Office Glass Partition Cost in Dubai (2026)" },
         { to: "/blog/best-glass-partition-company-dubai", label: "Best Glass Partition Company in Dubai (2026 Guide)" },
         { to: "/blog/acoustic-glass-dubai", label: "Acoustic Glass in Dubai: How Soundproof Glass Works" },
