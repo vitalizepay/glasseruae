@@ -69,6 +69,7 @@ import { Route as BlogCurvedGlassDubaiRouteImport } from './routes/blog.curved-g
 import { Route as BlogBestGlassPartitionCompanyDubaiRouteImport } from './routes/blog.best-glass-partition-company-dubai'
 import { Route as BlogBackPaintedGlassDubaiRouteImport } from './routes/blog.back-painted-glass-dubai'
 import { Route as BlogAluminiumFabricationServicesDubaiRouteImport } from './routes/blog.aluminium-fabrication-services-dubai'
+import { Route as BlogAed300kGlassPartitionProjectsDubaiRouteImport } from './routes/blog.aed-300k-glass-partition-projects-dubai'
 import { Route as BlogAcousticGlassPartitionDubaiRouteImport } from './routes/blog.acoustic-glass-partition-dubai'
 import { Route as BlogAcousticGlassDubaiRouteImport } from './routes/blog.acoustic-glass-dubai'
 import { Route as ApiChatRouteImport } from './routes/api/chat'
@@ -404,6 +405,12 @@ const BlogAluminiumFabricationServicesDubaiRoute =
     path: '/aluminium-fabrication-services-dubai',
     getParentRoute: () => BlogRoute,
   } as any)
+const BlogAed300kGlassPartitionProjectsDubaiRoute =
+  BlogAed300kGlassPartitionProjectsDubaiRouteImport.update({
+    id: '/aed-300k-glass-partition-projects-dubai',
+    path: '/aed-300k-glass-partition-projects-dubai',
+    getParentRoute: () => BlogRoute,
+  } as any)
 const BlogAcousticGlassPartitionDubaiRoute =
   BlogAcousticGlassPartitionDubaiRouteImport.update({
     id: '/acoustic-glass-partition-dubai',
@@ -455,6 +462,7 @@ export interface FileRoutesByFullPath {
   '/api/chat': typeof ApiChatRoute
   '/blog/acoustic-glass-dubai': typeof BlogAcousticGlassDubaiRoute
   '/blog/acoustic-glass-partition-dubai': typeof BlogAcousticGlassPartitionDubaiRoute
+  '/blog/aed-300k-glass-partition-projects-dubai': typeof BlogAed300kGlassPartitionProjectsDubaiRoute
   '/blog/aluminium-fabrication-services-dubai': typeof BlogAluminiumFabricationServicesDubaiRoute
   '/blog/back-painted-glass-dubai': typeof BlogBackPaintedGlassDubaiRoute
   '/blog/best-glass-partition-company-dubai': typeof BlogBestGlassPartitionCompanyDubaiRoute
@@ -517,6 +525,7 @@ export interface FileRoutesByTo {
   '/api/chat': typeof ApiChatRoute
   '/blog/acoustic-glass-dubai': typeof BlogAcousticGlassDubaiRoute
   '/blog/acoustic-glass-partition-dubai': typeof BlogAcousticGlassPartitionDubaiRoute
+  '/blog/aed-300k-glass-partition-projects-dubai': typeof BlogAed300kGlassPartitionProjectsDubaiRoute
   '/blog/aluminium-fabrication-services-dubai': typeof BlogAluminiumFabricationServicesDubaiRoute
   '/blog/back-painted-glass-dubai': typeof BlogBackPaintedGlassDubaiRoute
   '/blog/best-glass-partition-company-dubai': typeof BlogBestGlassPartitionCompanyDubaiRoute
@@ -583,6 +592,7 @@ export interface FileRoutesById {
   '/api/chat': typeof ApiChatRoute
   '/blog/acoustic-glass-dubai': typeof BlogAcousticGlassDubaiRoute
   '/blog/acoustic-glass-partition-dubai': typeof BlogAcousticGlassPartitionDubaiRoute
+  '/blog/aed-300k-glass-partition-projects-dubai': typeof BlogAed300kGlassPartitionProjectsDubaiRoute
   '/blog/aluminium-fabrication-services-dubai': typeof BlogAluminiumFabricationServicesDubaiRoute
   '/blog/back-painted-glass-dubai': typeof BlogBackPaintedGlassDubaiRoute
   '/blog/best-glass-partition-company-dubai': typeof BlogBestGlassPartitionCompanyDubaiRoute
@@ -650,6 +660,7 @@ export interface FileRouteTypes {
     | '/api/chat'
     | '/blog/acoustic-glass-dubai'
     | '/blog/acoustic-glass-partition-dubai'
+    | '/blog/aed-300k-glass-partition-projects-dubai'
     | '/blog/aluminium-fabrication-services-dubai'
     | '/blog/back-painted-glass-dubai'
     | '/blog/best-glass-partition-company-dubai'
@@ -712,6 +723,7 @@ export interface FileRouteTypes {
     | '/api/chat'
     | '/blog/acoustic-glass-dubai'
     | '/blog/acoustic-glass-partition-dubai'
+    | '/blog/aed-300k-glass-partition-projects-dubai'
     | '/blog/aluminium-fabrication-services-dubai'
     | '/blog/back-painted-glass-dubai'
     | '/blog/best-glass-partition-company-dubai'
@@ -777,6 +789,7 @@ export interface FileRouteTypes {
     | '/api/chat'
     | '/blog/acoustic-glass-dubai'
     | '/blog/acoustic-glass-partition-dubai'
+    | '/blog/aed-300k-glass-partition-projects-dubai'
     | '/blog/aluminium-fabrication-services-dubai'
     | '/blog/back-painted-glass-dubai'
     | '/blog/best-glass-partition-company-dubai'
@@ -1265,6 +1278,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof BlogAluminiumFabricationServicesDubaiRouteImport
       parentRoute: typeof BlogRoute
     }
+    '/blog/aed-300k-glass-partition-projects-dubai': {
+      id: '/blog/aed-300k-glass-partition-projects-dubai'
+      path: '/aed-300k-glass-partition-projects-dubai'
+      fullPath: '/blog/aed-300k-glass-partition-projects-dubai'
+      preLoaderRoute: typeof BlogAed300kGlassPartitionProjectsDubaiRouteImport
+      parentRoute: typeof BlogRoute
+    }
     '/blog/acoustic-glass-partition-dubai': {
       id: '/blog/acoustic-glass-partition-dubai'
       path: '/acoustic-glass-partition-dubai'
@@ -1292,6 +1312,7 @@ declare module '@tanstack/react-router' {
 interface BlogRouteChildren {
   BlogAcousticGlassDubaiRoute: typeof BlogAcousticGlassDubaiRoute
   BlogAcousticGlassPartitionDubaiRoute: typeof BlogAcousticGlassPartitionDubaiRoute
+  BlogAed300kGlassPartitionProjectsDubaiRoute: typeof BlogAed300kGlassPartitionProjectsDubaiRoute
   BlogAluminiumFabricationServicesDubaiRoute: typeof BlogAluminiumFabricationServicesDubaiRoute
   BlogBackPaintedGlassDubaiRoute: typeof BlogBackPaintedGlassDubaiRoute
   BlogBestGlassPartitionCompanyDubaiRoute: typeof BlogBestGlassPartitionCompanyDubaiRoute
@@ -1312,6 +1333,8 @@ interface BlogRouteChildren {
 const BlogRouteChildren: BlogRouteChildren = {
   BlogAcousticGlassDubaiRoute: BlogAcousticGlassDubaiRoute,
   BlogAcousticGlassPartitionDubaiRoute: BlogAcousticGlassPartitionDubaiRoute,
+  BlogAed300kGlassPartitionProjectsDubaiRoute:
+    BlogAed300kGlassPartitionProjectsDubaiRoute,
   BlogAluminiumFabricationServicesDubaiRoute:
     BlogAluminiumFabricationServicesDubaiRoute,
   BlogBackPaintedGlassDubaiRoute: BlogBackPaintedGlassDubaiRoute,
