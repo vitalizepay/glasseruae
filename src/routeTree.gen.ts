@@ -38,6 +38,7 @@ import { Route as ServicesRouteImport } from './routes/services'
 import { Route as ShowerGlassDubaiRouteImport } from './routes/shower-glass-dubai'
 import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
 import { Route as SkylightInstallationDubaiRouteImport } from './routes/skylight-installation-dubai'
+import { Route as TamilfdRouteImport } from './routes/tamilfd'
 import { Route as TamilfoodmenuRouteImport } from './routes/tamilfoodmenu'
 import { Route as ApiChatRouteImport } from './routes/api/chat'
 import { Route as BlogIndexRouteImport } from './routes/blog.index'
@@ -226,6 +227,11 @@ const SkylightInstallationDubaiRoute =
     path: '/skylight-installation-dubai',
     getParentRoute: () => rootRouteImport,
   } as any)
+const TamilfdRoute = TamilfdRouteImport.update({
+  id: '/tamilfd',
+  path: '/tamilfd',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const TamilfoodmenuRoute = TamilfoodmenuRouteImport.update({
   id: '/tamilfoodmenu',
   path: '/tamilfoodmenu',
@@ -465,6 +471,7 @@ export interface FileRoutesByFullPath {
   '/shower-glass-dubai': typeof ShowerGlassDubaiRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/skylight-installation-dubai': typeof SkylightInstallationDubaiRoute
+  '/tamilfd': typeof TamilfdRoute
   '/tamilfoodmenu': typeof TamilfoodmenuRoute
   '/api/chat': typeof ApiChatRoute
   '/blog/acoustic-glass-dubai': typeof BlogAcousticGlassDubaiRoute
@@ -529,6 +536,7 @@ export interface FileRoutesByTo {
   '/shower-glass-dubai': typeof ShowerGlassDubaiRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/skylight-installation-dubai': typeof SkylightInstallationDubaiRoute
+  '/tamilfd': typeof TamilfdRoute
   '/tamilfoodmenu': typeof TamilfoodmenuRoute
   '/api/chat': typeof ApiChatRoute
   '/blog/acoustic-glass-dubai': typeof BlogAcousticGlassDubaiRoute
@@ -597,6 +605,7 @@ export interface FileRoutesById {
   '/shower-glass-dubai': typeof ShowerGlassDubaiRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/skylight-installation-dubai': typeof SkylightInstallationDubaiRoute
+  '/tamilfd': typeof TamilfdRoute
   '/tamilfoodmenu': typeof TamilfoodmenuRoute
   '/api/chat': typeof ApiChatRoute
   '/blog/acoustic-glass-dubai': typeof BlogAcousticGlassDubaiRoute
@@ -666,6 +675,7 @@ export interface FileRouteTypes {
     | '/shower-glass-dubai'
     | '/sitemap.xml'
     | '/skylight-installation-dubai'
+    | '/tamilfd'
     | '/tamilfoodmenu'
     | '/api/chat'
     | '/blog/acoustic-glass-dubai'
@@ -730,6 +740,7 @@ export interface FileRouteTypes {
     | '/shower-glass-dubai'
     | '/sitemap.xml'
     | '/skylight-installation-dubai'
+    | '/tamilfd'
     | '/tamilfoodmenu'
     | '/api/chat'
     | '/blog/acoustic-glass-dubai'
@@ -797,6 +808,7 @@ export interface FileRouteTypes {
     | '/shower-glass-dubai'
     | '/sitemap.xml'
     | '/skylight-installation-dubai'
+    | '/tamilfd'
     | '/tamilfoodmenu'
     | '/api/chat'
     | '/blog/acoustic-glass-dubai'
@@ -865,6 +877,7 @@ export interface RootRouteChildren {
   ShowerGlassDubaiRoute: typeof ShowerGlassDubaiRoute
   SitemapDotxmlRoute: typeof SitemapDotxmlRoute
   SkylightInstallationDubaiRoute: typeof SkylightInstallationDubaiRoute
+  TamilfdRoute: typeof TamilfdRoute
   TamilfoodmenuRoute: typeof TamilfoodmenuRoute
   ApiChatRoute: typeof ApiChatRoute
 }
@@ -1072,6 +1085,13 @@ declare module '@tanstack/react-router' {
       path: '/skylight-installation-dubai'
       fullPath: '/skylight-installation-dubai'
       preLoaderRoute: typeof SkylightInstallationDubaiRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/tamilfd': {
+      id: '/tamilfd'
+      path: '/tamilfd'
+      fullPath: '/tamilfd'
+      preLoaderRoute: typeof TamilfdRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/tamilfoodmenu': {
@@ -1472,6 +1492,7 @@ const rootRouteChildren: RootRouteChildren = {
   ShowerGlassDubaiRoute: ShowerGlassDubaiRoute,
   SitemapDotxmlRoute: SitemapDotxmlRoute,
   SkylightInstallationDubaiRoute: SkylightInstallationDubaiRoute,
+  TamilfdRoute: TamilfdRoute,
   TamilfoodmenuRoute: TamilfoodmenuRoute,
   ApiChatRoute: ApiChatRoute,
 }
