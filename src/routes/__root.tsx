@@ -6,6 +6,7 @@ import {
   useRouter,
   HeadContent,
   Scripts,
+  type ErrorComponentProps,
 } from "@tanstack/react-router";
 import { useEffect, type ReactNode } from "react";
 
@@ -34,7 +35,7 @@ function NotFoundComponent() {
   );
 }
 
-function ErrorComponent({ error, reset }: { error: Error; reset: () => void }) {
+function ErrorComponent({ error, reset }: ErrorComponentProps) {
   console.error(error);
   const router = useRouter();
   useEffect(() => {
@@ -83,8 +84,6 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { property: "og:locale", content: "en_AE" },
       { name: "twitter:card", content: "summary_large_image" },
       { name: "theme-color", content: "#0A1A2F" },
-      { property: "og:image", content: "https://storage.googleapis.com/gpt-engineer-file-uploads/CCSag2zzSeVsAhrIMLoFggnKxEm2/social-images/social-1780255457152-glasser_logo.webp" },
-      { name: "twitter:image", content: "https://storage.googleapis.com/gpt-engineer-file-uploads/CCSag2zzSeVsAhrIMLoFggnKxEm2/social-images/social-1780255457152-glasser_logo.webp" },
       { name: "google-site-verification", content: "nONJ9PJu3C0IiPS41KVERRSvMYwftRNR-p3y7vr8Cwk" },
     ],
     links: [

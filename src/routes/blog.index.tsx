@@ -21,6 +21,7 @@ const D = "Trends, guides and design ideas for glass partitions, shower enclosur
 const URL = "https://glasseruae.com/blog";
 
 const POSTS = [
+  { slug: "aed-200k-commercial-glass-aluminium-project-dubai", title: "AED 200K+ Commercial Glass & Aluminium Project Dubai", img: pillar.url, alt: "Commercial architectural glass and aluminium project in Dubai", cat: "Case Study", to: "/blog/aed-200k-commercial-glass-aluminium-project-dubai" as const },
   { slug: "aed-300k-glass-partition-projects-dubai", title: "AED 300K+ Glass Partition Projects in Dubai", img: acoustic.url, alt: "Premium floor-to-ceiling glass partitions and black aluminium frames in a Dubai office", cat: "Case Study", to: "/blog/aed-300k-glass-partition-projects-dubai" as const },
   { slug: "acoustic-glass-partition-dubai", title: "Acoustic Glass Partition Dubai: Complete Guide (2026)", img: acousticPartition, alt: "Acoustic glass partition Dubai — frameless glass boardroom with black aluminium framing in a premium Dubai office", cat: "Guide", to: "/blog/acoustic-glass-partition-dubai" as const },
   { slug: "glass-and-aluminium-works-dubai", title: "Glass & Aluminium Works in Dubai: The Complete 2026 Guide", img: pillar.url, alt: "Frameless glass partitions with black aluminium framing in a premium Dubai office", cat: "Guide", to: "/blog/glass-and-aluminium-works-dubai" as const },

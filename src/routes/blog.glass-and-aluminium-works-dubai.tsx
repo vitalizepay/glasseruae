@@ -202,6 +202,7 @@ export const Route = createFileRoute("/blog/glass-and-aluminium-works-dubai")({
         { to: "/aluminium-works-dubai", label: "Aluminium Works Dubai" },
       ]}
       related={[
+        { to: "/blog/aed-200k-commercial-glass-aluminium-project-dubai", label: "AED 200K+ Commercial Glass & Aluminium Project Dubai" },
         { to: "/blog/office-glass-partition-cost-dubai", label: "Office Glass Partition Cost in Dubai (2026)" },
         { to: "/blog/best-glass-partition-company-dubai", label: "Best Glass Partition Company in Dubai" },
         { to: "/blog/aluminium-fabrication-services-dubai", label: "Aluminium Fabrication Services in Dubai" },
