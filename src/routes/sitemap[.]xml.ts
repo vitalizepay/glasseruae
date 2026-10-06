@@ -13,7 +13,6 @@ const PATHS: { path: string; priority: string }[] = [
   { path: "/projects", priority: "0.8" },
   { path: "/blog", priority: "0.7" },
   { path: "/contact", priority: "0.8" },
-  { path: "/tamilfoodmenu", priority: "0.5" },
 
 
   { path: "/glass-partition-dubai", priority: "0.95" },
