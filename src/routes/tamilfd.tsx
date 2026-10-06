@@ -172,7 +172,7 @@ const CATEGORIES = [
   },
 ];
 
-export const Route = createFileRoute("/tamilfoodmenu")({
+export const Route = createFileRoute("/tamilfd")({
   head: () => ({
     meta: [
       { title: "Fajr Al Nahda Restaurant | Tamil Restaurant in Sharjah" },
@@ -188,6 +188,7 @@ export const Route = createFileRoute("/tamilfoodmenu")({
       },
       { name: "viewport", content: "width=device-width, initial-scale=1, maximum-scale=5" },
       { name: "theme-color", content: "#C62828" },
+      { name: "robots", content: "noindex, nofollow" },
       { property: "og:title", content: "Fajr Al Nahda Restaurant | Tamil Restaurant in Sharjah" },
       {
         property: "og:description",
@@ -199,7 +200,7 @@ export const Route = createFileRoute("/tamilfoodmenu")({
       { name: "twitter:image", content: biryani },
     ],
     links: [
-      { rel: "canonical", href: "https://glasseruae.com/tamilfoodmenu" },
+      { rel: "canonical", href: "https://glasseruae.com/tamilfd" },
       { rel: "preconnect", href: "https://fonts.googleapis.com" },
       { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },
       {
@@ -216,7 +217,7 @@ export const Route = createFileRoute("/tamilfoodmenu")({
           name: "Fajr Al Nahda Restaurant",
           servesCuisine: ["Tamil", "South Indian", "Arabian", "Chinese"],
           telephone: "+971 6 522 0875",
-          url: "https://glasseruae.com/tamilfoodmenu",
+          url: "https://glasseruae.com/tamilfd",
           address: {
             "@type": "PostalAddress",
             streetAddress: "Al Nahda",
