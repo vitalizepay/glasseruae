@@ -1,8 +1,8 @@
 import { createFileRoute } from "@tanstack/react-router";
 import type {} from "@tanstack/react-start";
 
-const BASE_URL = "https://glasseruae.com";
-const LASTMOD = "2026-06-05";
+const BASE_URL = "https://www.glasseruae.com";
+const LASTMOD = "2026-10-06";
 
 const PATHS: { path: string; priority: string }[] = [
   { path: "/", priority: "1.0" },
@@ -68,6 +68,7 @@ const PATHS: { path: string; priority: string }[] = [
   { path: "/blog/glass-and-aluminium-works-dubai", priority: "0.9" },
   { path: "/blog/acoustic-glass-partition-dubai", priority: "0.9" },
   { path: "/blog/aed-300k-glass-partition-projects-dubai", priority: "0.9" },
+  { path: "/blog/aed-200k-commercial-glass-aluminium-project-dubai", priority: "0.9" },
 
 ];
 
