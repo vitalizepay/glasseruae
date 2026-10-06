@@ -7,7 +7,7 @@ import office from "@/assets/projects/office-glass-partitions-corporate.jpg.asse
 import cladding from "@/assets/projects/jvc-acp-cladding-1.jpg.asset.json";
 import curtainWall from "@/assets/blog/aluminium-facade-dubai.jpg.asset.json";
 import curved from "@/assets/projects/ad-curved-1.jpg.asset.json";
-import backPainted from "@/assets/projects/back-painted-glass-1.jpg.asset.json";
+import backPainted from "@/assets/projects/back-painted-glass-2.jpg.asset.json";
 import retail from "@/assets/projects/jlt-tower-1.jpg.asset.json";
 
 const SLUG = "aed-200k-commercial-glass-aluminium-project-dubai";
@@ -266,7 +266,12 @@ function CommercialCaseStudy() {
             <p className="text-xs uppercase tracking-[0.25em] text-orange font-semibold">Procurement guidance</p>
             <h2 className="mt-4 text-3xl md:text-5xl text-navy leading-tight">How to request a useful commercial quotation</h2>
             <p className="mt-7 text-muted-foreground leading-relaxed font-light">Send the latest plans and elevations, approximate quantities, intended glass types, aluminium finish, door and hardware schedules, performance requirements, site location and target programme. Identify whether access equipment, permits, night work, protection, removal or interface sealing belongs in the contractor's scope. A complete brief makes quotations easier to compare and limits late commercial surprises.</p>
-            <p className="mt-5 text-muted-foreground leading-relaxed font-light">For complex curtain wall, balustrade, curved-glass or long-span applications, the responsible engineer and consultant must confirm the governing design criteria. Glasser Technical Works LLC can then review fabrication and installation feasibility against those approved requirements. For broader service context, see our guide to [glass and aluminium works in Dubai](/blog/glass-and-aluminium-works-dubai).</p>
+            <p className="mt-5 text-muted-foreground leading-relaxed font-light">
+              For complex curtain wall, balustrade, curved-glass or long-span applications, the responsible engineer and consultant must confirm the governing design criteria. Glasser Technical Works LLC can then review fabrication and installation feasibility against those approved requirements. For broader service context, see our guide to{" "}
+              <Link to="/blog/glass-and-aluminium-works-dubai" className="text-orange underline decoration-orange/40 underline-offset-4 hover:decoration-orange">
+                glass and aluminium works in Dubai
+              </Link>.
+            </p>
           </div>
         </section>
 
