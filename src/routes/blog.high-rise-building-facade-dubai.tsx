@@ -72,7 +72,7 @@ function FacadeGuide() {
     return () => { cancelAnimationFrame(frame); window.removeEventListener("scroll", update); window.removeEventListener("resize", update); };
   }, []);
   const bodyWords = [facadeTitle, facadeIntro, quickAnswer, ...facadeSections.flatMap(s => [s.title, s.question ?? "", s.answer ?? "", ...s.paragraphs, ...(s.list ?? []), ...(s.table?.headings ?? []), ...(s.table?.rows.flat() ?? [])]), ...facadeFaqs.flatMap(f => [f.q, f.a])].join(" ").split(/\s+/).length;
-  return <Layout><article className="facade-publication">
+  return <Layout><article className="facade-publication" data-no-auto-reveal>
     <div className="fixed inset-x-0 top-0 z-[75] h-1 bg-transparent pointer-events-none" aria-hidden="true"><div ref={progressRef} className="h-full bg-editorial-accent origin-left scale-x-0" /></div>
     <header className="pt-28 md:pt-32 bg-background">
       <div className="max-w-7xl mx-auto px-5 md:px-10">
