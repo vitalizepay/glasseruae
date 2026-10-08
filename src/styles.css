@@ -42,9 +42,15 @@
   --color-gold: var(--gold);
   --color-gold-soft: var(--gold-soft);
   --color-ember: var(--ember);
+  --color-editorial: var(--editorial);
+  --color-editorial-foreground: var(--editorial-foreground);
+  --color-editorial-accent: var(--editorial-accent);
 }
 
 :root {
+  --editorial: oklch(0.2 0.006 250);
+  --editorial-foreground: oklch(0.98 0 0);
+  --editorial-accent: oklch(0.64 0.18 255);
   --radius: 0.5rem;
   /* Apple / Emaar palette — pure whites and soft greys */
   --background: oklch(1 0 0);                  /* #FFFFFF */
@@ -196,6 +202,12 @@ html.lenis, html.lenis body { height: auto; }
 
 .no-scrollbar::-webkit-scrollbar { display: none; }
 .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+
+.facade-publication h1, .facade-publication h2, .facade-publication h3 {
+  font-family: var(--font-sans);
+  letter-spacing: 0;
+}
+.facade-publication section { scroll-margin-top: 7rem; }
 
 @keyframes shimmer {
   0% { background-position: -200% 0; }
