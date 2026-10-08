@@ -68,6 +68,7 @@ const PATHS: { path: string; priority: string }[] = [
   { path: "/blog/acoustic-glass-partition-dubai", priority: "0.9" },
   { path: "/blog/aed-300k-glass-partition-projects-dubai", priority: "0.9" },
   { path: "/blog/aed-200k-commercial-glass-aluminium-project-dubai", priority: "0.9" },
+  { path: "/blog/high-rise-building-facade-dubai", priority: "0.9" },
 
 ];
 

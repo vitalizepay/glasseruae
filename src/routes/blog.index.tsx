@@ -14,13 +14,15 @@ import mirror from "@/assets/luxury-bathroom-mirror.jpg.asset.json";
 import smart from "@/assets/blog/smart-glass-dubai.jpg.asset.json";
 import acousticPartition from "@/assets/blog/acoustic-glass-partition-dubai.jpg";
 import pillar from "@/assets/blog/glass-aluminium-works-dubai.jpg.asset.json";
+import facade from "@/assets/blog/high-rise-facade-dubai-hero.webp";
 
 
 const T = "Blog — Glass & Aluminium Insights from Dubai | Glasser UAE";
 const D = "Trends, guides and design ideas for glass partitions, shower enclosures, aluminium windows and mirror installations across the UAE.";
-const URL = "https://glasseruae.com/blog";
+const URL = "https://www.glasseruae.com/blog";
 
 const POSTS = [
+  { slug: "high-rise-building-facade-dubai", title: "High-Rise Building Façade in Dubai: Million-AED Planning Guide", img: facade, alt: "Illustration of a Dubai high-rise glass façade under construction", cat: "Engineering", to: "/blog/high-rise-building-facade-dubai" as const },
   { slug: "aed-200k-commercial-glass-aluminium-project-dubai", title: "AED 200K+ Commercial Glass & Aluminium Project Dubai", img: pillar.url, alt: "Commercial architectural glass and aluminium project in Dubai", cat: "Case Study", to: "/blog/aed-200k-commercial-glass-aluminium-project-dubai" as const },
   { slug: "aed-300k-glass-partition-projects-dubai", title: "AED 300K+ Glass Partition Projects in Dubai", img: acoustic.url, alt: "Premium floor-to-ceiling glass partitions and black aluminium frames in a Dubai office", cat: "Case Study", to: "/blog/aed-300k-glass-partition-projects-dubai" as const },
   { slug: "acoustic-glass-partition-dubai", title: "Acoustic Glass Partition Dubai: Complete Guide (2026)", img: acousticPartition, alt: "Acoustic glass partition Dubai — frameless glass boardroom with black aluminium framing in a premium Dubai office", cat: "Guide", to: "/blog/acoustic-glass-partition-dubai" as const },
@@ -51,6 +53,8 @@ export const Route = createFileRoute("/blog/")({
       { property: "og:title", content: T },
       { property: "og:description", content: D },
       { property: "og:url", content: URL },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
     ],
     links: [{ rel: "canonical", href: URL }],
     scripts: [

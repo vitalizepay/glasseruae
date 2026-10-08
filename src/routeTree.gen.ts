@@ -56,6 +56,7 @@ import { Route as BlogFramelessShowerEnclosuresDubaiGuideRouteImport } from './r
 import { Route as BlogGlassAndAluminiumWorksDubaiRouteImport } from './routes/blog.glass-and-aluminium-works-dubai'
 import { Route as BlogGlassPartitionsDubaiOfficeGuideRouteImport } from './routes/blog.glass-partitions-dubai-office-guide'
 import { Route as BlogGlassShopfrontInstallationGuideRouteImport } from './routes/blog.glass-shopfront-installation-guide'
+import { Route as BlogHighRiseBuildingFacadeDubaiRouteImport } from './routes/blog.high-rise-building-facade-dubai'
 import { Route as BlogMirrorSuppliersDubaiRouteImport } from './routes/blog.mirror-suppliers-dubai'
 import { Route as BlogOfficeGlassPartitionCostDubaiRouteImport } from './routes/blog.office-glass-partition-cost-dubai'
 import { Route as BlogShowerGlassInstallationGuideDubaiRouteImport } from './routes/blog.shower-glass-installation-guide-dubai'
@@ -329,6 +330,12 @@ const BlogGlassShopfrontInstallationGuideRoute =
     path: '/glass-shopfront-installation-guide',
     getParentRoute: () => BlogRoute,
   } as any)
+const BlogHighRiseBuildingFacadeDubaiRoute =
+  BlogHighRiseBuildingFacadeDubaiRouteImport.update({
+    id: '/high-rise-building-facade-dubai',
+    path: '/high-rise-building-facade-dubai',
+    getParentRoute: () => BlogRoute,
+  } as any)
 const BlogMirrorSuppliersDubaiRoute =
   BlogMirrorSuppliersDubaiRouteImport.update({
     id: '/mirror-suppliers-dubai',
@@ -488,6 +495,7 @@ export interface FileRoutesByFullPath {
   '/blog/glass-and-aluminium-works-dubai': typeof BlogGlassAndAluminiumWorksDubaiRoute
   '/blog/glass-partitions-dubai-office-guide': typeof BlogGlassPartitionsDubaiOfficeGuideRoute
   '/blog/glass-shopfront-installation-guide': typeof BlogGlassShopfrontInstallationGuideRoute
+  '/blog/high-rise-building-facade-dubai': typeof BlogHighRiseBuildingFacadeDubaiRoute
   '/blog/mirror-suppliers-dubai': typeof BlogMirrorSuppliersDubaiRoute
   '/blog/office-glass-partition-cost-dubai': typeof BlogOfficeGlassPartitionCostDubaiRoute
   '/blog/shower-glass-installation-guide-dubai': typeof BlogShowerGlassInstallationGuideDubaiRoute
@@ -553,6 +561,7 @@ export interface FileRoutesByTo {
   '/blog/glass-and-aluminium-works-dubai': typeof BlogGlassAndAluminiumWorksDubaiRoute
   '/blog/glass-partitions-dubai-office-guide': typeof BlogGlassPartitionsDubaiOfficeGuideRoute
   '/blog/glass-shopfront-installation-guide': typeof BlogGlassShopfrontInstallationGuideRoute
+  '/blog/high-rise-building-facade-dubai': typeof BlogHighRiseBuildingFacadeDubaiRoute
   '/blog/mirror-suppliers-dubai': typeof BlogMirrorSuppliersDubaiRoute
   '/blog/office-glass-partition-cost-dubai': typeof BlogOfficeGlassPartitionCostDubaiRoute
   '/blog/shower-glass-installation-guide-dubai': typeof BlogShowerGlassInstallationGuideDubaiRoute
@@ -622,6 +631,7 @@ export interface FileRoutesById {
   '/blog/glass-and-aluminium-works-dubai': typeof BlogGlassAndAluminiumWorksDubaiRoute
   '/blog/glass-partitions-dubai-office-guide': typeof BlogGlassPartitionsDubaiOfficeGuideRoute
   '/blog/glass-shopfront-installation-guide': typeof BlogGlassShopfrontInstallationGuideRoute
+  '/blog/high-rise-building-facade-dubai': typeof BlogHighRiseBuildingFacadeDubaiRoute
   '/blog/mirror-suppliers-dubai': typeof BlogMirrorSuppliersDubaiRoute
   '/blog/office-glass-partition-cost-dubai': typeof BlogOfficeGlassPartitionCostDubaiRoute
   '/blog/shower-glass-installation-guide-dubai': typeof BlogShowerGlassInstallationGuideDubaiRoute
@@ -692,6 +702,7 @@ export interface FileRouteTypes {
     | '/blog/glass-and-aluminium-works-dubai'
     | '/blog/glass-partitions-dubai-office-guide'
     | '/blog/glass-shopfront-installation-guide'
+    | '/blog/high-rise-building-facade-dubai'
     | '/blog/mirror-suppliers-dubai'
     | '/blog/office-glass-partition-cost-dubai'
     | '/blog/shower-glass-installation-guide-dubai'
@@ -757,6 +768,7 @@ export interface FileRouteTypes {
     | '/blog/glass-and-aluminium-works-dubai'
     | '/blog/glass-partitions-dubai-office-guide'
     | '/blog/glass-shopfront-installation-guide'
+    | '/blog/high-rise-building-facade-dubai'
     | '/blog/mirror-suppliers-dubai'
     | '/blog/office-glass-partition-cost-dubai'
     | '/blog/shower-glass-installation-guide-dubai'
@@ -825,6 +837,7 @@ export interface FileRouteTypes {
     | '/blog/glass-and-aluminium-works-dubai'
     | '/blog/glass-partitions-dubai-office-guide'
     | '/blog/glass-shopfront-installation-guide'
+    | '/blog/high-rise-building-facade-dubai'
     | '/blog/mirror-suppliers-dubai'
     | '/blog/office-glass-partition-cost-dubai'
     | '/blog/shower-glass-installation-guide-dubai'
@@ -1213,6 +1226,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof BlogGlassShopfrontInstallationGuideRouteImport
       parentRoute: typeof BlogRoute
     }
+    '/blog/high-rise-building-facade-dubai': {
+      id: '/blog/high-rise-building-facade-dubai'
+      path: '/high-rise-building-facade-dubai'
+      fullPath: '/blog/high-rise-building-facade-dubai'
+      preLoaderRoute: typeof BlogHighRiseBuildingFacadeDubaiRouteImport
+      parentRoute: typeof BlogRoute
+    }
     '/blog/mirror-suppliers-dubai': {
       id: '/blog/mirror-suppliers-dubai'
       path: '/mirror-suppliers-dubai'
@@ -1364,6 +1384,7 @@ interface BlogRouteChildren {
   BlogGlassAndAluminiumWorksDubaiRoute: typeof BlogGlassAndAluminiumWorksDubaiRoute
   BlogGlassPartitionsDubaiOfficeGuideRoute: typeof BlogGlassPartitionsDubaiOfficeGuideRoute
   BlogGlassShopfrontInstallationGuideRoute: typeof BlogGlassShopfrontInstallationGuideRoute
+  BlogHighRiseBuildingFacadeDubaiRoute: typeof BlogHighRiseBuildingFacadeDubaiRoute
   BlogMirrorSuppliersDubaiRoute: typeof BlogMirrorSuppliersDubaiRoute
   BlogOfficeGlassPartitionCostDubaiRoute: typeof BlogOfficeGlassPartitionCostDubaiRoute
   BlogShowerGlassInstallationGuideDubaiRoute: typeof BlogShowerGlassInstallationGuideDubaiRoute
@@ -1394,6 +1415,7 @@ const BlogRouteChildren: BlogRouteChildren = {
     BlogGlassPartitionsDubaiOfficeGuideRoute,
   BlogGlassShopfrontInstallationGuideRoute:
     BlogGlassShopfrontInstallationGuideRoute,
+  BlogHighRiseBuildingFacadeDubaiRoute: BlogHighRiseBuildingFacadeDubaiRoute,
   BlogMirrorSuppliersDubaiRoute: BlogMirrorSuppliersDubaiRoute,
   BlogOfficeGlassPartitionCostDubaiRoute:
     BlogOfficeGlassPartitionCostDubaiRoute,
