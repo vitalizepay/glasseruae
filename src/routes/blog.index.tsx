@@ -15,6 +15,7 @@ import smart from "@/assets/blog/smart-glass-dubai.jpg.asset.json";
 import acousticPartition from "@/assets/blog/acoustic-glass-partition-dubai.jpg";
 import pillar from "@/assets/blog/glass-aluminium-works-dubai.jpg.asset.json";
 import facade from "@/assets/blog/high-rise-facade-dubai-hero.webp";
+import premiumPartition from "@/assets/blog/premium-glass-partitions-dubai-concept.webp";
 
 
 const T = "Blog — Glass & Aluminium Insights from Dubai | Glasser UAE";
@@ -22,6 +23,7 @@ const D = "Trends, guides and design ideas for glass partitions, shower enclosur
 const URL = "https://www.glasseruae.com/blog";
 
 const POSTS = [
+  { slug: "premium-glass-partitions-dubai-aed-400k-project", title: "Premium Glass Partitions Dubai: AED 400,000 Completed Order", img: premiumPartition, alt: "Editorial illustration of premium glass partitions, not the completed order", cat: "Completed Order", to: "/blog/premium-glass-partitions-dubai-aed-400k-project" as const },
   { slug: "high-rise-building-facade-dubai", title: "High-Rise Building Façade in Dubai: Million-AED Planning Guide", img: facade, alt: "Illustration of a Dubai high-rise glass façade under construction", cat: "Engineering", to: "/blog/high-rise-building-facade-dubai" as const },
   { slug: "aed-200k-commercial-glass-aluminium-project-dubai", title: "AED 200K+ Commercial Glass & Aluminium Project Dubai", img: pillar.url, alt: "Commercial architectural glass and aluminium project in Dubai", cat: "Case Study", to: "/blog/aed-200k-commercial-glass-aluminium-project-dubai" as const },
   { slug: "aed-300k-glass-partition-projects-dubai", title: "AED 300K+ Glass Partition Projects in Dubai", img: acoustic.url, alt: "Premium floor-to-ceiling glass partitions and black aluminium frames in a Dubai office", cat: "Case Study", to: "/blog/aed-300k-glass-partition-projects-dubai" as const },
