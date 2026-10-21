@@ -2,9 +2,8 @@ import { createFileRoute } from "@tanstack/react-router";
 import type {} from "@tanstack/react-start";
 
 const BASE_URL = "https://www.glasseruae.com";
-const LASTMOD = "2026-10-06";
 
-const PATHS: { path: string; priority: string }[] = [
+const PATHS: { path: string; priority: string; lastmod?: string }[] = [
   { path: "/", priority: "1.0" },
   { path: "/about", priority: "0.8" },
   { path: "/services", priority: "0.9" },
@@ -12,6 +11,7 @@ const PATHS: { path: string; priority: string }[] = [
   { path: "/areas-we-serve", priority: "0.8" },
   { path: "/projects", priority: "0.8" },
   { path: "/blog", priority: "0.7" },
+  { path: "/blog/premium-architectural-glass-solutions-dubai", priority: "0.9", lastmod: "2026-10-21" },
   { path: "/contact", priority: "0.8" },
 
 
@@ -77,7 +77,7 @@ export const Route = createFileRoute("/sitemap.xml")({
   server: {
     handlers: {
       GET: async () => {
-        const urls = PATHS.map((e) => `  <url><loc>${BASE_URL}${e.path}</loc><lastmod>${LASTMOD}</lastmod><priority>${e.priority}</priority></url>`).join("\n");
+        const urls = PATHS.map((e) => `  <url><loc>${BASE_URL}${e.path}</loc>${e.lastmod ? `<lastmod>${e.lastmod}</lastmod>` : ""}<priority>${e.priority}</priority></url>`).join("\n");
         const xml = `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${urls}\n</urlset>`;
         return new Response(xml, { headers: { "Content-Type": "application/xml", "Cache-Control": "public, max-age=3600" } });
       },

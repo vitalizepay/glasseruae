@@ -1,5 +1,4 @@
-# Premium partition project blog
-- [x] Write the AED 400,000 completed Dubai order article using confirmed facts only.
-- [x] Add an explicitly illustrative visual, blog listing and sitemap entries.
-- [x] Verify article, metadata, links and mobile layout.
-- [x] Check security and request publication.
+# Premium architectural glass blog
+- [x] Write the attached premium architectural glass brief without invented claims.
+- [x] Optimize the supplied image and add article metadata, listing and sitemap.
+- [ ] Verify desktop, mobile, FAQs and contact links.
