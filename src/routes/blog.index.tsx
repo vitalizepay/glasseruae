@@ -15,6 +15,7 @@ import smart from "@/assets/blog/smart-glass-dubai.jpg.asset.json";
 import acousticPartition from "@/assets/blog/acoustic-glass-partition-dubai.jpg";
 import pillar from "@/assets/blog/glass-aluminium-works-dubai.jpg.asset.json";
 import facade from "@/assets/blog/high-rise-facade-dubai-hero.webp";
+import premiumGlass from "@/assets/blog/premium-architectural-glass-dubai.webp.asset.json";
 import premiumPartition from "@/assets/blog/premium-glass-partitions-dubai-concept.webp";
 
 
@@ -23,6 +24,7 @@ const D = "Trends, guides and design ideas for glass partitions, shower enclosur
 const URL = "https://www.glasseruae.com/blog";
 
 const POSTS = [
+  { slug: "premium-architectural-glass-solutions-dubai", title: "Premium Architectural Glass Solutions in Dubai", img: premiumGlass.url, alt: "Architectural reference of a luxury villa with expansive glazing", cat: "Architecture", to: "/blog/premium-architectural-glass-solutions-dubai" as const },
   { slug: "premium-glass-partitions-dubai-aed-400k-project", title: "Premium Glass Partitions Dubai: AED 400,000 Completed Order", img: premiumPartition, alt: "Editorial illustration of premium glass partitions, not the completed order", cat: "Completed Order", to: "/blog/premium-glass-partitions-dubai-aed-400k-project" as const },
   { slug: "high-rise-building-facade-dubai", title: "High-Rise Building Façade in Dubai: Million-AED Planning Guide", img: facade, alt: "Illustration of a Dubai high-rise glass façade under construction", cat: "Engineering", to: "/blog/high-rise-building-facade-dubai" as const },
   { slug: "aed-200k-commercial-glass-aluminium-project-dubai", title: "AED 200K+ Commercial Glass & Aluminium Project Dubai", img: pillar.url, alt: "Commercial architectural glass and aluminium project in Dubai", cat: "Case Study", to: "/blog/aed-200k-commercial-glass-aluminium-project-dubai" as const },
