@@ -1,0 +1,60 @@
+export const doorGuide = {
+  slug: "glass-doors-dubai",
+  title: "Glass Doors Dubai: A Practical Guide to Choosing the Right System",
+  seoTitle: "Glass Doors Dubai: Types, Safety & Planning | Glasser UAE",
+  date: "2026-10-25",
+  description: "Compare glass doors in Dubai for offices, villas and shops. Understand swing, sliding and framed systems, safety glass, hardware and quotation requirements.",
+  excerpt: "Compare door systems, safety glass and hardware before specifying an office, villa or retail entrance.",
+  intro: "A glass door can look excellent on a drawing and still be wrong for the room. A meeting-room entrance needs privacy and reliable closing; a retail doorway must handle frequent use; a villa opening may need weather protection. The right decision starts with how the opening works, not simply how transparent the glass looks.",
+  answer: "Choose glass doors in Dubai by application, opening space, safety requirements and hardware compatibility. Swing and pivot doors need clear operating space; sliding doors need a suitable track and stacking area. Framed systems can accommodate seals more readily, but acoustic or weather performance must be verified for the complete tested assembly. Request a site-specific specification rather than choosing thickness or price alone.",
+  sections: [
+    { id: "application", heading: "Start with the opening, not the photograph", paragraphs: [
+      "For an office, establish whether the door serves a reception, a private meeting room or a busy corridor. Consider closing behaviour, access control and whether confidential conversations need to remain inside. A door beside a glazed partition should be specified as part of that partition system rather than treated as a separate decorative panel.",
+      "Retail entrances require a different discussion: frequency of use, clear access, locking arrangements and the interface with the shopfront. In villas and hospitality interiors, circulation, children, privacy and adjacent finishes matter. External openings also introduce wind, rain and solar exposure. A frameless internal door is not automatically suitable for an exposed entrance.",
+      "For a Business Bay office refurbishment or a Dubai retail fit-out, agree access and working-hour restrictions with building management before finalising the programme. These are planning considerations, not claims about projects completed by Glasser UAE."
+    ] },
+    { id: "systems", heading: "Swing, pivot or sliding glass doors?", paragraphs: [
+      "A hinged swing door provides a familiar opening action, but its leaf needs room to move without striking furniture, walls or another doorway. A pivot system supports the leaf through top and bottom pivots; its pivot position changes the usable opening and movement envelope. Confirm the permitted opening direction and how the door returns to its closed position.",
+      "Sliding doors can solve a tight swing-clearance problem, but the glass must slide somewhere. Check the available wall or sidelight length, track support, guide position and access for maintenance. A sliding door is not inherently soundproof: gaps around an unsealed leaf can allow speech to pass even when the glass itself is acoustically specified.",
+      "Automatic entrances require specialist coordination of the operator, activation devices, safety sensors and power supply. Their selection should include commissioning, safe operation and a maintenance plan. Do not assume that adding an operator to an ordinary manual door produces a suitable automatic entrance."
+    ] },
+    { id: "framing", heading: "Frameless clarity or a sealed framed system?", paragraphs: [
+      "Frameless glass doors reduce visible framing and create visual continuity with adjacent glazing. Patch fittings, hinges, handles and edge clearances remain visible functional details. Review these together: an attractive handle cannot compensate for inappropriate hinges or a poorly supported opening.",
+      "Slim aluminium-framed glass doors offer a different architectural expression and can provide locations for perimeter seals, locks and other hardware. Where speech privacy or external weather protection is important, request evidence for the complete door system, including the threshold. A frame alone is not proof of acoustic, thermal or watertight performance."
+    ] },
+    { id: "safety", heading: "Specify safety glass and compatible hardware", paragraphs: [
+      "Toughened, also called tempered, glass and laminated glass behave differently when broken. Toughened glass breaks into small fragments; laminated glass uses an interlayer to retain fragments. The appropriate construction depends on the door system, location and applicable project requirements. Neither the label ‘safety glass’ nor a thicker pane replaces a proper specification.",
+      "Thickness must be coordinated with leaf dimensions, weight, fixing method and hardware limits. Ask for the selected hinge, pivot or closer's permitted glass construction, dimensions and weight. Large leaves can impose significant loads on supporting surfaces; those surfaces need to be assessed before fabrication.",
+      "Holes, notches and edge processing for toughened glass must be finalised before heat treatment. Trying to cut or drill a toughened door after manufacture is not a normal adjustment method. Approve the hardware layout and final dimensions first; changed fittings may require a replacement leaf."
+    ] },
+    { id: "privacy", heading: "Privacy, visibility and finish selection", paragraphs: [
+      "Clear glass shares light and views, while frosted finishes or applied privacy film obscure detail. Discuss whether privacy is required at eye level, across the whole door or only around a treatment or meeting area. Review samples in realistic lighting: obscuring a view does not guarantee that silhouettes disappear when a person stands close to the pane.",
+      "Visual privacy and acoustic privacy are separate requirements. A frosted glass office door may still transmit speech through perimeter gaps. Where confidentiality matters, review the partition, door seals, threshold and nearby sound paths together. Use documented assembly performance rather than an unsupported ‘soundproof’ claim.",
+      "Clearly visible manifestation or markings help people recognise transparent doors and adjacent panes. Their design should be coordinated with the relevant accessibility and safety requirements. For bathrooms, use the dedicated shower-system specification: water containment, hinges, seals and corrosion exposure differ from a dry office entrance."
+    ] },
+    { id: "survey", heading: "What a site survey and quotation should cover", paragraphs: [
+      "Record the finished opening, floor levels, wall alignment and supporting substrate. Include adjacent glazing, ceiling details, existing services and the proposed threshold. A concealed floor spring may involve a floor recess, so check waterproofing, buried services and permission to alter the floor before selecting it.",
+      "Send Glasser UAE photographs, drawings, approximate opening sizes, project location and the intended use. Identify whether the scope includes glass only, hardware, aluminium framing, removal of an existing door, installation or making good. The team can then discuss the project requirements rather than infer them from a single image.",
+      "There is no universal glass-door price that fairly represents every Dubai project. Compare quotations on identical glass construction, hardware, finish, installation scope and exclusions. Ask whether VAT, delivery, access arrangements and any necessary remedial work are included. Confirm availability and programme after the specification is agreed; this guide does not promise a delivery period."
+    ] },
+    { id: "mistakes", heading: "Common selection mistakes to avoid", paragraphs: [
+      "Do not order from an unfinished opening or choose hardware solely by colour. Avoid comparing a glass-only supply price with a fully installed door package. Do not assume all frameless doors seal equally, that frosting improves sound insulation, or that every laminated construction is compatible with every fitting.",
+      "Fire resistance is another separate requirement. Ordinary toughened or laminated glass does not make a fire-rated door. Where the approved design requires fire protection, the glazing, frame, seals and hardware must form an appropriately tested and approved assembly. Obtain the project consultant's requirements before substitution."
+    ] },
+    { id: "maintenance", heading: "Installation, handover and long-term care", paragraphs: [
+      "At handover, check smooth movement, closing speed, alignment, lock operation and clearances. Confirm that handles and fittings are secure and that glass edges do not contact hard surfaces. For automatic doors, commissioning and safety checks need to be completed by the responsible specialist.",
+      "Clean glass with suitable non-abrasive products and follow the finish and hardware manufacturer's instructions. Coastal exposure in areas such as Dubai Marina may influence hardware selection and maintenance needs. Report dragging, uncontrolled closing, damaged edges or loose fittings promptly; do not continue using a door that appears unsafe.",
+      "The most useful glass-door specification balances appearance with daily operation, safety and maintainability. Glasser Technical Works LLC can discuss your Dubai or wider UAE project, coordinate the requested scope and help you identify the information needed for a meaningful quotation."
+    ] }
+  ],
+  faqs: [
+    { q: "Which glass door is suitable for a Dubai office?", a: "Start with the room's use, swing clearance, access control and privacy requirements. Frameless doors offer visual continuity; a suitably specified framed and sealed assembly may be more appropriate where documented acoustic performance is needed." },
+    { q: "Are sliding glass doors better for small rooms?", a: "They can reduce swing-space requirements, but they still need a suitable track, support and space for the leaf to slide. Check the complete opening arrangement before choosing a sliding system." },
+    { q: "Can toughened glass doors be cut or drilled after manufacture?", a: "No. Cutting, drilling, notches and edge processing must be completed before toughening. Changed dimensions or hardware holes normally require a replacement glass leaf." },
+    { q: "Does frosted glass make an office door soundproof?", a: "No. Frosting provides visual privacy, not a verified acoustic rating. Speech privacy depends on the complete door and partition assembly, including seals and other sound paths." },
+    { q: "What thickness should a glass door be?", a: "There is no universal thickness for all doors. Specify glass construction with the leaf dimensions, weight, support and hardware manufacturer's limits, together with applicable project requirements." },
+    { q: "How much do glass doors cost in Dubai?", a: "Cost depends on the system, dimensions, glass construction, hardware and installation conditions. Request an itemised project quotation and compare equivalent inclusions rather than using a universal advertised rate." },
+    { q: "Is an ordinary glass door fire-rated?", a: "No. A fire-rated door requires a suitable tested and approved complete assembly. Ordinary toughened or laminated glass alone does not establish fire resistance." },
+    { q: "What should I send Glasser UAE for a glass-door enquiry?", a: "Send the project location, opening photographs, drawings or approximate dimensions, intended use and preferred operating system. Include privacy, access control and any consultant requirements, plus whether removal and installation are part of the scope." }
+  ]
+};
