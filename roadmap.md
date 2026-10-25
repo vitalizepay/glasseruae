@@ -1,4 +1,4 @@
-# Premium architectural glass blog
-- [x] Write the attached premium architectural glass brief without invented claims.
-- [x] Optimize the supplied image and add article metadata, listing and sitemap.
-- [x] Verify desktop, mobile, FAQs and contact links.
+# Glass doors Dubai editorial guide
+- [ ] Validate the topic from the attached brief and write original, useful selection guidance.
+- [ ] Add the article, existing imagery, metadata, blog listing and sitemap entries.
+- [ ] Verify the article, FAQs, enquiry links and mobile layout; leave unpublished for review.
