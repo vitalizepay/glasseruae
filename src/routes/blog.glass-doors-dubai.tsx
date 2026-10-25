@@ -5,7 +5,7 @@ import { Layout } from "@/components/site/Layout";
 import { Button } from "@/components/ui/button";
 import { buildBlogHead } from "@/lib/seo";
 import { doorGuide } from "@/content/glass-doors-guide";
-import officeGlass from "@/assets/projects/jumeirah-office-partition.jpg.asset.json";
+import officeGlass from "@/assets/blog/glass-door-reference.webp.asset.json";
 
 export const Route = createFileRoute("/blog/glass-doors-dubai")({
   head: () => buildBlogHead({ slug: doorGuide.slug, title: doorGuide.title, seoTitle: doorGuide.seoTitle, description: doorGuide.description, datePublished: doorGuide.date }),
