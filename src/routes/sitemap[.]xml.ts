@@ -11,6 +11,7 @@ const PATHS: { path: string; priority: string; lastmod?: string }[] = [
   { path: "/areas-we-serve", priority: "0.8" },
   { path: "/projects", priority: "0.8" },
   { path: "/blog", priority: "0.7" },
+  { path: "/blog/glass-doors-dubai", priority: "0.8", lastmod: "2026-10-25" },
   { path: "/blog/premium-architectural-glass-solutions-dubai", priority: "0.9", lastmod: "2026-10-21" },
   { path: "/contact", priority: "0.8" },
 

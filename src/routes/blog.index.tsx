@@ -17,6 +17,7 @@ import pillar from "@/assets/blog/glass-aluminium-works-dubai.jpg.asset.json";
 import facade from "@/assets/blog/high-rise-facade-dubai-hero.webp";
 import premiumGlass from "@/assets/blog/premium-architectural-glass-dubai.webp.asset.json";
 import premiumPartition from "@/assets/blog/premium-glass-partitions-dubai-concept.webp";
+import { doorGuide } from "@/content/glass-doors-guide";
 
 
 const T = "Blog — Glass & Aluminium Insights from Dubai | Glasser UAE";
@@ -24,6 +25,7 @@ const D = "Trends, guides and design ideas for glass partitions, shower enclosur
 const URL = "https://www.glasseruae.com/blog";
 
 const POSTS = [
+  { slug: doorGuide.slug, title: doorGuide.title, img: acoustic.url, alt: "Glass office enclosure and door framing used as a design reference", cat: "Specification", to: "/blog/glass-doors-dubai" as const, excerpt: doorGuide.excerpt, date: doorGuide.date },
   { slug: "premium-architectural-glass-solutions-dubai", title: "Premium Architectural Glass Solutions in Dubai", img: premiumGlass.url, alt: "Architectural reference of a luxury villa with expansive glazing", cat: "Architecture", to: "/blog/premium-architectural-glass-solutions-dubai" as const },
   { slug: "premium-glass-partitions-dubai-aed-400k-project", title: "Premium Glass Partitions Dubai: AED 400,000 Completed Order", img: premiumPartition, alt: "Editorial illustration of premium glass partitions, not the completed order", cat: "Completed Order", to: "/blog/premium-glass-partitions-dubai-aed-400k-project" as const },
   { slug: "high-rise-building-facade-dubai", title: "High-Rise Building Façade in Dubai: Million-AED Planning Guide", img: facade, alt: "Illustration of a Dubai high-rise glass façade under construction", cat: "Engineering", to: "/blog/high-rise-building-facade-dubai" as const },
@@ -102,6 +104,8 @@ function BlogPage() {
               <div className="p-6">
                 <span className="text-xs uppercase tracking-widest text-orange font-semibold">{p.cat}</span>
                 <h3 className="mt-2 text-xl font-semibold text-navy group-hover:text-orange transition-colors">{p.title}</h3>
+                {"excerpt" in p && <p className="mt-3 text-sm text-muted-foreground leading-6">{p.excerpt}</p>}
+                {"date" in p && <time dateTime={p.date} className="block mt-4 text-xs text-muted-foreground">25 October 2026</time>}
               </div>
             </Link>
           ))}
