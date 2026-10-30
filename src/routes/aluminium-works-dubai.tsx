@@ -5,7 +5,7 @@ import { breadcrumbJsonLd } from "@/components/site/Breadcrumbs";
 
 const T = "Aluminium Works Dubai | Doors, Windows, Cladding | Glasser UAE";
 const D = "Comprehensive aluminium works in Dubai — doors, windows, curtain walls, cladding and custom fabrication. Licensed contractor serving the UAE since 2019.";
-const URL = "https://glasseruae.com/aluminium-works-dubai";
+const URL = "https://www.glasseruae.com/aluminium-works-dubai";
 
 const FAQS = [
   { q: "Which aluminium systems do you supply?", a: "We work with leading systems including Alupco, Schueco, Reynaers, Sapa and Technal — selected per project specification and budget." },

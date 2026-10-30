@@ -12,9 +12,9 @@ export const Route = createFileRoute("/contact")({
       { name: "description", content: D },
       { property: "og:title", content: T },
       { property: "og:description", content: D },
-      { property: "og:url", content: "https://glasseruae.com/contact" },
+      { property: "og:url", content: "https://www.glasseruae.com/contact" },
     ],
-    links: [{ rel: "canonical", href: "https://glasseruae.com/contact" }],
+    links: [{ rel: "canonical", href: "https://www.glasseruae.com/contact" }],
     scripts: [
       {
         type: "application/ld+json",
@@ -24,7 +24,7 @@ export const Route = createFileRoute("/contact")({
           name: "Glasser Technical Works LLC",
           telephone: "+971568400838",
           email: "sales@glasseruae.com",
-          url: "https://glasseruae.com/contact",
+          url: "https://www.glasseruae.com/contact",
           address: {
             "@type": "PostalAddress",
             streetAddress: "Al Hilal Bldg, Al Nahda St, Al Qusais",

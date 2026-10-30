@@ -5,7 +5,7 @@ import { relatedFor } from "@/lib/services";
 const SLUG = "frameless-glass-partitions-dubai";
 const T = "Frameless Glass Partitions Dubai | Glasser UAE";
 const D = "Expert frameless glass partition installation in Dubai. Glasser UAE supplies and fits seamless office and residential glass partitions across all Emirates. Free quote.";
-const URL = `https://glasseruae.com/services/${SLUG}`;
+const URL = `https://www.glasseruae.com/services/${SLUG}`;
 
 export const Route = createFileRoute("/services/frameless-glass-partitions-dubai")({
   head: () => ({

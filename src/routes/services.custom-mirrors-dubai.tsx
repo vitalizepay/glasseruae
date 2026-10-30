@@ -5,7 +5,7 @@ import { relatedFor } from "@/lib/services";
 const SLUG = "custom-mirrors-dubai";
 const T = "Custom Mirrors Dubai | Bespoke Mirror Installation | Glasser UAE";
 const D = "Bespoke custom mirror installation in Dubai. Glasser UAE crafts and installs custom mirrors for hotels, retail and private homes across the UAE. Free quote.";
-const URL = `https://glasseruae.com/services/${SLUG}`;
+const URL = `https://www.glasseruae.com/services/${SLUG}`;
 
 export const Route = createFileRoute("/services/custom-mirrors-dubai")({
   head: () => ({

@@ -8,7 +8,7 @@ import { MapPin, ArrowRight } from "lucide-react";
 
 const T = "Areas We Serve | Glass & Aluminium Across the UAE | Glasser UAE";
 const D = "Glasser Technical Works covers Dubai, Sharjah, Ajman and Abu Dhabi — including Al Qusais, Al Nahda, Deira, Business Bay, Dubai Marina, JVC and more.";
-const URL = "https://glasseruae.com/areas-we-serve";
+const URL = "https://www.glasseruae.com/areas-we-serve";
 
 const ZONES = [
   { city: "Dubai", areas: ["Al Qusais", "Al Nahda", "Deira", "Business Bay", "Dubai Marina", "JVC", "DIFC", "JLT", "Downtown", "Jumeirah", "Dubai Hills", "Al Barsha"] },
@@ -29,7 +29,7 @@ export const Route = createFileRoute("/areas-we-serve")({
       { type: "application/ld+json", children: JSON.stringify(breadcrumbJsonLd([{ label: "Home", to: "/" }, { label: "Areas We Serve" }])) },
       { type: "application/ld+json", children: JSON.stringify({
         "@context": "https://schema.org", "@type": "LocalBusiness",
-        name: "Glasser Technical Works LLC", url: "https://glasseruae.com",
+        name: "Glasser Technical Works LLC", url: "https://www.glasseruae.com",
         telephone: "+971568400838",
         address: { "@type": "PostalAddress", streetAddress: "Al Hilal Bldg, Al Nahda Street, Al Qusais", addressLocality: "Dubai", addressCountry: "AE" },
         areaServed: ZONES.flatMap((z) => [z.city, ...z.areas]),

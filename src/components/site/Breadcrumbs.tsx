@@ -33,7 +33,7 @@ export function breadcrumbJsonLd(items: Crumb[]) {
       "@type": "ListItem",
       position: i + 1,
       name: c.label,
-      ...(c.to ? { item: `https://glasseruae.com${c.to}` } : {}),
+      ...(c.to ? { item: `https://www.glasseruae.com${c.to}` } : {}),
     })),
   };
 }

@@ -7,7 +7,7 @@ export const Route = createFileRoute("/home")({
         return new Response(null, {
           status: 301,
           headers: {
-            Location: "https://glasseruae.com/",
+            Location: "https://www.glasseruae.com/",
             "Cache-Control": "public, max-age=86400",
           },
         });

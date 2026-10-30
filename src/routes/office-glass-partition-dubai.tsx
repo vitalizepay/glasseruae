@@ -5,7 +5,7 @@ import { breadcrumbJsonLd } from "@/components/site/Breadcrumbs";
 
 const T = "Office Glass Partition Dubai | Glasser UAE";
 const D = "Office glass partition specialists in Dubai. Frameless, acoustic & demountable office partition systems for towers, fit-outs and co-working spaces across the UAE.";
-const URL = "https://glasseruae.com/office-glass-partition-dubai";
+const URL = "https://www.glasseruae.com/office-glass-partition-dubai";
 
 const FAQS = [
   { q: "Do you handle full office fit-outs or only partitions?", a: "We specialise in glass and aluminium scope: partitions, doors, facades, mirrors and shopfronts. We work alongside main fit-out contractors or directly with end-clients." },

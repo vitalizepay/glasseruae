@@ -5,7 +5,7 @@ import { breadcrumbJsonLd } from "@/components/site/Breadcrumbs";
 
 const T = "Aluminium Fabrication Dubai | Custom Workshop | Glasser UAE";
 const D = "Custom aluminium fabrication in Dubai — doors, windows, pergolas, louvres, cladding sub-frames and bespoke architectural work. In-house Al Qusais workshop.";
-const URL = "https://glasseruae.com/aluminium-fabrication-dubai";
+const URL = "https://www.glasseruae.com/aluminium-fabrication-dubai";
 
 const FAQS = [
   { q: "Can you fabricate to my drawings?", a: "Yes. Send us your architect or engineer drawings — we'll quote against the spec or value-engineer alternatives." },

@@ -9,7 +9,7 @@ import officeCabin from "@/assets/glass-office-cabin.jpg.asset.json";
 const T = "Glass Services Dubai | Partitions, Facades, Shopfronts, Mirrors, Railings UAE";
 const D = "Premium glass and aluminium services in Dubai UAE — partitions, facades, shopfronts, mirrors, enclosures, skylights, railings, cladding, windows, doors. Expert installation across all Emirates.";
 const K = "glass partitions Dubai, glass facades UAE, shopfront glass Dubai, mirror installation UAE, glass railings Dubai, glass enclosures UAE, skylights Dubai, aluminium cladding UAE, aluminium windows Dubai, glass balustrades UAE";
-const URL = "https://glasseruae.com/glass-services";
+const URL = "https://www.glasseruae.com/glass-services";
 
 const NAV = [
   { id: "partitions", label: "Partitions" },

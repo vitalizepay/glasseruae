@@ -45,7 +45,7 @@ const TEAL = "#3fd0c9";
 
 const T = "Completed Glass Projects in Dubai | Glasser Technical Works";
 const D = "Browse 500+ completed glass partition, mirror, shower glass, ACP cladding and luxury villa projects across Dubai and the UAE by Glasser Technical Works.";
-const URL = "https://glasseruae.com/projects";
+const URL = "https://www.glasseruae.com/projects";
 
 const IMAGES = [staircase, partition, shower, mirror, railing, tower];
 

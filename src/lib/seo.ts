@@ -57,7 +57,7 @@ export function serviceJsonLd(name: string, url: string, description: string) {
     provider: {
       "@type": "LocalBusiness",
       name: "Glasser Technical Works LLC",
-      url: "https://glasseruae.com",
+      url: "https://www.glasseruae.com",
       telephone: "+971568400838",
       address: {
         "@type": "PostalAddress",

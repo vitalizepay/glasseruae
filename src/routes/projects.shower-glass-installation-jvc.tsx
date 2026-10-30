@@ -7,7 +7,7 @@ import villa from "@/assets/glass-villa.asset.json";
 
 const T = "Shower Glass Installation — JVC Project | Glasser UAE";
 const D = "Frameless shower glass enclosure installation in JVC, Dubai — luxury villa master bathroom with nano-coated 10mm tempered glass and matte black hardware.";
-const URL = "https://glasseruae.com/projects/shower-glass-installation-jvc";
+const URL = "https://www.glasseruae.com/projects/shower-glass-installation-jvc";
 
 export const Route = createFileRoute("/projects/shower-glass-installation-jvc")({
   head: () => ({

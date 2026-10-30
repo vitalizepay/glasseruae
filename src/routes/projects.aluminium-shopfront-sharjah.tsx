@@ -7,7 +7,7 @@ import partition from "@/assets/office-glass-partition-black.jpg.asset.json";
 
 const T = "Aluminium Shopfront — Sharjah Project | Glasser UAE";
 const D = "Aluminium shopfront and frameless glass storefront installation in Sharjah — full retail fit-out completed during overnight handover window with mall compliance.";
-const URL = "https://glasseruae.com/projects/aluminium-shopfront-sharjah";
+const URL = "https://www.glasseruae.com/projects/aluminium-shopfront-sharjah";
 
 export const Route = createFileRoute("/projects/aluminium-shopfront-sharjah")({
   head: () => ({

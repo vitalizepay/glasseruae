@@ -7,7 +7,7 @@ import officeBlack from "@/assets/office-glass-partition-black.jpg.asset.json";
 
 const T = "Office Glass Partition Installation Dubai | Glasser UAE";
 const D = "Office glass partition installation in Dubai with black aluminium framing — frameless single-glazed cabin, full-height glass walls, 24-hour install with DM compliance.";
-const URL = "https://glasseruae.com/projects/office-glass-partition-installation-dubai";
+const URL = "https://www.glasseruae.com/projects/office-glass-partition-installation-dubai";
 
 export const Route = createFileRoute("/projects/office-glass-partition-installation-dubai")({
   head: () => ({

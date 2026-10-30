@@ -7,7 +7,7 @@ import cabin from "@/assets/glass-office-cabin.jpg.asset.json";
 
 const T = "Office Glass Partition — Al Qusais Project | Glasser UAE";
 const D = "Frameless office glass partition project in Al Qusais, Dubai — 280 sqm fit-out completed in 9 days. Acoustic meeting rooms, branded manifestation, full DCD compliance.";
-const URL = "https://glasseruae.com/projects/office-glass-partition-al-qusais";
+const URL = "https://www.glasseruae.com/projects/office-glass-partition-al-qusais";
 
 export const Route = createFileRoute("/projects/office-glass-partition-al-qusais")({
   head: () => ({

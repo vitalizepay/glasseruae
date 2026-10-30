@@ -200,7 +200,7 @@ export const Route = createFileRoute("/tamilfd")({
       { name: "twitter:image", content: biryani },
     ],
     links: [
-      { rel: "canonical", href: "https://glasseruae.com/tamilfd" },
+      { rel: "canonical", href: "https://www.glasseruae.com/tamilfd" },
       { rel: "preconnect", href: "https://fonts.googleapis.com" },
       { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },
       {
@@ -217,7 +217,7 @@ export const Route = createFileRoute("/tamilfd")({
           name: "Fajr Al Nahda Restaurant",
           servesCuisine: ["Tamil", "South Indian", "Arabian", "Chinese"],
           telephone: "+971 6 522 0875",
-          url: "https://glasseruae.com/tamilfd",
+          url: "https://www.glasseruae.com/tamilfd",
           address: {
             "@type": "PostalAddress",
             streetAddress: "Al Nahda",

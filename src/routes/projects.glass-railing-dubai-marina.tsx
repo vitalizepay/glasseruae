@@ -7,7 +7,7 @@ import facade from "@/assets/glass-facade.asset.json";
 
 const T = "Glass Railing — Dubai Marina Project | Glasser UAE";
 const D = "Frameless cantilevered glass railing installation on a Dubai Marina balcony — 21.5mm laminated structural glass with stainless handrail, full DM compliance.";
-const URL = "https://glasseruae.com/projects/glass-railing-dubai-marina";
+const URL = "https://www.glasseruae.com/projects/glass-railing-dubai-marina";
 
 export const Route = createFileRoute("/projects/glass-railing-dubai-marina")({
   head: () => ({

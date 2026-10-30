@@ -14,7 +14,7 @@ import heroImage from "@/assets/landing/staircase.jpg";
 
 const TITLE = "Glass Partition & Aluminium Works Dubai | Glasser UAE";
 const DESC = "Glasser Technical Works provides glass partitions, shower glass, aluminium fabrication, glass railings and commercial glass solutions across Dubai, Sharjah and UAE.";
-const URL = "https://glasseruae.com/";
+const URL = "https://www.glasseruae.com/";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -51,10 +51,10 @@ gtag('config', 'G-VEJ92D45PT');`,
         children: JSON.stringify({
           "@context": "https://schema.org",
           "@type": "LocalBusiness",
-          "@id": "https://glasseruae.com/#business",
+          "@id": "https://www.glasseruae.com/#business",
           name: "Glasser Technical Works LLC",
-          url: "https://glasseruae.com",
-          logo: "https://glasseruae.com/assets/glasser-logo-CdC4CQ8d.png",
+          url: "https://www.glasseruae.com",
+          logo: "https://www.glasseruae.com/assets/glasser-logo-CdC4CQ8d.png",
           description: "Dubai specialists in frameless glass partitions, aluminium doors and windows, shower enclosures, mirrors and glass facades across the UAE since 2019.",
           telephone: "+971568400838",
           email: "sales@glasseruae.com",

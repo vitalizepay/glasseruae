@@ -5,7 +5,7 @@ import { relatedFor } from "@/lib/services";
 const SLUG = "aluminium-windows-dubai";
 const T = "Aluminium Windows Dubai | Thermal-Break Window Systems | Glasser UAE";
 const D = "Thermal-break aluminium windows for Dubai villas and offices. Glasser UAE engineers and installs high-performance window systems across the UAE. Free consultation.";
-const URL = `https://glasseruae.com/services/${SLUG}`;
+const URL = `https://www.glasseruae.com/services/${SLUG}`;
 
 export const Route = createFileRoute("/services/aluminium-windows-dubai")({
   head: () => ({
