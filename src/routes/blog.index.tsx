@@ -19,6 +19,8 @@ import premiumGlass from "@/assets/blog/premium-architectural-glass-dubai.webp.a
 import premiumPartition from "@/assets/blog/premium-glass-partitions-dubai-concept.webp";
 import { doorGuide } from "@/content/glass-doors-guide";
 import doorReference from "@/assets/blog/glass-door-reference.webp.asset.json";
+import { contractorsGuide } from "@/content/high-rise-contractors";
+import contractorsHero from "@/assets/blog/high-rise-glass-installation-dubai.webp";
 
 
 const T = "Blog — Glass & Aluminium Insights from Dubai | Glasser UAE";
@@ -26,6 +28,7 @@ const D = "Trends, guides and design ideas for glass partitions, shower enclosur
 const URL = "https://www.glasseruae.com/blog";
 
 const POSTS = [
+  { slug: contractorsGuide.slug, title: contractorsGuide.title, img: contractorsHero, alt: "High-rise glass and aluminium installation in Dubai", cat: "Contractors", to: "/blog/high-rise-glass-aluminium-contractors-dubai" as const, excerpt: contractorsGuide.excerpt, date: contractorsGuide.date },
   { slug: doorGuide.slug, title: doorGuide.title, img: doorReference.url, alt: "Glass office enclosure and door framing used as a design reference", cat: "Specification", to: "/blog/glass-doors-dubai" as const, excerpt: doorGuide.excerpt, date: doorGuide.date },
   { slug: "premium-architectural-glass-solutions-dubai", title: "Premium Architectural Glass Solutions in Dubai", img: premiumGlass.url, alt: "Architectural reference of a luxury villa with expansive glazing", cat: "Architecture", to: "/blog/premium-architectural-glass-solutions-dubai" as const },
   { slug: "premium-glass-partitions-dubai-aed-400k-project", title: "Premium Glass Partitions Dubai: AED 400,000 Completed Order", img: premiumPartition, alt: "Editorial illustration of premium glass partitions, not the completed order", cat: "Completed Order", to: "/blog/premium-glass-partitions-dubai-aed-400k-project" as const },
