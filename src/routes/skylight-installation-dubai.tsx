@@ -5,7 +5,7 @@ import { breadcrumbJsonLd } from "@/components/site/Breadcrumbs";
 
 const T = "Skylight Installation Dubai | Glass Roof Lights | Glasser UAE";
 const D = "Skylight installation in Dubai — fixed, vented and pyramid glass skylights for villas, atriums and commercial spaces. Laminated solar-control glazing, full DM compliance.";
-const URL = "https://glasseruae.com/skylight-installation-dubai";
+const URL = "https://www.glasseruae.com/skylight-installation-dubai";
 
 const FAQS = [
   { q: "Will a skylight overheat my room in summer?", a: "Not when correctly specified. We use solar-control low-e laminated glass with light transmission tuned to reduce heat gain by 60–75% compared with clear glass." },

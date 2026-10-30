@@ -7,7 +7,7 @@ import facade from "@/assets/glass-facade.asset.json";
 
 const T = "Premium Waterfront Glass Works — Palm Jumeirah Dubai | Glasser UAE";
 const D = "Premium waterfront frameless glass installation for a Palm Jumeirah villa — corner-jointed 12mm tempered glass facade with hidden hardware and panoramic palm views.";
-const URL = "https://glasseruae.com/projects/premium-waterfront-glass-palm-jumeirah";
+const URL = "https://www.glasseruae.com/projects/premium-waterfront-glass-palm-jumeirah";
 
 export const Route = createFileRoute("/projects/premium-waterfront-glass-palm-jumeirah")({
   head: () => ({

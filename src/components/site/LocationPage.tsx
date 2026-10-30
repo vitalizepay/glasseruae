@@ -11,7 +11,7 @@ export interface LocationProps {
 }
 
 export function locationHead(p: LocationProps) {
-  const URL = `https://glasseruae.com/${p.slug}`;
+  const URL = `https://www.glasseruae.com/${p.slug}`;
   const T = `Glass Partition ${p.area} | Office & Retail Specialists | Glasser UAE`;
   const D = `Glass partition installation in ${p.area}, Dubai. Frameless office, retail and clinic partitions. Free site survey, fast install, full DM compliance.`;
   const FAQS = [

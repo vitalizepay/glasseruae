@@ -78,7 +78,7 @@ export const Route = createFileRoute("/blog/")({
               "@type": "ListItem",
               position: i + 1,
               name: p.title,
-              url: `https://glasseruae.com${p.to}`,
+              url: `https://www.glasseruae.com${p.to}`,
             })),
           },
         }),

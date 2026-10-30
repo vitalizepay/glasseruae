@@ -5,7 +5,7 @@ import { breadcrumbJsonLd } from "@/components/site/Breadcrumbs";
 
 const T = "Glass Facade Dubai | Curtain Walls & Structural Glazing | Glasser UAE";
 const D = "Architectural glass facades in Dubai — curtain walls, structural glazing, spider systems, ventilated facades. Engineered to UAE wind & thermal performance specs.";
-const URL = "https://glasseruae.com/glass-facade-dubai";
+const URL = "https://www.glasseruae.com/glass-facade-dubai";
 
 const FAQS = [
   { q: "Do you provide facade engineering?", a: "Yes. Wind-load analysis, thermal performance calculations and structural sizing are part of every facade package we deliver." },

@@ -41,7 +41,7 @@ export function ContactSection() {
         `Location: ${project_location || "-"}`,
         `Project Details: ${project_details || "-"}`,
         "",
-        "Submitted From: https://glasseruae.com/contact",
+        "Submitted From: https://www.glasseruae.com/contact",
         `Date: ${new Date().toLocaleString("en-AE", { timeZone: "Asia/Dubai" })}`,
       ].join("\n");
 

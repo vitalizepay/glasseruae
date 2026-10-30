@@ -5,7 +5,7 @@ import { breadcrumbJsonLd } from "@/components/site/Breadcrumbs";
 
 const T = "Shower Glass Dubai | Frameless Shower Enclosures | Glasser UAE";
 const D = "Frameless shower glass installation in Dubai — walk-in enclosures, sliding doors, hinged screens & wet-rooms. 10mm tempered glass, premium hardware, free survey.";
-const URL = "https://glasseruae.com/shower-glass-dubai";
+const URL = "https://www.glasseruae.com/shower-glass-dubai";
 
 const FAQS = [
   { q: "How much does shower glass cost in Dubai?", a: "A standard frameless walk-in shower enclosure in Dubai ranges from AED 1,800 to AED 4,500 depending on size, hardware finish and glass treatment." },

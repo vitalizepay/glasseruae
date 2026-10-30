@@ -5,7 +5,7 @@ import { breadcrumbJsonLd } from "@/components/site/Breadcrumbs";
 
 const T = "Glass Railing Dubai | Frameless Balustrades & Staircases | Glasser UAE";
 const D = "Frameless glass railings & balustrades in Dubai — balconies, staircases, pool surrounds, mezzanines. Structural laminated glass with U-channel or spigot fixing.";
-const URL = "https://glasseruae.com/glass-railing-dubai";
+const URL = "https://www.glasseruae.com/glass-railing-dubai";
 
 const FAQS = [
   { q: "Are your railings DM compliant for height?", a: "Yes. We install to Dubai Municipality height and structural load requirements — 1100mm for balconies, 900mm for staircases, with calculated wind and crowd loads." },

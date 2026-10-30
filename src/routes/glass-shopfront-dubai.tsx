@@ -5,7 +5,7 @@ import { breadcrumbJsonLd } from "@/components/site/Breadcrumbs";
 
 const T = "Glass Shopfront Dubai | Retail & F&B Specialists | Glasser UAE";
 const D = "Glass shopfront installation in Dubai for retail, F&B and showroom spaces. Frameless storefronts, sliding & pivot entries, branded vinyl & overnight install.";
-const URL = "https://glasseruae.com/glass-shopfront-dubai";
+const URL = "https://www.glasseruae.com/glass-shopfront-dubai";
 
 const FAQS = [
   { q: "Can you install overnight to avoid trading disruption?", a: "Yes. Retail and F&B shopfront installations are routinely scheduled overnight or during mall handover windows." },

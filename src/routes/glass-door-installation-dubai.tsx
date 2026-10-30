@@ -5,7 +5,7 @@ import { breadcrumbJsonLd } from "@/components/site/Breadcrumbs";
 
 const T = "Glass Door Installation Dubai | Frameless & Pivot Doors | Glasser UAE";
 const D = "Frameless glass door installation in Dubai — single, double, pivot, sliding & automatic. Office, retail, villa, hotel & shopfront applications. Free survey UAE-wide.";
-const URL = "https://glasseruae.com/glass-door-installation-dubai";
+const URL = "https://www.glasseruae.com/glass-door-installation-dubai";
 
 const FAQS = [
   { q: "Can you replace just the floor spring?", a: "Yes. Failed floor springs are one of our most common repair calls — we hold Dorma, Geze and Newstar stock for next-day replacement." },

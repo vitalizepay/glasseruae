@@ -5,7 +5,7 @@ import { relatedFor } from "@/lib/services";
 const SLUG = "glass-facades-dubai";
 const T = "Glass Facades Dubai | Curtain Wall & Structural Glazing | Glasser UAE";
 const D = "Structural glass facade and curtain wall installation in Dubai and UAE. Glasser UAE engineers glass facades for villas, offices and commercial towers. Get a quote.";
-const URL = `https://glasseruae.com/services/${SLUG}`;
+const URL = `https://www.glasseruae.com/services/${SLUG}`;
 
 export const Route = createFileRoute("/services/glass-facades-dubai")({
   head: () => ({

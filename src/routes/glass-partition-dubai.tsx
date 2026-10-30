@@ -5,7 +5,7 @@ import { breadcrumbJsonLd } from "@/components/site/Breadcrumbs";
 
 const T = "Glass Partition Dubai | Frameless Offices | Glasser UAE";
 const D = "Premium glass partition installation in Dubai. Frameless, framed, acoustic & demountable systems for offices, clinics and retail. Free site survey across the UAE.";
-const URL = "https://glasseruae.com/glass-partition-dubai";
+const URL = "https://www.glasseruae.com/glass-partition-dubai";
 
 const FAQS = [
   { q: "How much does a glass partition cost in Dubai?", a: "Glass partitions in Dubai typically range from AED 350 to AED 850 per square metre installed, depending on glass thickness, frameless vs framed system, single or double glazing and door hardware." },

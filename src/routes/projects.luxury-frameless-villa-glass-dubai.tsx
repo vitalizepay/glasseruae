@@ -7,7 +7,7 @@ import facade from "@/assets/glass-facade.asset.json";
 
 const T = "Luxury Frameless Villa Glass Installation Dubai | Glasser UAE";
 const D = "Luxury frameless glass installation for a Dubai waterfront villa — floor-to-ceiling 12mm tempered glass with hidden channel anchoring and uninterrupted sea views.";
-const URL = "https://glasseruae.com/projects/luxury-frameless-villa-glass-dubai";
+const URL = "https://www.glasseruae.com/projects/luxury-frameless-villa-glass-dubai";
 
 export const Route = createFileRoute("/projects/luxury-frameless-villa-glass-dubai")({
   head: () => ({

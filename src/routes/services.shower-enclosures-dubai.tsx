@@ -5,7 +5,7 @@ import { relatedFor } from "@/lib/services";
 const SLUG = "shower-enclosures-dubai";
 const T = "Shower Enclosures Dubai | Frameless Glass Shower Screens | Glasser UAE";
 const D = "Frameless luxury shower enclosures in Dubai. Custom-made tempered glass shower screens and enclosures by Glasser UAE. Supply and installation across the UAE.";
-const URL = `https://glasseruae.com/services/${SLUG}`;
+const URL = `https://www.glasseruae.com/services/${SLUG}`;
 
 export const Route = createFileRoute("/services/shower-enclosures-dubai")({
   head: () => ({
