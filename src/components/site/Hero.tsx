@@ -1,7 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import { Link } from "@tanstack/react-router";
 import { ArrowDown, ArrowUpRight, Pause, Play } from "lucide-react";
-import { useReducedMotion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import poster from "@/assets/landing/staircase.jpg";
 import video1 from "@/assets/landing/hero-video-1.mp4.asset.json";
@@ -17,8 +16,16 @@ export function Hero() {
   const [ready, setReady] = useState<boolean[]>([]);
   const [paused, setPaused] = useState(false);
   const [visible, setVisible] = useState(true);
-  const reduceMotion = useReducedMotion();
+  const [reduceMotion, setReduceMotion] = useState(true);
   const playing = !paused && !reduceMotion && visible;
+
+  useEffect(() => {
+    const preference = window.matchMedia("(prefers-reduced-motion: reduce)");
+    const update = () => setReduceMotion(preference.matches);
+    update();
+    preference.addEventListener("change", update);
+    return () => preference.removeEventListener("change", update);
+  }, []);
 
   useEffect(() => {
     const element = root.current;
@@ -59,7 +66,7 @@ export function Hero() {
         <video
           key={src}
           ref={(element) => { videos.current[i] = element; }}
-          src={src}
+          src={i === active || ready[i] ? src : undefined}
           muted
           playsInline
           preload={i === active ? "auto" : "metadata"}

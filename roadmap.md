@@ -5,4 +5,4 @@
 
 # Homepage hero refinement
 - [x] Refine homepage typography, project enquiry links and video presentation.
-- [ ] Verify video selection, playback controls and desktop/mobile layout.
+- [x] Verify video selection, playback controls and desktop/mobile layout.
