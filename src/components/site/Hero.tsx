@@ -1,23 +1,17 @@
 import { useEffect, useRef, useState } from "react";
 import { Link } from "@tanstack/react-router";
-import { ArrowDown, ArrowUpRight, Pause, Play } from "lucide-react";
+import { ArrowDown, ArrowUpRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import poster from "@/assets/landing/staircase.jpg";
-import video1 from "@/assets/landing/hero-video-1.mp4.asset.json";
-import video2 from "@/assets/landing/hero-video-2.mp4.asset.json";
-import video3 from "@/assets/landing/hero-video-3.mp4.asset.json";
-
-const VIDEOS = [video1.url, video2.url, video3.url];
+import heroVideo from "@/assets/landing/hero-video-1.mp4.asset.json";
 
 export function Hero() {
   const root = useRef<HTMLElement | null>(null);
-  const videos = useRef<(HTMLVideoElement | null)[]>([]);
-  const [active, setActive] = useState(0);
-  const [ready, setReady] = useState<boolean[]>([]);
-  const [paused, setPaused] = useState(false);
+  const video = useRef<HTMLVideoElement | null>(null);
+  const [ready, setReady] = useState(false);
   const [visible, setVisible] = useState(true);
   const [reduceMotion, setReduceMotion] = useState(true);
-  const playing = !paused && !reduceMotion && visible;
+  const playing = !reduceMotion && visible;
 
   useEffect(() => {
     const preference = window.matchMedia("(prefers-reduced-motion: reduce)");
@@ -43,40 +37,33 @@ export function Hero() {
   }, []);
 
   useEffect(() => {
-    videos.current.forEach((video, i) => {
-      if (!video) return;
-      if (i === active && playing) {
-        void video.play().catch(() => setPaused(true));
-      } else {
-        video.pause();
-      }
-    });
-  }, [active, playing]);
-
-  const selectScene = (index: number) => {
-    const video = videos.current[index];
-    if (video && index !== active) video.currentTime = 0;
-    setActive(index);
-  };
+    const element = video.current;
+    if (!element) return;
+    if (playing) {
+      void element.play().catch(() => setReady(false));
+    } else {
+      element.pause();
+    }
+  }, [playing]);
 
   return (
     <section ref={root} data-no-auto-reveal aria-label="Glasser glass and aluminium works" className="glasser-hero relative isolate w-full overflow-hidden bg-hero-surface text-hero-foreground">
-      <img src={poster} alt="" fetchPriority="high" className="absolute inset-0 h-full w-full object-cover" />
-      {VIDEOS.map((src, i) => (
-        <video
-          key={src}
-          ref={(element) => { videos.current[i] = element; }}
-          src={i === active || ready[i] ? src : undefined}
+      <img src={poster} alt="" fetchPriority="high" decoding="async" className="absolute inset-0 h-full w-full object-cover" />
+      <video
+          ref={video}
+          src={!reduceMotion ? heroVideo.url : undefined}
+          poster={poster}
+          autoPlay={playing}
+          loop
           muted
           playsInline
-          preload={i === active ? "auto" : "metadata"}
+          preload="none"
           aria-hidden="true"
           tabIndex={-1}
-          onCanPlay={() => setReady((previous) => { const next = [...previous]; next[i] = true; return next; })}
-          onEnded={() => selectScene((i + 1) % VIDEOS.length)}
-          className={`hero-film absolute inset-0 h-full w-full object-cover ${i === active && ready[i] ? "opacity-100" : "opacity-0"}`}
+          onPlaying={() => setReady(true)}
+          onError={() => setReady(false)}
+          className={`hero-film pointer-events-none absolute inset-0 h-full w-full object-cover ${ready && !reduceMotion ? "opacity-100" : "opacity-0"}`}
         />
-      ))}
       <div className="hero-shade pointer-events-none absolute inset-0" />
 
       <div className="hero-inner relative z-10 mx-auto flex w-full max-w-[1440px] flex-col justify-center px-6 md:px-12 lg:px-20">
@@ -108,16 +95,6 @@ export function Hero() {
           <div className="flex items-center gap-4">
             <ArrowDown size={16} className="text-hero-accent" aria-hidden="true" />
             <p className="text-xs leading-relaxed text-hero-foreground/75">Commercial &amp; residential<span className="hidden sm:inline"> · Dubai &amp; UAE</span></p>
-          </div>
-          <div className="flex shrink-0 items-center gap-1" role="group" aria-label="Hero video controls">
-            {VIDEOS.map((_, i) => (
-              <Button key={i} variant="ghost" size="icon" onClick={() => selectScene(i)} aria-label={`Show scene ${i + 1}`} aria-pressed={i === active} className="hero-scene h-10 w-10 rounded-md" title={`Show scene ${i + 1}`}>
-                <span className={`h-0.5 w-5 ${i === active ? "bg-hero-accent" : "bg-hero-foreground/40"}`} />
-              </Button>
-            ))}
-            <Button variant="ghost" size="icon" disabled={Boolean(reduceMotion)} onClick={() => setPaused((value) => !value)} aria-label={playing ? "Pause background video" : "Play background video"} title={reduceMotion ? "Motion reduced by your device settings" : playing ? "Pause background video" : "Play background video"} className="hero-scene ml-1 h-10 w-10 rounded-md border border-hero-foreground/25">
-              {playing ? <Pause /> : <Play />}
-            </Button>
           </div>
         </div>
       </div>
