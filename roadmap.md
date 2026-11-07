@@ -6,3 +6,8 @@
 # Homepage hero refinement
 - [x] Refine homepage typography, project enquiry links and video presentation.
 - [x] Verify video selection, playback controls and desktop/mobile layout.
+
+# Automatic homepage animation
+- [x] Create one optimised looping architectural animation and matching poster.
+- [x] Remove manual video controls, retain automatic playback and reduced-motion fallback, and align homepage sharing image.
+- [x] Verify looping playback, enquiry links and desktop/mobile presentation.
