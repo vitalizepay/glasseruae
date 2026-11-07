@@ -66,7 +66,7 @@ const PATHS: { path: string; priority: string; lastmod?: string }[] = [
   { path: "/blog/curved-glass-partitions-dubai", priority: "0.8" },
   { path: "/blog/curved-glass-partition-ideas-dubai", priority: "0.8" },
   { path: "/blog/smart-glass-dubai", priority: "0.85" },
-  { path: "/blog/glass-and-aluminium-works-dubai", priority: "0.9" },
+  { path: "/blog/glass-and-aluminium-works-dubai", priority: "0.9", lastmod: "2026-11-07" },
   { path: "/blog/acoustic-glass-partition-dubai", priority: "0.9" },
   { path: "/blog/aed-300k-glass-partition-projects-dubai", priority: "0.9" },
   { path: "/blog/aed-200k-commercial-glass-aluminium-project-dubai", priority: "0.9" },

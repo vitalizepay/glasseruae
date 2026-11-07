@@ -21,6 +21,7 @@ import { doorGuide } from "@/content/glass-doors-guide";
 import doorReference from "@/assets/blog/glass-door-reference.webp.asset.json";
 import { contractorsGuide } from "@/content/high-rise-contractors";
 import contractorsHero from "@/assets/blog/high-rise-glass-installation-dubai.webp";
+import { solutionsGuide } from "@/content/glass-aluminium-solutions";
 
 
 const T = "Blog — Glass & Aluminium Insights from Dubai | Glasser UAE";
@@ -28,6 +29,7 @@ const D = "Trends, guides and design ideas for glass partitions, shower enclosur
 const URL = "https://www.glasseruae.com/blog";
 
 const POSTS = [
+  { slug: solutionsGuide.slug, title: solutionsGuide.title, img: pillar.url, alt: "Architectural reference of glass partitions and aluminium framing", cat: "Guide", to: "/blog/glass-and-aluminium-works-dubai" as const, excerpt: solutionsGuide.excerpt, date: solutionsGuide.modified },
   { slug: contractorsGuide.slug, title: contractorsGuide.title, img: contractorsHero, alt: "High-rise glass and aluminium installation in Dubai", cat: "Contractors", to: "/blog/high-rise-glass-aluminium-contractors-dubai" as const, excerpt: contractorsGuide.excerpt, date: contractorsGuide.date },
   { slug: doorGuide.slug, title: doorGuide.title, img: doorReference.url, alt: "Glass office enclosure and door framing used as a design reference", cat: "Specification", to: "/blog/glass-doors-dubai" as const, excerpt: doorGuide.excerpt, date: doorGuide.date },
   { slug: "premium-architectural-glass-solutions-dubai", title: "Premium Architectural Glass Solutions in Dubai", img: premiumGlass.url, alt: "Architectural reference of a luxury villa with expansive glazing", cat: "Architecture", to: "/blog/premium-architectural-glass-solutions-dubai" as const },
@@ -36,7 +38,6 @@ const POSTS = [
   { slug: "aed-200k-commercial-glass-aluminium-project-dubai", title: "AED 200K+ Commercial Glass & Aluminium Project Dubai", img: pillar.url, alt: "Commercial architectural glass and aluminium project in Dubai", cat: "Case Study", to: "/blog/aed-200k-commercial-glass-aluminium-project-dubai" as const },
   { slug: "aed-300k-glass-partition-projects-dubai", title: "AED 300K+ Glass Partition Projects in Dubai", img: acoustic.url, alt: "Premium floor-to-ceiling glass partitions and black aluminium frames in a Dubai office", cat: "Case Study", to: "/blog/aed-300k-glass-partition-projects-dubai" as const },
   { slug: "acoustic-glass-partition-dubai", title: "Acoustic Glass Partition Dubai: Complete Guide (2026)", img: acousticPartition, alt: "Acoustic glass partition Dubai — frameless glass boardroom with black aluminium framing in a premium Dubai office", cat: "Guide", to: "/blog/acoustic-glass-partition-dubai" as const },
-  { slug: "glass-and-aluminium-works-dubai", title: "Glass & Aluminium Works in Dubai: The Complete 2026 Guide", img: pillar.url, alt: "Frameless glass partitions with black aluminium framing in a premium Dubai office", cat: "Guide", to: "/blog/glass-and-aluminium-works-dubai" as const },
   { slug: "smart-glass-dubai", title: "Smart Glass in Dubai: Switchable Privacy Glass Guide (2026)", img: smart.url, alt: "Switchable smart glass boardroom in a Dubai office", cat: "Guide", to: "/blog/smart-glass-dubai" as const },
 
   { slug: "curved-glass-partition-ideas-dubai", title: "Curved Glass Partition Ideas & Benefits for Dubai Offices", img: curved.url, alt: "Curved glass partition design in a premium Dubai office reception", cat: "Design", to: "/blog/curved-glass-partition-ideas-dubai" as const },
@@ -109,7 +110,7 @@ function BlogPage() {
                 <span className="text-xs uppercase tracking-widest text-orange font-semibold">{p.cat}</span>
                 <h3 className="mt-2 text-xl font-semibold text-navy group-hover:text-orange transition-colors">{p.title}</h3>
                 {"excerpt" in p && <p className="mt-3 text-sm text-muted-foreground leading-6">{p.excerpt}</p>}
-                {"date" in p && <time dateTime={p.date} className="block mt-4 text-xs text-muted-foreground">25 October 2026</time>}
+                {"date" in p && <time dateTime={p.date} className="block mt-4 text-xs text-muted-foreground">{new Intl.DateTimeFormat("en-GB", { day: "numeric", month: "long", year: "numeric", timeZone: "UTC" }).format(new Date(`${p.date}T00:00:00Z`))}</time>}
               </div>
             </Link>
           ))}
