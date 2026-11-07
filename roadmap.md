@@ -1,4 +1,4 @@
-# Glass doors Dubai editorial guide
-- [x] Validate the topic from the attached brief and write original, useful selection guidance.
-- [x] Add the article, existing imagery, metadata, blog listing and sitemap entries.
-- [x] Verify the article, FAQs, enquiry links and mobile layout; leave unpublished for review.
+# Glass and aluminium solutions guide
+- [ ] Adapt the attachment into the existing broad guide without creating duplicate search intent.
+- [ ] Update article presentation, enquiry links, metadata, listing and sitemap modification dates.
+- [ ] Verify desktop/mobile reading, FAQs, search tags and enquiry navigation; publish the website.
