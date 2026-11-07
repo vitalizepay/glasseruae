@@ -2,8 +2,10 @@ import { useEffect, useRef, useState } from "react";
 import { Link } from "@tanstack/react-router";
 import { ArrowDown, ArrowUpRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import poster from "@/assets/landing/staircase.jpg";
-import heroVideo from "@/assets/landing/hero-video-1.mp4.asset.json";
+import heroPoster from "@/assets/landing/glasser-hero-loop-poster.jpg.asset.json";
+import heroVideo from "@/assets/landing/glasser-hero-loop.mp4.asset.json";
+
+const poster = heroPoster.url;
 
 export function Hero() {
   const root = useRef<HTMLElement | null>(null);

@@ -10,7 +10,10 @@ import { Testimonials } from "@/components/site/Testimonials";
 import { FAQ } from "@/components/site/FAQ";
 import { CTA } from "@/components/site/CTA";
 import { ContactSection } from "@/components/site/ContactSection";
-import heroImage from "@/assets/landing/staircase.jpg";
+import heroPoster from "@/assets/landing/glasser-hero-loop-poster.jpg.asset.json";
+
+const heroImage = heroPoster.url;
+const shareImage = `https://www.glasseruae.com${heroImage}`;
 
 const TITLE = "Glass Partition & Aluminium Works Dubai | Glasser UAE";
 const DESC = "Glasser Technical Works provides glass partitions, shower glass, aluminium fabrication, glass railings and commercial glass solutions across Dubai, Sharjah and UAE.";
@@ -26,8 +29,11 @@ export const Route = createFileRoute("/")({
       { property: "og:description", content: DESC },
       { property: "og:type", content: "website" },
       { property: "og:url", content: URL },
+      { property: "og:image", content: shareImage },
+      { property: "og:image:alt", content: "Architectural glass and aluminium design reference for Glasser UAE" },
       { property: "og:locale", content: "en_AE" },
       { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:image", content: shareImage },
       { name: "twitter:title", content: TITLE },
       { name: "twitter:description", content: DESC },
     ],
