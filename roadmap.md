@@ -2,3 +2,7 @@
 - [x] Adapt the attachment into the existing broad guide without creating duplicate search intent.
 - [x] Update article presentation, enquiry links, metadata, listing and sitemap modification dates.
 - [x] Verify desktop/mobile reading, FAQs, search tags and enquiry navigation; request website publication.
+
+# Homepage hero refinement
+- [x] Refine homepage typography, project enquiry links and video presentation.
+- [ ] Verify video selection, playback controls and desktop/mobile layout.

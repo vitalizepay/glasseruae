@@ -45,9 +45,18 @@
   --color-editorial: var(--editorial);
   --color-editorial-foreground: var(--editorial-foreground);
   --color-editorial-accent: var(--editorial-accent);
+  --color-hero-surface: var(--hero-surface);
+  --color-hero-foreground: var(--hero-foreground);
+  --color-hero-accent: var(--hero-accent);
 }
 
 :root {
+  --hero-surface: oklch(0.17 0.005 250);
+  --hero-foreground: oklch(0.99 0 0);
+  --hero-accent: oklch(0.85 0.085 75);
+  --hero-cta: oklch(0.67 0.16 48);
+  --hero-cta-hover: oklch(0.61 0.16 48);
+  --hero-overlay: linear-gradient(90deg, oklch(0.12 0.005 250 / 0.8) 0%, oklch(0.12 0.005 250 / 0.57) 43%, oklch(0.12 0.005 250 / 0.12) 100%), linear-gradient(0deg, oklch(0.12 0.005 250 / 0.65), transparent 30%);
   --editorial: oklch(0.2 0.006 250);
   --editorial-foreground: oklch(0.98 0 0);
   --editorial-accent: oklch(0.64 0.18 255);
@@ -240,4 +249,32 @@ html.lenis, html.lenis body { height: auto; }
   position: fixed; inset: 0; pointer-events: none; z-index: 100;
   background-image: url("data:image/svg+xml;utf8,<svg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 0.6 0'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>");
   opacity: 0.06; mix-blend-mode: overlay;
+}
+
+/* Homepage cinematic stage: readable copy, unobstructed architecture. */
+.glasser-hero, .hero-inner { min-height: calc(100svh - 48px); }
+.hero-inner { padding-top: 158px; padding-bottom: 142px; }
+.hero-shade { background: var(--hero-overlay); }
+.hero-film { transition: opacity 900ms ease; }
+.hero-title { font-size: 80px; line-height: 1.04; letter-spacing: 0; }
+.hero-quote { background: var(--hero-cta); color: var(--hero-foreground); box-shadow: none; }
+.hero-quote:hover { background: var(--hero-cta-hover); }
+.hero-projects, .hero-scene { color: var(--hero-foreground); }
+.hero-projects { border: 1px solid color-mix(in oklab, var(--hero-foreground) 35%, transparent); }
+.hero-projects:hover, .hero-scene:hover { background: color-mix(in oklab, var(--hero-foreground) 12%, transparent); color: var(--hero-foreground); }
+.glasser-hero :focus-visible { outline: 2px solid var(--hero-accent); outline-offset: 4px; }
+@media (min-width: 1440px) { .hero-title { font-size: 88px; } }
+@media (max-width: 767px) {
+  .hero-title { font-size: 54px; }
+  .hero-inner { padding-top: 140px; padding-bottom: 132px; }
+  .hero-footer { gap: 12px; }
+  .hero-footer > div:first-child { max-width: 150px; gap: 8px; }
+}
+@media (max-width: 399px) {
+  .hero-title { font-size: 44px; }
+  .hero-footer > div:first-child { max-width: 116px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .hero-film { transition: none; }
+  .glasser-hero *, .glasser-hero *::before, .glasser-hero *::after { animation: none !important; transition: none !important; }
 }
