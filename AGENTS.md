@@ -8,3 +8,4 @@
 - Keep supplied long-form contractor briefs as generated browser-safe content modules (structured blocks + FAQs) consumed by a dedicated blog route, so visible FAQs and FAQ schema share one source.
 - Keep the broad glass-and-aluminium solutions guide in one typed content module shared by its existing article and listing; refresh the established URL rather than adding a competing broad-intent article.
 - Keep the homepage background as one optimised looping video, pause it when off-screen or hidden, and use a poster for reduced motion or playback failure so media does not block readable HTML content.
+- Keep the AI project advisor's service catalogue and input validation in a browser-safe module, with the gateway call in a server-only module behind a server function, so recommendations can only link to real service pages.

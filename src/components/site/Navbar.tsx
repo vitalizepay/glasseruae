@@ -10,6 +10,7 @@ const links = [
   { to: "/glass-services", label: "Glass Services" },
   { to: "/projects", label: "Projects" },
   { to: "/blog", label: "Blog" },
+  { to: "/project-advisor", label: "Project Advisor" },
   { to: "/contact", label: "Contact" },
 ] as const;
 
