@@ -33,6 +33,7 @@ import { Route as GlassShopfrontDubaiRouteImport } from './routes/glass-shopfron
 import { Route as HomeRouteImport } from './routes/home'
 import { Route as IndexDothtmlRouteImport } from './routes/index[.]html'
 import { Route as OfficeGlassPartitionDubaiRouteImport } from './routes/office-glass-partition-dubai'
+import { Route as ProjectAdvisorRouteImport } from './routes/project-advisor'
 import { Route as ProjectsRouteImport } from './routes/projects'
 import { Route as ServicesRouteImport } from './routes/services'
 import { Route as ShowerGlassDubaiRouteImport } from './routes/shower-glass-dubai'
@@ -206,6 +207,11 @@ const OfficeGlassPartitionDubaiRoute =
     path: '/office-glass-partition-dubai',
     getParentRoute: () => rootRouteImport,
   } as any)
+const ProjectAdvisorRoute = ProjectAdvisorRouteImport.update({
+  id: '/project-advisor',
+  path: '/project-advisor',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const ProjectsRoute = ProjectsRouteImport.update({
   id: '/projects',
   path: '/projects',
@@ -500,6 +506,7 @@ export interface FileRoutesByFullPath {
   '/home': typeof HomeRoute
   '/index.html': typeof IndexDothtmlRoute
   '/office-glass-partition-dubai': typeof OfficeGlassPartitionDubaiRoute
+  '/project-advisor': typeof ProjectAdvisorRoute
   '/projects': typeof ProjectsRouteWithChildren
   '/services': typeof ServicesRouteWithChildren
   '/shower-glass-dubai': typeof ShowerGlassDubaiRoute
@@ -572,6 +579,7 @@ export interface FileRoutesByTo {
   '/home': typeof HomeRoute
   '/index.html': typeof IndexDothtmlRoute
   '/office-glass-partition-dubai': typeof OfficeGlassPartitionDubaiRoute
+  '/project-advisor': typeof ProjectAdvisorRoute
   '/shower-glass-dubai': typeof ShowerGlassDubaiRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/skylight-installation-dubai': typeof SkylightInstallationDubaiRoute
@@ -644,6 +652,7 @@ export interface FileRoutesById {
   '/home': typeof HomeRoute
   '/index.html': typeof IndexDothtmlRoute
   '/office-glass-partition-dubai': typeof OfficeGlassPartitionDubaiRoute
+  '/project-advisor': typeof ProjectAdvisorRoute
   '/projects': typeof ProjectsRouteWithChildren
   '/services': typeof ServicesRouteWithChildren
   '/shower-glass-dubai': typeof ShowerGlassDubaiRoute
@@ -719,6 +728,7 @@ export interface FileRouteTypes {
     | '/home'
     | '/index.html'
     | '/office-glass-partition-dubai'
+    | '/project-advisor'
     | '/projects'
     | '/services'
     | '/shower-glass-dubai'
@@ -791,6 +801,7 @@ export interface FileRouteTypes {
     | '/home'
     | '/index.html'
     | '/office-glass-partition-dubai'
+    | '/project-advisor'
     | '/shower-glass-dubai'
     | '/sitemap.xml'
     | '/skylight-installation-dubai'
@@ -862,6 +873,7 @@ export interface FileRouteTypes {
     | '/home'
     | '/index.html'
     | '/office-glass-partition-dubai'
+    | '/project-advisor'
     | '/projects'
     | '/services'
     | '/shower-glass-dubai'
@@ -936,6 +948,7 @@ export interface RootRouteChildren {
   HomeRoute: typeof HomeRoute
   IndexDothtmlRoute: typeof IndexDothtmlRoute
   OfficeGlassPartitionDubaiRoute: typeof OfficeGlassPartitionDubaiRoute
+  ProjectAdvisorRoute: typeof ProjectAdvisorRoute
   ProjectsRoute: typeof ProjectsRouteWithChildren
   ServicesRoute: typeof ServicesRouteWithChildren
   ShowerGlassDubaiRoute: typeof ShowerGlassDubaiRoute
@@ -1114,6 +1127,13 @@ declare module '@tanstack/react-router' {
       path: '/office-glass-partition-dubai'
       fullPath: '/office-glass-partition-dubai'
       preLoaderRoute: typeof OfficeGlassPartitionDubaiRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/project-advisor': {
+      id: '/project-advisor'
+      path: '/project-advisor'
+      fullPath: '/project-advisor'
+      preLoaderRoute: typeof ProjectAdvisorRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/projects': {
@@ -1599,6 +1619,7 @@ const rootRouteChildren: RootRouteChildren = {
   HomeRoute: HomeRoute,
   IndexDothtmlRoute: IndexDothtmlRoute,
   OfficeGlassPartitionDubaiRoute: OfficeGlassPartitionDubaiRoute,
+  ProjectAdvisorRoute: ProjectAdvisorRoute,
   ProjectsRoute: ProjectsRouteWithChildren,
   ServicesRoute: ServicesRouteWithChildren,
   ShowerGlassDubaiRoute: ShowerGlassDubaiRoute,
