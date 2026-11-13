@@ -54,6 +54,7 @@ import { Route as BlogCurvedGlassDubaiRouteImport } from './routes/blog.curved-g
 import { Route as BlogCurvedGlassPartitionIdeasDubaiRouteImport } from './routes/blog.curved-glass-partition-ideas-dubai'
 import { Route as BlogCurvedGlassPartitionsDubaiRouteImport } from './routes/blog.curved-glass-partitions-dubai'
 import { Route as BlogFramelessShowerEnclosuresDubaiGuideRouteImport } from './routes/blog.frameless-shower-enclosures-dubai-guide'
+import { Route as BlogGlassAluminiumInteriorDesignCompaniesDubaiRouteImport } from './routes/blog.glass-aluminium-interior-design-companies-dubai'
 import { Route as BlogGlassAndAluminiumWorksDubaiRouteImport } from './routes/blog.glass-and-aluminium-works-dubai'
 import { Route as BlogGlassDoorsDubaiRouteImport } from './routes/blog.glass-doors-dubai'
 import { Route as BlogGlassPartitionsDubaiOfficeGuideRouteImport } from './routes/blog.glass-partitions-dubai-office-guide'
@@ -322,6 +323,12 @@ const BlogFramelessShowerEnclosuresDubaiGuideRoute =
     path: '/frameless-shower-enclosures-dubai-guide',
     getParentRoute: () => BlogRoute,
   } as any)
+const BlogGlassAluminiumInteriorDesignCompaniesDubaiRoute =
+  BlogGlassAluminiumInteriorDesignCompaniesDubaiRouteImport.update({
+    id: '/glass-aluminium-interior-design-companies-dubai',
+    path: '/glass-aluminium-interior-design-companies-dubai',
+    getParentRoute: () => BlogRoute,
+  } as any)
 const BlogGlassAndAluminiumWorksDubaiRoute =
   BlogGlassAndAluminiumWorksDubaiRouteImport.update({
     id: '/glass-and-aluminium-works-dubai',
@@ -526,6 +533,7 @@ export interface FileRoutesByFullPath {
   '/blog/curved-glass-partition-ideas-dubai': typeof BlogCurvedGlassPartitionIdeasDubaiRoute
   '/blog/curved-glass-partitions-dubai': typeof BlogCurvedGlassPartitionsDubaiRoute
   '/blog/frameless-shower-enclosures-dubai-guide': typeof BlogFramelessShowerEnclosuresDubaiGuideRoute
+  '/blog/glass-aluminium-interior-design-companies-dubai': typeof BlogGlassAluminiumInteriorDesignCompaniesDubaiRoute
   '/blog/glass-and-aluminium-works-dubai': typeof BlogGlassAndAluminiumWorksDubaiRoute
   '/blog/glass-doors-dubai': typeof BlogGlassDoorsDubaiRoute
   '/blog/glass-partitions-dubai-office-guide': typeof BlogGlassPartitionsDubaiOfficeGuideRoute
@@ -597,6 +605,7 @@ export interface FileRoutesByTo {
   '/blog/curved-glass-partition-ideas-dubai': typeof BlogCurvedGlassPartitionIdeasDubaiRoute
   '/blog/curved-glass-partitions-dubai': typeof BlogCurvedGlassPartitionsDubaiRoute
   '/blog/frameless-shower-enclosures-dubai-guide': typeof BlogFramelessShowerEnclosuresDubaiGuideRoute
+  '/blog/glass-aluminium-interior-design-companies-dubai': typeof BlogGlassAluminiumInteriorDesignCompaniesDubaiRoute
   '/blog/glass-and-aluminium-works-dubai': typeof BlogGlassAndAluminiumWorksDubaiRoute
   '/blog/glass-doors-dubai': typeof BlogGlassDoorsDubaiRoute
   '/blog/glass-partitions-dubai-office-guide': typeof BlogGlassPartitionsDubaiOfficeGuideRoute
@@ -672,6 +681,7 @@ export interface FileRoutesById {
   '/blog/curved-glass-partition-ideas-dubai': typeof BlogCurvedGlassPartitionIdeasDubaiRoute
   '/blog/curved-glass-partitions-dubai': typeof BlogCurvedGlassPartitionsDubaiRoute
   '/blog/frameless-shower-enclosures-dubai-guide': typeof BlogFramelessShowerEnclosuresDubaiGuideRoute
+  '/blog/glass-aluminium-interior-design-companies-dubai': typeof BlogGlassAluminiumInteriorDesignCompaniesDubaiRoute
   '/blog/glass-and-aluminium-works-dubai': typeof BlogGlassAndAluminiumWorksDubaiRoute
   '/blog/glass-doors-dubai': typeof BlogGlassDoorsDubaiRoute
   '/blog/glass-partitions-dubai-office-guide': typeof BlogGlassPartitionsDubaiOfficeGuideRoute
@@ -748,6 +758,7 @@ export interface FileRouteTypes {
     | '/blog/curved-glass-partition-ideas-dubai'
     | '/blog/curved-glass-partitions-dubai'
     | '/blog/frameless-shower-enclosures-dubai-guide'
+    | '/blog/glass-aluminium-interior-design-companies-dubai'
     | '/blog/glass-and-aluminium-works-dubai'
     | '/blog/glass-doors-dubai'
     | '/blog/glass-partitions-dubai-office-guide'
@@ -819,6 +830,7 @@ export interface FileRouteTypes {
     | '/blog/curved-glass-partition-ideas-dubai'
     | '/blog/curved-glass-partitions-dubai'
     | '/blog/frameless-shower-enclosures-dubai-guide'
+    | '/blog/glass-aluminium-interior-design-companies-dubai'
     | '/blog/glass-and-aluminium-works-dubai'
     | '/blog/glass-doors-dubai'
     | '/blog/glass-partitions-dubai-office-guide'
@@ -893,6 +905,7 @@ export interface FileRouteTypes {
     | '/blog/curved-glass-partition-ideas-dubai'
     | '/blog/curved-glass-partitions-dubai'
     | '/blog/frameless-shower-enclosures-dubai-guide'
+    | '/blog/glass-aluminium-interior-design-companies-dubai'
     | '/blog/glass-and-aluminium-works-dubai'
     | '/blog/glass-doors-dubai'
     | '/blog/glass-partitions-dubai-office-guide'
@@ -1276,6 +1289,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof BlogFramelessShowerEnclosuresDubaiGuideRouteImport
       parentRoute: typeof BlogRoute
     }
+    '/blog/glass-aluminium-interior-design-companies-dubai': {
+      id: '/blog/glass-aluminium-interior-design-companies-dubai'
+      path: '/glass-aluminium-interior-design-companies-dubai'
+      fullPath: '/blog/glass-aluminium-interior-design-companies-dubai'
+      preLoaderRoute: typeof BlogGlassAluminiumInteriorDesignCompaniesDubaiRouteImport
+      parentRoute: typeof BlogRoute
+    }
     '/blog/glass-and-aluminium-works-dubai': {
       id: '/blog/glass-and-aluminium-works-dubai'
       path: '/glass-and-aluminium-works-dubai'
@@ -1480,6 +1500,7 @@ interface BlogRouteChildren {
   BlogCurvedGlassPartitionIdeasDubaiRoute: typeof BlogCurvedGlassPartitionIdeasDubaiRoute
   BlogCurvedGlassPartitionsDubaiRoute: typeof BlogCurvedGlassPartitionsDubaiRoute
   BlogFramelessShowerEnclosuresDubaiGuideRoute: typeof BlogFramelessShowerEnclosuresDubaiGuideRoute
+  BlogGlassAluminiumInteriorDesignCompaniesDubaiRoute: typeof BlogGlassAluminiumInteriorDesignCompaniesDubaiRoute
   BlogGlassAndAluminiumWorksDubaiRoute: typeof BlogGlassAndAluminiumWorksDubaiRoute
   BlogGlassDoorsDubaiRoute: typeof BlogGlassDoorsDubaiRoute
   BlogGlassPartitionsDubaiOfficeGuideRoute: typeof BlogGlassPartitionsDubaiOfficeGuideRoute
@@ -1513,6 +1534,8 @@ const BlogRouteChildren: BlogRouteChildren = {
   BlogCurvedGlassPartitionsDubaiRoute: BlogCurvedGlassPartitionsDubaiRoute,
   BlogFramelessShowerEnclosuresDubaiGuideRoute:
     BlogFramelessShowerEnclosuresDubaiGuideRoute,
+  BlogGlassAluminiumInteriorDesignCompaniesDubaiRoute:
+    BlogGlassAluminiumInteriorDesignCompaniesDubaiRoute,
   BlogGlassAndAluminiumWorksDubaiRoute: BlogGlassAndAluminiumWorksDubaiRoute,
   BlogGlassDoorsDubaiRoute: BlogGlassDoorsDubaiRoute,
   BlogGlassPartitionsDubaiOfficeGuideRoute:
