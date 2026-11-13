@@ -1,3 +1,7 @@
+# Interior design trade article
+- [x] Write a distinct coordination guide for interior design companies with service and enquiry links.
+- [x] Add search metadata, blog listing and sitemap entries; verify desktop/mobile and keep ready for review.
+
 # Glass and aluminium solutions guide
 - [x] Adapt the attachment into the existing broad guide without creating duplicate search intent.
 - [x] Update article presentation, enquiry links, metadata, listing and sitemap modification dates.

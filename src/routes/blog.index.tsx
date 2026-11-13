@@ -22,6 +22,7 @@ import doorReference from "@/assets/blog/glass-door-reference.webp.asset.json";
 import { contractorsGuide } from "@/content/high-rise-contractors";
 import contractorsHero from "@/assets/blog/high-rise-glass-installation-dubai.webp";
 import { solutionsGuide } from "@/content/glass-aluminium-solutions";
+import { interiorGuide } from "@/content/interior-design-partners";
 
 
 const T = "Blog — Glass & Aluminium Insights from Dubai | Glasser UAE";
@@ -29,6 +30,7 @@ const D = "Trends, guides and design ideas for glass partitions, shower enclosur
 const URL = "https://www.glasseruae.com/blog";
 
 const POSTS = [
+  { slug: interiorGuide.slug, title: interiorGuide.title, img: doorReference.url, alt: "Office glass enclosure used as an interior design reference", cat: "Interior Design", to: "/blog/glass-aluminium-interior-design-companies-dubai" as const, excerpt: interiorGuide.excerpt, date: interiorGuide.date },
   { slug: solutionsGuide.slug, title: solutionsGuide.title, img: pillar.url, alt: "Architectural reference of glass partitions and aluminium framing", cat: "Guide", to: "/blog/glass-and-aluminium-works-dubai" as const, excerpt: solutionsGuide.excerpt, date: solutionsGuide.modified },
   { slug: contractorsGuide.slug, title: contractorsGuide.title, img: contractorsHero, alt: "High-rise glass and aluminium installation in Dubai", cat: "Contractors", to: "/blog/high-rise-glass-aluminium-contractors-dubai" as const, excerpt: contractorsGuide.excerpt, date: contractorsGuide.date },
   { slug: doorGuide.slug, title: doorGuide.title, img: doorReference.url, alt: "Glass office enclosure and door framing used as a design reference", cat: "Specification", to: "/blog/glass-doors-dubai" as const, excerpt: doorGuide.excerpt, date: doorGuide.date },
