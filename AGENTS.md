@@ -10,3 +10,4 @@
 - Keep the homepage background as one optimised looping video, pause it when off-screen or hidden, and use a poster for reduced motion or playback failure so media does not block readable HTML content.
 - Keep the AI project advisor's service catalogue and input validation in a browser-safe module, with the gateway call in a server-only module behind a server function, so recommendations can only link to real service pages.
 - Keep trade-focused interior design editorial copy and FAQs in a browser-safe content module shared by its article and listing so visible content and search metadata agree.
+- Keep public enquiry inserts field-scoped and bounded by database RLS; visitors can submit quotes but cannot supply IDs/timestamps or read existing enquiries.
