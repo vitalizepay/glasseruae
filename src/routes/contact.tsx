@@ -13,6 +13,8 @@ export const Route = createFileRoute("/contact")({
       { property: "og:title", content: T },
       { property: "og:description", content: D },
       { property: "og:url", content: "https://www.glasseruae.com/contact" },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary" },
     ],
     links: [{ rel: "canonical", href: "https://www.glasseruae.com/contact" }],
     scripts: [

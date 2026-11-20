@@ -2,57 +2,39 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 import { MapPin, Phone, Mail, Clock, Send } from "lucide-react";
 import { supabase } from "@/integrations/supabase/client";
-
-const WHATSAPP_NUMBER = "971588190839";
+import { Button } from "@/components/ui/button";
+import { enquiryInsert, enquirySchema, enquiryWhatsAppUrl, REFERRAL_SOURCES } from "@/lib/enquiries";
 
 export function ContactSection() {
   const [submitting, setSubmitting] = useState(false);
   const [sent, setSent] = useState(false);
   const [error, setError] = useState<string | null>(null);
+  const [whatsappUrl, setWhatsappUrl] = useState<string | null>(null);
 
   async function onSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
     setError(null);
     const fd = new FormData(e.currentTarget);
-    const full_name = String(fd.get("full_name") || "").trim().slice(0, 120);
-    const phone = String(fd.get("phone") || "").trim().slice(0, 40);
-    const service_needed = String(fd.get("service_needed") || "").trim().slice(0, 80);
-    const project_location = String(fd.get("project_location") || "").trim().slice(0, 80);
-    const project_details = String(fd.get("project_details") || "").trim().slice(0, 1500);
-
-    if (!full_name || !phone) {
-      setError("Please enter your full name and mobile number.");
+    const parsed = enquirySchema.safeParse(Object.fromEntries(fd));
+    if (!parsed.success) {
+      setError(parsed.error.issues[0]?.message || "Please check your enquiry details.");
       return;
     }
-
+    const url = enquiryWhatsAppUrl(parsed.data);
+    // Reserve a tab during the click, before saving, to avoid async popup blocking.
+    const handoff = window.open("about:blank", "_blank");
+    if (handoff) handoff.opener = null;
     setSubmitting(true);
     try {
       const { error: dbErr } = await supabase
         .from("glass_enquiries")
-        .insert({ full_name, phone, project_location: project_location || null, project_details: [service_needed && `Service: ${service_needed}`, project_details].filter(Boolean).join("\n\n") || null });
+        .insert(enquiryInsert(parsed.data));
       if (dbErr) throw dbErr;
-
-      const lines = [
-        "New Glass & Aluminium Enquiry – Glasser UAE",
-        "",
-        `Name: ${full_name}`,
-        `Mobile: ${phone}`,
-        `Service Needed: ${service_needed || "-"}`,
-        `Location: ${project_location || "-"}`,
-        `Project Details: ${project_details || "-"}`,
-        "",
-        "Submitted From: https://www.glasseruae.com/contact",
-        `Date: ${new Date().toLocaleString("en-AE", { timeZone: "Asia/Dubai" })}`,
-      ].join("\n");
-
-      window.open(
-        `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(lines)}`,
-        "_blank",
-        "noopener",
-      );
+      setWhatsappUrl(url);
+      if (handoff) handoff.location.replace(url);
       setSent(true);
-    } catch (err) {
-      console.error("enquiry submit failed", err);
+    } catch {
+      handoff?.close();
       setError("Could not submit right now. Please call +971 56 840 0838.");
     } finally {
       setSubmitting(false);
@@ -120,8 +102,9 @@ export function ContactSection() {
             {sent ? (
               <div className="mt-8 p-6 rounded-2xl border border-border bg-white">
                 <p className="text-navy text-lg font-light">
-                  Thank you for contacting Glasser UAE. Our team will contact you shortly.
+                  Your enquiry is saved. Send the prepared message in WhatsApp to contact Glasser UAE.
                 </p>
+                {whatsappUrl && <Button asChild className="mt-4"><a href={whatsappUrl} target="_blank" rel="noopener noreferrer">Continue to WhatsApp <Send size={15} /></a></Button>}
               </div>
             ) : (
               <>
@@ -159,11 +142,19 @@ export function ContactSection() {
                     </select>
                   </div>
                   <div className="sm:col-span-2">
+                    <label htmlFor="referral_source" className="block text-[11px] font-medium uppercase tracking-[0.22em] text-muted-foreground mb-2">How did you find us? *</label>
+                    <select id="referral_source" name="referral_source" required defaultValue="" className="w-full bg-background border border-border rounded-2xl px-4 py-3.5 text-navy focus:outline-none focus:ring-2 focus:ring-navy/20">
+                      <option value="" disabled>Select an option</option>
+                      {REFERRAL_SOURCES.map(source => <option key={source} value={source}>{source}</option>)}
+                    </select>
+                  </div>
+                  <div className="sm:col-span-2">
                     <label htmlFor="project_details" className="block text-[11px] font-medium uppercase tracking-[0.22em] text-muted-foreground mb-2">Project Details</label>
                     <textarea
                       id="project_details"
                       name="project_details"
                       rows={4}
+                      maxLength={1500}
                       className="w-full bg-white border border-border rounded-2xl px-4 py-3.5 text-navy focus:outline-none focus:ring-2 focus:ring-navy/20 resize-none"
                       placeholder="Glass partition for office, villa glass works, mirror installation, dimensions, timeline, etc."
                     />
@@ -174,13 +165,13 @@ export function ContactSection() {
                   <p className="mt-4 text-sm text-red-600">{error}</p>
                 )}
 
-                <button
+                <Button
                   type="submit"
                   disabled={submitting}
                   className="mt-8 inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-full bg-navy text-navy-foreground font-medium hover:bg-navy/90 transition disabled:opacity-60 disabled:cursor-not-allowed"
                 >
                   {submitting ? "Sending…" : (<>Send Enquiry <Send size={15} /></>)}
-                </button>
+                </Button>
               </>
             )}
           </motion.form>
@@ -194,7 +185,7 @@ function Field({ label, name, type = "text", required, className = "" }: { label
   return (
     <div className={className}>
       <label htmlFor={name} className="block text-[11px] font-medium uppercase tracking-[0.22em] text-muted-foreground mb-2">{label}</label>
-      <input id={name} name={name} type={type} required={required} className="w-full bg-white border border-border rounded-2xl px-4 py-3.5 text-navy focus:outline-none focus:ring-2 focus:ring-navy/20" />
+      <input id={name} name={name} type={type} required={required} maxLength={name === "full_name" ? 120 : 40} className="w-full bg-white border border-border rounded-2xl px-4 py-3.5 text-navy focus:outline-none focus:ring-2 focus:ring-navy/20" />
     </div>
   );
 }

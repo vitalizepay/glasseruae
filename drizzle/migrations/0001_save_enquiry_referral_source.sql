@@ -1,0 +1,3 @@
+ALTER TABLE public.glass_enquiries ADD COLUMN referral_source text;
+ALTER TABLE public.glass_enquiries ADD CONSTRAINT glass_enquiries_referral_source_allowed CHECK (referral_source IS NULL OR referral_source IN ('Facebook', 'LinkedIn', 'Google / search', 'Instagram', 'Referral / word of mouth', 'Existing customer', 'Other', 'Prefer not to say'));
+GRANT INSERT (referral_source) ON public.glass_enquiries TO anon, authenticated;

@@ -1,3 +1,9 @@
+# Enquiries and Facebook campaign
+- [x] Add the supplied LinkedIn profile to the website.
+- [x] Correct the WhatsApp destination, save enquiry sources including Facebook, and verify a real test submission and handoff.
+- [x] Save the Facebook campaign brief and present goal, language and budget choices without authorising spending.
+- [ ] Continue Facebook campaign preparation and launch after the owner answers the open questions and approves the finished campaign and exact spend.
+
 # Facebook visitor growth
 - [x] Prepare ready-to-post Facebook images and captions with tracked links, plus a short invite message for existing contacts.
 - [x] Save the social material and post plan in Project Files; verify each image renders cleanly before delivery.

@@ -22,6 +22,7 @@ export type Database = {
           phone: string
           project_details: string | null
           project_location: string | null
+          referral_source: string | null
         }
         Insert: {
           created_at?: string
@@ -30,6 +31,7 @@ export type Database = {
           phone: string
           project_details?: string | null
           project_location?: string | null
+          referral_source?: string | null
         }
         Update: {
           created_at?: string
@@ -38,6 +40,7 @@ export type Database = {
           phone?: string
           project_details?: string | null
           project_location?: string | null
+          referral_source?: string | null
         }
         Relationships: []
       }

@@ -1,5 +1,5 @@
 import { Link } from "@tanstack/react-router";
-import { Phone, Mail, MapPin, Facebook, Instagram, Linkedin } from "lucide-react";
+import { Phone, Mail, MapPin, Linkedin } from "lucide-react";
 import logo from "@/assets/glasser-logo.png";
 
 export function Footer() {
@@ -16,11 +16,9 @@ export function Footer() {
               Dubai's trusted glass &amp; aluminium specialists. Premium installations across the UAE since 2019.
             </p>
             <div className="flex gap-3 mt-5">
-              {[Facebook, Instagram, Linkedin].map((Icon, i) => (
-                <a key={i} href="#" className="w-9 h-9 rounded-full glass-dark flex items-center justify-center hover:bg-orange hover:text-orange-foreground transition" aria-label="social">
-                  <Icon size={16} />
-                </a>
-              ))}
+              <a href="https://www.linkedin.com/in/glasser-uae/" target="_blank" rel="noopener noreferrer" title="Glasser UAE on LinkedIn" className="w-9 h-9 rounded-full glass-dark flex items-center justify-center hover:bg-orange hover:text-orange-foreground transition" aria-label="Glasser UAE on LinkedIn">
+                <Linkedin size={16} />
+              </a>
             </div>
           </div>
 

@@ -11,3 +11,4 @@
 - Keep the AI project advisor's service catalogue and input validation in a browser-safe module, with the gateway call in a server-only module behind a server function, so recommendations can only link to real service pages.
 - Keep trade-focused interior design editorial copy and FAQs in a browser-safe content module shared by its article and listing so visible content and search metadata agree.
 - Keep public enquiry inserts field-scoped and bounded by database RLS; visitors can submit quotes but cannot supply IDs/timestamps or read existing enquiries.
+- Keep enquiry source validation, insert payloads and WhatsApp URL construction in one browser-safe module; reserve the handoff tab before saving and retain a visible link so blocked popups do not lose the handoff.
