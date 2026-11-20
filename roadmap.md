@@ -2,7 +2,8 @@
 - [x] Add the supplied LinkedIn profile to the website.
 - [x] Correct the WhatsApp destination, save enquiry sources including Facebook, and verify a real test submission and handoff.
 - [x] Save the Facebook campaign brief and present goal, language and budget choices without authorising spending.
-- [ ] Continue Facebook campaign preparation and launch after the owner answers the open questions and approves the finished campaign and exact spend.
+- [x] Settle campaign brief: WhatsApp chats, tap-to-chat in Ads Manager, English, about AED 3/day.
+- [ ] Prepare tap-to-chat ad images, copy and Ads Manager settings after the research choice; owner launches and approves spend in Ads Manager.
 
 # Facebook visitor growth
 - [x] Prepare ready-to-post Facebook images and captions with tracked links, plus a short invite message for existing contacts.
