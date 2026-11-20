@@ -1,3 +1,7 @@
+# Facebook visitor growth
+- [x] Prepare ready-to-post Facebook images and captions with tracked links, plus a short invite message for existing contacts.
+- [x] Save the social material and post plan in Project Files; verify each image renders cleanly before delivery.
+
 # Interior design trade article
 - [x] Write a distinct coordination guide for interior design companies with service and enquiry links.
 - [x] Add search metadata, blog listing and sitemap entries; verify desktop/mobile and keep ready for review.
