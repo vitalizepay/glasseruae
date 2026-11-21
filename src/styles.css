@@ -145,6 +145,22 @@
   .gradient-hero { background: var(--gradient-hero); }
 }
 
+/* Scoped consent surfaces leave the rest of the site theme unchanged. */
+.consent-theme {
+  --background: oklch(0.21 0.009 250);
+  --foreground: oklch(0.96 0.003 250);
+  --muted-foreground: oklch(0.75 0.008 250);
+  --border: oklch(0.35 0.009 250);
+  --input: oklch(0.35 0.009 250);
+  --primary: oklch(0.88 0.045 75);
+  --primary-foreground: oklch(0.21 0.009 250);
+  --accent: oklch(0.29 0.01 250);
+  --accent-foreground: oklch(0.96 0.003 250);
+  --ring: oklch(0.88 0.045 75);
+  --shadow-elegant: 0 12px 40px -10px oklch(0.08 0.005 250 / 0.5);
+  color: var(--foreground);
+}
+
 /* Minimal, slow animations only */
 @keyframes float-slow {
   0%, 100% { transform: translateY(0); }
