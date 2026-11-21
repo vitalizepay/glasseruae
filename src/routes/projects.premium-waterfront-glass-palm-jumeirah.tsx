@@ -12,10 +12,11 @@ const URL = "https://www.glasseruae.com/projects/premium-waterfront-glass-palm-j
 export const Route = createFileRoute("/projects/premium-waterfront-glass-palm-jumeirah")({
   head: () => ({
     meta: [
+      { name: "twitter:card", content: "summary_large_image" },
       { title: T }, { name: "description", content: D },
       { property: "og:title", content: T }, { property: "og:description", content: D },
       { property: "og:url", content: URL }, { property: "og:type", content: "article" },
-      { property: "og:image", content: waterfront.url },
+      ...(waterfront.url.startsWith("https://") ? [{ property: "og:image", content: waterfront.url }, { name: "twitter:image", content: waterfront.url }] : []),
     ],
     links: [{ rel: "canonical", href: URL }],
     scripts: [

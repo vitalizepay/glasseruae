@@ -1,7 +1,12 @@
 # Growth marketing upgrade
 - [x] Audit existing enquiries, tracking, service content, connector availability, search readiness and email verification.
 - [x] Connect Google Analytics browser tracking and prepare the prioritised implementation plan from the supplied brief.
-- [ ] Implement the phased upgrade after approval of the audit-first plan; external verification and advertising spend remain separately gated.
+- [x] Implement shared saved quote capture, commercial lead fields, consent-aware GA4 events and protected owner follow-up; verify forms, WhatsApp, consent withdrawal and permissions.
+- [x] Improve the office-partition page for interior/fit-out buyers, correct service contact links and audit search/sharing metadata.
+- [ ] Complete remaining editorial claim review after the owner supplies project, performance, warranty and capability evidence.
+- [ ] Connect live dashboard reporting after report-reading access is supplied; visitor/click totals remain explicitly unconnected.
+- [ ] Wire and verify owner email notifications after sender-domain verification; enquiries are stored without email delivery now.
+- [ ] Publish the verified preview changes after owner approval.
 - [x] Confirm owner sign-in needs no profile fields; retain separate protected role records.
 - [ ] Grant the approved owner account after the owner supplies its sign-in email.
 

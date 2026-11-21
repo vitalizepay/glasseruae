@@ -11,6 +11,8 @@ const D = "Frameless glass partitions, shower enclosures, aluminium doors & wind
 export const Route = createFileRoute("/services/")({
   head: () => ({
     meta: [
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
       { title: T },
       { name: "description", content: D },
       { property: "og:title", content: T },

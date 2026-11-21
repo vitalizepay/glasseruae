@@ -12,6 +12,7 @@ const URL = "https://www.glasseruae.com/projects/glass-railing-dubai-marina";
 export const Route = createFileRoute("/projects/glass-railing-dubai-marina")({
   head: () => ({
     meta: [
+      { name: "twitter:card", content: "summary_large_image" },
       { title: T }, { name: "description", content: D },
       { property: "og:title", content: T }, { property: "og:description", content: D },
       { property: "og:url", content: URL }, { property: "og:type", content: "article" },

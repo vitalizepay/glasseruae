@@ -1,10 +1,11 @@
-import { createFileRoute } from "@tanstack/react-router";
+import { createFileRoute, Link } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
 import { Layout } from "@/components/site/Layout";
 import bathroomMirror from "@/assets/luxury-bathroom-mirror.jpg.asset.json";
 import officePartitionBlack from "@/assets/office-glass-partition-black.jpg.asset.json";
 import vanityMirror from "@/assets/marble-vanity-mirror.jpg.asset.json";
 import officeCabin from "@/assets/glass-office-cabin.jpg.asset.json";
+import { Button } from "@/components/ui/button";
 
 const T = "Glass Services Dubai | Partitions, Facades, Shopfronts, Mirrors, Railings UAE";
 const D = "Premium glass and aluminium services in Dubai UAE — partitions, facades, shopfronts, mirrors, enclosures, skylights, railings, cladding, windows, doors. Expert installation across all Emirates.";
@@ -126,10 +127,10 @@ const FAQS = [
 ];
 
 const RELATED = [
-  "Top Glass Partition Trends in Dubai Offices 2025",
-  "How to Choose the Right Glass Railing for Your UAE Villa",
-  "Aluminium Cladding vs PVDF Cladding — What Works in UAE Climate?",
-];
+  { to: "/blog/glass-aluminium-interior-design-companies-dubai", label: "Glass and aluminium coordination for interior designers" },
+  { to: "/blog/glass-partitions-dubai-office-guide", label: "Choosing office glass partitions" },
+  { to: "/blog/aluminium-fabrication-services-dubai", label: "Aluminium fabrication planning" },
+] as const;
 
 const GALLERY = [
   { src: bathroomMirror.url, cap: "Backlit LED Mirror & Stone Vanity — Dubai Villa", alt: "luxury backlit LED mirror with stone vanity Dubai bathroom" },
@@ -141,6 +142,7 @@ const GALLERY = [
 export const Route = createFileRoute("/glass-services")({
   head: () => ({
     meta: [
+      { name: "twitter:card", content: "summary_large_image" },
       { title: T },
       { name: "description", content: D },
       { name: "keywords", content: K },
@@ -493,14 +495,14 @@ function GlassServicesPage() {
             </p>
             <div className="mt-8 flex flex-wrap gap-4 justify-center">
               <a
-                href="https://wa.me/971000000000"
+                href="https://wa.me/971568400838"
                 className="px-7 py-3.5 rounded-full font-medium text-white transition hover:opacity-90"
                 style={{ background: "#25D366" }}
               >
                 WhatsApp Us
               </a>
               <a
-                href="mailto:info@glasseruae.com"
+                href="mailto:sales@glasseruae.com"
                 className="px-7 py-3.5 rounded-full font-medium text-white transition hover:opacity-90"
                 style={{ background: NAVY }}
               >
@@ -524,7 +526,7 @@ function GlassServicesPage() {
             <div className="grid md:grid-cols-3 gap-6">
               {RELATED.map((r) => (
                 <div
-                  key={r}
+                  key={r.to}
                   className="p-8 bg-white cursor-pointer transition hover:-translate-y-1"
                   style={{
                     border: "1px solid #E5E7EB",
@@ -534,7 +536,7 @@ function GlassServicesPage() {
                 >
                   <span className="text-xs uppercase tracking-widest" style={{ color: GOLD }}>Article</span>
                   <h3 className="mt-3" style={{ ...DM_SERIF, color: NAVY, fontSize: 20, lineHeight: 1.3 }}>
-                    {r}
+                    <Button asChild variant="link" className="h-auto p-0 text-left whitespace-normal justify-start"><Link to={r.to}>{r.label}</Link></Button>
                   </h3>
                 </div>
               ))}
@@ -542,10 +544,6 @@ function GlassServicesPage() {
           </div>
         </section>
 
-        {/* Hidden SEO keywords */}
-        <div aria-hidden="true" style={{ position: "absolute", left: "-9999px", width: 1, height: 1, overflow: "hidden" }}>
-          glass partitions Dubai, glass facades UAE, shopfront glass Dubai, mirror installation UAE, glass railings Dubai, glass balustrades UAE, skylights Dubai, aluminium cladding UAE, aluminium windows Dubai, aluminium doors Dubai, glass enclosures UAE, glass canopy Dubai, curved glass UAE, structural glazing Dubai, curtain wall UAE, teflon glass fitting, spider fitting glass, patch fitting glass door, frameless glass railing, glass staircase railing Dubai, tempered glass UAE, laminated glass Dubai, acoustic glass partition, glass pool fence Dubai, glass shower enclosure UAE, glass balcony railing, gym mirror installation Dubai, wardrobe mirror UAE, glass works Dubai, glazing contractor UAE, commercial glazing Dubai, residential glass works Dubai, luxury villa glass UAE, glass company Dubai, best glass company UAE, glass fixing near me, glass installation Abu Dhabi, glass works Sharjah, glass partition Ajman, aluminium fabrication Dubai, aluminium pergola UAE, aluminium louvers Dubai, aluminium shopfront UAE, glass facade villa Dubai, glass door installation UAE, glass window replacement Dubai, glass works near me UAE, glazing services UAE, glass precision engineering Dubai, glass craftsmanship UAE, glass architecture Dubai, glass interiors UAE, glass exteriors Dubai
-        </div>
       </div>
     </Layout>
   );

@@ -20,6 +20,8 @@ const ZONES = [
 export const Route = createFileRoute("/areas-we-serve")({
   head: () => ({
     meta: [
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
       { title: T }, { name: "description", content: D },
       { property: "og:title", content: T }, { property: "og:description", content: D },
       { property: "og:url", content: URL },
@@ -43,7 +45,7 @@ export const Route = createFileRoute("/areas-we-serve")({
           <Breadcrumbs items={[{ label: "Home", to: "/" }, { label: "Areas We Serve" }]} />
           <span className="mt-6 inline-block text-[11px] uppercase tracking-[0.3em] text-orange font-semibold">Coverage</span>
           <h1 className="text-4xl md:text-6xl text-navy mt-4 font-light leading-tight">Areas We Serve</h1>
-          <p className="mt-6 text-lg text-muted-foreground font-light max-w-3xl">From our Al Qusais workshop we deliver glass and aluminium installation across all four major emirates — Dubai, Sharjah, Ajman and Abu Dhabi.</p>
+          <p className="mt-6 text-lg text-muted-foreground font-light max-w-3xl">Discuss glass and aluminium installation for projects across Dubai and other UAE emirates — Dubai, Sharjah, Ajman and Abu Dhabi.</p>
         </div>
       </section>
 

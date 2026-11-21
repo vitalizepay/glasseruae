@@ -10,6 +10,7 @@ const URL = `https://www.glasseruae.com/services/${SLUG}`;
 export const Route = createFileRoute("/services/custom-mirrors-dubai")({
   head: () => ({
     meta: [
+      { name: "twitter:card", content: "summary_large_image" },
       { title: T },
       { name: "description", content: D },
       { property: "og:title", content: T },

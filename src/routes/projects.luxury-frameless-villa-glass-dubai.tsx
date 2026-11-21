@@ -12,10 +12,11 @@ const URL = "https://www.glasseruae.com/projects/luxury-frameless-villa-glass-du
 export const Route = createFileRoute("/projects/luxury-frameless-villa-glass-dubai")({
   head: () => ({
     meta: [
+      { name: "twitter:card", content: "summary_large_image" },
       { title: T }, { name: "description", content: D },
       { property: "og:title", content: T }, { property: "og:description", content: D },
       { property: "og:url", content: URL }, { property: "og:type", content: "article" },
-      { property: "og:image", content: villa.url },
+      ...(villa.url.startsWith("https://") ? [{ property: "og:image", content: villa.url }, { name: "twitter:image", content: villa.url }] : []),
     ],
     links: [{ rel: "canonical", href: URL }],
     scripts: [

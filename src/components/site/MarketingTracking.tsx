@@ -12,7 +12,9 @@ export function MarketingTracking() {
     let active = true;
     const privatePage = /^\/(auth|owner|tamilfd|tamilfoodmenu|lovable|api)(\/|$)/.test(pathname);
     async function sync() {
-      if (privatePage || !await analyticsAllowed()) {
+      const allowed = !privatePage && await analyticsAllowed();
+      if (!active) return;
+      if (!allowed) {
         clearAttribution();
         trackedPath.current = "";
         const win = measurementWindow();
@@ -21,7 +23,6 @@ export function MarketingTracking() {
         document.cookie.split(";").forEach(cookie => { const name = cookie.split("=")[0]?.trim(); if (name?.startsWith("_ga")) { for (const domain of ["", location.hostname, `.${location.hostname.replace(/^www\./, "")}`]) document.cookie = `${name}=; Max-Age=0; path=/${domain ? `; domain=${domain}` : ""}`; } });
         return;
       }
-      if (!active) return;
       const win = measurementWindow();
       (win as unknown as Record<string, unknown>)[`ga-disable-${TRACKING_CONFIG.measurementId}`] = false;
       captureAttribution();

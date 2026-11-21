@@ -19,6 +19,7 @@ const FAQS = [
 export const Route = createFileRoute("/glass-partition-dubai")({
   head: () => ({
     meta: [
+      { name: "twitter:card", content: "summary_large_image" },
       { title: T }, { name: "description", content: D },
       { property: "og:title", content: T }, { property: "og:description", content: D },
       { property: "og:url", content: URL }, { property: "og:type", content: "website" },

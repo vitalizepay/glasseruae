@@ -196,8 +196,7 @@ export const Route = createFileRoute("/tamilfd")({
           "Authentic Tamil, South Indian, Arabian & Chinese Cuisine — Al Nahda, Sharjah. Monthly mess and home delivery available.",
       },
       { property: "og:type", content: "website" },
-      { property: "og:image", content: biryani },
-      { name: "twitter:image", content: biryani },
+      { name: "twitter:card", content: "summary_large_image" },
     ],
     links: [
       { rel: "canonical", href: "https://www.glasseruae.com/tamilfd" },

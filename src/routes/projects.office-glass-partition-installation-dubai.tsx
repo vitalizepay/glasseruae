@@ -12,10 +12,11 @@ const URL = "https://www.glasseruae.com/projects/office-glass-partition-installa
 export const Route = createFileRoute("/projects/office-glass-partition-installation-dubai")({
   head: () => ({
     meta: [
+      { name: "twitter:card", content: "summary_large_image" },
       { title: T }, { name: "description", content: D },
       { property: "og:title", content: T }, { property: "og:description", content: D },
       { property: "og:url", content: URL }, { property: "og:type", content: "article" },
-      { property: "og:image", content: office.url },
+      ...(office.url.startsWith("https://") ? [{ property: "og:image", content: office.url }, { name: "twitter:image", content: office.url }] : []),
     ],
     links: [{ rel: "canonical", href: URL }],
     scripts: [

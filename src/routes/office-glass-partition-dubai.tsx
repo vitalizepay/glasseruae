@@ -1,85 +1,44 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { SeoLanding } from "@/components/site/SeoLanding";
-import { SERVICE_AREAS, SEO_PROJECTS, faqJsonLd, serviceJsonLd } from "@/lib/seo";
+import { SERVICE_AREAS, faqJsonLd, serviceJsonLd } from "@/lib/seo";
 import { breadcrumbJsonLd } from "@/components/site/Breadcrumbs";
+import officePhoto from "@/assets/projects/office-glass-partitions-corporate.jpg.asset.json";
 
-const T = "Office Glass Partition Dubai | Glasser UAE";
-const D = "Office glass partition specialists in Dubai. Frameless, acoustic & demountable office partition systems for towers, fit-outs and co-working spaces across the UAE.";
+const T = "Office Glass Partitions Dubai for Fit-Out Projects | Glasser UAE";
+const D = "Plan office glass partitions in Dubai with Glasser UAE. Meeting rooms, glass doors and aluminium framing for fit-out contractors, designers and office owners.";
 const URL = "https://www.glasseruae.com/office-glass-partition-dubai";
-
 const FAQS = [
-  { q: "Do you handle full office fit-outs or only partitions?", a: "We specialise in glass and aluminium scope: partitions, doors, facades, mirrors and shopfronts. We work alongside main fit-out contractors or directly with end-clients." },
-  { q: "Will the partitions block Wi-Fi?", a: "No. Glass partitions do not meaningfully attenuate 2.4 GHz or 5 GHz Wi-Fi signals." },
-  { q: "Can you install in occupied offices?", a: "Yes. We routinely work evenings and weekends to install in live offices with zero downtime." },
-  { q: "Do you provide manifestation graphics?", a: "Yes. Frosted vinyl manifestation strips, custom logos and full privacy films can be supplied and installed with the partition." },
-  { q: "What about fire-rated glass partitions?", a: "We supply EI30 and EI60 fire-rated glass partition systems where required for civil-defence compliance." },
+  { q: "Do you handle the whole office fit-out?", a: "Glasser focuses on the glass and aluminium package. Confirm the partition, door and framing scope, and agree how it interfaces with the main fit-out contractor, ceilings, flooring and other trades." },
+  { q: "What should I send for an office partition quotation?", a: "Send the location, plans or approximate dimensions, door quantities, finish references, intended room use and target programme. Include consultant requirements and known site-access constraints. Identify the drawing revision and any provisional measurements." },
+  { q: "Does frosted glass make a meeting room soundproof?", a: "No. Frosting provides visual privacy. Acoustic performance depends on the complete partition and door assembly, perimeter seals and sound paths through ceilings, floors and adjacent construction. Ask for evidence for the proposed system." },
+  { q: "Can partitions be installed in an occupied office?", a: "Discuss occupied areas, approved working hours, protection, deliveries and installation sequencing before quotation. Confirm a project-specific programme instead of assuming there will be no disruption." },
+  { q: "Who handles building-management approvals?", a: "Confirm approval and technical-submission responsibilities with the main contractor, consultant and building management before appointment. A glass package does not automatically include all permits or specialist engineering." },
+  { q: "How much do office glass partitions cost in Dubai?", a: "Cost depends on the system, panel dimensions, doors, framing, finish, hardware and access. Request an itemised quotation against the same drawings and specification, including assumptions and exclusions. There is no universal rate for every office package." },
 ];
-
 export const Route = createFileRoute("/office-glass-partition-dubai")({
   head: () => ({
-    meta: [
-      { title: T }, { name: "description", content: D },
-      { property: "og:title", content: T }, { property: "og:description", content: D },
-      { property: "og:url", content: URL },
-      { name: "twitter:title", content: T }, { name: "twitter:description", content: D },
-    ],
+    meta: [{ title: T }, { name: "description", content: D }, { property: "og:title", content: T }, { property: "og:description", content: D }, { property: "og:type", content: "website" }, { property: "og:url", content: URL }, { name: "twitter:card", content: "summary_large_image" }, ...(officePhoto.url.startsWith("https://") ? [{ property: "og:image", content: officePhoto.url }, { name: "twitter:image", content: officePhoto.url }] : [])],
     links: [{ rel: "canonical", href: URL }],
-    scripts: [
-      { type: "application/ld+json", children: JSON.stringify(serviceJsonLd("Office Glass Partition Dubai", URL, D)) },
-      { type: "application/ld+json", children: JSON.stringify(faqJsonLd(FAQS)) },
-      { type: "application/ld+json", children: JSON.stringify(breadcrumbJsonLd([{ label: "Home", to: "/" }, { label: "Services", to: "/services" }, { label: "Office Glass Partition Dubai" }])) },
-    ],
+    scripts: [{ type: "application/ld+json", children: JSON.stringify(serviceJsonLd("Office Glass Partitions Dubai", URL, D)) }, { type: "application/ld+json", children: JSON.stringify(faqJsonLd(FAQS)) }, { type: "application/ld+json", children: JSON.stringify(breadcrumbJsonLd([{ label: "Home", to: "/" }, { label: "Services", to: "/services" }, { label: "Office Glass Partitions Dubai" }])) }],
   }),
-  component: () => (
-    <SeoLanding
-      eyebrow="Workspace · Dubai"
-      h1="Office Glass Partition Dubai"
-      crumbs={[{ label: "Home", to: "/" }, { label: "Services", to: "/services" }, { label: "Office Glass Partition Dubai" }]}
-      intro="Modern Dubai workplaces are designed for light, transparency and rapid reconfiguration. Glasser UAE has fitted office glass partitions in towers across DIFC, Business Bay, Sheikh Zayed Road, Dubai Marina, JLT and Internet City — for tenants from 200 sqm startups to 5,000 sqm regional headquarters."
-      defaultService="Office Glass Partition Dubai"
-      benefits={[
-        "Frameless single & double glazed partition systems",
-        "Acoustic glass up to 48 dB sound reduction",
-        "Floor-to-ceiling installation with concealed channels",
-        "Frameless pivot, sliding & swing glass doors",
-        "Manifestation graphics & branded vinyl",
-        "Fire-rated EI30 / EI60 options available",
-        "Out-of-hours installation for live offices",
-        "Full DM, DCD and landlord NOC management",
-      ]}
-      process={[
-        { step: "Brief", detail: "Discuss layout, headcount, meeting-room privacy & brand intent." },
-        { step: "Design", detail: "CAD layout, finish samples and fixed-price proposal." },
-        { step: "Approvals", detail: "We submit landlord & civil-defence NOCs on your behalf." },
-        { step: "Install", detail: "Phased install around live operations, 2–5 day site duration." },
-      ]}
-      sections={[
-        { heading: "Why Glass Partitions Dominate Dubai Office Fit-Outs", paragraphs: [
-          "In Dubai's grade-A commercial towers, natural light is the single most important environmental factor for tenant attraction and staff retention. Solid drywall meeting rooms cut a floorplate's light by up to 60% — a serious problem when annual rents in DIFC or Business Bay can exceed AED 250 per square foot. Glass partitions preserve light penetration to the core of the floorplate while still delivering enclosed, acoustically separated rooms.",
-          "They also signal a premium, modern brand to visiting clients. Whether you are a law firm, fintech, family office or media agency, the choice between glass and gypsum walls quietly shapes how clients perceive your business.",
-        ] },
-        { heading: "Open Plan, Meeting Rooms & Boardrooms — Choosing the Right System", paragraphs: [
-          "Open work zones rarely need acoustic separation — single-glazed 10mm frameless partitions are ideal. They feel almost invisible and keep budget contained.",
-          "Meeting rooms benefit from 12mm single-glazed or 6+12+6mm double-glazed systems with proper acoustic seals at floor and ceiling junctions. Boardrooms, HR offices and CEO suites should always be double-glazed: speech privacy is essential and the additional cost is small relative to total fit-out budget.",
-        ] },
-        { heading: "Acoustic Performance: What the Numbers Mean", paragraphs: [
-          "Sound reduction is measured in decibels (Rw). 32 dB lets you hear normal conversation clearly through the wall. 38 dB makes raised voices muffled. 42 dB makes normal conversation inaudible. 48 dB delivers full speech privacy. For Dubai boardrooms handling sensitive deals, we recommend 42 dB minimum — and 48 dB for legal, HR and family-office environments.",
-        ] },
-        { heading: "Fit-Out Approvals & Landlord NOCs", paragraphs: [
-          "Most Dubai commercial buildings require a fit-out NOC before partition work begins. Glasser handles this submission directly — providing the partition shop drawings, material certificates and method statements typically requested by building management. For civil-defence-controlled fit-outs we additionally submit DCD documentation and arrange the final inspection.",
-        ] },
-        { heading: "Installation in Live Offices", paragraphs: [
-          "Roughly 40% of our office partition work is installed in occupied offices. We schedule work in evening or weekend shifts, protect carpets and equipment with floor sheeting, and use low-dust drilling techniques where possible. Glass panels are pre-cut at our workshop so on-site time is reduced to lifting, levelling and sealing — typically 2–5 days for a full floor.",
-        ] },
-      ]}
-      faqs={FAQS}
-      areas={SERVICE_AREAS}
-      relatedProjects={[...SEO_PROJECTS]}
-      relatedServices={[
-        { to: "/glass-partition-dubai", label: "Glass Partition Dubai" },
-        { to: "/glass-door-installation-dubai", label: "Glass Door Installation Dubai" },
-        { to: "/glass-railing-dubai", label: "Glass Railing Dubai" },
-      ]}
-    />
-  ),
+  component: () => <SeoLanding
+    eyebrow="Office interiors · Dubai / UAE"
+    h1="Office glass partitions in Dubai"
+    intro="Plan a coordinated glass and aluminium package for your office fit-out. Glasser Technical Works LLC works with interior designers, fit-out contractors and office owners on glazed meeting rooms, private offices, reception partitions and associated doors. Share the layout, finishes and site requirements to start a project-specific quotation."
+    crumbs={[{ label: "Home", to: "/" }, { label: "Services", to: "/services" }, { label: "Office Glass Partitions Dubai" }]}
+    defaultService="Office Glass Partitions" defaultLocation="Dubai"
+    benefits={["Framed and frameless partition layouts", "Meeting-room and private-office glazing", "Glass doors and coordinated hardware", "Aluminium framing and finish selection", "Visual privacy and manifestation requirements", "Consultant-led acoustic specification", "Floor, ceiling and joinery coordination", "Itemised project enquiry and quotation"]}
+    process={[{ step: "Brief", detail: "Share the layout, intended uses, location and target programme." }, { step: "Coordinate", detail: "Review dimensions, door schedules, finishes and responsibility for approvals." }, { step: "Quote", detail: "Compare a defined glass package, with assumptions and exclusions." }, { step: "Confirm", detail: "Agree surveyed dimensions, approved details and installation sequence before fabrication." }]}
+    sections={[
+      { heading: "A glass package for fit-out contractors and interior designers", paragraphs: ["Office glass partitions are part of a wider interior package. A meeting room needs appropriate door operation, head support, floor junctions and coordination with air-conditioning and lighting. List each glazed elevation and door on the same drawing revision so the glass installer and adjacent trades price the same scope.", "For main contractors and design studios, an enquiry is more useful when it states whether supply, installation, removal, making good, access equipment and approvals are included. Glasser can discuss the relevant glass and aluminium elements; confirm specialist engineering and permit responsibilities in the agreed contract."] },
+      { heading: "Choose around room use, not appearance alone", paragraphs: ["Frameless partitions provide a visually open division, while aluminium-framed systems create a deliberate architectural rhythm. Select the system around panel dimensions, supports, door hardware and required performance. Photographs communicate an aesthetic, but are not a technical specification.", "Reception glazing, boardrooms and private offices can have different operational needs. Identify circulation, accessibility, locks, visibility markings and visual privacy before ordering. Confirm glass construction and hardware compatibility with the responsible designer or consultant."] },
+      { heading: "Acoustic privacy requires a complete assembly", paragraphs: ["Frosted film does not make a partition soundproof. Speech can pass through door gaps, unsealed junctions or ceiling voids even where the glass itself performs well. Review the entire room enclosure and request suitable evidence for the specified partition and door system.", "Avoid treating a generic pane thickness or advertised decibel figure as a guarantee for the finished office. Agree the performance requirement, test evidence and site interfaces with the project consultant before choosing single or double glazing."] },
+      { heading: "Drawings and BOQ information for a reliable quotation", paragraphs: ["Send dimensioned plans, glazed elevations, a door schedule and a bill of quantities where available. Identify the building and emirate, room uses, glass appearance, aluminium colour reference, hardware preferences and target programme. Mark approximate dimensions clearly; final fabrication requires confirmed sizes.", "Include consultant specifications and known access restrictions. An itemised comparison should cover fixed glazing, doors, fittings, framing, finishes, installation and any agreed removal or protection. Check VAT, assumptions and exclusions rather than comparing headline square-metre rates alone."] },
+      { heading: "Dubai office access and installation planning", paragraphs: ["Dubai office buildings may have restrictions on working hours, loading bays, lifts and material movement. Review these with building management before committing to an installation sequence. Large panels and concealed floor hardware can introduce additional coordination requirements.", "For occupied premises, agree how work areas will be separated, adjacent finishes protected and deliveries scheduled. Programme depends on approvals, surveyed conditions, selected materials and site readiness; no single turnaround applies to every fit-out."] },
+    ]}
+    gallery={[{ src: officePhoto.url, alt: "Office glass partitions and meeting-room doors from the existing Glasser project image collection" }]}
+    faqs={FAQS} areas={SERVICE_AREAS}
+    relatedProjects={[{ to: "/blog/premium-glass-partitions-dubai-aed-400k-project", label: "Completed AED 400,000 Dubai partition order" }, { to: "/blog/glass-aluminium-interior-design-companies-dubai", label: "Glass and aluminium coordination for interior designers" }]}
+    relatedServices={[{ to: "/glass-partition-dubai", label: "Glass partitions" }, { to: "/glass-door-installation-dubai", label: "Glass doors and hardware" }, { to: "/services/custom-mirrors-dubai", label: "Custom mirrors" }, { to: "/aluminium-works-dubai", label: "Aluminium project scope" }]}
+  />,
 });

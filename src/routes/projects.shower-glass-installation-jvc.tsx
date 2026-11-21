@@ -12,6 +12,7 @@ const URL = "https://www.glasseruae.com/projects/shower-glass-installation-jvc";
 export const Route = createFileRoute("/projects/shower-glass-installation-jvc")({
   head: () => ({
     meta: [
+      { name: "twitter:card", content: "summary_large_image" },
       { title: T }, { name: "description", content: D },
       { property: "og:title", content: T }, { property: "og:description", content: D },
       { property: "og:url", content: URL }, { property: "og:type", content: "article" },
