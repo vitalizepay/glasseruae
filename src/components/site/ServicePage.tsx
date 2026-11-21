@@ -1,6 +1,9 @@
 import { Link } from "@tanstack/react-router";
 import { Layout } from "@/components/site/Layout";
 import { Check, ArrowRight } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { QuoteForm } from "@/components/site/QuoteForm";
+import { serviceWhatsAppUrl } from "@/lib/enquiries";
 
 export interface RelatedService {
   to: string;
@@ -31,6 +34,7 @@ export function ServicePage({ h1, eyebrow, intro, featuresHeading, features, rel
           <span className="text-[11px] uppercase tracking-[0.3em] text-orange font-semibold">{eyebrow}</span>
           <h1 className="text-4xl md:text-6xl text-navy mt-4 font-light">{h1}</h1>
           <p className="mt-6 text-lg text-muted-foreground leading-relaxed font-light">{intro}</p>
+          <div className="mt-6 flex flex-wrap gap-3"><Button asChild size="lg"><a href={serviceWhatsAppUrl(h1)} target="_blank" rel="noopener noreferrer">Discuss this service <ArrowRight size={16} /></a></Button><Button asChild variant="outline" size="lg"><a href="#service-enquiry">Request a quotation</a></Button></div>
           {guide && (
             <Link
               to={guide.to}
@@ -89,16 +93,13 @@ export function ServicePage({ h1, eyebrow, intro, featuresHeading, features, rel
         </section>
       )}
 
-      <section className="py-20 bg-navy text-white">
+      <section id="service-enquiry" className="py-20 bg-background scroll-mt-24"><div className="container mx-auto px-6 max-w-3xl"><QuoteForm defaultService={h1} /></div></section>
+
+      <section className="py-20 bg-navy text-navy-foreground">
         <div className="container mx-auto px-6 max-w-3xl text-center">
-          <h2 className="text-3xl md:text-5xl font-light">Get a free quote</h2>
-          <p className="mt-4 text-white/70 font-light">Free site survey and detailed quotation anywhere in the UAE.</p>
-          <Link
-            to="/contact"
-            className="mt-8 inline-flex items-center gap-2 px-7 py-3.5 rounded-full bg-orange text-orange-foreground font-medium hover:bg-orange/90 transition"
-          >
-            Request a quote <ArrowRight size={16} />
-          </Link>
+          <h2 className="text-3xl md:text-5xl font-light">Discuss your project scope</h2>
+          <p className="mt-4 text-navy-foreground/70 font-light">Share the location, available drawings and required glass or aluminium work.</p>
+          <Button asChild size="lg" className="mt-8"><Link to="/contact">Request a quote <ArrowRight size={16} /></Link></Button>
         </div>
       </section>
 

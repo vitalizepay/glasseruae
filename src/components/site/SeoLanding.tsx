@@ -4,6 +4,8 @@ import { Layout } from "@/components/site/Layout";
 import { Breadcrumbs, type Crumb } from "@/components/site/Breadcrumbs";
 import { QuoteForm } from "@/components/site/QuoteForm";
 import { StickyCTA } from "@/components/site/StickyCTA";
+import { Button } from "@/components/ui/button";
+import { serviceWhatsAppUrl } from "@/lib/enquiries";
 
 export interface SeoSection {
   heading: string;
@@ -47,15 +49,9 @@ export function SeoLanding(p: SeoLandingProps) {
           <h1 className="text-4xl md:text-6xl text-navy mt-4 font-light leading-tight">{p.h1}</h1>
           <p className="mt-6 text-lg text-muted-foreground leading-relaxed font-light max-w-3xl">{p.intro}</p>
           <div className="mt-8 flex flex-wrap gap-3">
-            <Link to="/contact" className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-navy text-navy-foreground font-medium hover:bg-navy/90 transition">
-              Get free quote <ArrowRight size={14} />
-            </Link>
-            <a href="tel:+971568400838" className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-orange text-orange-foreground font-medium hover:bg-orange/90 transition">
-              Call +971 56 840 0838
-            </a>
-            <a href="https://wa.me/971568400838" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-[#25D366] text-white font-medium">
-              WhatsApp
-            </a>
+            <Button asChild size="lg"><a href="#project-enquiry">Request a quotation <ArrowRight size={14} /></a></Button>
+            <Button asChild variant="outline" size="lg"><a href="tel:+971568400838">Call Glasser</a></Button>
+            <Button asChild variant="outline" size="lg"><a href={serviceWhatsAppUrl(p.defaultService || p.h1, p.defaultLocation || "UAE")} target="_blank" rel="noopener noreferrer">WhatsApp</a></Button>
           </div>
         </div>
       </section>
@@ -105,7 +101,7 @@ export function SeoLanding(p: SeoLandingProps) {
       )}
 
       {p.gallery && p.gallery.length > 0 && (
-        <section className="py-16 bg-surface">
+        <section data-project-gallery className="py-16 bg-surface">
           <div className="container mx-auto px-6 max-w-6xl">
             <h2 className="text-2xl md:text-3xl text-navy font-medium mb-8">Recent work</h2>
             <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
@@ -149,7 +145,7 @@ export function SeoLanding(p: SeoLandingProps) {
         </div>
       </section>
 
-      <section className="py-20 bg-background">
+      <section id="project-enquiry" className="py-20 bg-background scroll-mt-24">
         <div className="container mx-auto px-6 max-w-3xl">
           <QuoteForm defaultService={p.defaultService} defaultLocation={p.defaultLocation} />
         </div>
@@ -186,10 +182,10 @@ export function SeoLanding(p: SeoLandingProps) {
         </section>
       )}
 
-      <section className="py-20 bg-navy text-white">
+      <section className="py-20 bg-navy text-navy-foreground">
         <div className="container mx-auto px-6 max-w-3xl text-center">
           <h2 className="text-3xl md:text-5xl font-light">Ready to start your project?</h2>
-          <p className="mt-4 text-white/70 font-light">Free site survey & detailed quotation across Dubai, Sharjah, Ajman and Abu Dhabi.</p>
+          <p className="mt-4 text-navy-foreground/70 font-light">Share your UAE project scope, available drawings and installation requirements.</p>
           <div className="mt-8 flex flex-wrap justify-center gap-3">
             <Link to="/contact" className="inline-flex items-center gap-2 px-7 py-3.5 rounded-full bg-orange text-orange-foreground font-medium hover:bg-orange/90 transition">
               Request a quote <ArrowRight size={16} />

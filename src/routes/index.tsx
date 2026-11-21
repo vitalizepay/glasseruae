@@ -13,7 +13,7 @@ import { ContactSection } from "@/components/site/ContactSection";
 import heroPoster from "@/assets/landing/glasser-hero-loop-poster.jpg.asset.json";
 
 const heroImage = heroPoster.url;
-const shareImage = `https://www.glasseruae.com${heroImage}`;
+const shareImage = heroImage.startsWith("https://") ? heroImage : `https://www.glasseruae.com${heroImage}`;
 
 const TITLE = "Glass Partition & Aluminium Works Dubai | Glasser UAE";
 const DESC = "Glasser Technical Works provides glass partitions, shower glass, aluminium fabrication, glass railings and commercial glass solutions across Dubai, Sharjah and UAE.";
@@ -42,16 +42,6 @@ export const Route = createFileRoute("/")({
       { rel: "preload", as: "image", href: heroImage, fetchPriority: "high" },
     ],
     scripts: [
-      {
-        src: "https://www.googletagmanager.com/gtag/js?id=G-VEJ92D45PT",
-        async: true,
-      },
-      {
-        children: `window.dataLayer = window.dataLayer || [];
-function gtag(){dataLayer.push(arguments);}
-gtag('js', new Date());
-gtag('config', 'G-VEJ92D45PT');`,
-      },
       {
         type: "application/ld+json",
         children: JSON.stringify({

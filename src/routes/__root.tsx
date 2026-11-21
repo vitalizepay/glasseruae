@@ -9,6 +9,10 @@ import {
   type ErrorComponentProps,
 } from "@tanstack/react-router";
 import { useEffect, type ReactNode } from "react";
+import { CookieConsent } from "@/components/site/CookieConsent";
+import { MarketingTracking } from "@/components/site/MarketingTracking";
+import consentDefaults from "@/lib/consent-defaults.js?raw";
+import { supabase } from "@/integrations/supabase/client";
 
 import appCss from "../styles.css?url";
 import { reportLovableError } from "../lib/lovable-error-reporting";
@@ -86,6 +90,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { name: "theme-color", content: "#0A1A2F" },
       { name: "google-site-verification", content: "nONJ9PJu3C0IiPS41KVERRSvMYwftRNR-p3y7vr8Cwk" },
     ],
+    scripts: [{ children: consentDefaults }],
     links: [
       { rel: "stylesheet", href: appCss },
       { rel: "icon", href: "/favicon.ico", sizes: "any" },
@@ -109,13 +114,6 @@ function RootShell({ children }: { children: ReactNode }) {
     <html lang="en">
       <head>
         <HeadContent />
-        <script async src="https://www.googletagmanager.com/gtag/js?id=G-VEJ92D45PT"></script>
-        <script dangerouslySetInnerHTML={{ __html: `
-          window.dataLayer = window.dataLayer || [];
-          function gtag(){dataLayer.push(arguments);}
-          gtag('js', new Date());
-          gtag('config', 'G-VEJ92D45PT');
-        `}} />
       </head>
       <body>
         {children}
@@ -127,11 +125,31 @@ function RootShell({ children }: { children: ReactNode }) {
 
 function RootComponent() {
   const { queryClient } = Route.useRouteContext();
+  const router = useRouter();
+  useEffect(() => {
+    const { data: { subscription } } = supabase.auth.onAuthStateChange(event => {
+      if (!["SIGNED_IN", "SIGNED_OUT", "USER_UPDATED"].includes(event)) return;
+      void router.invalidate();
+      if (event === "SIGNED_OUT") queryClient.removeQueries({ queryKey: ["owner-leads"] });
+      else void queryClient.invalidateQueries();
+      if (event === "SIGNED_IN" && sessionStorage.getItem("glasser_owner_return") === "/owner") {
+        sessionStorage.removeItem("glasser_owner_return");
+        void router.navigate({ to: "/owner" });
+      }
+    });
+    // OAuth's full-page return can hydrate an existing session before SIGNED_IN fires.
+    if (sessionStorage.getItem("glasser_owner_return") === "/owner") void supabase.auth.getUser().then(({ data }) => {
+      if (data.user) { sessionStorage.removeItem("glasser_owner_return"); void router.navigate({ to: "/owner" }); }
+    });
+    return () => subscription.unsubscribe();
+  }, [router, queryClient]);
 
   return (
     <QueryClientProvider client={queryClient}>
       {/* Required: nested routes render here. Removing <Outlet /> breaks all child routes. */}
       <Outlet />
+      <MarketingTracking />
+      <CookieConsent />
     </QueryClientProvider>
   );
 }

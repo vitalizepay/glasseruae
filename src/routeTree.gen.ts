@@ -10,10 +10,12 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as AuthenticatedRouteRouteImport } from './routes/_authenticated/route'
 import { Route as AboutRouteImport } from './routes/about'
 import { Route as AluminiumFabricationDubaiRouteImport } from './routes/aluminium-fabrication-dubai'
 import { Route as AluminiumWorksDubaiRouteImport } from './routes/aluminium-works-dubai'
 import { Route as AreasWeServeRouteImport } from './routes/areas-we-serve'
+import { Route as AuthRouteImport } from './routes/auth'
 import { Route as BlogRouteImport } from './routes/blog'
 import { Route as ContactRouteImport } from './routes/contact'
 import { Route as GlassDoorInstallationDubaiRouteImport } from './routes/glass-door-installation-dubai'
@@ -33,6 +35,7 @@ import { Route as GlassShopfrontDubaiRouteImport } from './routes/glass-shopfron
 import { Route as HomeRouteImport } from './routes/home'
 import { Route as IndexDothtmlRouteImport } from './routes/index[.]html'
 import { Route as OfficeGlassPartitionDubaiRouteImport } from './routes/office-glass-partition-dubai'
+import { Route as PrivacyRouteImport } from './routes/privacy'
 import { Route as ProjectAdvisorRouteImport } from './routes/project-advisor'
 import { Route as ProjectsRouteImport } from './routes/projects'
 import { Route as ServicesRouteImport } from './routes/services'
@@ -41,6 +44,7 @@ import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
 import { Route as SkylightInstallationDubaiRouteImport } from './routes/skylight-installation-dubai'
 import { Route as TamilfdRouteImport } from './routes/tamilfd'
 import { Route as TamilfoodmenuRouteImport } from './routes/tamilfoodmenu'
+import { Route as AuthenticatedOwnerRouteImport } from './routes/_authenticated/owner'
 import { Route as ApiChatRouteImport } from './routes/api/chat'
 import { Route as BlogIndexRouteImport } from './routes/blog.index'
 import { Route as BlogAcousticGlassDubaiRouteImport } from './routes/blog.acoustic-glass-dubai'
@@ -88,6 +92,10 @@ const IndexRoute = IndexRouteImport.update({
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const AuthenticatedRouteRoute = AuthenticatedRouteRouteImport.update({
+  id: '/_authenticated',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const AboutRoute = AboutRouteImport.update({
   id: '/about',
   path: '/about',
@@ -107,6 +115,11 @@ const AluminiumWorksDubaiRoute = AluminiumWorksDubaiRouteImport.update({
 const AreasWeServeRoute = AreasWeServeRouteImport.update({
   id: '/areas-we-serve',
   path: '/areas-we-serve',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AuthRoute = AuthRouteImport.update({
+  id: '/auth',
+  path: '/auth',
   getParentRoute: () => rootRouteImport,
 } as any)
 const BlogRoute = BlogRouteImport.update({
@@ -208,6 +221,11 @@ const OfficeGlassPartitionDubaiRoute =
     path: '/office-glass-partition-dubai',
     getParentRoute: () => rootRouteImport,
   } as any)
+const PrivacyRoute = PrivacyRouteImport.update({
+  id: '/privacy',
+  path: '/privacy',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const ProjectAdvisorRoute = ProjectAdvisorRouteImport.update({
   id: '/project-advisor',
   path: '/project-advisor',
@@ -248,6 +266,11 @@ const TamilfoodmenuRoute = TamilfoodmenuRouteImport.update({
   id: '/tamilfoodmenu',
   path: '/tamilfoodmenu',
   getParentRoute: () => rootRouteImport,
+} as any)
+const AuthenticatedOwnerRoute = AuthenticatedOwnerRouteImport.update({
+  id: '/owner',
+  path: '/owner',
+  getParentRoute: () => AuthenticatedRouteRoute,
 } as any)
 const ApiChatRoute = ApiChatRouteImport.update({
   id: '/api/chat',
@@ -494,6 +517,7 @@ export interface FileRoutesByFullPath {
   '/aluminium-fabrication-dubai': typeof AluminiumFabricationDubaiRoute
   '/aluminium-works-dubai': typeof AluminiumWorksDubaiRoute
   '/areas-we-serve': typeof AreasWeServeRoute
+  '/auth': typeof AuthRoute
   '/blog': typeof BlogRouteWithChildren
   '/contact': typeof ContactRoute
   '/glass-door-installation-dubai': typeof GlassDoorInstallationDubaiRoute
@@ -513,6 +537,7 @@ export interface FileRoutesByFullPath {
   '/home': typeof HomeRoute
   '/index.html': typeof IndexDothtmlRoute
   '/office-glass-partition-dubai': typeof OfficeGlassPartitionDubaiRoute
+  '/privacy': typeof PrivacyRoute
   '/project-advisor': typeof ProjectAdvisorRoute
   '/projects': typeof ProjectsRouteWithChildren
   '/services': typeof ServicesRouteWithChildren
@@ -521,6 +546,7 @@ export interface FileRoutesByFullPath {
   '/skylight-installation-dubai': typeof SkylightInstallationDubaiRoute
   '/tamilfd': typeof TamilfdRoute
   '/tamilfoodmenu': typeof TamilfoodmenuRoute
+  '/owner': typeof AuthenticatedOwnerRoute
   '/api/chat': typeof ApiChatRoute
   '/blog/acoustic-glass-dubai': typeof BlogAcousticGlassDubaiRoute
   '/blog/acoustic-glass-partition-dubai': typeof BlogAcousticGlassPartitionDubaiRoute
@@ -569,6 +595,7 @@ export interface FileRoutesByTo {
   '/aluminium-fabrication-dubai': typeof AluminiumFabricationDubaiRoute
   '/aluminium-works-dubai': typeof AluminiumWorksDubaiRoute
   '/areas-we-serve': typeof AreasWeServeRoute
+  '/auth': typeof AuthRoute
   '/contact': typeof ContactRoute
   '/glass-door-installation-dubai': typeof GlassDoorInstallationDubaiRoute
   '/glass-facade-dubai': typeof GlassFacadeDubaiRoute
@@ -587,12 +614,14 @@ export interface FileRoutesByTo {
   '/home': typeof HomeRoute
   '/index.html': typeof IndexDothtmlRoute
   '/office-glass-partition-dubai': typeof OfficeGlassPartitionDubaiRoute
+  '/privacy': typeof PrivacyRoute
   '/project-advisor': typeof ProjectAdvisorRoute
   '/shower-glass-dubai': typeof ShowerGlassDubaiRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/skylight-installation-dubai': typeof SkylightInstallationDubaiRoute
   '/tamilfd': typeof TamilfdRoute
   '/tamilfoodmenu': typeof TamilfoodmenuRoute
+  '/owner': typeof AuthenticatedOwnerRoute
   '/api/chat': typeof ApiChatRoute
   '/blog/acoustic-glass-dubai': typeof BlogAcousticGlassDubaiRoute
   '/blog/acoustic-glass-partition-dubai': typeof BlogAcousticGlassPartitionDubaiRoute
@@ -638,10 +667,12 @@ export interface FileRoutesByTo {
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/_authenticated': typeof AuthenticatedRouteRouteWithChildren
   '/about': typeof AboutRoute
   '/aluminium-fabrication-dubai': typeof AluminiumFabricationDubaiRoute
   '/aluminium-works-dubai': typeof AluminiumWorksDubaiRoute
   '/areas-we-serve': typeof AreasWeServeRoute
+  '/auth': typeof AuthRoute
   '/blog': typeof BlogRouteWithChildren
   '/contact': typeof ContactRoute
   '/glass-door-installation-dubai': typeof GlassDoorInstallationDubaiRoute
@@ -661,6 +692,7 @@ export interface FileRoutesById {
   '/home': typeof HomeRoute
   '/index.html': typeof IndexDothtmlRoute
   '/office-glass-partition-dubai': typeof OfficeGlassPartitionDubaiRoute
+  '/privacy': typeof PrivacyRoute
   '/project-advisor': typeof ProjectAdvisorRoute
   '/projects': typeof ProjectsRouteWithChildren
   '/services': typeof ServicesRouteWithChildren
@@ -669,6 +701,7 @@ export interface FileRoutesById {
   '/skylight-installation-dubai': typeof SkylightInstallationDubaiRoute
   '/tamilfd': typeof TamilfdRoute
   '/tamilfoodmenu': typeof TamilfoodmenuRoute
+  '/_authenticated/owner': typeof AuthenticatedOwnerRoute
   '/api/chat': typeof ApiChatRoute
   '/blog/acoustic-glass-dubai': typeof BlogAcousticGlassDubaiRoute
   '/blog/acoustic-glass-partition-dubai': typeof BlogAcousticGlassPartitionDubaiRoute
@@ -719,6 +752,7 @@ export interface FileRouteTypes {
     | '/aluminium-fabrication-dubai'
     | '/aluminium-works-dubai'
     | '/areas-we-serve'
+    | '/auth'
     | '/blog'
     | '/contact'
     | '/glass-door-installation-dubai'
@@ -738,6 +772,7 @@ export interface FileRouteTypes {
     | '/home'
     | '/index.html'
     | '/office-glass-partition-dubai'
+    | '/privacy'
     | '/project-advisor'
     | '/projects'
     | '/services'
@@ -746,6 +781,7 @@ export interface FileRouteTypes {
     | '/skylight-installation-dubai'
     | '/tamilfd'
     | '/tamilfoodmenu'
+    | '/owner'
     | '/api/chat'
     | '/blog/acoustic-glass-dubai'
     | '/blog/acoustic-glass-partition-dubai'
@@ -794,6 +830,7 @@ export interface FileRouteTypes {
     | '/aluminium-fabrication-dubai'
     | '/aluminium-works-dubai'
     | '/areas-we-serve'
+    | '/auth'
     | '/contact'
     | '/glass-door-installation-dubai'
     | '/glass-facade-dubai'
@@ -812,12 +849,14 @@ export interface FileRouteTypes {
     | '/home'
     | '/index.html'
     | '/office-glass-partition-dubai'
+    | '/privacy'
     | '/project-advisor'
     | '/shower-glass-dubai'
     | '/sitemap.xml'
     | '/skylight-installation-dubai'
     | '/tamilfd'
     | '/tamilfoodmenu'
+    | '/owner'
     | '/api/chat'
     | '/blog/acoustic-glass-dubai'
     | '/blog/acoustic-glass-partition-dubai'
@@ -862,10 +901,12 @@ export interface FileRouteTypes {
   id:
     | '__root__'
     | '/'
+    | '/_authenticated'
     | '/about'
     | '/aluminium-fabrication-dubai'
     | '/aluminium-works-dubai'
     | '/areas-we-serve'
+    | '/auth'
     | '/blog'
     | '/contact'
     | '/glass-door-installation-dubai'
@@ -885,6 +926,7 @@ export interface FileRouteTypes {
     | '/home'
     | '/index.html'
     | '/office-glass-partition-dubai'
+    | '/privacy'
     | '/project-advisor'
     | '/projects'
     | '/services'
@@ -893,6 +935,7 @@ export interface FileRouteTypes {
     | '/skylight-installation-dubai'
     | '/tamilfd'
     | '/tamilfoodmenu'
+    | '/_authenticated/owner'
     | '/api/chat'
     | '/blog/acoustic-glass-dubai'
     | '/blog/acoustic-glass-partition-dubai'
@@ -938,10 +981,12 @@ export interface FileRouteTypes {
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  AuthenticatedRouteRoute: typeof AuthenticatedRouteRouteWithChildren
   AboutRoute: typeof AboutRoute
   AluminiumFabricationDubaiRoute: typeof AluminiumFabricationDubaiRoute
   AluminiumWorksDubaiRoute: typeof AluminiumWorksDubaiRoute
   AreasWeServeRoute: typeof AreasWeServeRoute
+  AuthRoute: typeof AuthRoute
   BlogRoute: typeof BlogRouteWithChildren
   ContactRoute: typeof ContactRoute
   GlassDoorInstallationDubaiRoute: typeof GlassDoorInstallationDubaiRoute
@@ -961,6 +1006,7 @@ export interface RootRouteChildren {
   HomeRoute: typeof HomeRoute
   IndexDothtmlRoute: typeof IndexDothtmlRoute
   OfficeGlassPartitionDubaiRoute: typeof OfficeGlassPartitionDubaiRoute
+  PrivacyRoute: typeof PrivacyRoute
   ProjectAdvisorRoute: typeof ProjectAdvisorRoute
   ProjectsRoute: typeof ProjectsRouteWithChildren
   ServicesRoute: typeof ServicesRouteWithChildren
@@ -979,6 +1025,13 @@ declare module '@tanstack/react-router' {
       path: '/'
       fullPath: '/'
       preLoaderRoute: typeof IndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/_authenticated': {
+      id: '/_authenticated'
+      path: ''
+      fullPath: '/'
+      preLoaderRoute: typeof AuthenticatedRouteRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/about': {
@@ -1007,6 +1060,13 @@ declare module '@tanstack/react-router' {
       path: '/areas-we-serve'
       fullPath: '/areas-we-serve'
       preLoaderRoute: typeof AreasWeServeRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/auth': {
+      id: '/auth'
+      path: '/auth'
+      fullPath: '/auth'
+      preLoaderRoute: typeof AuthRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/blog': {
@@ -1142,6 +1202,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof OfficeGlassPartitionDubaiRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/privacy': {
+      id: '/privacy'
+      path: '/privacy'
+      fullPath: '/privacy'
+      preLoaderRoute: typeof PrivacyRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/project-advisor': {
       id: '/project-advisor'
       path: '/project-advisor'
@@ -1197,6 +1264,13 @@ declare module '@tanstack/react-router' {
       fullPath: '/tamilfoodmenu'
       preLoaderRoute: typeof TamilfoodmenuRouteImport
       parentRoute: typeof rootRouteImport
+    }
+    '/_authenticated/owner': {
+      id: '/_authenticated/owner'
+      path: '/owner'
+      fullPath: '/owner'
+      preLoaderRoute: typeof AuthenticatedOwnerRouteImport
+      parentRoute: typeof AuthenticatedRouteRoute
     }
     '/api/chat': {
       id: '/api/chat'
@@ -1488,6 +1562,17 @@ declare module '@tanstack/react-router' {
   }
 }
 
+interface AuthenticatedRouteRouteChildren {
+  AuthenticatedOwnerRoute: typeof AuthenticatedOwnerRoute
+}
+
+const AuthenticatedRouteRouteChildren: AuthenticatedRouteRouteChildren = {
+  AuthenticatedOwnerRoute: AuthenticatedOwnerRoute,
+}
+
+const AuthenticatedRouteRouteWithChildren =
+  AuthenticatedRouteRoute._addFileChildren(AuthenticatedRouteRouteChildren)
+
 interface BlogRouteChildren {
   BlogAcousticGlassDubaiRoute: typeof BlogAcousticGlassDubaiRoute
   BlogAcousticGlassPartitionDubaiRoute: typeof BlogAcousticGlassPartitionDubaiRoute
@@ -1619,10 +1704,12 @@ const ServicesRouteWithChildren = ServicesRoute._addFileChildren(
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  AuthenticatedRouteRoute: AuthenticatedRouteRouteWithChildren,
   AboutRoute: AboutRoute,
   AluminiumFabricationDubaiRoute: AluminiumFabricationDubaiRoute,
   AluminiumWorksDubaiRoute: AluminiumWorksDubaiRoute,
   AreasWeServeRoute: AreasWeServeRoute,
+  AuthRoute: AuthRoute,
   BlogRoute: BlogRouteWithChildren,
   ContactRoute: ContactRoute,
   GlassDoorInstallationDubaiRoute: GlassDoorInstallationDubaiRoute,
@@ -1642,6 +1729,7 @@ const rootRouteChildren: RootRouteChildren = {
   HomeRoute: HomeRoute,
   IndexDothtmlRoute: IndexDothtmlRoute,
   OfficeGlassPartitionDubaiRoute: OfficeGlassPartitionDubaiRoute,
+  PrivacyRoute: PrivacyRoute,
   ProjectAdvisorRoute: ProjectAdvisorRoute,
   ProjectsRoute: ProjectsRouteWithChildren,
   ServicesRoute: ServicesRouteWithChildren,

@@ -1,5 +1,7 @@
 import { Link } from "@tanstack/react-router";
 import { Phone, Mail, MapPin, Linkedin } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { openCookieSettings } from "@/components/site/CookieConsent";
 import logo from "@/assets/glasser-logo.png";
 
 export function Footer() {
@@ -13,7 +15,7 @@ export function Footer() {
           <div>
             <img src={logo} alt="Glasser Technical Works LLC logo" className="h-12 bg-white rounded-md p-1 w-auto mb-4" />
             <p className="text-sm text-white/70 leading-relaxed">
-              Dubai's trusted glass &amp; aluminium specialists. Premium installations across the UAE since 2019.
+              Glass and aluminium solutions for UAE commercial and residential projects.
             </p>
             <div className="flex gap-3 mt-5">
               <a href="https://www.linkedin.com/in/glasser-uae/" target="_blank" rel="noopener noreferrer" title="Glasser UAE on LinkedIn" className="w-9 h-9 rounded-full glass-dark flex items-center justify-center hover:bg-orange hover:text-orange-foreground transition" aria-label="Glasser UAE on LinkedIn">
@@ -58,11 +60,11 @@ export function Footer() {
         </div>
         <div className="border-t border-white/10 mt-12 pt-6 flex flex-col gap-3 text-xs text-white/80">
           <p className="text-white/70">
-            Glasser Technical Works LLC · Licensed Dubai glass &amp; aluminium contractor · Established 2019 · 500+ projects delivered across the UAE
+            Glasser Technical Works LLC · Glass and aluminium project enquiries across the UAE
           </p>
           <div className="flex flex-col md:flex-row justify-between gap-3">
             <p>© {new Date().getFullYear()} Glasser Technical Works LLC. All rights reserved.</p>
-            <p>Dubai · Abu Dhabi · Sharjah · Ajman · UAE</p>
+            <div className="flex flex-wrap items-center gap-4"><Link to="/privacy" className="underline underline-offset-4">Privacy</Link><Button variant="link" className="h-auto p-0 text-xs text-navy-foreground" onClick={openCookieSettings}>Cookie settings</Button><Link to="/auth" className="text-navy-foreground/70">Owner sign-in</Link></div>
           </div>
         </div>
       </div>

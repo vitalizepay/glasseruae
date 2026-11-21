@@ -2,6 +2,8 @@
 - [x] Audit existing enquiries, tracking, service content, connector availability, search readiness and email verification.
 - [x] Connect Google Analytics browser tracking and prepare the prioritised implementation plan from the supplied brief.
 - [ ] Implement the phased upgrade after approval of the audit-first plan; external verification and advertising spend remain separately gated.
+- [x] Confirm owner sign-in needs no profile fields; retain separate protected role records.
+- [ ] Grant the approved owner account after the owner supplies its sign-in email.
 
 # Enquiries and Facebook campaign
 - [x] Add the supplied LinkedIn profile to the website.

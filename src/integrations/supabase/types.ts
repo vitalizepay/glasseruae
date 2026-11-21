@@ -16,31 +16,88 @@ export type Database = {
     Tables: {
       glass_enquiries: {
         Row: {
+          campaign: string | null
+          company_name: string | null
           created_at: string
+          email: string | null
+          follow_up_at: string | null
           full_name: string
           id: string
+          landing_page: string | null
+          owner_notes: string | null
           phone: string
           project_details: string | null
           project_location: string | null
+          project_scope: string | null
+          project_type: string | null
           referral_source: string | null
+          service_needed: string | null
+          status: string
+          submitted_page: string | null
+          traffic_medium: string | null
+          traffic_source: string | null
         }
         Insert: {
+          campaign?: string | null
+          company_name?: string | null
           created_at?: string
+          email?: string | null
+          follow_up_at?: string | null
           full_name: string
           id?: string
+          landing_page?: string | null
+          owner_notes?: string | null
           phone: string
           project_details?: string | null
           project_location?: string | null
+          project_scope?: string | null
+          project_type?: string | null
           referral_source?: string | null
+          service_needed?: string | null
+          status?: string
+          submitted_page?: string | null
+          traffic_medium?: string | null
+          traffic_source?: string | null
         }
         Update: {
+          campaign?: string | null
+          company_name?: string | null
           created_at?: string
+          email?: string | null
+          follow_up_at?: string | null
           full_name?: string
           id?: string
+          landing_page?: string | null
+          owner_notes?: string | null
           phone?: string
           project_details?: string | null
           project_location?: string | null
+          project_scope?: string | null
+          project_type?: string | null
           referral_source?: string | null
+          service_needed?: string | null
+          status?: string
+          submitted_page?: string | null
+          traffic_medium?: string | null
+          traffic_source?: string | null
+        }
+        Relationships: []
+      }
+      user_roles: {
+        Row: {
+          id: string
+          role: string
+          user_id: string
+        }
+        Insert: {
+          id?: string
+          role: string
+          user_id: string
+        }
+        Update: {
+          id?: string
+          role?: string
+          user_id?: string
         }
         Relationships: []
       }
@@ -49,7 +106,7 @@ export type Database = {
       [_ in never]: never
     }
     Functions: {
-      [_ in never]: never
+      is_glasser_owner: { Args: never; Returns: boolean }
     }
     Enums: {
       [_ in never]: never

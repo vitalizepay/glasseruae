@@ -12,3 +12,6 @@
 - Keep trade-focused interior design editorial copy and FAQs in a browser-safe content module shared by its article and listing so visible content and search metadata agree.
 - Keep public enquiry inserts field-scoped and bounded by database RLS; visitors can submit quotes but cannot supply IDs/timestamps or read existing enquiries.
 - Keep enquiry source validation, insert payloads and WhatsApp URL construction in one browser-safe module; reserve the handoff tab before saving and retain a visible link so blocked popups do not lose the handoff.
+- Use one shared enquiry form and validated server action across contact, service and location pages so every quote is saved before WhatsApp handoff.
+- Keep the supplied consent helper unchanged and coordinate optional event dispatch at the root; require explicit analytics acceptance and allowlisted event fields so private lead data never enters analytics.
+- Keep company permissions in protected user_roles and fetch/update leads through authenticated server functions and RLS; sign-in alone never grants company access.
