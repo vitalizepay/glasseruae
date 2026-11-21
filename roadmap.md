@@ -1,3 +1,8 @@
+# Growth marketing upgrade
+- [x] Audit existing enquiries, tracking, service content, connector availability, search readiness and email verification.
+- [x] Connect Google Analytics browser tracking and prepare the prioritised implementation plan from the supplied brief.
+- [ ] Implement the phased upgrade after approval of the audit-first plan; external verification and advertising spend remain separately gated.
+
 # Enquiries and Facebook campaign
 - [x] Add the supplied LinkedIn profile to the website.
 - [x] Correct the WhatsApp destination, save enquiry sources including Facebook, and verify a real test submission and handoff.
