@@ -36,7 +36,7 @@ export function CookieConsent() {
   useEffect(() => { if (visible) panel.current?.focus({ preventScroll: true }); }, [visible]);
   function answer(accepted: boolean) { saveChoices({ analytics: accepted ? "granted" : "denied", advertising: accepted ? "granted" : "denied" }); setVisible(false); }
   return <>
-    {visible && !settings && <div ref={panel} tabIndex={-1} role="region" aria-label="Privacy choices" className="consent-theme fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[calc(100%-32px)] max-w-[360px] max-h-[85svh] overflow-y-auto z-[80] rounded-lg border border-border bg-background p-5 shadow-elegant focus:outline-none">
+    {visible && !settings && <div ref={panel} tabIndex={-1} role="region" aria-label="Privacy choices" className="consent-theme fixed bottom-4 left-1/2 -translate-x-1/2 w-[calc(100%-32px)] max-w-[360px] max-h-[85svh] overflow-y-auto z-[80] rounded-lg border border-border bg-background p-5 shadow-elegant focus:outline-none">
       <h2 className="font-sans text-base font-medium tracking-normal text-foreground">Your privacy choices</h2>
       <p className="mt-2 text-xs leading-5 text-muted-foreground">Visits are counted without cookies. Accept analytics cookies to measure service interest and enquiries. Advertising stays off until configured.</p>
       <Link to="/privacy" className="inline-block mt-2 text-xs underline underline-offset-4 text-muted-foreground hover:text-foreground">Privacy Notice</Link>
