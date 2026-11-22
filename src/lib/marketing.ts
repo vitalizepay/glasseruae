@@ -2,7 +2,8 @@ import { canTrack, readChoice } from "@/lib/consent";
 import { campaignSlug, eventProperties, explicitConsentAllows, publicPagePath, sourceName, type MarketingEvent } from "@/lib/marketing-rules";
 
 export const TRACKING_CONFIG = {
-  measurementId: import.meta.env.VITE_LOVABLE_CONNECTOR_GOOGLE_ANALYTICS_API_KEY || "",
+  // GA4 uses gtag/js with a G- ID, not the GTM container endpoint.
+  measurementId: "G-VEJ92D45PT",
   gtmId: import.meta.env.VITE_GTM_CONTAINER_ID || "",
   metaPixelId: import.meta.env.VITE_META_PIXEL_ID || "",
   linkedinPartnerId: import.meta.env.VITE_LINKEDIN_PARTNER_ID || "",

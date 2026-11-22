@@ -1,3 +1,6 @@
+# Requested Google Analytics tag
+- [x] Use the supplied GA4 ID in the existing consent-aware tracker; verified no load before consent/rejection, one correct tag on acceptance and withdrawal disabling. Google receipt and publication remain unverified; recommend commercial introductions using existing service content.
+
 # Growth marketing upgrade
 - [x] Audit existing enquiries, tracking, service content, connector availability, search readiness and email verification.
 - [x] Connect Google Analytics browser tracking and prepare the prioritised implementation plan from the supplied brief.
