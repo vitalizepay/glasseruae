@@ -1,5 +1,5 @@
 # Google Search Console setup
-- [ ] Verify the published site's Google account access, add the verified property and submit its live same-origin sitemap; request approval before publishing required changes.
+- [x] Verify the published site's Google account access, add the verified property and submit its live same-origin sitemap; the existing live verification tag required no publication.
 
 # Requested Google Analytics tag
 - [x] Use the supplied GA4 ID in the existing consent-aware tracker; verified no load before consent/rejection, one correct tag on acceptance and withdrawal disabling. Google receipt and publication remain unverified; recommend commercial introductions using existing service content.
